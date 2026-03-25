@@ -1,0 +1,36 @@
+<svg width="1920" height="1280" viewBox="0 0 1920 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="a0" x1="188" y1="106" x2="1764" y2="1188" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8D6B79"/>
+      <stop offset="0.46" stop-color="#6D5260"/>
+      <stop offset="1" stop-color="#3E2D3A"/>
+    </linearGradient>
+    <radialGradient id="a1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1462 322) rotate(120) scale(658 520)">
+      <stop stop-color="#F5E7EE" stop-opacity="0.66"/>
+      <stop offset="1" stop-color="#F5E7EE" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="a2" x1="246" y1="276" x2="980" y2="886" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEDCE4" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#D7C1CD" stop-opacity="0.14"/>
+    </linearGradient>
+    <filter id="a3" x="0" y="0" width="1920" height="1280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.71" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.07"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1920" height="1280" fill="url(#a0)"/>
+  <rect width="1920" height="1280" fill="url(#a1)"/>
+  <rect x="132" y="176" width="742" height="942" rx="68" fill="url(#a2)"/>
+  <rect x="210" y="242" width="584" height="536" rx="44" fill="rgba(247,236,242,0.42)"/>
+  <rect x="252" y="294" width="500" height="440" rx="32" fill="rgba(255,249,252,0.44)"/>
+  <ellipse cx="1338" cy="604" rx="376" ry="470" fill="rgba(231,208,219,0.58)"/>
+  <ellipse cx="1468" cy="590" rx="176" ry="336" fill="rgba(220,190,204,0.46)"/>
+  <rect x="936" y="902" width="772" height="194" rx="32" fill="rgba(255,255,255,0.14)"/>
+  <rect x="998" y="956" width="474" height="14" rx="7" fill="rgba(255,255,255,0.76)"/>
+  <rect x="998" y="992" width="608" height="11" rx="5.5" fill="rgba(255,255,255,0.52)"/>
+  <rect x="998" y="1024" width="350" height="11" rx="5.5" fill="rgba(255,255,255,0.38)"/>
+  <rect width="1920" height="1280" fill="url(#a3)"/>
+</svg>

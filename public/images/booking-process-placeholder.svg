@@ -1,0 +1,30 @@
+<svg width="1400" height="980" viewBox="0 0 1400 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="94" y1="66" x2="1306" y2="916" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8F7182"/>
+      <stop offset="0.5" stop-color="#715869"/>
+      <stop offset="1" stop-color="#4D3A49"/>
+    </linearGradient>
+    <filter id="grain" x="0" y="0" width="1400" height="980" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.05"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="980" fill="url(#bg)"/>
+
+  <rect x="122" y="128" width="1158" height="214" rx="28" fill="rgba(255,255,255,0.16)"/>
+  <rect x="172" y="198" width="330" height="12" rx="6" fill="rgba(255,255,255,0.74)"/>
+  <rect x="172" y="230" width="442" height="10" rx="5" fill="rgba(255,255,255,0.52)"/>
+
+  <rect x="122" y="374" width="362" height="422" rx="30" fill="rgba(250,242,246,0.34)"/>
+  <rect x="518" y="374" width="362" height="422" rx="30" fill="rgba(250,242,246,0.28)"/>
+  <rect x="914" y="374" width="366" height="422" rx="30" fill="rgba(250,242,246,0.34)"/>
+
+  <ellipse cx="1046" cy="692" rx="172" ry="198" fill="rgba(236,214,225,0.52)"/>
+
+  <rect width="1400" height="980" fill="url(#grain)"/>
+</svg>

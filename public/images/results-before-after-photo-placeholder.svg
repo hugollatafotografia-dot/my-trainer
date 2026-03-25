@@ -1,0 +1,41 @@
+<svg width="980" height="1280" viewBox="0 0 980 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rb-bg" x1="82" y1="72" x2="906" y2="1212" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C5E70"/>
+      <stop offset="0.52" stop-color="#987084"/>
+      <stop offset="1" stop-color="#58414F"/>
+    </linearGradient>
+    <radialGradient id="rb-light" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(308 246) rotate(32) scale(358 252)">
+      <stop stop-color="#F7EAF1" stop-opacity="0.56"/>
+      <stop offset="1" stop-color="#F7EAF1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rb-blur" x="396" y="210" width="434" height="650" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    <filter id="rb-grain" x="0" y="0" width="980" height="1280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.062"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="980" height="1280" fill="url(#rb-bg)"/>
+  <rect width="980" height="1280" fill="url(#rb-light)"/>
+
+  <rect x="78" y="124" width="316" height="220" rx="26" fill="rgba(250,242,246,0.27)"/>
+  <rect x="104" y="150" width="264" height="170" rx="20" fill="rgba(250,242,246,0.42)"/>
+
+  <g filter="url(#rb-blur)" opacity="0.6">
+    <ellipse cx="618" cy="500" rx="190" ry="252" fill="#F1DDE6"/>
+    <ellipse cx="710" cy="574" rx="98" ry="190" fill="#E2C4D1"/>
+  </g>
+
+  <rect x="112" y="980" width="424" height="160" rx="24" fill="rgba(255,255,255,0.14)"/>
+  <rect x="146" y="1036" width="236" height="10" rx="5" fill="rgba(255,255,255,0.74)"/>
+  <rect x="146" y="1062" width="306" height="8" rx="4" fill="rgba(255,255,255,0.5)"/>
+  <rect x="146" y="1086" width="188" height="8" rx="4" fill="rgba(255,255,255,0.42)"/>
+
+  <rect width="980" height="1280" fill="url(#rb-grain)"/>
+</svg>

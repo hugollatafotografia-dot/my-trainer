@@ -1,0 +1,41 @@
+<svg width="1500" height="1100" viewBox="0 0 1500 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="he-bg" x1="108" y1="84" x2="1400" y2="1034" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8E6E7D"/>
+      <stop offset="0.5" stop-color="#6B5261"/>
+      <stop offset="1" stop-color="#473542"/>
+    </linearGradient>
+    <radialGradient id="he-light" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(326 242) rotate(34) scale(574 392)">
+      <stop stop-color="#F7E9F0" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#F7E9F0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="he-blur" x="794" y="112" width="614" height="740" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <filter id="he-grain" x="0" y="0" width="1500" height="1100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.74" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.062"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1500" height="1100" fill="url(#he-bg)"/>
+  <rect width="1500" height="1100" fill="url(#he-light)"/>
+
+  <rect x="126" y="142" width="464" height="338" rx="38" fill="rgba(248,239,244,0.28)"/>
+  <rect x="166" y="182" width="384" height="258" rx="30" fill="rgba(250,242,246,0.42)"/>
+
+  <g filter="url(#he-blur)" opacity="0.58">
+    <ellipse cx="1086" cy="486" rx="212" ry="286" fill="#F3DFE8"/>
+    <ellipse cx="1178" cy="560" rx="104" ry="202" fill="#E4C7D4"/>
+  </g>
+
+  <rect x="162" y="792" width="664" height="206" rx="34" fill="rgba(255,255,255,0.14)"/>
+  <rect x="212" y="864" width="342" height="12" rx="6" fill="rgba(255,255,255,0.74)"/>
+  <rect x="212" y="896" width="432" height="10" rx="5" fill="rgba(255,255,255,0.52)"/>
+  <rect x="212" y="924" width="248" height="10" rx="5" fill="rgba(255,255,255,0.4)"/>
+
+  <rect width="1500" height="1100" fill="url(#he-grain)"/>
+</svg>

@@ -1,0 +1,54 @@
+<svg width="1920" height="1200" viewBox="0 0 1920 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hh-bg" x1="132" y1="86" x2="1778" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#896979"/>
+      <stop offset="0.44" stop-color="#6B5160"/>
+      <stop offset="1" stop-color="#45323F"/>
+    </linearGradient>
+    <radialGradient id="hh-light-left" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(362 236) rotate(34) scale(732 514)">
+      <stop stop-color="#F7EAF1" stop-opacity="0.84"/>
+      <stop offset="1" stop-color="#F7EAF1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hh-light-subject" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1434 456) rotate(88) scale(512 384)">
+      <stop stop-color="#F4DFE9" stop-opacity="0.92"/>
+      <stop offset="0.68" stop-color="#E7C9D7" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#E7C9D7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hh-vignette" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1534 890) rotate(-146) scale(924 612)">
+      <stop stop-color="#251722" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#251722" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="hh-blur" x="1080" y="86" width="826" height="994" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="44"/>
+    </filter>
+    <filter id="hh-grain" x="0" y="0" width="1920" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.065"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1200" fill="url(#hh-bg)"/>
+  <rect width="1920" height="1200" fill="url(#hh-light-left)"/>
+  <rect width="1920" height="1200" fill="url(#hh-vignette)"/>
+
+  <rect x="82" y="122" width="522" height="390" rx="56" fill="rgba(248,238,244,0.24)"/>
+  <rect x="122" y="164" width="442" height="308" rx="40" fill="rgba(249,241,246,0.38)"/>
+
+  <g filter="url(#hh-blur)" opacity="0.58">
+    <ellipse cx="1438" cy="500" rx="248" ry="360" fill="#F5E3EB"/>
+    <ellipse cx="1582" cy="564" rx="132" ry="266" fill="#E4C5D4"/>
+  </g>
+
+  <ellipse cx="1416" cy="482" rx="238" ry="338" fill="url(#hh-light-subject)"/>
+  <path d="M1198 804C1288 892 1438 936 1640 912C1762 898 1848 846 1910 770" stroke="rgba(255,255,255,0.24)" stroke-width="16" stroke-linecap="round"/>
+
+  <rect x="138" y="780" width="674" height="224" rx="36" fill="rgba(255,255,255,0.13)"/>
+  <rect x="194" y="852" width="362" height="14" rx="7" fill="rgba(255,255,255,0.73)"/>
+  <rect x="194" y="888" width="468" height="10" rx="5" fill="rgba(255,255,255,0.52)"/>
+  <rect x="194" y="918" width="270" height="10" rx="5" fill="rgba(255,255,255,0.4)"/>
+
+  <rect width="1920" height="1200" fill="url(#hh-grain)"/>
+</svg>

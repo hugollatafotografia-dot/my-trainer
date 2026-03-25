@@ -1,0 +1,43 @@
+<svg width="980" height="1280" viewBox="0 0 980 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="86" y1="74" x2="904" y2="1208" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7D6071"/>
+      <stop offset="0.54" stop-color="#9A7388"/>
+      <stop offset="1" stop-color="#5B4354"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(318 264) rotate(32) scale(342 236)">
+      <stop stop-color="#F6E8EF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#F6E8EF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="focus" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(612 456) rotate(74) scale(296 224)">
+      <stop stop-color="#F8E7EE" stop-opacity="0.9"/>
+      <stop offset="0.72" stop-color="#E7CCDA" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#E7CCDA" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain" x="0" y="0" width="980" height="1280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.76" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="980" height="1280" fill="url(#bg)"/>
+  <rect width="980" height="1280" fill="url(#light)"/>
+
+  <rect x="72" y="122" width="322" height="220" rx="28" fill="rgba(250,242,246,0.28)"/>
+  <rect x="96" y="148" width="274" height="172" rx="22" fill="rgba(250,242,246,0.42)"/>
+
+  <ellipse cx="604" cy="478" rx="188" ry="244" fill="url(#focus)"/>
+  <ellipse cx="548" cy="748" rx="246" ry="316" fill="rgba(255,255,255,0.08)"/>
+
+  <path d="M374 878C456 936 566 966 714 956" stroke="rgba(255,255,255,0.24)" stroke-width="10" stroke-linecap="round"/>
+
+  <rect x="112" y="980" width="420" height="158" rx="24" fill="rgba(255,255,255,0.15)"/>
+  <rect x="146" y="1036" width="228" height="10" rx="5" fill="rgba(255,255,255,0.72)"/>
+  <rect x="146" y="1062" width="304" height="8" rx="4" fill="rgba(255,255,255,0.5)"/>
+  <rect x="146" y="1086" width="186" height="8" rx="4" fill="rgba(255,255,255,0.45)"/>
+
+  <rect width="980" height="1280" fill="url(#grain)"/>
+</svg>

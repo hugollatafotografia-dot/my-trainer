@@ -1,0 +1,41 @@
+<svg width="1500" height="1100" viewBox="0 0 1500 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="th-bg" x1="108" y1="84" x2="1402" y2="1034" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8A6A7B"/>
+      <stop offset="0.5" stop-color="#674F5F"/>
+      <stop offset="1" stop-color="#43323F"/>
+    </linearGradient>
+    <radialGradient id="th-light" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(334 242) rotate(34) scale(566 382)">
+      <stop stop-color="#F7EAF1" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#F7EAF1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="th-blur" x="806" y="126" width="602" height="734" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <filter id="th-grain" x="0" y="0" width="1500" height="1100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.74" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.062"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1500" height="1100" fill="url(#th-bg)"/>
+  <rect width="1500" height="1100" fill="url(#th-light)"/>
+
+  <rect x="120" y="140" width="466" height="336" rx="38" fill="rgba(248,239,244,0.28)"/>
+  <rect x="160" y="180" width="384" height="256" rx="30" fill="rgba(250,242,246,0.42)"/>
+
+  <g filter="url(#th-blur)" opacity="0.58">
+    <ellipse cx="1092" cy="492" rx="216" ry="292" fill="#F2DEE8"/>
+    <ellipse cx="1182" cy="560" rx="106" ry="204" fill="#E2C5D3"/>
+  </g>
+
+  <rect x="156" y="796" width="670" height="204" rx="34" fill="rgba(255,255,255,0.14)"/>
+  <rect x="206" y="868" width="350" height="12" rx="6" fill="rgba(255,255,255,0.74)"/>
+  <rect x="206" y="900" width="430" height="10" rx="5" fill="rgba(255,255,255,0.52)"/>
+  <rect x="206" y="928" width="248" height="10" rx="5" fill="rgba(255,255,255,0.4)"/>
+
+  <rect width="1500" height="1100" fill="url(#th-grain)"/>
+</svg>

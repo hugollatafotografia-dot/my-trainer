@@ -20,20 +20,18 @@ export default function Card({
   return (
     <article
       className={cn(
-        "rounded-[2rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] p-7 shadow-[0_30px_70px_-48px_rgba(22,21,20,0.35)]",
+        "surface-card",
         className,
       )}
     >
       {eyebrow ? (
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--color-accent)]">
+        <p className="eyebrow-label mb-3">
           {eyebrow}
         </p>
       ) : null}
-      <h3 className="text-xl font-semibold tracking-[-0.03em] text-[color:var(--color-foreground)]">
-        {title}
-      </h3>
+      <h3 className="type-h3 text-[color:var(--color-foreground)]">{title}</h3>
       {description ? (
-        <p className="mt-3 text-sm leading-7 text-[color:var(--color-muted)] sm:text-base">
+        <p className="body-muted mt-3 text-[var(--text-body-sm)] leading-7">
           {description}
         </p>
       ) : null}

@@ -1,9 +1,9 @@
 export const navLinks = [
-  { href: "/clases", label: "Clases" },
-  { href: "/entrenador-personal", label: "Entrenador Personal" },
-  { href: "/precios", label: "Precios" },
-  { href: "/reservar", label: "Reservar" },
+  { href: "/tratamientos", label: "Tratamientos" },
+  { href: "/sobre-nosotros", label: "Sobre nosotros" },
+  { href: "/resultados", label: "Resultados" },
   { href: "/contacto", label: "Contacto" },
+  { href: "/reservar", label: "Reservar" },
 ];
 
 export const legalLinks = [
@@ -13,7 +13,7 @@ export const legalLinks = [
 ];
 
 export const contactDetails = {
-  phone: "+34 600 000 000",
-  email: "hola@mytrainer.es",
-  address: "Avenida Principal 123, Andorra la Vella",
+  phone: "+376 600 000",
+  email: "illa.carlemany@centresideal.com",
+  address: "Illa Carlemany, Escaldes-Engordany, Andorra",
 };

@@ -1,0 +1,31 @@
+<svg width="1800" height="1200" viewBox="0 0 1800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="b0" x1="128" y1="104" x2="1654" y2="1110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7E606D"/>
+      <stop offset="0.52" stop-color="#5E4854"/>
+      <stop offset="1" stop-color="#372A33"/>
+    </linearGradient>
+    <radialGradient id="b1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(360 322) rotate(36) scale(756 520)">
+      <stop stop-color="#F4E6ED" stop-opacity="0.68"/>
+      <stop offset="1" stop-color="#F4E6ED" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="b2" x="0" y="0" width="1800" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.74" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.07"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1800" height="1200" fill="url(#b0)"/>
+  <rect width="1800" height="1200" fill="url(#b1)"/>
+  <rect x="92" y="144" width="724" height="916" rx="62" fill="rgba(248,240,245,0.35)"/>
+  <rect x="160" y="212" width="578" height="496" rx="36" fill="rgba(255,251,253,0.46)"/>
+  <rect x="910" y="170" width="782" height="852" rx="66" fill="rgba(239,218,229,0.22)"/>
+  <ellipse cx="1304" cy="498" rx="286" ry="384" fill="rgba(234,211,222,0.62)"/>
+  <ellipse cx="1412" cy="512" rx="140" ry="262" fill="rgba(221,190,204,0.46)"/>
+  <rect x="204" y="834" width="534" height="182" rx="28" fill="rgba(255,255,255,0.14)"/>
+  <rect x="250" y="884" width="386" height="13" rx="6.5" fill="rgba(255,255,255,0.72)"/>
+  <rect x="250" y="918" width="294" height="10" rx="5" fill="rgba(255,255,255,0.46)"/>
+  <rect width="1800" height="1200" fill="url(#b2)"/>
+</svg>

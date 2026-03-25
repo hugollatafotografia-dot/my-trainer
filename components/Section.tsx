@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
+import Container from "./Container";
+
 type SectionProps = {
   children: ReactNode;
   className?: string;
@@ -22,25 +24,19 @@ export default function Section({
   title,
 }: SectionProps) {
   return (
-    <section id={id} className={cn("py-20 sm:py-24", className)}>
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+    <section id={id} className={cn("section-shell", className)}>
+      <Container>
         <div className="max-w-3xl">
-          {label ? (
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--color-accent)]">
-              {label}
-            </p>
-          ) : null}
-          <h2 className="font-display text-4xl leading-none tracking-[-0.03em] text-[color:var(--color-foreground)] sm:text-5xl">
-            {title}
-          </h2>
+          {label ? <p className="eyebrow-label">{label}</p> : null}
+          <h2 className="type-h2 text-[color:var(--color-foreground)]">{title}</h2>
           {description ? (
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[color:var(--color-muted)] sm:text-lg">
+            <p className="body-muted mt-5 max-w-2xl leading-8">
               {description}
             </p>
           ) : null}
         </div>
         <div className={cn("mt-12", contentClassName)}>{children}</div>
-      </div>
+      </Container>
     </section>
   );
 }
