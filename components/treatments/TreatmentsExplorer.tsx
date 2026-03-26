@@ -15,6 +15,72 @@ type TreatmentsExplorerProps = {
   closeLabel?: string;
 };
 
+const CATEGORY_THEME: Record<
+  TreatmentCategoryId,
+  {
+    activeButton: string;
+    hoverButton: string;
+    pill: string;
+    accentText: string;
+    cardHover: string;
+    topBar: string;
+  }
+> = {
+  "estetica-normal": {
+    activeButton: "border-[#9a4565] bg-[#9a4565] text-white shadow-[0_20px_36px_-30px_rgba(154,69,101,0.76)]",
+    hoverButton: "hover:border-[#9a4565]/55",
+    pill: "border-[#9a4565]/35 bg-[#9a4565]/10 text-[#9a4565]",
+    accentText: "text-[#9a4565]",
+    cardHover: "hover:border-[#9a4565]/45 hover:shadow-[0_18px_34px_-26px_rgba(154,69,101,0.44)]",
+    topBar: "bg-[#9a4565]",
+  },
+  "estetica-avanzada": {
+    activeButton: "border-[#2f6f91] bg-[#2f6f91] text-white shadow-[0_20px_36px_-30px_rgba(47,111,145,0.76)]",
+    hoverButton: "hover:border-[#2f6f91]/55",
+    pill: "border-[#2f6f91]/35 bg-[#2f6f91]/10 text-[#2f6f91]",
+    accentText: "text-[#2f6f91]",
+    cardHover: "hover:border-[#2f6f91]/45 hover:shadow-[0_18px_34px_-26px_rgba(47,111,145,0.42)]",
+    topBar: "bg-[#2f6f91]",
+  },
+  "estetica-regenerativa": {
+    activeButton: "border-[#4f7c53] bg-[#4f7c53] text-white shadow-[0_20px_36px_-30px_rgba(79,124,83,0.76)]",
+    hoverButton: "hover:border-[#4f7c53]/55",
+    pill: "border-[#4f7c53]/35 bg-[#4f7c53]/10 text-[#4f7c53]",
+    accentText: "text-[#4f7c53]",
+    cardHover: "hover:border-[#4f7c53]/45 hover:shadow-[0_18px_34px_-26px_rgba(79,124,83,0.42)]",
+    topBar: "bg-[#4f7c53]",
+  },
+};
+
+function normalizeToken(value: string) {
+  return value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+}
+
+function getKeywordTone(word: string) {
+  const token = normalizeToken(word);
+
+  if (["facial", "rostro", "piel", "manchas", "antimanchas"].some((item) => token.includes(item))) {
+    return "text-[#2f6f91]";
+  }
+
+  if (["corporal", "cuerpo", "abdomen", "piernas", "gluteos", "espalda", "presoterapia", "maderoterapia"].some((item) =>
+    token.includes(item))) {
+    return "text-[#8a6533]";
+  }
+
+  if (["laser", "ipl", "hifu", "radiofrecuencia", "microneedling", "electroporacion", "hydrafacial", "led"].some((item) =>
+    token.includes(item))) {
+    return "text-[#2b7a78]";
+  }
+
+  if (["regener", "barrera", "sensible", "calmante", "post", "diagnostico", "rutina", "revision"].some((item) =>
+    token.includes(item))) {
+    return "text-[#4f7c53]";
+  }
+
+  return "text-[color:var(--color-foreground)]";
+}
+
 export default function TreatmentsExplorer({
   content,
   mode = "page",
@@ -26,7 +92,7 @@ export default function TreatmentsExplorer({
   const [activeCategory, setActiveCategory] = useState<TreatmentCategoryId>(
     initialCategory ?? "estetica-normal",
   );
-  const [query, setQuery] = useState("");
+  const [showAll, setShowAll] = useState(false);
   const [selectedTreatmentId, setSelectedTreatmentId] = useState<string | null>(null);
 
   const totalsByCategory = useMemo(
@@ -45,37 +111,13 @@ export default function TreatmentsExplorer({
     [activeCategory, content.categories],
   );
 
-  const filteredTreatments = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
-
-    return content.treatments.filter((item) => {
-      if (item.categoryId !== activeCategory) {
-        return false;
-      }
-
-      if (!normalizedQuery) {
-        return true;
-      }
-
-      return [item.name, item.shortDescription, item.objective, item.candidate]
-        .join(" ")
-        .toLowerCase()
-        .includes(normalizedQuery);
-    });
-  }, [activeCategory, content.treatments, query]);
-
-  const featuredTreatments = useMemo(() => {
-    const explicitFeatured = filteredTreatments.filter((item) => item.featured);
-    const source = explicitFeatured.length > 0 ? explicitFeatured : filteredTreatments;
-    const maxCards = mode === "home" ? 2 : 3;
-    return source.slice(0, maxCards);
-  }, [filteredTreatments, mode]);
-
-  const secondaryTreatments = useMemo(() => {
-    const featuredIds = new Set(featuredTreatments.map((item) => item.id));
-    const rest = filteredTreatments.filter((item) => !featuredIds.has(item.id));
-    return mode === "home" ? rest.slice(0, 6) : rest;
-  }, [featuredTreatments, filteredTreatments, mode]);
+  const activeTreatments = useMemo(
+    () =>
+      content.treatments
+        .filter((item) => item.categoryId === activeCategory)
+        .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured))),
+    [activeCategory, content.treatments],
+  );
 
   const selectedTreatment = useMemo<TreatmentItem | null>(
     () => content.treatments.find((item) => item.id === selectedTreatmentId) ?? null,
@@ -91,172 +133,210 @@ export default function TreatmentsExplorer({
     [content.categories],
   );
 
+  const activeCategoryIndex = useMemo(
+    () => content.categories.findIndex((category) => category.id === activeCategory),
+    [activeCategory, content.categories],
+  );
+
+  const nextCategory = useMemo(() => {
+    if (!content.categories.length || activeCategoryIndex === -1) {
+      return null;
+    }
+
+    const nextIndex = (activeCategoryIndex + 1) % content.categories.length;
+    return content.categories[nextIndex] ?? null;
+  }, [activeCategoryIndex, content.categories]);
+
+  const visibleLimit = mode === "home" ? 4 : 6;
+  const canToggleMore = mode === "page" && activeTreatments.length > visibleLimit;
+  const hiddenCount = Math.max(activeTreatments.length - visibleLimit, 0);
+  const currentStep = activeCategoryIndex >= 0 ? activeCategoryIndex + 1 : 1;
+  const activeTheme = CATEGORY_THEME[activeCategory];
+  const nextTheme = CATEGORY_THEME[nextCategory?.id ?? activeCategory];
+  const visibleTreatments =
+    mode === "home" || !showAll ? activeTreatments.slice(0, visibleLimit) : activeTreatments;
+
   return (
     <>
       <div className="mt-7 space-y-4">
-        <section className="rounded-[1.25rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-4 py-4 sm:px-5">
-          <p className="text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">Exploracion guiada</p>
-          <div className="mt-3 grid gap-2.5 sm:grid-cols-3">
-            <article className="rounded-[0.95rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3.5 py-3">
-              <p className="text-[0.58rem] font-semibold uppercase tracking-[0.09em] text-[color:var(--color-accent)]">Paso 1</p>
-              <p className="mt-1 text-[0.76rem] font-semibold text-[color:var(--color-foreground)]">{content.filterLabel}</p>
-              <p className="mt-1 text-[0.73rem] leading-5 text-[color:var(--color-muted)]">Elige una de las tres lineas principales.</p>
-            </article>
-            <article className="rounded-[0.95rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3.5 py-3">
-              <p className="text-[0.58rem] font-semibold uppercase tracking-[0.09em] text-[color:var(--color-accent)]">Paso 2</p>
-              <p className="mt-1 text-[0.76rem] font-semibold text-[color:var(--color-foreground)]">Busca y compara</p>
-              <p className="mt-1 text-[0.73rem] leading-5 text-[color:var(--color-muted)]">Refina por nombre, objetivo o perfil de caso.</p>
-            </article>
-            <article className="rounded-[0.95rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3.5 py-3">
-              <p className="text-[0.58rem] font-semibold uppercase tracking-[0.09em] text-[color:var(--color-accent)]">Paso 3</p>
-              <p className="mt-1 text-[0.76rem] font-semibold text-[color:var(--color-foreground)]">{content.detailLabel}</p>
-              <p className="mt-1 text-[0.73rem] leading-5 text-[color:var(--color-muted)]">Abre la ficha completa para ver protocolo y seguimiento.</p>
-            </article>
+        <section className="rounded-[1.2rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-4 py-4 sm:px-5">
+          <p className="text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
+            {content.filterLabel}
+          </p>
+          <p className="mt-1 text-[0.8rem] leading-6 text-[color:var(--color-muted)]">{content.explorer.guide}</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <span className="inline-flex h-6 items-center rounded-[var(--radius-pill)] border border-[#9a4565]/35 bg-[#9a4565]/10 px-2.5 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-[#9a4565]">
+              Normal
+            </span>
+            <span className="inline-flex h-6 items-center rounded-[var(--radius-pill)] border border-[#2f6f91]/35 bg-[#2f6f91]/10 px-2.5 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-[#2f6f91]">
+              Avanzada
+            </span>
+            <span className="inline-flex h-6 items-center rounded-[var(--radius-pill)] border border-[#4f7c53]/35 bg-[#4f7c53]/10 px-2.5 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-[#4f7c53]">
+              Regenerativa
+            </span>
+          </div>
+          <p className="mt-2 text-[0.7rem] leading-5 text-[color:var(--color-muted)]">
+            Lectura visual: <span className="font-semibold text-[#2f6f91]">facial</span>,{" "}
+            <span className="font-semibold text-[#8a6533]">corporal</span>,{" "}
+            <span className="font-semibold text-[#2b7a78]">tecnologia</span>,{" "}
+            <span className="font-semibold text-[#4f7c53]">recuperacion</span>.
+          </p>
+
+          <div className="mt-4 grid gap-2 md:grid-cols-3" aria-label={content.filterLabel}>
+            {content.categories.map((category) => {
+              const isActive = category.id === activeCategory;
+              const categoryTheme = CATEGORY_THEME[category.id];
+
+              return (
+                <button
+                  key={category.id}
+                  type="button"
+                  onClick={() => {
+                    setActiveCategory(category.id);
+                    setShowAll(false);
+                  }}
+                  className={cn(
+                    "relative rounded-[1rem] border px-3.5 py-3 text-left transition-[border-color,background-color,transform,box-shadow] duration-300",
+                    isActive ? categoryTheme.activeButton : `border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] text-[color:var(--color-muted)] hover:-translate-y-px ${categoryTheme.hoverButton}`,
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "text-[0.72rem] font-semibold uppercase tracking-[0.08em]",
+                      isActive ? "text-white" : "text-[color:var(--color-foreground)]",
+                    )}
+                  >
+                    {category.name}
+                  </span>
+                  <span className={cn("mt-1 block text-[0.73rem] leading-5", isActive ? "text-white/84" : "text-[color:var(--color-muted)]")}>
+                    {category.description}
+                  </span>
+                  <span
+                    className={cn(
+                      "absolute right-3 top-3 inline-flex min-w-6 items-center justify-center rounded-[var(--radius-pill)] px-1.5 py-0.5 text-[0.58rem]",
+                      isActive ? "bg-white/16 text-white" : "bg-[color:var(--color-pill)] text-[color:var(--color-muted)]",
+                    )}
+                  >
+                    {totalsByCategory[category.id]}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </section>
 
-        <div className="grid gap-2 md:grid-cols-3" aria-label={content.filterLabel}>
-          {content.categories.map((category) => {
-            const isActive = category.id === activeCategory;
+        <article className="grid gap-3 rounded-[1rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-4 py-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+          <div>
+            <p className={cn("text-[0.62rem] font-semibold uppercase tracking-[0.08em]", activeTheme.accentText)}>
+              {content.explorer.activeCategoryLabel}
+            </p>
+            <h3 className="mt-1 text-[1rem] font-semibold text-[color:var(--color-foreground)]">{activeCategoryData?.name}</h3>
+            <p className="mt-1 text-[0.82rem] leading-6 text-[color:var(--color-muted)]">{activeCategoryData?.description}</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <span className={cn("inline-flex h-7 items-center rounded-[var(--radius-pill)] border px-2.5 text-[0.62rem] font-semibold uppercase tracking-[0.08em]", activeTheme.pill)}>
+                {activeTreatments.length} {content.explorer.availableTreatmentsLabel}
+              </span>
+              <span className="inline-flex h-7 items-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-2.5 text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)]">
+                {content.explorer.stepLabel} {currentStep}/{content.categories.length}
+              </span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              if (!nextCategory) {
+                return;
+              }
+              setActiveCategory(nextCategory.id);
+              setShowAll(false);
+            }}
+            disabled={!nextCategory}
+            className={cn(
+              "inline-flex h-10 items-center justify-center rounded-[var(--radius-pill)] border bg-[color:var(--color-surface-strong)] px-4 text-[0.68rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60",
+              nextTheme.pill,
+            )}
+          >
+            {content.explorer.nextCategoryLabel}
+          </button>
+        </article>
+      </div>
+
+      {visibleTreatments.length > 0 ? (
+        <div className={cn("mt-5 grid gap-3", mode === "home" ? "md:grid-cols-2" : "sm:grid-cols-2 xl:grid-cols-3")}>
+          {visibleTreatments.map((item) => {
+            const itemTheme = CATEGORY_THEME[item.categoryId];
 
             return (
               <button
-                key={category.id}
+                key={item.id}
                 type="button"
-                onClick={() => setActiveCategory(category.id)}
+                onClick={() => setSelectedTreatmentId(item.id)}
                 className={cn(
-                  "relative min-h-[5.8rem] rounded-[1rem] border px-3.5 py-3 text-left transition-[border-color,background-color,transform,box-shadow] duration-300",
-                  isActive
-                    ? "border-[color:var(--color-brand)] bg-[color:var(--color-brand)] text-white shadow-[0_24px_40px_-32px_rgba(40,18,29,0.78)]"
-                    : "border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] text-[color:var(--color-muted)] hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:shadow-[0_18px_34px_-28px_rgba(32,16,25,0.5)]",
+                  "group surface-card relative h-full overflow-hidden rounded-[1.15rem] px-4 py-4 text-left transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-px sm:px-5",
+                  itemTheme.cardHover,
                 )}
               >
-                <span className={cn("text-[0.72rem] font-semibold uppercase tracking-[0.08em]", isActive ? "text-white" : "text-[color:var(--color-foreground)]")}>
-                  {category.name}
-                </span>
-                <span className={cn("mt-1 block text-[0.74rem] leading-5", isActive ? "text-white/84" : "text-[color:var(--color-muted)]")}>
-                  {category.description}
-                </span>
-                <span
-                  className={cn(
-                    "absolute right-3 top-3 inline-flex min-w-6 items-center justify-center rounded-[var(--radius-pill)] px-1.5 py-0.5 text-[0.58rem]",
-                    isActive ? "bg-white/16 text-white" : "bg-[color:var(--color-pill)] text-[color:var(--color-muted)]",
-                  )}
-                >
-                  {totalsByCategory[category.id]}
+                <span className={cn("absolute inset-x-0 top-0 h-1", itemTheme.topBar)} aria-hidden />
+
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-[0.95rem] font-semibold tracking-[-0.01em] text-[color:var(--color-foreground)]">
+                    <span className="inline-flex flex-wrap gap-x-1">
+                      {item.name.split(" ").map((word, index) => (
+                        <span key={`${item.id}-${word}-${index}`} className={cn("inline-block", getKeywordTone(word))}>
+                          {word}
+                        </span>
+                      ))}
+                    </span>
+                  </h3>
+                  {item.featured ? (
+                    <span className={cn("inline-flex h-6 shrink-0 items-center rounded-[var(--radius-pill)] border px-2 text-[0.56rem] font-semibold uppercase tracking-[0.08em]", itemTheme.pill)}>
+                      {content.explorer.featuredBadge}
+                    </span>
+                  ) : null}
+                </div>
+
+                <p className="mt-2 text-[0.8rem] leading-6 text-[color:var(--color-muted)]">{item.shortDescription}</p>
+
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span className={cn("inline-flex h-7 items-center rounded-[var(--radius-pill)] border px-2.5 text-[0.61rem] font-semibold uppercase tracking-[0.08em]", itemTheme.pill)}>
+                    {item.duration}
+                  </span>
+                  <span className="inline-flex h-7 items-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-2.5 text-[0.61rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)]">
+                    {item.frequency}
+                  </span>
+                </div>
+
+                <p className="mt-3 text-[0.77rem] leading-5 text-[color:var(--color-muted)]">
+                  <span className={cn("font-semibold", itemTheme.accentText)}>{content.labels.objective}:</span> {item.objective}
+                </p>
+                <p className="mt-1 text-[0.77rem] leading-5 text-[color:var(--color-muted)]">
+                  <span className={cn("font-semibold", itemTheme.accentText)}>{content.labels.candidate}:</span> {item.candidate}
+                </p>
+
+                <span className={cn("mt-4 inline-flex h-8 items-center rounded-[var(--radius-pill)] border px-3 text-[0.64rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-300", itemTheme.pill)}>
+                  {item.ctaLabel}
                 </span>
               </button>
             );
           })}
         </div>
-
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-end">
-          <article className="rounded-[1rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-4 py-3.5">
-            <p className="text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-accent)]">
-              Categoria activa
-            </p>
-            <p className="mt-1 text-[0.86rem] leading-6 text-[color:var(--color-muted)]">{activeCategoryData?.description}</p>
-            <p className="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)]">
-              {filteredTreatments.length} tratamiento(s) disponibles
-            </p>
-          </article>
-
-          <label className="space-y-1.5">
-            <span className="text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)]">
-              Buscar dentro de la categoria
-            </span>
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Nombre o necesidad"
-              className="h-10 w-full rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3.5 text-[0.82rem] text-[color:var(--color-foreground)] focus-visible:border-[color:var(--color-brand)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-brand)]/20"
-            />
-          </label>
-        </div>
-      </div>
-
-      {featuredTreatments.length > 0 ? (
-        <>
-          <p className="mt-6 text-[0.66rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
-            {content.featuredLabel}
-          </p>
-
-          <div className={cn("mt-3 grid gap-4", mode === "home" ? "lg:grid-cols-2" : "md:grid-cols-2 xl:grid-cols-3")}>
-            {featuredTreatments.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setSelectedTreatmentId(item.id)}
-                className="group surface-card h-full rounded-[1.3rem] px-5 py-5 text-left transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:shadow-[0_26px_44px_-34px_rgba(32,16,25,0.58)] sm:px-6"
-              >
-                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
-                  Protocolo destacado
-                </p>
-                <h3 className="mt-2 text-[1.02rem] font-semibold tracking-[-0.012em] text-[color:var(--color-foreground)]">
-                  {item.name}
-                </h3>
-                <p className="mt-2 text-[0.85rem] leading-6 text-[color:var(--color-muted)]">{item.shortDescription}</p>
-
-                <dl className="mt-4 space-y-1.5 text-[0.8rem] leading-6 text-[color:var(--color-muted)]">
-                  <div>
-                    <dt className="inline font-semibold text-[color:var(--color-foreground)]">{content.labels.objective}:</dt>{" "}
-                    {item.objective}
-                  </div>
-                  <div>
-                    <dt className="inline font-semibold text-[color:var(--color-foreground)]">{content.labels.duration}:</dt>{" "}
-                    {item.duration}
-                  </div>
-                  <div>
-                    <dt className="inline font-semibold text-[color:var(--color-foreground)]">{content.labels.frequency}:</dt>{" "}
-                    {item.frequency}
-                  </div>
-                  <div>
-                    <dt className="inline font-semibold text-[color:var(--color-foreground)]">{content.labels.candidate}:</dt>{" "}
-                    {item.candidate}
-                  </div>
-                </dl>
-
-                <span className="mt-4 inline-flex h-9 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3.5 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-300 group-hover:border-[color:var(--color-brand)] group-hover:text-[color:var(--color-brand)]">
-                  {item.ctaLabel}
-                </span>
-              </button>
-            ))}
-          </div>
-        </>
-      ) : null}
-
-      {secondaryTreatments.length > 0 ? (
-        <section className="mt-6 rounded-[1.35rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-4 py-4 sm:px-5 sm:py-5">
-          <p className="text-[0.66rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
-            {content.secondaryLabel}
-          </p>
-          <p className="mt-1 text-[0.82rem] leading-6 text-[color:var(--color-muted)]">{content.secondaryDescription}</p>
-          <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
-            {secondaryTreatments.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setSelectedTreatmentId(item.id)}
-                className="group rounded-[0.95rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3.5 py-3 text-left transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:shadow-[0_18px_34px_-26px_rgba(32,16,25,0.58)]"
-              >
-                <p className="text-[0.79rem] font-semibold leading-5 text-[color:var(--color-foreground)]">{item.name}</p>
-                <p className="mt-1 text-[0.73rem] leading-5 text-[color:var(--color-muted)] line-clamp-2">
-                  {item.shortDescription}
-                </p>
-                <p className="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.06em] text-[color:var(--color-muted)] transition-colors duration-200 group-hover:text-[color:var(--color-brand)]">
-                  {item.duration}
-                </p>
-              </button>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      {!featuredTreatments.length && !secondaryTreatments.length ? (
+      ) : (
         <article className="mt-6 rounded-[1.1rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-4 py-4 text-[0.84rem] leading-6 text-[color:var(--color-muted)]">
-          No hay tratamientos que coincidan con la busqueda actual en esta categoria.
+          {content.explorer.emptyStateLabel}
         </article>
+      )}
+
+      {canToggleMore ? (
+        <div className="mt-5">
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="inline-flex h-10 items-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-300 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
+          >
+            {showAll ? content.explorer.showLessLabel : `${content.explorer.showMoreLabel} (+${hiddenCount})`}
+          </button>
+        </div>
       ) : null}
 
       {mode === "home" && bridgeHref && bridgeLabel ? (

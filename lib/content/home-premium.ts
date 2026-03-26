@@ -126,22 +126,22 @@ const sharedTeam: HomeTeamMember[] = [
     name: "Eli",
     age: "41",
     role: "Gerente",
-    specialty: "Direccion de centro, diagnostico y planificacion de tratamiento",
+    specialty: "Dirección de centro, diagnóstico y planificación de tratamiento",
     excerpt: "Coordina la calidad del servicio y valida cada plan de tratamiento antes de su inicio.",
-    image: "/images/about/hero-centro-estetica-illa-carlemany.jpg",
+    image: "/images/pages/hero/equipo/equipo-eli.png",
     alt: "Eli, gerente del centro",
     imagePosition: "52% 38%",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "Equipo",
     modalTitle: "Eli - Gerente",
     motivation:
       "Trabajo para que cada clienta salga con un plan claro, una expectativa realista y una experiencia cuidada de principio a fin.",
     experience: [
-      "Mas de 14 anos en gestion de centros de estetica y coordinacion de equipos.",
-      "Supervision de protocolos faciales, corporales y depilacion laser diodo.",
+      "Más de 14 años en gestion de centros de estética y coordinacion de equipos.",
+      "Supervision de protocolos faciales, corporales y depilación láser diodo.",
     ],
     studies: [
-      "Grado superior en Estetica Integral y Bienestar.",
+      "Grado superior en Estética Integral y Bienestar.",
       "Formacion en gestion de experiencia de cliente y operativa de centro.",
     ],
     treatments: ["Diagnostico inicial", "Plan recomendado", "Revision de seguimiento y continuidad"],
@@ -149,7 +149,7 @@ const sharedTeam: HomeTeamMember[] = [
       "Prioriza explicaciones claras para que la clienta decida con seguridad.",
       "Coordina agenda y fases para mantener continuidad real del tratamiento.",
     ],
-    languages: ["Espanol", "Catala", "Frances"],
+    languages: ["Español", "Català", "Francés"],
   },
   {
     id: "jaquie",
@@ -157,120 +157,120 @@ const sharedTeam: HomeTeamMember[] = [
     age: "33",
     role: "Esteticien",
     specialty: "Laser diodo, radiofrecuencia y protocolos faciales avanzados",
-    excerpt: "Especialista en ejecutar tratamientos avanzados con trazabilidad tecnica y confort.",
-    image: "/images/treatments/hero-tratamientos-esteticos.jpg",
+    excerpt: "Especialista en ejecutar tratamientos avanzados con trazabilidad técnica y confort.",
+    image: "/images/pages/hero/equipo/equipo-jaquie-20260326.png",
     alt: "Jaquie, esteticien del centro",
     imagePosition: "60% 34%",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "Equipo",
     modalTitle: "Jaquie - Esteticien",
     motivation:
-      "Me gusta combinar precision tecnica y cercania para que cada sesion sea efectiva y facil de seguir para la clienta.",
+      "Me gusta combinar precision técnica y cercania para que cada sesión sea efectiva y fácil de seguir para la clienta.",
     experience: [
-      "9 anos en depilacion laser diodo y protocolos de tecnologia estetica avanzada.",
+      "9 años en depilación láser diodo y protocolos de tecnología estética avanzada.",
       "Experiencia en trabajo por fases y seguimiento por respuesta cutanea.",
     ],
     studies: [
-      "Tecnico superior en Estetica Integral y aparatologia.",
+      "Técnico superior en Estética Integral y aparatologia.",
       "Actualizacion continuada en protocolos de energia y radiofrecuencia.",
     ],
     treatments: ["Depilacion laser diodo", "Radiofrecuencia facial", "Hidrodermoabrasion avanzada"],
     approach: [
       "Ajusta parametros por zona y tolerancia para evitar sobretratamiento.",
-      "Explica pre y post sesion para mejorar resultados y tranquilidad.",
+      "Explica pre y post sesión para mejorar resultados y tranquilidad.",
     ],
-    languages: ["Espanol", "Catala", "Frances"],
+    languages: ["Español", "Català", "Francés"],
   },
   {
     id: "karen",
     name: "Karen",
     age: "36",
     role: "Esteticien",
-    specialty: "Estetica regenerativa y calidad de piel",
+    specialty: "Estética regenerativa y calidad de piel",
     excerpt: "Desarrolla protocolos de recuperacion cutanea y mantenimiento de calidad de piel.",
-    image: "/images/about/experiencia-cabina-centro.jpg",
+    image: "/images/pages/hero/equipo/equipo-karen-20260326.png",
     alt: "Karen, esteticien del centro",
     imagePosition: "56% 42%",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "Equipo",
     modalTitle: "Karen - Esteticien",
     motivation:
       "Mi foco es recuperar confort cutaneo y construir resultados sostenibles, especialmente en pieles sensibles o reactivas.",
     experience: [
-      "10 anos en protocolos regenerativos, barrera cutanea y mejora de textura.",
-      "Experiencia en acompanamiento de casos con sensibilidad o post-tratamiento.",
+      "10 años en protocolos regenerativos, barrera cutanea y mejora de textura.",
+      "Experiencia en acompañamiento de casos con sensibilidad o post-tratamiento.",
     ],
     studies: [
       "Formacion en dermocosmetica aplicada y fisiologia cutanea.",
-      "Especializacion en tecnicas no invasivas de regeneracion.",
+      "Especializacion en técnicas no invasivas de regeneracion.",
     ],
     treatments: ["Protocolo barrera cutanea", "Bioestimulacion LED", "Rejuvenecimiento periocular regenerativo"],
     approach: [
       "Prioriza progresion controlada para respetar la tolerancia de la piel.",
       "Combina cabina y rutina en casa para consolidar resultados.",
     ],
-    languages: ["Espanol", "Frances"],
+    languages: ["Español", "Francés"],
   },
 ];
 
 const sharedFaqs: HomeFaqItem[] = [
   {
     id: "faq-valoracion-coste",
-    question: "La valoracion inicial tiene coste?",
+    question: "La valoración inicial tiene coste?",
     summary: "Te explicamos en que casos es informativa y cuando aplica reserva de tratamiento.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
-    modalTitle: "Valoracion inicial y coste",
+    modalTitle: "Valoración inicial y coste",
     answerLead:
-      "La primera visita se usa para diagnosticar y orientar. La condicion economica exacta se confirma en recepcion segun el plan recomendado.",
+      "La primera visita se usa para diagnosticar y orientar. La condición económica exacta se confirma en recepción según el plan recomendado.",
     blocks: [
       {
-        title: "Que incluye la valoracion",
+        title: "Qué incluye la valoración",
         lines: [
           "Revision de necesidad principal, historial y tolerancia.",
           "Propuesta de plan por fases con orden de prioridades.",
         ],
       },
       {
-        title: "Como se comunica",
+        title: "Cómo se comunica",
         lines: [
-          "Antes de confirmar cualquier sesion se detallan condiciones de cita y presupuesto orientativo.",
+          "Antes de confirmar cualquier sesión se detallan condiciones de cita y presupuesto orientativo.",
         ],
       },
     ],
   },
   {
     id: "faq-laser-sesiones",
-    question: "Cuantas sesiones de laser suelen ser necesarias?",
-    summary: "Depende de zona, fototipo y respuesta biologica.",
-    ctaLabel: "Saber mas",
+    question: "Cuántas sesiones de láser suelen ser necesarias?",
+    summary: "Depende de zona, fototipo y respuesta biológica.",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
-    modalTitle: "Numero orientativo de sesiones de laser",
+    modalTitle: "Número orientativo de sesiones de láser",
     answerLead:
-      "No hay una cifra unica para todas las clientas. Se trabaja por bloques y se ajusta segun evolucion real.",
+      "No hay una cifra única para todas las clientas. Se trabaja por bloques y se ajusta según evolución real.",
     blocks: [
       {
         title: "Factores que influyen",
         lines: ["Zona tratada", "Tipo de vello", "Ritmo hormonal", "Regularidad entre sesiones"],
       },
       {
-        title: "Como se decide",
+        title: "Cómo se decide",
         lines: ["Se revisa respuesta por zona en cada visita y se ajustan intervalos para mantener eficacia."],
       },
     ],
   },
   {
     id: "faq-laser-duele",
-    question: "Duele la depilacion laser?",
+    question: "¿Duele la depilación láser?",
     summary: "La sensacion es tolerable y se adapta intensidad.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
-    modalTitle: "Sensacion durante depilacion laser",
+    modalTitle: "Sensacion durante depilación láser",
     answerLead:
       "Puede notarse calor o pinchazo breve, pero se trabaja con parametros ajustados para mantener confort.",
     blocks: [
       {
-        title: "Durante la sesion",
+        title: "Durante la sesión",
         lines: [
           "Se comprueba tolerancia al inicio.",
           "Se ajusta energia por zona para evitar exceso de molestia.",
@@ -278,7 +278,7 @@ const sharedFaqs: HomeFaqItem[] = [
       },
       {
         title: "Despues",
-        lines: ["Puede aparecer enrojecimiento leve transitorio.", "Recibiras pautas de cuidado post-sesion."],
+        lines: ["Puede aparecer enrojecimiento leve transitorio.", "Recibiras pautas de cuidado post-sesión."],
       },
     ],
   },
@@ -286,29 +286,29 @@ const sharedFaqs: HomeFaqItem[] = [
     id: "faq-verano",
     question: "Puedo hacerme tratamientos en verano?",
     summary: "Si, con seleccion de protocolo y fotoproteccion estricta.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
     modalTitle: "Tratamientos en temporada de verano",
     answerLead:
       "Es posible mantener tratamiento en verano, pero se priorizan protocolos compatibles y control de exposicion solar.",
     blocks: [
       {
-        title: "Que se prioriza",
+        title: "Qué se prioriza",
         lines: ["Protocolos de baja agresion", "Control de tiempos de exposicion", "Cuidado de barrera cutanea"],
       },
       {
         title: "Condiciones",
-        lines: ["Fotoproteccion diaria", "Evitar sol directo pre y post sesion segun pauta indicada."],
+        lines: ["Fotoprotección diaria", "Evitar sol directo pre y post sesión según pauta indicada."],
       },
     ],
   },
   {
     id: "faq-no-se-por-donde-empezar",
-    question: "Que tratamiento necesito si no se por donde empezar?",
+    question: "¿Qué tratamiento necesito si no sé por dónde empezar?",
     summary: "La primera visita se disena precisamente para esto.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
-    modalTitle: "Como elegimos tratamiento cuando hay dudas",
+    modalTitle: "Cómo elegimos tratamiento cuando hay dudas",
     answerLead:
       "No necesitas llegar con una decision cerrada. El centro define contigo un plan priorizado y realista.",
     blocks: [
@@ -317,7 +317,7 @@ const sharedFaqs: HomeFaqItem[] = [
         lines: [
           "Diagnostico del punto de partida.",
           "Objetivo principal y objetivo secundario.",
-          "Plan por fases segun impacto y continuidad posible.",
+          "Plan por fases según impacto y continuidad posible.",
         ],
       },
       {
@@ -328,13 +328,13 @@ const sharedFaqs: HomeFaqItem[] = [
   },
   {
     id: "faq-duracion-cita",
-    question: "Cuanto dura una cita?",
+    question: "¿Cuánto dura una cita?",
     summary: "Segun tratamiento, entre 30 y 70 minutos de media.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
     modalTitle: "Duracion habitual de las citas",
     answerLead:
-      "Cada ficha de tratamiento indica una duracion orientativa y puede variar segun zona o fase del plan.",
+      "Cada ficha de tratamiento indica una duración orientativa y puede variar según zona o fase del plan.",
     blocks: [
       {
         title: "Rango orientativo",
@@ -350,14 +350,14 @@ const sharedFaqs: HomeFaqItem[] = [
     id: "faq-whatsapp",
     question: "Puedo reservar por WhatsApp?",
     summary: "Si, es uno de los canales principales del centro.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
     modalTitle: "Reservas por WhatsApp",
     answerLead:
-      "Puedes abrir conversacion por WhatsApp para solicitar disponibilidad, resolver dudas y confirmar tu cita.",
+      "Puedes abrir conversación por WhatsApp para solicitar disponibilidad, resolver dudas y confirmar tu cita.",
     blocks: [
       {
-        title: "Que debes enviar",
+        title: "Qué debes enviar",
         lines: ["Objetivo o tratamiento", "Franja horaria preferida", "Si es primera visita o seguimiento"],
       },
       {
@@ -368,37 +368,37 @@ const sharedFaqs: HomeFaqItem[] = [
   },
   {
     id: "faq-confirmacion-cita",
-    question: "Como se confirma la cita?",
-    summary: "Con mensaje de confirmacion y recordatorio previo.",
-    ctaLabel: "Saber mas",
+    question: "¿Cómo se confirma la cita?",
+    summary: "Con mensaje de confirmación y recordatorio previo.",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
-    modalTitle: "Proceso de confirmacion",
+    modalTitle: "Proceso de confirmación",
     answerLead:
       "Cada reserva queda confirmada por canal directo y con los detalles operativos necesarios para asistir sin dudas.",
     blocks: [
       {
-        title: "Flujo de confirmacion",
+        title: "Flujo de confirmación",
         lines: [
           "Solicitud de cita.",
           "Validacion de disponibilidad.",
-          "Mensaje de confirmacion final con hora y recomendaciones.",
+          "Mensaje de confirmación final con hora y recomendaciones.",
         ],
       },
       {
         title: "Recordatorio",
-        lines: ["Se realiza recordatorio previo cuando corresponde segun tipo de cita."],
+        lines: ["Se realiza recordatorio previo cuando corresponde según tipo de cita."],
       },
     ],
   },
   {
     id: "faq-profesional",
-    question: "Que profesional me atiende?",
+    question: "¿Qué profesional me atiende?",
     summary: "Se asigna por especialidad y tipo de tratamiento.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
     modalTitle: "Asignacion de profesional",
     answerLead:
-      "La asignacion la realiza el centro para que cada caso lo atienda la profesional mas adecuada por protocolo.",
+      "La asignacion la realiza el centro para que cada caso lo atienda la profesional más adecuada por protocolo.",
     blocks: [
       {
         title: "Criterio de asignacion",
@@ -414,15 +414,15 @@ const sharedFaqs: HomeFaqItem[] = [
     id: "faq-cambios-cancelacion",
     question: "Se puede cambiar o cancelar una cita?",
     summary: "Si, avisando con antelacion para reorganizar agenda.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
     modalTitle: "Cambios y cancelaciones",
     answerLead:
       "El centro permite reprogramar citas dentro de condiciones razonables para mantener la continuidad del plan.",
     blocks: [
       {
-        title: "Como hacerlo",
-        lines: ["Contacta por WhatsApp en cuanto sepas que no podras asistir."],
+        title: "Cómo hacerlo",
+        lines: ["Contacta por WhatsApp en cuanto sepas que no podrás asistir."],
       },
       {
         title: "Importancia",
@@ -432,23 +432,23 @@ const sharedFaqs: HomeFaqItem[] = [
   },
   {
     id: "faq-categorias",
-    question: "Que diferencia hay entre estetica normal, avanzada y regenerativa?",
+    question: "¿Qué diferencia hay entre estética normal, avanzada y regenerativa?",
     summary: "Cada categoria responde a una intensidad y objetivo distinto.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
-    modalTitle: "Diferencia entre categorias de tratamiento",
+    modalTitle: "Diferencia entre categorías de tratamiento",
     answerLead:
       "La cartera se organiza por nivel de intervencion y por momento del proceso de la piel.",
     blocks: [
       {
-        title: "Estetica normal",
+        title: "Estética normal",
         lines: ["Mantenimiento, limpieza y mejora visible de baja intensidad."],
       },
       {
-        title: "Estetica avanzada y regenerativa",
+        title: "Estética avanzada y regenerativa",
         lines: [
-          "Avanzada: tecnologia para objetivos de precision.",
-          "Regenerativa: recuperacion de calidad cutanea y continuidad.",
+          "Avanzada: tecnología para objetivos de precision.",
+          "Regenerativa: recuperación de calidad cutánea y continuidad.",
         ],
       },
     ],
@@ -457,14 +457,14 @@ const sharedFaqs: HomeFaqItem[] = [
     id: "faq-combinacion",
     question: "Puedo combinar varios tratamientos?",
     summary: "Si, pero con orden y criterio de tolerancia.",
-    ctaLabel: "Saber mas",
+    ctaLabel: "Saber más",
     modalLabel: "FAQs",
     modalTitle: "Combinacion de tratamientos",
     answerLead:
       "Combinar tratamientos es habitual, siempre que la secuencia este bien planteada y se respete la tolerancia de cada piel.",
     blocks: [
       {
-        title: "Como se combina",
+        title: "Cómo se combina",
         lines: [
           "Se define tratamiento principal y complementario.",
           "Se distribuye en fases para no sobrecargar.",
@@ -484,8 +484,8 @@ const caFaqCopy: Record<string, { question: string; summary: string }> = {
     summary: "T'expliquem quan es informativa i quan s'aplica la reserva de tractament.",
   },
   "faq-laser-sesiones": {
-    question: "Quantes sessions de laser solen ser necessaries?",
-    summary: "Depen de la zona, el fototip i la resposta biologica.",
+    question: "Quantes sessions de láser solen ser necessaries?",
+    summary: "Depen de la zona, el fototip i la resposta biológica.",
   },
   "faq-laser-duele": {
     question: "Fa mal la depilacio laser?",
@@ -520,7 +520,7 @@ const caFaqCopy: Record<string, { question: string; summary: string }> = {
     summary: "Si, avisant amb antelacio per reorganitzar l'agenda.",
   },
   "faq-categorias": {
-    question: "Quina diferencia hi ha entre estetica normal, avancada i regenerativa?",
+    question: "Quina diferencia hi ha entre estética normal, avancada i regenerativa?",
     summary: "Cada categoria respon a una intensitat i objectiu diferent.",
   },
   "faq-combinacion": {
@@ -571,7 +571,7 @@ const frFaqCopy: Record<string, { question: string; summary: string }> = {
     summary: "Oui, en prevenant a l'avance pour reorganiser l'agenda.",
   },
   "faq-categorias": {
-    question: "Quelle difference entre esthetique classique, avancee et regenerative?",
+    question: "Quelle différence entre esthétique classique, avancée et régénérative?",
     summary: "Chaque categorie correspond a une intensite et un objectif differents.",
   },
   "faq-combinacion": {
@@ -624,37 +624,37 @@ const esHome: HomePremiumContent = {
   hero: {
     eyebrow: "Centros Ideal Andorra - Illa Carlemany",
     titleLead: "Depilacion laser diodo",
-    titleStrong: "y estetica avanzada",
+    titleStrong: "y estética avanzada",
     titleTail: "con protocolo profesional real.",
     description:
       "Primera visita de 30 minutos para diagnosticar, priorizar objetivos y definir un plan claro desde el primer dia.",
-    support: "Centro en Escaldes-Engordany, con atencion por agenda y seguimiento activo.",
+    support: "Centro en Escaldes-Engordany, con atención por agenda y seguimiento activo.",
     highlights: ["Diagnostico inicial", "Plan recomendado", "Seguimiento por fases"],
     locationChip: "Escaldes-Engordany · Illa Carlemany · 2a planta",
-    locationLabel: "Ubicacion operativa",
+    locationLabel: "Ubicación operativa",
     addressLine: "Av. Carlemany, 70, AD700 Andorra",
     floorLine: "Centre Comercial Illa Carlemany - segunda planta",
-    hoursLine: "Agenda gestionada por cita previa y confirmacion por WhatsApp.",
+    hoursLine: "Agenda gestionada por cita previa y confirmación por WhatsApp.",
     mapCta: "Abrir en Google Maps",
-    routeCta: "Como llegar",
+    routeCta: "Cómo llegar",
   },
   firstVisitLabel: "Primera visita",
-  firstVisitTitle: "Una valoracion que te deja decisiones claras, no dudas.",
+  firstVisitTitle: "Una valoración que te deja decisiones claras, no dudas.",
   firstVisitDescription:
-    "Convertimos la primera cita en un punto de control tecnico-comercial: entendemos tu caso, ordenamos prioridades y definimos plan.",
+    "Convertimos la primera cita en un punto de control técnico-comercial: entendemos tu caso, ordenamos prioridades y definimos plan.",
   firstVisitItems: [
     {
       id: "diagnostico",
       title: "Diagnostico",
       summary: "Lectura profesional del estado actual de la piel o zona a tratar.",
-      ctaLabel: "Saber mas",
+      ctaLabel: "Saber más",
       modalLabel: "Primera visita",
       modalTitle: "Diagnostico inicial",
       modalIntro:
-        "El diagnostico no es una charla comercial: es una revision estructurada para detectar necesidades reales y riesgos de sobretratamiento.",
+        "El diagnóstico no es una charla comercial: es una revisión estructurada para detectar necesidades reales y riesgos de sobretratamiento.",
       blocks: [
         {
-          title: "Que analizamos",
+          title: "Qué analizamos",
           lines: [
             "Estado cutaneo, tolerancia y antecedentes relevantes.",
             "Objetivo principal y urgencia real de cada zona.",
@@ -662,7 +662,7 @@ const esHome: HomePremiumContent = {
           ],
         },
         {
-          title: "Que obtiene la clienta",
+          title: "Qué obtiene la clienta",
           lines: [
             "Explicacion clara de lo que si conviene y lo que no conviene iniciar.",
             "Estimacion orientativa de tiempos y continuidad.",
@@ -674,25 +674,25 @@ const esHome: HomePremiumContent = {
       id: "plan-recomendado",
       title: "Plan recomendado",
       summary: "Ruta por fases con orden de prioridades, frecuencia y seguimiento.",
-      ctaLabel: "Saber mas",
+      ctaLabel: "Saber más",
       modalLabel: "Primera visita",
       modalTitle: "Plan recomendado",
       modalIntro:
         "Definimos una propuesta personalizada con criterio operativo: fase inicial, fase de consolidacion y mantenimiento.",
       blocks: [
         {
-          title: "Que se tiene en cuenta",
+          title: "Qué se tiene en cuenta",
           lines: [
             "Objetivo estetico principal y objetivos secundarios.",
             "Disponibilidad real de agenda y ritmo de sesiones sostenible.",
-            "Respuesta esperable segun tu perfil y tolerancia.",
+            "Respuesta esperable según tu perfil y tolerancia.",
           ],
         },
         {
-          title: "Como se plantea",
+          title: "Cómo se plantea",
           lines: [
             "Tratamientos priorizados por impacto y seguridad.",
-            "Frecuencia orientativa y puntos de revision.",
+            "Frecuencia orientativa y puntos de revisión.",
             "Recomendaciones de cuidado entre sesiones.",
           ],
         },
@@ -702,7 +702,7 @@ const esHome: HomePremiumContent = {
   methodLabel: "Metodo",
   methodTitle: "Protocolo premium en cuatro fases operativas.",
   methodDescription:
-    "Sustituimos frases vagas por proceso verificable: diagnostico, ejecucion, seguimiento y ajuste.",
+    "Sustituimos frases vagas por proceso verificable: diagnóstico, ejecución, seguimiento y ajuste.",
   methodStages: [
     {
       id: "01",
@@ -715,15 +715,15 @@ const esHome: HomePremiumContent = {
       id: "02",
       title: "Diseno del plan",
       subtitle: "Ordenamos el tratamiento por etapas",
-      description: "Secuenciamos tecnicas y frecuencia sin sobrecargar la piel.",
+      description: "Secuenciamos técnicas y frecuencia sin sobrecargar la piel.",
       signals: ["Plan por fases", "Frecuencia orientativa", "Consentimiento informado"],
     },
     {
       id: "03",
       title: "Ejecucion controlada",
-      subtitle: "Aplicamos con tecnica y trazabilidad",
-      description: "Registramos parametros de sesion para tomar decisiones en la siguiente visita.",
-      signals: ["Checklist pre-sesion", "Registro tecnico", "Cierre de cuidados"],
+      subtitle: "Aplicamos con técnica y trazabilidad",
+      description: "Registramos parametros de sesión para tomar decisiones en la siguiente visita.",
+      signals: ["Checklist pre-sesión", "Registro técnico", "Cierre de cuidados"],
     },
     {
       id: "04",
@@ -734,17 +734,17 @@ const esHome: HomePremiumContent = {
     },
   ],
   treatmentsLabel: "Tratamientos",
-  treatmentsTitle: "Oferta amplia, ordenada y facil de explorar.",
+  treatmentsTitle: "Oferta amplia, ordenada y fácil de explorar.",
   treatmentsDescription:
-    "Explora por categoria y abre cada ficha sin salir de la pagina para entender tiempos, objetivo y encaje.",
-  treatmentsBridge: "Ver catalogo completo",
+    "Explora por categoria y abre cada ficha sin salir de la página para entender tiempos, objetivo y encaje.",
+  treatmentsBridge: "Ver catálogo completo",
   teamLabel: "Equipo",
-  teamTitle: "Tres profesionales, un mismo estandar de trabajo.",
+  teamTitle: "Tres profesionales, un mismo estándar de trabajo.",
   teamDescription:
-    "Humanizamos la marca con perfiles reales, especialidades claras y enfoque de acompanamiento.",
+    "Humanizamos la marca con perfiles reales, especialidades claras y enfoque de acompañamiento.",
   teamMembers: sharedTeam,
   teamModalLabels: {
-    years: "anos",
+    years: "años",
     profile: "Perfil profesional",
     experience: "Experiencia",
     studies: "Estudios",
@@ -753,7 +753,7 @@ const esHome: HomePremiumContent = {
     languages: "Idiomas",
   },
   processLabel: "Proceso",
-  processTitle: "De la primera consulta a la reserva confirmada, sin friccion.",
+  processTitle: "De la primera consulta a la reserva confirmada, sin fricción.",
   processDescription: "Cada paso tiene una accion clara para que la clienta entienda que esperar y cuando.",
   processSteps: [
     {
@@ -766,25 +766,25 @@ const esHome: HomePremiumContent = {
       id: "02",
       title: "Preconfirmacion",
       description: "Validamos disponibilidad y resolvemos dudas previas.",
-      detail: "Te enviamos condiciones de cita, preparacion previa y canal de seguimiento.",
+      detail: "Te enviamos condiciones de cita, preparación previa y canal de seguimiento.",
     },
     {
       id: "03",
       title: "Primera visita",
       description: "Diagnostico y plan recomendado dentro del centro.",
-      detail: "Saldras con propuesta estructurada y proximos pasos definidos.",
+      detail: "Saldras con propuesta estructurada y próximos pasos definidos.",
     },
     {
       id: "04",
       title: "Reserva de tratamiento",
-      description: "Confirmamos la siguiente cita segun prioridad y agenda.",
+      description: "Confirmamos la siguiente cita según prioridad y agenda.",
       detail: "La continuidad se planifica por bloques para mantener ritmo y resultados sostenibles.",
     },
   ],
   faqLabel: "Preguntas frecuentes",
   faqTitle: "FAQs reales para decidir con seguridad antes de reservar.",
   faqDescription:
-    "Resolvemos las dudas que mas se repiten en primera visita y seguimiento para que el proceso sea claro desde el inicio.",
+    "Resolvemos las dudas que más se repiten en primera visita y seguimiento para que el proceso sea claro desde el inicio.",
   faqItems: sharedFaqs,
 };
 
@@ -795,16 +795,16 @@ const caHome: HomePremiumContent = {
     ...esHome.hero,
     eyebrow: "Centres Ideal Andorra - Illa Carlemany",
     titleLead: "Depilacio laser de diode",
-    titleStrong: "i estetica avancada",
+    titleStrong: "i estètica avançada",
     titleTail: "amb protocol professional real.",
     description:
       "Primera visita de 30 minuts per diagnosticar, prioritzar objectius i definir un pla clar des del primer dia.",
-    support: "Centre a Escaldes-Engordany, amb atencio per agenda i seguiment actiu.",
+    support: "Centre a Escaldes-Engordany, amb atenció per agenda i seguiment actiu.",
     highlights: ["Diagnosi inicial", "Pla recomanat", "Seguiment per fases"],
     locationChip: "Escaldes-Engordany · Illa Carlemany · 2a planta",
   },
   firstVisitLabel: "Primera visita",
-  firstVisitTitle: "Una valoracio que et deixa decisions clares, no dubtes.",
+  firstVisitTitle: "Una valoració que et deixa decisions clares, no dubtes.",
   firstVisitDescription:
     "Convertim la primera cita en un punt de control tecnic-comercial per ordenar prioritats i definir el pla.",
   firstVisitItems: [
@@ -812,14 +812,14 @@ const caHome: HomePremiumContent = {
       id: "diagnostico",
       title: "Diagnosi",
       summary: "Lectura professional de l'estat actual de la pell o la zona a tractar.",
-      ctaLabel: "Saber-ne mes",
+      ctaLabel: "Saber-ne més",
       modalLabel: "Primera visita",
       modalTitle: "Diagnosi inicial",
       modalIntro:
         "La diagnosi es una revisio estructurada per detectar necessitats reals i evitar sobretractaments.",
       blocks: [
         {
-          title: "Que analitzem",
+          title: "Què analitzem",
           lines: [
             "Estat cutani, tolerancia i antecedents rellevants.",
             "Objectiu principal i urgencia real de cada zona.",
@@ -827,7 +827,7 @@ const caHome: HomePremiumContent = {
           ],
         },
         {
-          title: "Que obtens",
+          title: "Què obtens",
           lines: [
             "Explicacio clara del que convé iniciar i del que convé posposar.",
             "Estimacio orientativa de temps i continuïtat.",
@@ -838,14 +838,14 @@ const caHome: HomePremiumContent = {
     {
       id: "plan-recomendado",
       title: "Pla recomanat",
-      summary: "Ruta per fases amb ordre de prioritats, frequencia i seguiment.",
-      ctaLabel: "Saber-ne mes",
+      summary: "Ruta per fases amb ordre de prioritats, freqüència i seguiment.",
+      ctaLabel: "Saber-ne més",
       modalLabel: "Primera visita",
       modalTitle: "Pla recomanat",
       modalIntro: "Definim una proposta personalitzada per fases: inici, consolidacio i manteniment.",
       blocks: [
         {
-          title: "Que es te en compte",
+          title: "Què es té en compte",
           lines: [
             "Objectiu estetic principal i objectius secundaris.",
             "Disponibilitat real d'agenda i ritme sostenible de sessions.",
@@ -856,7 +856,7 @@ const caHome: HomePremiumContent = {
           title: "Com es planteja",
           lines: [
             "Tractaments prioritzats per impacte i seguretat.",
-            "Frequencia orientativa i punts de revisio.",
+            "Freqüència orientativa i punts de revisió.",
             "Recomanacions de cura entre sessions.",
           ],
         },
@@ -866,7 +866,7 @@ const caHome: HomePremiumContent = {
   methodLabel: "Metode",
   methodTitle: "Protocol premium en quatre fases operatives.",
   methodDescription:
-    "Substituim frases vagues per un proces verificable: diagnosi, execucio, seguiment i ajust.",
+    "Substituim frases vagues per un procés verificable: diagnosi, execució, seguiment i ajust.",
   methodStages: [
     {
       id: "01",
@@ -879,13 +879,13 @@ const caHome: HomePremiumContent = {
       id: "02",
       title: "Disseny del pla",
       subtitle: "Ordenem el tractament per etapes",
-      description: "Sequenciem tecniques i frequencia sense sobrecarregar la pell.",
-      signals: ["Pla per fases", "Frequencia orientativa", "Consentiment informat"],
+      description: "Sequenciem tècniques i freqüència sense sobrecarregar la pell.",
+      signals: ["Pla per fases", "Freqüència orientativa", "Consentiment informat"],
     },
     {
       id: "03",
       title: "Execucio controlada",
-      subtitle: "Aplicacio tecnica i traçabilitat",
+      subtitle: "Aplicacio técnica i traçabilitat",
       description: "Registrem parametres de sessio per decidir la fase seguent.",
       signals: ["Checklist pre-sessio", "Registre tecnic", "Tancament de cures"],
     },
@@ -898,12 +898,12 @@ const caHome: HomePremiumContent = {
     },
   ],
   treatmentsLabel: "Tractaments",
-  treatmentsTitle: "Oferta amplia, ordenada i facil d'explorar.",
+  treatmentsTitle: "Oferta amplia, ordenada i fácil d'explorar.",
   treatmentsDescription:
-    "Explora per categoria i obre cada fitxa sense sortir de la pagina per entendre temps, objectiu i encaix.",
-  treatmentsBridge: "Veure cataleg complet",
+    "Explora per categoria i obre cada fitxa sense sortir de la página per entendre temps, objectiu i encaix.",
+  treatmentsBridge: "Veure catàleg complet",
   teamLabel: "Equip",
-  teamTitle: "Tres professionals, un mateix estandard de treball.",
+  teamTitle: "Tres professionals, un mateix estàndard de treball.",
   teamDescription:
     "Humanitzem la marca amb perfils reals, especialitats clares i un enfocament d'acompanyament.",
   teamMembers: sharedTeam.map((member) => ({
@@ -913,41 +913,41 @@ const caHome: HomePremiumContent = {
       member.id === "eli"
         ? "Direccio de centre, diagnosi i planificacio de tractaments"
         : member.id === "jaquie"
-          ? "Laser de diode, radiofrequencia i protocols facials avancats"
+          ? "Laser de diode, radiofreqüència i protocols facials avancats"
           : "Estetica regenerativa i qualitat de pell",
     excerpt:
       member.id === "eli"
         ? "Coordina qualitat, agenda i validacio final de cada pla."
         : member.id === "jaquie"
           ? "Executa tractaments avancats amb control tecnic i confort."
-          : "Desenvolupa protocols de recuperacio cutania i manteniment.",
-    ctaLabel: "Saber-ne mes",
+          : "Desenvolupa protocols de recuperacio cutània i manteniment.",
+    ctaLabel: "Saber-ne més",
     modalLabel: "Equip",
     modalTitle: member.id === "eli" ? "Eli - Gerent" : member.id === "jaquie" ? "Jaquie - Esteticien" : "Karen - Esteticien",
     motivation:
       member.id === "eli"
-        ? "Treballo perque cada clienta surti amb un pla clar, realista i ben explicat."
+        ? "Treballo perquè cada clienta surti amb un pla clar, realista i ben explicat."
         : member.id === "jaquie"
-          ? "M'agrada combinar precisio tecnica i proximitat en cada sessio."
+          ? "M'agrada combinar precisio técnica i proximitat en cada sessio."
           : "Em centro en recuperar confort cutani i resultats sostinguts.",
     experience:
       member.id === "eli"
-        ? ["Mes de 14 anys en gestio de centres d'estetica.", "Coordinacio d'equip i protocols de seguiment."]
+        ? ["Més de 14 anys en gestió de centres d'estètica.", "Coordinació d'equip i protocols de seguiment."]
         : member.id === "jaquie"
-          ? ["9 anys en laser de diode i tecnologia estetica.", "Treball per fases amb control de resposta cutania."]
-          : ["10 anys en protocols regeneratius i barrera cutania.", "Seguiment de casos sensibles o reactius."],
+          ? ["9 anys en laser de diode i tecnología estètica.", "Treball per fases amb control de resposta cutània."]
+          : ["10 anys en protocols regeneratius i barrera cutània.", "Seguiment de casos sensibles o reactius."],
     studies:
       member.id === "eli"
-        ? ["Grau superior d'Estetica Integral i Benestar.", "Formacio en gestio d'experiencia de clienta."]
+        ? ["Grau superior d'Estetica Integral i Benestar.", "Formació en gestió d'experiencia de clienta."]
         : member.id === "jaquie"
-          ? ["Tecnic superior en estetica i aparatologia.", "Formacio continuada en energia i radiofrequencia."]
-          : ["Formacio en dermocosmetica aplicada.", "Especialitzacio en tecniques regeneratives no invasives."],
+          ? ["Tecnic superior en estètica i aparatologia.", "Formació continuada en energia i radiofreqüència."]
+          : ["Formació en dermocosmètica aplicada.", "Especialització en tècniques regeneratives no invasives."],
     treatments:
       member.id === "eli"
         ? ["Diagnosi inicial", "Pla recomanat", "Revisio de seguiment"]
         : member.id === "jaquie"
-          ? ["Depilacio laser de diode", "Radiofrequencia facial", "Hidrodermoabrasio avancada"]
-          : ["Protocol barrera cutania", "Bioestimulacio LED", "Rejoveniment periocular"],
+          ? ["Depilacio laser de diode", "Radiofrequencia facial", "Hidrodermoabrasio avançada"]
+          : ["Protocol barrera cutània", "Bioestimulacio LED", "Rejoveniment periocular"],
     approach:
       member.id === "eli"
         ? ["Explicacio clara abans de cada decisio.", "Continuïtat de pla i agenda sense friccions."]
@@ -966,7 +966,7 @@ const caHome: HomePremiumContent = {
   },
   processLabel: "Proces",
   processTitle: "De la primera consulta a la reserva confirmada, sense friccio.",
-  processDescription: "Cada pas te una accio clara perque la clienta entengui que esperar i quan.",
+  processDescription: "Cada pas té una accio clara perquè la clienta entengui que esperar i quan.",
   processSteps: [
     {
       id: "01",
@@ -996,7 +996,7 @@ const caHome: HomePremiumContent = {
   faqLabel: "Preguntes frequents",
   faqTitle: "FAQs reals per decidir amb seguretat abans de reservar.",
   faqDescription:
-    "Resolem els dubtes mes habituals de primera visita i seguiment perque el proces sigui clar des de l'inici.",
+    "Resolem els dubtes més habituals de primera visita i seguiment perquè el procés sigui clar des de l'inici.",
   faqItems: buildLocalizedFaqs("ca", caFaqCopy),
 };
 
@@ -1007,7 +1007,7 @@ const frHome: HomePremiumContent = {
     ...esHome.hero,
     eyebrow: "Centres Ideal Andorre - Illa Carlemany",
     titleLead: "Epilation laser diode",
-    titleStrong: "et esthetique avancee",
+    titleStrong: "et esthétique avancée",
     titleTail: "avec un protocole professionnel reel.",
     description:
       "Premiere visite de 30 minutes pour diagnostiquer, prioriser les objectifs et definir un plan clair des le debut.",
@@ -1018,7 +1018,7 @@ const frHome: HomePremiumContent = {
   firstVisitLabel: "Premiere visite",
   firstVisitTitle: "Une evaluation qui vous laisse des decisions claires, pas des doutes.",
   firstVisitDescription:
-    "Nous transformons la premiere visite en point de controle technico-commercial pour definir les priorites.",
+    "Nous transformons la premiere visite en point de contrôle technico-commercial pour definir les priorites.",
   firstVisitItems: [
     {
       id: "diagnostico",
@@ -1028,7 +1028,7 @@ const frHome: HomePremiumContent = {
       modalLabel: "Premiere visite",
       modalTitle: "Diagnostic initial",
       modalIntro:
-        "Le diagnostic est une revision structuree pour identifier les besoins reels et eviter le surtraitement.",
+        "Le diagnostic est une révision structurée pour identifier les besoins réels et éviter le surtraitement.",
       blocks: [
         {
           title: "Ce que nous analysons",
@@ -1050,7 +1050,7 @@ const frHome: HomePremiumContent = {
     {
       id: "plan-recomendado",
       title: "Plan recommande",
-      summary: "Parcours par phases avec priorites, frequence et suivi.",
+      summary: "Parcours par phases avec priorites, fréquence et suivi.",
       ctaLabel: "En savoir plus",
       modalLabel: "Premiere visite",
       modalTitle: "Plan recommande",
@@ -1059,7 +1059,7 @@ const frHome: HomePremiumContent = {
         {
           title: "Ce qui est pris en compte",
           lines: [
-            "Objectif esthetique principal et objectifs secondaires.",
+            "Objectif esthétique principal et objectifs secondaires.",
             "Disponibilite reelle d'agenda et rythme soutenable des seances.",
             "Reponse attendue selon le profil et la tolerance.",
           ],
@@ -1067,8 +1067,8 @@ const frHome: HomePremiumContent = {
         {
           title: "Comment c'est construit",
           lines: [
-            "Traitements priorises par impact et securite.",
-            "Frequence indicative et points de revision.",
+            "Traitements priorises par impact et sécurité.",
+            "Fréquence indicative et points de révision.",
             "Recommandations de soin entre seances.",
           ],
         },
@@ -1091,8 +1091,8 @@ const frHome: HomePremiumContent = {
       id: "02",
       title: "Conception du plan",
       subtitle: "Nous organisons le traitement par etapes",
-      description: "Nous sequencons techniques et frequence sans surcharger la peau.",
-      signals: ["Plan par phases", "Frequence indicative", "Consentement eclaire"],
+      description: "Nous sequencons techniques et fréquence sans surcharger la peau.",
+      signals: ["Plan par phases", "Fréquence indicative", "Consentement éclairé"],
     },
     {
       id: "03",
@@ -1105,19 +1105,19 @@ const frHome: HomePremiumContent = {
       id: "04",
       title: "Suivi et ajustement",
       subtitle: "Evolution basee sur l'evidence",
-      description: "Nous revoyons la reponse, ajustons le rythme et consolidons la maintenance.",
+      description: "Nous revoyons la réponse, ajustons le rythme et consolidons la maintenance.",
       signals: ["Revue de progression", "Ajustement du plan", "Continuite"],
     },
   ],
   treatmentsLabel: "Traitements",
-  treatmentsTitle: "Une offre large, structuree et facile a explorer.",
+  treatmentsTitle: "Une offre large, structuree et fácile a explorer.",
   treatmentsDescription:
     "Explorez par categorie et ouvrez chaque fiche sans quitter la page pour comprendre duree, objectif et indication.",
   treatmentsBridge: "Voir le catalogue complet",
   teamLabel: "Equipe",
   teamTitle: "Trois professionnelles, un meme niveau d'exigence.",
   teamDescription:
-    "Nous humanisons la marque avec des profils reels, des specialites claires et un accompagnement precis.",
+    "Nous humanisons la marque avec des profils réels, des spécialités claires et un accompagnement precis.",
   teamMembers: sharedTeam.map((member) => ({
     ...member,
     role: member.id === "eli" ? "Gerante" : "Estheticienne",
@@ -1125,13 +1125,13 @@ const frHome: HomePremiumContent = {
       member.id === "eli"
         ? "Direction du centre, diagnostic et planification des traitements"
         : member.id === "jaquie"
-          ? "Laser diode, radiofrequence et protocoles faciaux avances"
-          : "Esthetique regenerative et qualite de peau",
+          ? "Laser diode, radiofréquence et protocoles faciaux avances"
+          : "Esthetique régénérative et qualité de peau",
     excerpt:
       member.id === "eli"
-        ? "Coordonne la qualite, l'agenda et la validation finale de chaque plan."
+        ? "Coordonne la qualité, l'agenda et la validation finale de chaque plan."
         : member.id === "jaquie"
-          ? "Execute les traitements avances avec controle technique et confort."
+          ? "Execute les traitements avances avec contrôle technique et confort."
           : "Developpe des protocoles de recuperation cutanee et de maintenance.",
     ctaLabel: "En savoir plus",
     modalLabel: "Equipe",
@@ -1144,21 +1144,21 @@ const frHome: HomePremiumContent = {
           : "Je me concentre sur le confort cutane et des resultats durables.",
     experience:
       member.id === "eli"
-        ? ["Plus de 14 ans en gestion de centres esthetiques.", "Coordination d'equipe et suivi operationnel."]
+        ? ["Plus de 14 ans en gestion de centres esthétiques.", "Coordination d'équipe et suivi opérationnel."]
         : member.id === "jaquie"
-          ? ["9 ans en laser diode et technologie esthetique.", "Travail par phases avec controle de la reponse cutanee."]
+          ? ["9 ans en laser diode et technologie esthétique.", "Travail par phases avec contrôle de la réponse cutanee."]
           : ["10 ans en protocoles regeneratifs et barriere cutanee.", "Suivi de cas sensibles ou reactifs."],
     studies:
       member.id === "eli"
-        ? ["Diplome superieur en esthetique integrale.", "Formation en gestion d'experience cliente."]
+        ? ["Diplôme superieur en esthétique integrale.", "Formation en gestion d'expérience cliente."]
         : member.id === "jaquie"
-          ? ["Diplome technique en esthetique et appareil.", "Formation continue en energie et radiofrequence."]
-          : ["Formation en dermocosmetique appliquee.", "Specialisation en techniques regeneratives non invasives."],
+          ? ["Diplôme technique en esthétique et appareil.", "Formation continue en energie et radiofréquence."]
+          : ["Formation en dermocosmétique appliquée.", "Spécialisation en techniques régénératives non invasives."],
     treatments:
       member.id === "eli"
         ? ["Diagnostic initial", "Plan recommande", "Revue de suivi"]
         : member.id === "jaquie"
-          ? ["Epilation laser diode", "Radiofrequence faciale", "Hydrodermabrasion avancee"]
+          ? ["Epilation laser diode", "Radiofrequence faciale", "Hydrodermabrasion avancée"]
           : ["Protocole barriere cutanee", "Biostimulation LED", "Rajeunissement perioculaire"],
     approach:
       member.id === "eli"
@@ -1184,7 +1184,7 @@ const frHome: HomePremiumContent = {
       id: "01",
       title: "Demande initiale",
       description: "Vous partagez objectif, zone et plage horaire souhaitee.",
-      detail: "Vous pouvez commencer par WhatsApp ou reservation web; reponse priorisee en horaire operationnel.",
+      detail: "Vous pouvez commencer par WhatsApp ou reservation web; réponse priorisee en horaire operationnel.",
     },
     {
       id: "02",

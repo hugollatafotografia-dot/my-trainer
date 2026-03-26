@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t.nav.treatments,
     description:
       "Catalogo profesional organizado en estetica normal, estetica avanzada y estetica regenerativa en Centros Ideal Andorra.",
-    imagePath: "/images/treatments/hero-tratamientos-esteticos.jpg",
+    imagePath: "/images/pages/tratamientos/hero/hero-tratamientos-esteticos.png",
   });
 }
 
@@ -39,7 +39,7 @@ export default async function TratamientosPage() {
       <section className="relative isolate overflow-hidden border-b border-white/10 text-white">
         <div className="absolute inset-0 -z-10">
           <MediaFill
-            src="/images/treatments/hero-tratamientos-esteticos.jpg"
+            src="/images/pages/tratamientos/hero/hero-tratamientos-esteticos.png"
             alt="Cabina preparada para tratamientos esteticos"
             priority
             className="photo-grade object-cover object-[56%_34%]"
@@ -163,7 +163,7 @@ export default async function TratamientosPage() {
             <article className="image-frame h-full w-full overflow-hidden p-4 sm:p-5">
               <div className="relative h-full min-h-[25rem] overflow-hidden rounded-[1.45rem] sm:min-h-[33rem]">
                 <MediaFill
-                  src="/images/treatments/flujo-proceso-tratamiento.jpg"
+                  src="/images/pages/tratamientos/proceso/flujo-proceso-tratamiento.png"
                   alt="Especialista ejecutando tratamiento"
                   className="photo-grade-soft object-cover object-[54%_40%]"
                 />
@@ -178,7 +178,7 @@ export default async function TratamientosPage() {
         label={t.treatmentsPage.closing.label}
         title={t.treatmentsPage.closing.title}
         description={t.treatmentsPage.closing.description}
-        imageSrc="/images/treatments/cierre-reserva-tratamiento.mp4"
+        imageSrc="/images/pages/tratamientos/cierre/cierre-reserva-tratamiento.mp4"
         imageAlt="Recepcion para confirmar reserva"
         primaryCta={{
           href: l("/reservar"),

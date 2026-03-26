@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t.nav.results,
     description:
       "Resultados y documentacion de evolucion en Centros Ideal Andorra con enfoque responsable y expectativas realistas.",
-    imagePath: "/images/results/hero-resultados-tratamientos.mp4",
+    imagePath: "/images/pages/resultados/hero/hero-resultados-tratamientos.mp4",
   });
 }
 
@@ -35,7 +35,7 @@ export default async function ResultadosPage() {
         label={t.resultsPage.hero.label}
         title={t.resultsPage.hero.title}
         description={t.resultsPage.hero.description}
-        imageSrc="/images/results/hero-resultados-tratamientos.mp4"
+        imageSrc="/images/pages/resultados/hero/hero-resultados-tratamientos.mp4"
         imageAlt="Resultados de tratamientos personalizados"
         primaryCta={{
           href: l("/reservar"),
@@ -69,7 +69,7 @@ export default async function ResultadosPage() {
           <article className="image-frame overflow-hidden p-4 sm:p-5">
             <div className="relative h-[22rem] overflow-hidden rounded-[1.45rem] sm:h-[26rem]">
               <MediaFill
-                src="/images/results/modulo-confianza-centro.mp4"
+                src="/images/pages/resultados/confianza/modulo-confianza-centro.mp4"
                 alt="Detalle del centro y equipo profesional"
                 className="photo-grade-soft object-cover object-[54%_36%]"
               />
@@ -128,7 +128,7 @@ export default async function ResultadosPage() {
         label={t.resultsPage.closing.label}
         title={t.resultsPage.closing.title}
         description={t.resultsPage.closing.description}
-        imageSrc="/images/shared/detalle-centro-ideal-illa-carlemany.jpg"
+        imageSrc="/images/pages/resultados/cierre/detalle-centro-ideal-illa-carlemany.png"
         imageAlt="Detalle del centro"
         primaryCta={{
           href: l("/reservar"),

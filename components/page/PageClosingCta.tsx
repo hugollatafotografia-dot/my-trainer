@@ -32,9 +32,9 @@ export default function PageClosingCta({
   secondaryCta,
 }: PageClosingCtaProps) {
   return (
-    <section className="bg-[color:var(--color-background)] pb-18 pt-12 sm:pb-22 sm:pt-14">
+    <section className="bg-[color:var(--color-background)] pb-14 pt-9 sm:pb-16 sm:pt-11">
       <Container>
-        <div className="relative isolate overflow-hidden rounded-[2.15rem] border border-[color:var(--color-line)] bg-[color:var(--color-brand)] px-6 py-8 text-white shadow-[0_42px_96px_-72px_rgba(43,19,32,0.84)] sm:px-8 sm:py-10">
+        <div className="relative isolate overflow-hidden rounded-[2.15rem] border border-[color:var(--color-line)] bg-[color:var(--color-brand)] px-6 py-7 text-white shadow-[0_42px_96px_-72px_rgba(43,19,32,0.84)] sm:px-8 sm:py-9">
           <div className="absolute inset-0 -z-10">
             <MediaFill
               src={imageSrc}

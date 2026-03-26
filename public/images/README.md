@@ -1,45 +1,60 @@
 # Mapa de imagenes publicas
 
-Esta carpeta esta organizada por contexto de uso para identificar rapidamente donde se utiliza cada imagen en la web.
+Estructura reorganizada por pagina y por subbloque visual para facilitar mantenimiento.
 
-## Estructura
+## Estructura principal (por pagina)
 
-- `about/`: Imagenes usadas en `app/sobre-nosotros/page.tsx`
-- `booking/`: Imagenes usadas en `app/reservar/page.tsx`
-- `contact/`: Imagenes usadas en `app/contacto/page.tsx`
-- `home/`: Imagenes usadas en `app/page.tsx`
-- `results/`: Imagenes usadas en `app/resultados/page.tsx`
-- `shared/`: Imagenes reutilizadas en mas de una pagina
-- `treatments/`: Imagenes usadas en `app/tratamientos/page.tsx`
+- `pages/hero/`
+- `pages/tratamientos/`
+- `pages/sobre-nosotros/`
+- `pages/resultados/`
+- `pages/contacto/`
+- `pages/reservar/` (extra para la pagina de reserva)
 
-## Inventario y uso
+## Subcarpetas por pagina
 
-| Archivo | Pagina(s) donde se usa |
-| --- | --- |
-| `about/hero-centro-estetica-illa-carlemany.jpg` | Sobre nosotros |
-| `about/historia-metodo-equipo.mp4` | Sobre nosotros |
-| `about/experiencia-cabina-centro.jpg` | Sobre nosotros |
-| `about/seguimiento-whatsapp-paciente.jpg` | Sobre nosotros |
-| `booking/hero-reserva-tratamiento.mp4` | Reservar |
-| `booking/cabina-valoracion-estetica.jpg` | Reservar |
-| `contact/hero-contacto-centro.mp4` | Contacto |
-| `contact/zona-asesoria-estudio.jpg` | Contacto |
-| `home/hero-cabina-premium-illa-carlemany.mp4` | Inicio |
-| `home/metodo-preparacion-tratamiento-cabina.mp4` | Inicio |
-| `home/servicios-detalle-tratamiento-estetico.jpg` | Inicio |
-| `home/cta-recepcion-centro-estetico.mp4` | Inicio |
-| `results/hero-resultados-tratamientos.mp4` | Resultados |
-| `results/comparativa-antes-tratamiento.jpg` | Resultados |
-| `results/comparativa-despues-tratamiento.mp4` | Resultados |
-| `results/modulo-confianza-centro.mp4` | Resultados |
-| `shared/sala-valoracion-estetica.jpg` | Inicio, Tratamientos |
-| `shared/detalle-centro-ideal-illa-carlemany.jpg` | Inicio, Resultados |
-| `treatments/hero-tratamientos-esteticos.jpg` | Tratamientos |
-| `treatments/flujo-proceso-tratamiento.jpg` | Tratamientos |
-| `treatments/cierre-reserva-tratamiento.mp4` | Tratamientos |
+### `pages/hero/`
+- `inicial/`: recurso principal del hero
+- `primera-visita/`: recurso del bloque Primera visita
+- `equipo/`: recursos asociados al bloque de equipo
+- `proceso/`: recursos del bloque de proceso
+- `metodo/`: recursos de metodo/editoriales
+- `cta/`: recursos de cierre o CTA
+- `cierre/`: recursos de cierre reutilizables
+
+### `pages/tratamientos/`
+- `hero/`
+- `proceso/`
+- `cierre/`
+
+### `pages/sobre-nosotros/`
+- `hero/`
+- `equipo/`
+- `historia/`
+- `cierre/`
+
+### `pages/resultados/`
+- `hero/`
+- `comparativas/`
+- `confianza/`
+- `cierre/`
+
+### `pages/contacto/`
+- `hero/`
+- `asesoria/`
+- `cierre/`
+
+### `pages/reservar/`
+- `hero/`
+- `cabina/`
 
 ## Convencion de nombres
 
 - Formato: `contexto-descripcion-clara.<jpg|mp4>`
-- Minusculas y guiones para mantener consistencia
-- Sin sufijos genericos (`real`, `placeholder`) para que el nombre describa directamente el contenido
+- Minusculas y guiones
+- Sin sufijos ambiguos (`real`, `placeholder`)
+- En rutas locales (`/images/...`) no usar query string (`?v=...`) con `next/image`; si hace falta versionado, usar nombre de archivo/version en el propio filename.
+
+## Nota
+
+Todas las rutas del proyecto (`app/`, `components/`, `lib/`) ya apuntan a esta nueva estructura.

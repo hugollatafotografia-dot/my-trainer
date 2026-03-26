@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/",
     title: t.seo.title,
     description: t.seo.description,
-    imagePath: "/images/home/hero-cabina-premium-illa-carlemany.mp4",
+    imagePath: "/images/pages/hero/inicial/hero-cabina-premium-illa-carlemany.mp4",
   });
 }
 
@@ -47,7 +47,7 @@ export default async function Home() {
       <section className="relative isolate overflow-hidden border-b border-white/10 text-white">
         <div className="absolute inset-0 -z-10">
           <MediaFill
-            src="/images/home/hero-cabina-premium-illa-carlemany.mp4"
+            src="/images/pages/hero/inicial/hero-cabina-premium-illa-carlemany.mp4"
             alt="Cabina premium de Centros Ideal Andorra"
             priority
             className="object-cover object-[62%_38%]"
@@ -124,7 +124,7 @@ export default async function Home() {
             <div className="image-frame overflow-hidden p-4 sm:p-5">
               <div className="relative aspect-[5/6] overflow-hidden rounded-[1.35rem] sm:aspect-[4/5]">
                 <MediaFill
-                  src="/images/shared/sala-valoracion-estetica.jpg"
+                  src="/images/pages/hero/primera-visita/sala-valoracion-estetica.png"
                   alt="Sala de valoracion del centro"
                   className="photo-grade-soft object-cover object-[56%_42%]"
                 />
@@ -145,8 +145,18 @@ export default async function Home() {
         </Container>
       </section>
 
-      <section className="section-shell bg-[linear-gradient(168deg,#34202d_0%,#2a1a25_58%,#22141d_100%)] text-white" id="metodo">
-        <Container>
+      <section className="section-shell relative isolate overflow-hidden text-white" id="metodo">
+        <div className="absolute inset-0 -z-10">
+          <MediaFill
+            src="/images/pages/hero/metodo/metodo-preparacion-tratamiento-cabina.mp4"
+            alt="Preparacion del tratamiento en cabina"
+            className="object-cover object-[54%_40%]"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(168deg,rgba(52,32,45,0.9)_0%,rgba(42,26,37,0.9)_58%,rgba(34,20,29,0.92)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_84%_20%,rgba(214,173,192,0.22),transparent_42%),radial-gradient(circle_at_16%_86%,rgba(122,82,99,0.26),transparent_34%)]" />
+        </div>
+
+        <Container className="relative">
           <Reveal className="max-w-[48rem]">
             <p className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-accent)]/88">{premium.methodLabel}</p>
             <h2 className="max-w-[15ch] text-[clamp(2.05rem,4.2vw,3.42rem)] leading-[0.97] font-semibold tracking-[-0.03em]">{premium.methodTitle}</h2>
@@ -238,7 +248,7 @@ export default async function Home() {
             <article className="image-frame h-full overflow-hidden border-white/18 bg-white/8 p-4 sm:p-5">
               <div className="relative h-full min-h-[25rem] overflow-hidden rounded-[1.4rem] sm:min-h-[31rem]">
                 <MediaFill
-                  src="/images/home/servicios-detalle-tratamiento-estetico.jpg"
+                  src="/images/pages/hero/proceso/servicios-detalle-tratamiento-estetico.png"
                   alt="Detalle de cabina y proceso de tratamiento"
                   className="photo-grade-soft object-cover object-[56%_35%]"
                 />
@@ -263,15 +273,15 @@ export default async function Home() {
         </Container>
       </section>
 
-      <section className="bg-[color:var(--color-background)] pb-20 pt-14 sm:pb-24 sm:pt-16 md:pb-28 md:pt-20">
+      <section className="bg-[color:var(--color-background)] pb-14 pt-10 sm:pb-16 sm:pt-12 md:pb-20 md:pt-14">
         <Container>
           <Reveal>
             <div className="relative isolate overflow-hidden rounded-[2.4rem] border border-[color:var(--color-line)] bg-[color:var(--color-brand)] px-6 py-8 text-white shadow-[0_46px_110px_-74px_rgba(42,18,31,0.84)] sm:px-8 sm:py-10 md:px-10 md:py-12">
               <div className="absolute inset-0 -z-10">
                 <MediaFill
-                  src="/images/shared/detalle-centro-ideal-illa-carlemany.jpg"
-                  alt="Detalle de Centros Ideal Andorra"
-                  className="object-cover object-[56%_42%] opacity-44"
+                  src="/images/pages/hero/cta/cta-recepcion-centro-estetico.mp4"
+                  alt="Recepcion de Centros Ideal Andorra"
+                  className="object-cover object-[56%_44%] opacity-48"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(55,23,39,0.92)_0%,rgba(74,31,52,0.83)_52%,rgba(90,39,62,0.73)_100%)]" />
               </div>
@@ -295,7 +305,7 @@ export default async function Home() {
                     trackingLabel="reservar_valoracion_cta_final"
                     abTest={ctaExperiment.id}
                     abVariant={ctaExperiment.variant}
-                    className="h-[3.15rem] px-7 text-[0.75rem] font-semibold uppercase tracking-[0.085em]"
+                    className="h-[3.15rem] w-full px-7 text-[0.75rem] font-semibold uppercase tracking-[0.085em] !text-[#170d13] hover:!text-[#12080f] sm:w-auto"
                   >
                     {t.cta.book}
                   </Button>
@@ -308,7 +318,7 @@ export default async function Home() {
                     trackingLabel="whatsapp_cta_final"
                     abTest={ctaExperiment.id}
                     abVariant={ctaExperiment.variant}
-                    className="h-[3.15rem] border-white/34 bg-black/24 px-7 text-[0.75rem] font-semibold uppercase tracking-[0.085em] text-white hover:border-white/46 hover:bg-black/34 hover:text-white"
+                    className="h-[3.15rem] w-full border-white/34 bg-black/24 px-7 text-[0.75rem] font-semibold uppercase tracking-[0.085em] text-white hover:border-white/46 hover:bg-black/34 hover:text-white sm:w-auto"
                   >
                     {t.cta.whatsapp}
                   </Button>

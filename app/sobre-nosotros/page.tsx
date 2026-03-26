@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t.nav.about,
     description:
       "Conoce el metodo de trabajo, el equipo profesional y la operativa de Centros Ideal Andorra en Illa Carlemany.",
-    imagePath: "/images/about/hero-centro-estetica-illa-carlemany.jpg",
+    imagePath: "/images/pages/sobre-nosotros/hero/hero-centro-estetica-illa-carlemany.jpg",
   });
 }
 
@@ -35,7 +35,7 @@ export default async function SobreNosotrosPage() {
         label={t.aboutPage.hero.label}
         title={t.aboutPage.hero.title}
         description={t.aboutPage.hero.description}
-        imageSrc="/images/about/hero-centro-estetica-illa-carlemany.jpg"
+        imageSrc="/images/pages/sobre-nosotros/hero/hero-centro-estetica-illa-carlemany.jpg"
         imageAlt="Centro y equipo"
         primaryCta={{
           href: l("/reservar"),
@@ -78,7 +78,7 @@ export default async function SobreNosotrosPage() {
           <article className="image-frame h-full overflow-hidden p-4 sm:p-5">
             <div className="relative h-full min-h-[25rem] overflow-hidden rounded-[1.45rem] sm:min-h-[33rem]">
               <MediaFill
-                src="/images/about/historia-metodo-equipo.mp4"
+                src="/images/pages/sobre-nosotros/historia/historia-metodo-equipo.mp4"
                 alt="Método del centro"
                 className="photo-grade-soft object-cover object-[58%_36%]"
               />
@@ -93,7 +93,7 @@ export default async function SobreNosotrosPage() {
           <article className="image-frame overflow-hidden border-white/18 bg-white/8 p-4 sm:p-5">
             <div className="relative h-[22rem] overflow-hidden rounded-[1.4rem] sm:h-[27rem]">
               <MediaFill
-                src="/images/about/experiencia-cabina-centro.jpg"
+                src="/images/pages/sobre-nosotros/equipo/experiencia-cabina-centro.jpg"
                 alt="Experiencia en cabina"
                 className="photo-grade-soft object-cover object-[56%_42%]"
               />
@@ -123,7 +123,7 @@ export default async function SobreNosotrosPage() {
         label={t.aboutPage.closing.label}
         title={t.aboutPage.closing.title}
         description={t.aboutPage.closing.description}
-        imageSrc="/images/about/seguimiento-whatsapp-paciente.jpg"
+        imageSrc="/images/pages/sobre-nosotros/cierre/seguimiento-whatsapp-paciente.jpg"
         imageAlt="Seguimiento por WhatsApp"
         primaryCta={{
           href: l("/reservar"),

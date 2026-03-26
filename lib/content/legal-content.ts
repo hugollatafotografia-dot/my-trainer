@@ -12,6 +12,7 @@ export type LegalDocument = {
   effectiveDateLabel: string;
   effectiveDateValue: string;
   statusNote: string;
+  pendingItems?: string[];
   sections: LegalSection[];
 };
 
@@ -25,183 +26,238 @@ const esContent: LegalContent = {
   legalNotice: {
     title: "Aviso legal",
     intro:
-      "Este sitio informa sobre servicios de estetica y depilacion laser en Andorra. Los datos de titularidad marcados como pendientes deben validarse antes de publicacion definitiva.",
-    effectiveDateLabel: "Fecha de revision",
+      "Este sitio web informa sobre servicios de estética y depilación laser prestados en Andorra. Se ha preparado con criterio de diligencia reforzada y debe completarse con los datos societarios definitivos antes de su cierre jurídico final.",
+    effectiveDateLabel: "Fecha de revisión",
     effectiveDateValue: "26 de marzo de 2026",
     statusNote:
-      "Documento preparado con maxima prudencia para Andorra. Requiere validacion final de asesoria juridica con datos societarios cerrados.",
+      "Base legal preparada para publicación profesional. Pendiente validación final por asesoría juridica local y cierre de datos registrales del responsable.",
+    pendingItems: [
+      "[PENDIENTE_VALIDAR] Denominacion social exacta del titular.",
+      "[PENDIENTE_VALIDAR] NRT del responsable.",
+      "[PENDIENTE_VALIDAR] Domicilio social completo.",
+      "[PENDIENTE_VALIDAR] Datos de inscripción registral o licencia mercantil, si aplican.",
+    ],
     sections: [
       {
-        title: "1. Titular del sitio web",
+        title: "1. Titularidad y datos de contacto",
         paragraphs: [
           "Nombre comercial: Centros Ideal Andorra.",
-          "Email de contacto: illa.carlemany@centresideal.com.",
-          "Telefono: +376 688 080.",
-          "Direccion operativa: Av. Carlemany, 70, AD700 Andorra.",
-        ],
-        bullets: [
-          "Dato pendiente de validacion: denominacion social exacta.",
-          "Dato pendiente de validacion: NRT.",
-          "Dato pendiente de validacion: domicilio social completo.",
+          "Canal general: illa.carlemany@centresideal.com.",
+          "Telefono de contacto: +376 688 080.",
+          "Direccion operativa informada: Av. Carlemany, 70, AD700 Andorra.",
+          "Los datos marcados como pendientes deben integrarse antes de version legal definitiva.",
         ],
       },
       {
-        title: "2. Objeto y alcance",
+        title: "2. Objeto del sitio",
         paragraphs: [
-          "La web ofrece informacion comercial y de orientacion sobre tratamientos esteticos no invasivos.",
-          "La indicacion final de tratamiento se confirma siempre en valoracion presencial.",
+          "La web tiene finalidad informativa, comercial y de pre-reserva de servicios esteticos.",
+          "La información publicada no sustituye valoracion profesional individual ni asesoramiento médico.",
         ],
       },
       {
         title: "3. Condiciones de uso",
         bullets: [
-          "La persona usuaria se compromete a un uso licito y diligente del sitio.",
-          "Se prohibe el uso del sitio para afectar su seguridad, disponibilidad o integridad.",
-          "El centro puede actualizar contenidos, estructura o servicios sin preaviso.",
+          "La persona usuaria se compromete a usar el sitio de forma lícita y diligente.",
+          "Queda prohibido cualquier uso que dañe, sature o comprometa seguridad, codigo o disponibilidad del servicio.",
+          "El titular puede modificar contenidos, estructura y servicios para mejora operativa o cumplimiento normativo.",
         ],
       },
       {
         title: "4. Propiedad intelectual e industrial",
-        paragraphs: [
-          "Marca, imagenes, contenidos y diseno estan protegidos por la normativa aplicable.",
-          "No se permite reproduccion total o parcial sin autorizacion expresa de la titularidad.",
-        ],
-      },
-      {
-        title: "5. Responsabilidad",
-        paragraphs: [
-          "El centro aplica medidas razonables de calidad y seguridad, pero no garantiza ausencia absoluta de errores tecnicos.",
-          "Los contenidos no sustituyen asesoramiento medico ni sanitario.",
-        ],
-      },
-      {
-        title: "6. Marco normativo de referencia",
         bullets: [
-          "Constitucion del Principado de Andorra (art. 14, derecho a la intimidad).",
+          "Diseno, textos, marca, imagenes y elementos distintivos estan protegidos por normativa aplicable.",
+          "No se autoriza reproducción, distribución o transformación sin permiso previo y expreso del titular.",
+        ],
+      },
+      {
+        title: "5. Disponibilidad, enlaces y responsabilidad",
+        bullets: [
+          "Se aplican medidas razonables para continuidad del servicio, sin garantizar ausencia absoluta de incidencias técnicas.",
+          "El titular no responde por contenidos o políticas de terceros enlazados desde la web.",
+          "La persona usuaria es responsable del uso que haga de la información publicada.",
+        ],
+      },
+      {
+        title: "6. Comunicaciones y marketing",
+        bullets: [
+          "Las comunicaciones comerciales solo se realizan conforme a base legitimadora válida o consentimiento cuando corresponda.",
+          "La persona usuaria puede revocar permisos de comunicaciones no esenciales en cualquier momento.",
+        ],
+      },
+      {
+        title: "7. Marco normativo de referencia (Andorra)",
+        bullets: [
+          "Constitucion del Principado de Andorra (derecho a la intimidad y proteccion de la vida privada).",
           "Llei 29/2021, del 28 d'octubre, qualificada de proteccio de dades personals.",
-          "Llei 35/2014, del 27 de novembre, de serveis de confianca electronica (y modificaciones vigentes).",
+          "Criterios y guías publicadas por la APDA para aviso legal, privacidad y cookies en entornos web.",
+          "Resto de normativa andorrana vigente aplicable a servicios digitales, comercio electrónico y consumo.",
         ],
       },
     ],
   },
   privacy: {
-    title: "Politica de privacidad",
+    title: "Política de privacidad",
     intro:
-      "Esta politica describe como se tratan datos personales en el contexto de consultas y gestion de citas del centro.",
-    effectiveDateLabel: "Fecha de revision",
+      "Esta política explica como se tratan datos personales en la web y en la gestión de consultas, pre-reservas y seguimiento operativo del centro.",
+    effectiveDateLabel: "Fecha de revisión",
     effectiveDateValue: "26 de marzo de 2026",
     statusNote:
-      "Estructura juridica lista para produccion. Pendiente completar identificacion del responsable con datos societarios definitivos.",
+      "Documento reforzado para contexto andorrano (Llei 29/2021). Requiere cierre de datos societarios y validación de asesoría legal antes de version final irreversible.",
+    pendingItems: [
+      "[PENDIENTE_VALIDAR] Identificacion completa del responsable (razon social y NRT).",
+      "[PENDIENTE_VALIDAR] Confirmacion de Delegado/a de Proteccion de Datos (si procede por obligacion legal).",
+      "[PENDIENTE_VALIDAR] Inventario final de encargados de tratamiento y herramientas activas.",
+    ],
     sections: [
       {
         title: "1. Responsable del tratamiento",
         paragraphs: [
           "Responsable comercial: Centros Ideal Andorra.",
-          "Canal de contacto para privacidad: illa.carlemany@centresideal.com.",
-        ],
-        bullets: [
-          "Pendiente validar denominacion social y NRT.",
-          "Pendiente validar si procede nombramiento formal de DPD.",
+          "Contacto general: illa.carlemany@centresideal.com.",
+          "Canal de privacidad: illa.carlemany@centresideal.com (hasta asignacion de canal especifico si procede).",
         ],
       },
       {
-        title: "2. Datos que se pueden tratar",
+        title: "2. Categorias de datos tratados",
         bullets: [
-          "Identificativos y de contacto (nombre, telefono, email).",
-          "Datos aportados en consulta sobre objetivos esteticos y disponibilidad de agenda.",
-          "Datos tecnicos minimos de navegacion para seguridad y funcionamiento del sitio.",
+          "Datos identificativos y de contacto: nombre, telefono, email.",
+          "Datos de agenda y preferencia de cita (franja, profesional, disponibilidad).",
+          "Datos de contexto de consulta aportados voluntariamente por la persona usuaria.",
+          "Datos tecnicos minimos para seguridad, idioma y funcionamiento del sitio.",
         ],
       },
       {
-        title: "3. Finalidades",
+        title: "3. Finalidades del tratamiento",
         bullets: [
-          "Gestion de consultas previas y solicitud de valoracion.",
-          "Coordinacion de agenda y seguimiento operativo del servicio.",
-          "Mejora de experiencia web y medicion interna cuando exista consentimiento para analitica.",
+          "Atender consultas y solicitudes de información.",
+          "Gestionar pre-reservas, coordinacion de agenda y seguimiento de atencion.",
+          "Mantener trazabilidad operativa del servicio y continuidad asistencial no sanitaria.",
+          "Mejorar experiencia web con analítica opcional cuando exista consentimiento valido.",
         ],
       },
       {
-        title: "4. Base juridica",
+        title: "4. Base legitimadora",
         bullets: [
-          "Aplicacion de medidas precontractuales a peticion de la persona interesada.",
-          "Consentimiento para tratamientos que lo requieran (p. ej. analitica no esencial).",
-          "Interes legitimo en seguridad, prevencion de abuso y continuidad operativa.",
+          "Ejecucion de medidas precontractuales solícitadas por la persona interesada.",
+          "Cumplimiento de obligaciones legales aplicables.",
+          "Interes legitimo en seguridad, prevencion de abuso y organizacion interna.",
+          "Consentimiento para finalidades opcionales (por ejemplo, analítica no esencial).",
         ],
       },
       {
-        title: "5. Conservacion",
+        title: "5. Conservacion de datos",
         bullets: [
-          "Consultas no convertidas en cita: plazo interno limitado y revisable.",
-          "Datos vinculados a prestacion de servicio: conservacion segun obligaciones legales aplicables.",
-          "Registros tecnicos: retencion minimizada segun necesidad operativa.",
+          "Consultas sin conversion a cita: conservación limitada y revisable en periodos internos de depuracion.",
+          "Datos vinculados a servicio: conservación conforme a obligaciones legales, fiscales y de responsabilidad aplicables.",
+          "Registros tecnicos y seguridad: retencion minimizada y proporcionada a la finalidad.",
         ],
       },
       {
-        title: "6. Destinatarios y transferencias",
+        title: "6. Destinatarios y encargados",
+        bullets: [
+          "No se ceden datos a terceros salvo obligacion legal o necesidad operativa vinculada al servicio.",
+          "Cuando intervienen proveedores, se formalizan clausulas de encargo y deberes de confidencialidad.",
+          "Se aplica principio de minimización: acceso solo a quien lo necesita por funcion.",
+        ],
+      },
+      {
+        title: "7. Transferencias internacionales",
         paragraphs: [
-          "No se comunican datos a terceros salvo obligacion legal o proveedores necesarios para la prestacion del servicio.",
-          "Cuando intervengan encargados de tratamiento, se formalizan clausulas contractuales adecuadas.",
+          "Con caracter general no se preve transferencias internacionales fuera de Andorra sin base legitimadora y garantias adecuadas.",
+          "Si se implantaran herramientas con tratamiento internacional, esta política se actualizara y se informara expresamente.",
         ],
       },
       {
-        title: "7. Derechos de las personas",
+        title: "8. Derechos de las personas interesadas",
         bullets: [
-          "Acceso, rectificacion, supresion, oposicion, limitacion y portabilidad cuando proceda.",
-          "Canal de ejercicio: illa.carlemany@centresideal.com.",
-          "Autoridad de control: Agencia Andorrana de Proteccio de Dades (APDA).",
+          "Derechos de acceso, rectificacion, supresion, oposicion, limitacion y portabilidad cuando resulten aplicables.",
+          "El ejercicio puede solícitarse por escrito al canal de privacidad indicado.",
+          "Si no se obtiene respuesta satisfactoria, puede acudirse a la APDA como autoridad de control competente.",
+          "Datos de referencia APDA: apda@apda.ad | +376 808 115.",
         ],
       },
       {
-        title: "8. Medidas de seguridad",
+        title: "9. Seguridad y confidencialidad",
         bullets: [
-          "Control de acceso, minimizacion de datos y registros tecnicos de actividad.",
-          "Revisiones periodicas de configuracion y buenas practicas de seguridad.",
+          "Control de acceso, revisiónes de configuración y medidas de minimización de datos.",
+          "Buenas practicas de seguridad aplicadas a formularios, almacenamiento y operaciones internas.",
+          "Compromiso de confidencialidad del personal y colaboradores con acceso autorizado.",
+        ],
+      },
+      {
+        title: "10. Actualizaciones de esta política",
+        paragraphs: [
+          "Esta política puede actualizarse para reflejar cambios normativos, tecnicos o de operativa interna.",
+          "La fecha de revisión visible en cabecera indica la última actualización publicada.",
         ],
       },
     ],
   },
   cookies: {
-    title: "Politica de cookies",
+    title: "Política de cookies",
     intro:
-      "Informacion sobre cookies y tecnologias equivalentes utilizadas en este sitio, con especial atencion a consentimiento y configuracion.",
-    effectiveDateLabel: "Fecha de revision",
+      "Esta política detalla el uso de cookies y almacenamiento local en la web, el sistema de consentimiento y la forma de gestiónar preferencias en cualquier momento.",
+    effectiveDateLabel: "Fecha de revisión",
     effectiveDateValue: "26 de marzo de 2026",
     statusNote:
-      "La web incluye banner de consentimiento y permite rechazar analitica no esencial. Debe revisarse periodicamente el inventario tecnico.",
+      "Modelo alineado con recomendaciones APDA para web: consentimiento granular, rechazo de opcionales y acceso permanente a gestión de preferencias.",
+    pendingItems: [
+      "[PENDIENTE_VALIDAR] Inventario final de herramientas de medición si se amplia analítica.",
+      "[PENDIENTE_VALIDAR] Política de terceros concreta (si se incorporan servicios externos con cookies propias).",
+    ],
     sections: [
       {
-        title: "1. Que son",
+        title: "1. Qué son las cookies",
         paragraphs: [
-          "Las cookies son pequenos archivos que se almacenan en el navegador para recordar configuraciones o medir uso del sitio.",
+          "Son ficheros o identificadores que el navegador almacena para recordar configuraciónes o apoyar funciones técnicas y de medición.",
+          "Tambien se utiliza almacenamiento local para registrar preferencias de consentimiento.",
         ],
       },
       {
-        title: "2. Cookies y almacenamiento usados",
+        title: "2. Categorias aplicadas en esta web",
         bullets: [
-          "Cookie tecnica de idioma: ideal_locale (necesaria para mostrar el sitio en el idioma seleccionado).",
-          "Almacenamiento local de consentimiento: ideal.cookies.consent.v1.",
-          "Almacenamiento local de analitica interna y sesion: solo si la persona acepta medicion.",
+          "Técnicas necesarias: imprescindibles para funcionamiento básico (idioma, seguridad, continuidad de sesión funcional).",
+          "Analitica opcional: solo se activa cuando la persona usuaria acepta esta categoría.",
+          "No se condiciona la navegacion a aceptar cookies opcionales (sin cookie wall).",
         ],
       },
       {
-        title: "3. Categorias",
+        title: "3. Inventario tecnico actual",
         bullets: [
-          "Tecnicas necesarias: activas por defecto para funcionamiento basico.",
-          "Analitica: desactivada por defecto hasta consentimiento expreso.",
+          "ideal_locale: cookie técnica necesaria para recordar idioma.",
+          "ideal.cookies.consent.v1: almacenamiento local para guardar preferencias de cookies.",
+          "Registros de analítica interna: únicamente tras consentimiento expreso para categoría analítica.",
         ],
       },
       {
         title: "4. Gestion del consentimiento",
         bullets: [
-          "Puede aceptar todo o mantener solo esenciales desde el banner inicial.",
-          "Puede cambiar su preferencia en cualquier momento desde el enlace de cookies del pie de pagina.",
+          "Banner inicial con acciones claras: aceptar todo, rechazar opcionales y guardar seleccion.",
+          "Panel de preferencias accesible de forma permanente desde el footer (Gestionar cookies).",
+          "La retirada o cambio de consentimiento puede realizarse en cualquier momento.",
         ],
       },
       {
-        title: "5. Marco normativo",
+        title: "5. Conservacion y revisión",
+        bullets: [
+          "Las preferencias se conservan hasta que la persona usuaria las modifique o limpie el navegador.",
+          "El inventario de cookies se revisa periódicamente para mantener coherencia legal y técnica.",
+        ],
+      },
+      {
+        title: "6. Derechos y canales",
+        bullets: [
+          "Las solicitudes de privacidad y derechos pueden enviarse al canal indicado en la política de privacidad.",
+          "La APDA actua como autoridad de control de referencia en Andorra.",
+        ],
+      },
+      {
+        title: "7. Marco normativo de referencia",
         bullets: [
           "Llei 29/2021, del 28 d'octubre, qualificada de proteccio de dades personals.",
-          "Normativa andorrana vigente en materia de servicios electronicos y privacidad aplicable al canal web.",
+          "Modelos y recomendaciones APDA para aviso legal, política de privacidad y política de cookies en planes web.",
+          "Resto de normativa andorrana vigente aplicable a servicios digitales y comunicaciones electrónicas.",
         ],
       },
     ],
@@ -216,11 +272,11 @@ const caContent: LegalContent = {
   },
   privacy: {
     ...esContent.privacy,
-    title: "Politica de privacitat",
+    title: "Política de privacitat",
   },
   cookies: {
     ...esContent.cookies,
-    title: "Politica de cookies",
+    title: "Política de cookies",
   },
 };
 
@@ -228,11 +284,11 @@ const frContent: LegalContent = {
   ...esContent,
   legalNotice: {
     ...esContent.legalNotice,
-    title: "Mentions legales",
+    title: "Mentions légales",
   },
   privacy: {
     ...esContent.privacy,
-    title: "Politique de confidentialite",
+    title: "Politique de confidentialité",
   },
   cookies: {
     ...esContent.cookies,

@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Reservar valoracion",
     description:
       "Reserva valoracion inicial en Centros Ideal Andorra. Proceso claro, confirmacion por WhatsApp y primera visita sin compromiso.",
-    imagePath: "/images/booking/hero-reserva-tratamiento.mp4",
+    imagePath: "/images/pages/reservar/hero/hero-reserva-tratamiento.mp4",
   });
 }
 
@@ -33,7 +33,7 @@ export default async function ReservarPage() {
         label={t.bookingPage.hero.label}
         title={t.bookingPage.hero.title}
         description={t.bookingPage.hero.description}
-        imageSrc="/images/booking/hero-reserva-tratamiento.mp4"
+        imageSrc="/images/pages/reservar/hero/hero-reserva-tratamiento.mp4"
         imageAlt="Cabina principal de reserva"
         primaryCta={{
           href: whatsappHref,
@@ -69,7 +69,7 @@ export default async function ReservarPage() {
           <article className="image-frame overflow-hidden p-4 sm:p-5">
             <div className="relative h-[22rem] overflow-hidden rounded-[1.45rem] sm:h-[27rem]">
               <MediaFill
-                src="/images/booking/cabina-valoracion-estetica.jpg"
+                src="/images/pages/reservar/cabina/cabina-valoracion-estetica.jpg"
                 alt="Cabina de valoración"
                 className="photo-grade-soft object-cover object-[56%_39%]"
               />
@@ -121,7 +121,7 @@ export default async function ReservarPage() {
         label={t.bookingPage.closing.label}
         title={t.bookingPage.closing.title}
         description={t.bookingPage.closing.description}
-        imageSrc="/images/booking/hero-reserva-tratamiento.mp4"
+        imageSrc="/images/pages/reservar/hero/hero-reserva-tratamiento.mp4"
         imageAlt="Detalle de cabina"
         primaryCta={{
           href: whatsappHref,

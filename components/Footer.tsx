@@ -20,7 +20,7 @@ export default async function Footer() {
 
   return (
     <footer className="border-t border-white/12 bg-[linear-gradient(176deg,#2f1d29_0%,#22151f_58%,#1b1119_100%)] text-white">
-      <Container className="pt-12">
+      <Container className="pt-8">
         <div className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] px-6 py-6 shadow-[0_30px_76px_-66px_rgba(8,5,8,0.92)] backdrop-blur-[4px] sm:px-8">
           <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
             <div className="max-w-[37rem]">
@@ -41,7 +41,8 @@ export default async function Footer() {
                 data-track-href="/reservar"
                 data-ab-test="home_cta_journey"
                 data-ab-variant="v1"
-                className="inline-flex h-[2.95rem] w-full items-center justify-center rounded-[var(--radius-pill)] bg-white px-6 text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:bg-white/92 sm:w-auto"
+                className="inline-flex h-[2.95rem] w-full items-center justify-center rounded-[var(--radius-pill)] border border-transparent bg-[color:var(--color-brand)] px-7 text-[0.76rem] font-semibold uppercase tracking-[0.05em] text-white transition-colors duration-200 hover:bg-[color:var(--color-brand-strong)] sm:w-auto"
+                style={{ color: "#ffffff", backgroundColor: "#5b2a42" }}
               >
                 {t.cta.book}
               </Link>
@@ -64,7 +65,7 @@ export default async function Footer() {
         </div>
       </Container>
 
-      <Container className="grid gap-8 pb-8 pt-11 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.85fr_0.85fr_1fr]">
+      <Container className="grid gap-7 pb-7 pt-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.85fr_0.85fr_1fr]">
         <div className="sm:col-span-2 lg:col-span-1">
           <BrandLogo
             size="lg"

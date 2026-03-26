@@ -47,7 +47,7 @@ export function buildPageMetadata({
   path,
   title,
   description,
-  imagePath = "/images/home/hero-cabina-premium-illa-carlemany.mp4",
+  imagePath = "/images/pages/hero/inicial/hero-cabina-premium-illa-carlemany.mp4",
   noIndex = false,
 }: PageMetadataConfig): Metadata {
   const localizedPath = withLocalePath(path, locale);
@@ -106,7 +106,7 @@ export function buildLocalBusinessSchema(locale: Locale, dictionary: SiteDiction
     "@id": absoluteUrl(withLocalePath("/", defaultLocale)),
     name: SITE_NAME,
     url: absoluteUrl(withLocalePath("/", locale)),
-    image: absoluteUrl("/images/home/hero-cabina-premium-illa-carlemany.mp4"),
+    image: absoluteUrl("/images/pages/hero/inicial/hero-cabina-premium-illa-carlemany.mp4"),
     telephone: contactDetails.phoneIntl,
     email: contactDetails.email,
     description: dictionary.seo.description,

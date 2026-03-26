@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t.nav.contact,
     description:
       "Contacto directo con Centros Ideal Andorra. WhatsApp, direccion en Illa Carlemany y proceso de reserva de valoracion inicial.",
-    imagePath: "/images/contact/hero-contacto-centro.mp4",
+    imagePath: "/images/pages/contacto/hero/hero-contacto-centro.mp4",
   });
 }
 
@@ -61,7 +61,7 @@ export default async function ContactoPage() {
         label={t.contactPage.hero.label}
         title={t.contactPage.hero.title}
         description={t.contactPage.hero.description}
-        imageSrc="/images/contact/hero-contacto-centro.mp4"
+        imageSrc="/images/pages/contacto/hero/hero-contacto-centro.mp4"
         imageAlt="Recepción y contacto del centro"
         primaryCta={{
           href: whatsappHref,
@@ -105,7 +105,7 @@ export default async function ContactoPage() {
           <article className="image-frame overflow-hidden p-4 sm:p-5">
             <div className="relative h-[22rem] overflow-hidden rounded-[1.45rem] sm:h-[27rem]">
               <MediaFill
-                src="/images/contact/zona-asesoria-estudio.jpg"
+                src="/images/pages/contacto/asesoria/zona-asesoria-estudio.png"
                 alt="Zona de asesoría"
                 className="photo-grade-soft object-cover object-[56%_43%]"
               />
@@ -189,7 +189,7 @@ export default async function ContactoPage() {
         label={t.contactPage.closing.label}
         title={t.contactPage.closing.title}
         description={t.contactPage.closing.description}
-        imageSrc="/images/shared/detalle-centro-ideal-illa-carlemany.jpg"
+        imageSrc="/images/pages/contacto/cierre/detalle-centro-ideal-illa-carlemany.png"
         imageAlt="Detalle del centro"
         primaryCta={{
           href: l("/reservar"),

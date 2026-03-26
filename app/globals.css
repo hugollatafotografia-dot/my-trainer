@@ -16,8 +16,8 @@
 
   --container-max: 78rem;
   --container-gutter: clamp(1.2rem, 2.2vw, 2rem);
-  --section-space: clamp(4rem, 7.1vw, 6.45rem);
-  --section-space-tight: clamp(2.7rem, 4.8vw, 4.2rem);
+  --section-space: clamp(3rem, 5.2vw, 4.95rem);
+  --section-space-tight: clamp(2rem, 3.8vw, 3.25rem);
   --grid-gap: clamp(1rem, 1.8vw, 1.6rem);
   --card-padding: clamp(1.25rem, 2vw, 1.85rem);
 
