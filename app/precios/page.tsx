@@ -1,5 +1,8 @@
 import { redirect } from "next/navigation";
 
-export default function PreciosPage() {
-  redirect("/tratamientos");
+import { getPageContext } from "@/lib/i18n";
+
+export default async function PreciosPage() {
+  const { l } = await getPageContext();
+  redirect(l("/tratamientos"));
 }

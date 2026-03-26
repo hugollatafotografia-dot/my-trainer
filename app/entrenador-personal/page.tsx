@@ -1,5 +1,8 @@
 import { redirect } from "next/navigation";
 
-export default function EntrenadorPersonalPage() {
-  redirect("/tratamientos");
+import { getPageContext } from "@/lib/i18n";
+
+export default async function EntrenadorPersonalPage() {
+  const { l } = await getPageContext();
+  redirect(l("/tratamientos"));
 }

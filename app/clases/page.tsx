@@ -1,5 +1,8 @@
 import { redirect } from "next/navigation";
 
-export default function ClasesPage() {
-  redirect("/tratamientos");
+import { getPageContext } from "@/lib/i18n";
+
+export default async function ClasesPage() {
+  const { l } = await getPageContext();
+  redirect(l("/tratamientos"));
 }

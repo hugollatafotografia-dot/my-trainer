@@ -20,6 +20,19 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Chatbot setup
+
+1. Copy `.env.example` to `.env.local`.
+2. Set `OPENAI_API_KEY`.
+3. Set your preconfigured chatbot identifier in one of:
+   - `OPENAI_CHATBOT_ASSISTANT_ID`
+   - `OPENAI_RESPONSES_ASSISTANT_ID`
+   - `OPENAI_ASSISTANT_ID`
+   - `OPENAI_CHATBOT_ID`
+4. If you do not use assistant id, set `OPENAI_CHATBOT_MODEL` (default: `gpt-4.1-mini`).
+
+The frontend never calls OpenAI directly. Chat requests go through `app/api/chat/route.ts`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

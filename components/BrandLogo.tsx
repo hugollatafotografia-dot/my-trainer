@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
@@ -5,30 +6,34 @@ import { cn } from "@/lib/utils";
 type BrandLogoProps = {
   className?: string;
   href?: string;
-  showMark?: boolean;
   size?: "md" | "lg";
+  showWordmark?: boolean;
 };
 
 const sizeClasses = {
   md: {
-    wrap: "gap-2.25",
-    mark: "h-[1.68rem] w-[1.68rem]",
-    title: "text-[0.98rem]",
-    subtitle: "text-[0.53rem]",
+    wrap: "gap-2.5",
+    mark: "h-[2.58rem] w-[2.58rem]",
+    title: "text-[0.93rem]",
+    subtitle: "text-[0.49rem]",
+    subtitleVisibility: "hidden sm:inline",
+    imageSizes: "(max-width: 1024px) 42px, 42px",
   },
   lg: {
-    wrap: "gap-2.8",
-    mark: "h-[1.98rem] w-[1.98rem]",
-    title: "text-[1.12rem]",
-    subtitle: "text-[0.56rem]",
+    wrap: "gap-3",
+    mark: "h-[2.78rem] w-[2.78rem]",
+    title: "text-[1.04rem]",
+    subtitle: "text-[0.52rem]",
+    subtitleVisibility: "inline",
+    imageSizes: "(max-width: 1024px) 44px, 46px",
   },
 };
 
 export default function BrandLogo({
   className,
   href = "/",
-  showMark = true,
   size = "md",
+  showWordmark = true,
 }: BrandLogoProps) {
   const style = sizeClasses[size];
 
@@ -37,45 +42,49 @@ export default function BrandLogo({
       href={href}
       className={cn(
         "inline-flex items-center text-[color:var(--color-foreground)]",
-        style.wrap,
+        showWordmark ? style.wrap : "gap-0",
         className,
       )}
     >
-      {showMark ? (
-        <span
-          className={cn(
-            "relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[color:var(--color-line)] bg-[linear-gradient(150deg,#faf3f6_0%,#eedde6_100%)] shadow-[0_12px_26px_-20px_rgba(40,20,30,0.64)]",
-            style.mark,
-          )}
-          aria-hidden
-        >
-          <span className="absolute inset-[0.16rem] rounded-full bg-[linear-gradient(146deg,#6d3550_0%,#472235_100%)]" />
-          <span className="relative text-[0.5rem] font-semibold tracking-[0.1em] text-white">
-            CI
+      <span
+        className={cn(
+          "relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[color:var(--color-line)] bg-white p-[0.12rem] shadow-[0_12px_26px_-20px_rgba(40,20,30,0.64)]",
+          style.mark,
+        )}
+        aria-hidden
+      >
+        <Image
+          src="/branding/logo-centros-ideal-andorra.jpg"
+          alt="Logo Centros Ideal Andorra"
+          fill
+          sizes={style.imageSizes}
+          className="rounded-full object-cover"
+        />
+      </span>
+
+      {showWordmark ? (
+        <span className="grid leading-none">
+          <span
+            className={cn(
+              "font-display font-semibold tracking-[-0.026em]",
+              style.title,
+            )}
+          >
+            Centros Ideal
+          </span>
+          <span
+            className={cn(
+              "mt-1 font-semibold uppercase tracking-[0.18em] text-current opacity-70",
+              style.subtitle,
+              style.subtitleVisibility,
+            )}
+          >
+            Andorra
           </span>
         </span>
       ) : null}
 
-      <span className="grid leading-none">
-        <span
-          className={cn(
-            "font-display font-semibold tracking-[-0.026em]",
-            style.title,
-          )}
-        >
-          Centres Ideal
-        </span>
-        <span
-          className={cn(
-            "mt-1 font-semibold uppercase tracking-[0.18em] text-[color:var(--color-muted)]",
-            style.subtitle,
-          )}
-        >
-          Illa Carlemany
-        </span>
-      </span>
-
-      <span className="sr-only">Centres Ideal Illa Carlemany</span>
+      <span className="sr-only">Centros Ideal Andorra</span>
     </Link>
   );
 }

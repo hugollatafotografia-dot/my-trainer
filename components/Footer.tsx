@@ -1,126 +1,145 @@
 import Link from "next/link";
 
 import { contactDetails, legalLinks, navLinks } from "@/lib/site";
+import { getDictionary } from "@/lib/i18n/messages";
+import { withLocalePath } from "@/lib/i18n/routing";
+import { getServerLocale } from "@/lib/i18n/server";
+import { whatsappHref } from "@/lib/site";
 import { TRACK_EVENTS } from "@/lib/tracking/events";
 
 import BrandLogo from "./BrandLogo";
 import Container from "./Container";
+import CookiePreferencesButton from "./cookies/CookiePreferencesButton";
 
-export default function Footer() {
+export default async function Footer() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
   const footerNav = navLinks.filter((item) => item.href !== "/reservar");
+  const cookiePreferencesLabel =
+    locale === "ca" ? "Gestionar cookies" : locale === "fr" ? "Gerer les cookies" : "Gestionar cookies";
 
   return (
-    <footer className="border-t border-white/12 bg-[linear-gradient(176deg,#301d2a_0%,#241722_56%,#1d121b_100%)] text-white">
-      <Container className="pt-14">
-        <div className="rounded-[2rem] border border-white/14 bg-white/[0.06] px-6 py-6 shadow-[0_36px_86px_-74px_rgba(6,4,6,0.95)] backdrop-blur-[4px] sm:px-8">
+    <footer className="border-t border-white/12 bg-[linear-gradient(176deg,#2f1d29_0%,#22151f_58%,#1b1119_100%)] text-white">
+      <Container className="pt-12">
+        <div className="rounded-[1.8rem] border border-white/14 bg-white/[0.05] px-6 py-6 shadow-[0_30px_76px_-66px_rgba(8,5,8,0.92)] backdrop-blur-[4px] sm:px-8">
           <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-            <div className="max-w-[40rem]">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white/66">
-                Centres Ideal Illa Carlemany
+            <div className="max-w-[37rem]">
+              <p className="text-[0.66rem] font-semibold uppercase tracking-[0.15em] text-white/64">
+                {t.footer.topEyebrow}
               </p>
-              <p className="mt-3 text-[1.2rem] leading-[1.4] tracking-[-0.015em] text-white/92 sm:text-[1.36rem]">
-                Si necesitas orientación previa, te ayudamos por WhatsApp antes
-                de confirmar tu valoración.
+              <p className="mt-3 text-[1.07rem] leading-[1.5] tracking-[-0.012em] text-white/90 sm:text-[1.18rem]">
+                {t.footer.topTitle}
               </p>
             </div>
 
             <div className="flex flex-col gap-2.5 sm:flex-row">
               <Link
-                href="https://wa.me/376600000"
-                target="_blank"
-                rel="noreferrer"
-                data-track-event={TRACK_EVENTS.CLICK_WHATSAPP}
-                data-track-source="footer_whatsapp"
-                data-track-label="whatsapp_footer"
-                data-track-href="https://wa.me/376600000"
-                data-ab-test="home_cta_journey"
-                data-ab-variant="v1"
-                className="inline-flex h-[3rem] items-center justify-center rounded-[var(--radius-pill)] bg-white px-6 text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:bg-white/92"
-              >
-                WhatsApp directo
-              </Link>
-              <Link
-                href="/reservar"
+                href={withLocalePath("/reservar", locale)}
                 data-track-event={TRACK_EVENTS.CLICK_RESERVAR}
                 data-track-source="footer_primary"
                 data-track-label="reservar_desde_footer"
                 data-track-href="/reservar"
                 data-ab-test="home_cta_journey"
                 data-ab-variant="v1"
-                className="inline-flex h-[3rem] items-center justify-center rounded-[var(--radius-pill)] border border-white/24 bg-white/[0.09] px-6 text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:bg-white/[0.18]"
+                className="inline-flex h-[2.95rem] w-full items-center justify-center rounded-[var(--radius-pill)] bg-white px-6 text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:bg-white/92 sm:w-auto"
               >
-                Reservar valoración
+                {t.cta.book}
+              </Link>
+              <Link
+                href={whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                data-track-event={TRACK_EVENTS.CLICK_WHATSAPP}
+                data-track-source="footer_whatsapp"
+                data-track-label="whatsapp_footer"
+                data-track-href={whatsappHref}
+                data-ab-test="home_cta_journey"
+                data-ab-variant="v1"
+                className="inline-flex h-[2.95rem] w-full items-center justify-center rounded-[var(--radius-pill)] border border-white/28 bg-black/24 px-6 text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:border-white/44 hover:bg-black/34 sm:w-auto"
+              >
+                {t.cta.whatsapp}
               </Link>
             </div>
           </div>
         </div>
       </Container>
 
-      <Container className="grid gap-10 pb-8 pt-12 lg:grid-cols-[1.35fr_0.84fr_0.84fr_1fr]">
-        <div>
-          <BrandLogo size="lg" className="text-white [&_span:last-child]:text-white/80" />
-          <p className="mt-5 max-w-[34rem] text-[0.92rem] leading-7 text-white/76">
-            Diagnóstico facial y corporal en Illa Carlemany con protocolos no
-            invasivos y seguimiento profesional.
-          </p>
-          <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-white/62">
-            Centres Ideal · Andorra
+      <Container className="grid gap-8 pb-8 pt-11 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.85fr_0.85fr_1fr]">
+        <div className="sm:col-span-2 lg:col-span-1">
+          <BrandLogo
+            size="lg"
+            href={withLocalePath("/", locale)}
+            className="text-white"
+          />
+          <p className="mt-4 max-w-[30rem] text-[0.86rem] leading-7 text-white/74">
+            {t.footer.description}
           </p>
         </div>
 
         <div>
-          <h2 className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/62">
-            Navegación
+          <h2 className="text-[0.66rem] font-semibold uppercase tracking-[0.17em] text-white/62">
+            {t.footer.navigation}
           </h2>
-          <div className="mt-4 flex flex-col gap-2.5 text-[0.9rem] text-white/80">
+          <div className="mt-4 flex flex-col gap-2 text-[0.86rem] text-white/80">
             {footerNav.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={withLocalePath(link.href, locale)}
                 className="transition-colors duration-200 hover:text-white"
               >
-                {link.label}
+                {t.nav[link.key]}
               </Link>
             ))}
           </div>
         </div>
 
         <div>
-          <h2 className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/62">
-            Legal
-          </h2>
-          <div className="mt-4 flex flex-col gap-2.5 text-[0.9rem] text-white/80">
+          <h2 className="text-[0.66rem] font-semibold uppercase tracking-[0.17em] text-white/62">{t.footer.legal}</h2>
+          <div className="mt-4 flex flex-col gap-2 text-[0.86rem] text-white/80">
             {legalLinks.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={withLocalePath(link.href, locale)}
                 className="transition-colors duration-200 hover:text-white"
               >
-                {link.label}
+                {t.legal[link.key]}
               </Link>
             ))}
+            <CookiePreferencesButton label={cookiePreferencesLabel} />
           </div>
         </div>
 
         <div>
-          <h2 className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/62">
-            Contacto
-          </h2>
-          <div className="mt-4 space-y-2.5 text-[0.9rem] leading-7 text-white/80">
-            <p>{contactDetails.phone}</p>
-            <p>{contactDetails.email}</p>
-            <p>{contactDetails.address}</p>
+          <h2 className="text-[0.66rem] font-semibold uppercase tracking-[0.17em] text-white/62">{t.footer.contact}</h2>
+          <div className="mt-4 space-y-2 text-[0.86rem] leading-7 text-white/78">
+            <p>
+              <Link href={`tel:${contactDetails.phoneIntl.replace(/\s+/g, "")}`} className="transition-colors duration-200 hover:text-white">
+                {contactDetails.phoneIntl}
+              </Link>
+            </p>
+            <p>
+              <Link href={`mailto:${contactDetails.email}`} className="transition-colors duration-200 hover:text-white">
+                {contactDetails.email}
+              </Link>
+            </p>
+            <p>
+              <Link
+                href={contactDetails.mapsPlaceUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors duration-200 hover:text-white"
+              >
+                {contactDetails.address}
+              </Link>
+            </p>
+            <p>{contactDetails.floor}</p>
           </div>
-          <p className="mt-5 text-[0.76rem] leading-6 text-white/62">
-            Respuesta según horario de atención y disponibilidad de agenda.
-          </p>
         </div>
       </Container>
 
       <Container className="border-t border-white/12 pb-8 pt-4">
-        <p className="text-[0.73rem] leading-6 text-white/56">
-          © {new Date().getFullYear()} Centres Ideal Illa Carlemany. Todos los
-          derechos reservados.
+        <p className="text-[0.71rem] leading-6 text-white/56">
+          © {new Date().getFullYear()} {t.brand.legalName}. {t.footer.rights}
         </p>
       </Container>
     </footer>

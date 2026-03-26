@@ -20,7 +20,7 @@ export default function Card({
   return (
     <article
       className={cn(
-        "surface-card",
+        "surface-card lift-card",
         className,
       )}
     >

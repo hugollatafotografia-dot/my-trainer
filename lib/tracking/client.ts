@@ -4,6 +4,7 @@ import type { TrackEventName, TrackEventPayload, TrackEventRecord } from "./even
 import { TRACKING_EVENT_CAPTURED } from "./events";
 import { resolveAbVariant } from "./ab";
 import { getSessionId, persistEvent } from "./storage";
+import { hasAnalyticsConsent } from "@/lib/cookies/consent";
 
 declare global {
   interface Window {
@@ -16,6 +17,10 @@ declare global {
 
 export function trackEvent(event: TrackEventName, payload: TrackEventPayload = {}) {
   if (typeof window === "undefined") {
+    return;
+  }
+
+  if (!hasAnalyticsConsent()) {
     return;
   }
 
