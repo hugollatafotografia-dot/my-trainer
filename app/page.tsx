@@ -12,6 +12,7 @@ import TreatmentsExplorer from "@/components/treatments/TreatmentsExplorer";
 import { getHomePremiumContent } from "@/lib/content/home-premium";
 import { getTreatmentsCatalog } from "@/lib/content/treatments-catalog";
 import { getPageContext } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/messages";
 import { getServerLocale } from "@/lib/i18n/server";
 import { contactDetails } from "@/lib/site";
@@ -41,6 +42,69 @@ export default async function Home() {
   const premium = getHomePremiumContent(locale);
   const treatments = getTreatmentsCatalog(locale);
   const whatsappHref = `https://wa.me/${t.brand.whatsappNumber}`;
+  const pageCopyByLocale: Record<Locale, { maps: string; phase: string; step: string }> = {
+    es: { maps: "Mapa", phase: "Fase", step: "Paso" },
+    ca: { maps: "Mapa", phase: "Fase", step: "Pas" },
+    fr: { maps: "Carte", phase: "Phase", step: "Étape" },
+    en: { maps: "Map", phase: "Phase", step: "Step" },
+    uk: { maps: "Карта", phase: "Фаза", step: "Крок" },
+    ru: { maps: "Карта", phase: "Фаза", step: "Шаг" },
+  };
+  const pageCopy = pageCopyByLocale[locale];
+  const imageAltByLocale: Record<
+    Locale,
+    {
+      hero: string;
+      firstVisit: string;
+      method: string;
+      process: string;
+      closing: string;
+    }
+  > = {
+    es: {
+      hero: "Cabina premium de Centros Ideal Andorra",
+      firstVisit: "Sala de valoracion del centro",
+      method: "Preparacion del tratamiento en cabina",
+      process: "Detalle de cabina y proceso de tratamiento",
+      closing: "Recepcion de Centros Ideal Andorra",
+    },
+    ca: {
+      hero: "Cabina premium de Centres Ideal Andorra",
+      firstVisit: "Sala de valoracio del centre",
+      method: "Preparacio del tractament en cabina",
+      process: "Detall de cabina i proces de tractament",
+      closing: "Recepcio de Centres Ideal Andorra",
+    },
+    fr: {
+      hero: "Cabine premium de Centres Ideal Andorra",
+      firstVisit: "Salle d'evaluation du centre",
+      method: "Preparation du traitement en cabine",
+      process: "Detail de cabine et processus de traitement",
+      closing: "Reception de Centres Ideal Andorra",
+    },
+    en: {
+      hero: "Premium treatment cabin at Centres Ideal Andorra",
+      firstVisit: "Assessment room at the centre",
+      method: "Treatment preparation in cabin",
+      process: "Treatment cabin detail and process",
+      closing: "Reception area at Centres Ideal Andorra",
+    },
+    uk: {
+      hero: "Преміальна кабіна в Centros Ideal Andorra",
+      firstVisit: "Кабінет первинної консультації в центрі",
+      method: "Підготовка процедури в кабіні",
+      process: "Деталь кабіни та етапи процедури",
+      closing: "Зона рецепції Centros Ideal Andorra",
+    },
+    ru: {
+      hero: "Премиальная кабина в Centros Ideal Andorra",
+      firstVisit: "Кабинет первичной консультации в центре",
+      method: "Подготовка процедуры в кабинете",
+      process: "Деталь кабинета и этапы процедуры",
+      closing: "Зона ресепшен Centros Ideal Andorra",
+    },
+  };
+  const imageAlt = imageAltByLocale[locale];
 
   return (
     <>
@@ -48,7 +112,7 @@ export default async function Home() {
         <div className="absolute inset-0 -z-10">
           <MediaFill
             src="/images/pages/hero/inicial/hero-cabina-premium-illa-carlemany.mp4"
-            alt="Cabina premium de Centros Ideal Andorra"
+            alt={imageAlt.hero}
             priority
             className="object-cover object-[62%_38%]"
           />
@@ -56,29 +120,29 @@ export default async function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_86%_16%,rgba(188,145,164,0.22),transparent_42%),radial-gradient(circle_at_12%_86%,rgba(189,145,166,0.16),transparent_34%)]" />
         </div>
 
-        <Container className="relative flex min-h-[44rem] items-end pb-12 pt-24 sm:min-h-[49rem] md:min-h-[54rem] md:pt-28 xl:min-h-[58rem] xl:pb-16">
+        <Container className="relative flex min-h-[36rem] items-end pb-9 pt-[5.5rem] sm:min-h-[49rem] sm:pb-12 sm:pt-24 md:min-h-[54rem] md:pt-28 xl:min-h-[58rem] xl:pb-16">
           <Reveal className="max-w-[46rem]">
-            <p className="mb-4 text-[0.67rem] font-semibold uppercase tracking-[0.16em] text-white/78">{premium.hero.eyebrow}</p>
-            <h1 className="max-w-[14ch] text-[clamp(2.6rem,7.7vw,5.95rem)] leading-[0.86] font-semibold tracking-[-0.043em]">
+            <p className="mb-4 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-white/78 sm:text-[0.67rem] sm:tracking-[0.16em]">{premium.hero.eyebrow}</p>
+            <h1 className="max-w-[13ch] text-[clamp(2.26rem,10.6vw,5.95rem)] leading-[0.87] font-semibold tracking-[-0.043em] sm:max-w-[14ch] sm:text-[clamp(2.6rem,7.7vw,5.95rem)] sm:leading-[0.86]">
               <span className="block">{premium.hero.titleLead}</span>
               <span className="block text-[color:var(--color-accent)]">{premium.hero.titleStrong}</span>
               <span className="mt-1 block text-[0.54em] leading-[1.05] tracking-[-0.02em] text-white/86">{premium.hero.titleTail}</span>
             </h1>
             <p className="mt-5 max-w-[35rem] text-[0.95rem] leading-7 text-white/84 sm:text-[1.01rem]">{premium.hero.description}</p>
-            <p className="mt-2 max-w-[34rem] text-[0.83rem] leading-6 text-white/72">{premium.hero.support}</p>
+            <p className="mt-2 max-w-[34rem] text-[0.86rem] leading-6 text-white/72">{premium.hero.support}</p>
 
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="no-scrollbar mt-5 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
               {premium.hero.highlights.map((item) => (
                 <span
                   key={item}
-                  className="glass-pill inline-flex h-8 items-center px-3 text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-white/90"
+                  className="glass-pill inline-flex h-9 shrink-0 items-center px-3 text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-white/90"
                 >
                   {item}
                 </span>
               ))}
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-2.5">
+            <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center">
               <Button
                 href={l("/reservar")}
                 size="lg"
@@ -87,7 +151,7 @@ export default async function Home() {
                 trackingLabel="reservar_valoracion_hero"
                 abTest={ctaExperiment.id}
                 abVariant={ctaExperiment.variant}
-                className="h-[3.02rem] px-7 text-[0.73rem] font-semibold uppercase tracking-[0.08em]"
+                className="h-[3.02rem] w-full px-7 text-[0.73rem] font-semibold uppercase tracking-[0.08em] sm:w-auto"
               >
                 {t.cta.book}
               </Button>
@@ -100,7 +164,7 @@ export default async function Home() {
                 trackingLabel="whatsapp_hero"
                 abTest={ctaExperiment.id}
                 abVariant={ctaExperiment.variant}
-                className="h-[3.02rem] border-white/36 bg-black/24 px-7 text-[0.73rem] font-semibold uppercase tracking-[0.08em] text-white hover:border-white/52 hover:bg-black/34 hover:text-white"
+                className="h-[3.02rem] w-full border-white/36 bg-black/24 px-7 text-[0.73rem] font-semibold uppercase tracking-[0.08em] text-white hover:border-white/52 hover:bg-black/34 hover:text-white sm:w-auto"
               >
                 {t.cta.whatsapp}
               </Button>
@@ -108,10 +172,10 @@ export default async function Home() {
                 href={contactDetails.mapsPlaceUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex h-[3.02rem] items-center gap-2 rounded-[var(--radius-pill)] border border-white/26 bg-black/24 px-4 text-[0.66rem] font-semibold uppercase tracking-[0.07em] text-white/88 transition-[background-color,border-color,transform] duration-300 hover:-translate-y-px hover:border-white/42 hover:bg-black/34"
+                className="group inline-flex h-[3.02rem] w-full items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-white/26 bg-black/24 px-4 text-[0.66rem] font-semibold uppercase tracking-[0.07em] text-white/88 transition-[background-color,border-color,transform] duration-300 hover:-translate-y-px hover:border-white/42 hover:bg-black/34 sm:w-auto"
               >
                 <span>{premium.hero.locationChip}</span>
-                <span className="text-white/58 transition-colors duration-300 group-hover:text-white/84">Maps</span>
+                <span className="text-white/58 transition-colors duration-300 group-hover:text-white/84">{pageCopy.maps}</span>
               </Link>
             </div>
           </Reveal>
@@ -125,7 +189,7 @@ export default async function Home() {
               <div className="relative aspect-[5/6] overflow-hidden rounded-[1.35rem] sm:aspect-[4/5]">
                 <MediaFill
                   src="/images/pages/hero/primera-visita/sala-valoracion-estetica.png"
-                  alt="Sala de valoracion del centro"
+                  alt={imageAlt.firstVisit}
                   className="photo-grade-soft object-cover object-[56%_42%]"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(130deg,rgba(19,12,16,0.58)_0%,rgba(19,12,16,0.16)_65%)]" />
@@ -138,7 +202,7 @@ export default async function Home() {
             <h2 className="max-w-[15ch] text-[clamp(2.08rem,4.8vw,3.44rem)] leading-[0.98] font-semibold tracking-[-0.032em] text-[color:var(--color-foreground)]">
               {premium.firstVisitTitle}
             </h2>
-            <p className="mt-3 max-w-[39rem] text-[0.88rem] leading-7 text-[color:var(--color-muted)]">{premium.firstVisitDescription}</p>
+            <p className="mt-3 max-w-[39rem] text-[0.9rem] leading-7 text-[color:var(--color-muted)]">{premium.firstVisitDescription}</p>
 
             <FirstVisitSection items={premium.firstVisitItems} closeLabel={premium.closeModalLabel} />
           </Reveal>
@@ -149,7 +213,7 @@ export default async function Home() {
         <div className="absolute inset-0 -z-10">
           <MediaFill
             src="/images/pages/hero/metodo/metodo-preparacion-tratamiento-cabina.mp4"
-            alt="Preparacion del tratamiento en cabina"
+            alt={imageAlt.method}
             className="object-cover object-[54%_40%]"
           />
           <div className="absolute inset-0 bg-[linear-gradient(168deg,rgba(52,32,45,0.9)_0%,rgba(42,26,37,0.9)_58%,rgba(34,20,29,0.92)_100%)]" />
@@ -166,8 +230,8 @@ export default async function Home() {
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
             {premium.methodStages.map((stage, index) => (
               <Reveal key={stage.id} delay={index * 70}>
-                <article className="lift-card h-full rounded-[1.35rem] border border-white/16 bg-white/[0.07] px-5 py-6 backdrop-blur-[3px]">
-                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]/92">Fase {stage.id}</p>
+                <article className="lift-card h-full rounded-[1.35rem] border border-white/16 bg-white/[0.07] px-4 py-5 backdrop-blur-[3px] sm:px-5 sm:py-6">
+                  <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]/92">{pageCopy.phase} {stage.id}</p>
                   <h3 className="mt-1 text-[1.04rem] font-semibold text-white">{stage.title}</h3>
                   <p className="mt-1 text-[0.82rem] font-medium text-white/72">{stage.subtitle}</p>
                   <p className="mt-3 text-[0.86rem] leading-7 text-white/76">{stage.description}</p>
@@ -196,7 +260,7 @@ export default async function Home() {
             <h2 className="max-w-[15ch] text-[clamp(2rem,4.4vw,3.2rem)] leading-[0.98] font-semibold tracking-[-0.03em] text-[color:var(--color-foreground)]">
               {premium.treatmentsTitle}
             </h2>
-            <p className="mt-3 max-w-[42rem] text-[0.89rem] leading-7 text-[color:var(--color-muted)]">{premium.treatmentsDescription}</p>
+            <p className="mt-3 max-w-[42rem] text-[0.9rem] leading-7 text-[color:var(--color-muted)]">{premium.treatmentsDescription}</p>
           </Reveal>
 
           <TreatmentsExplorer
@@ -233,10 +297,10 @@ export default async function Home() {
             <div className="mt-7 space-y-3">
               {premium.processSteps.map((step, index) => (
                 <Reveal key={step.id} delay={index * 70}>
-                  <article className="rounded-[1.2rem] border border-white/16 bg-white/[0.07] px-5 py-4 backdrop-blur-[2px]">
-                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]/92">Paso {step.id}</p>
+                  <article className="rounded-[1.2rem] border border-white/16 bg-white/[0.07] px-4 py-4 backdrop-blur-[2px] sm:px-5">
+                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]/92">{pageCopy.step} {step.id}</p>
                     <h3 className="mt-1 text-[1rem] font-semibold text-white">{step.title}</h3>
-                    <p className="mt-1 text-[0.84rem] leading-6 text-white/76">{step.description}</p>
+                    <p className="mt-1 text-[0.86rem] leading-6 text-white/76">{step.description}</p>
                     <p className="mt-2 text-[0.8rem] leading-6 text-white/66">{step.detail}</p>
                   </article>
                 </Reveal>
@@ -249,7 +313,7 @@ export default async function Home() {
               <div className="relative h-full min-h-[25rem] overflow-hidden rounded-[1.4rem] sm:min-h-[31rem]">
                 <MediaFill
                   src="/images/pages/hero/proceso/servicios-detalle-tratamiento-estetico.png"
-                  alt="Detalle de cabina y proceso de tratamiento"
+                  alt={imageAlt.process}
                   className="photo-grade-soft object-cover object-[56%_35%]"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(124deg,rgba(11,8,11,0.56)_0%,rgba(11,8,11,0.16)_64%)]" />
@@ -266,21 +330,21 @@ export default async function Home() {
             <h2 className="max-w-[16ch] text-[clamp(1.96rem,4vw,3.05rem)] leading-[0.98] font-semibold tracking-[-0.03em] text-[color:var(--color-foreground)]">
               {premium.faqTitle}
             </h2>
-            <p className="mt-3 max-w-[39rem] text-[0.89rem] leading-7 text-[color:var(--color-muted)]">{premium.faqDescription}</p>
+            <p className="mt-3 max-w-[39rem] text-[0.9rem] leading-7 text-[color:var(--color-muted)]">{premium.faqDescription}</p>
           </Reveal>
 
           <FaqSection items={premium.faqItems} closeLabel={premium.closeModalLabel} />
         </Container>
       </section>
 
-      <section className="bg-[color:var(--color-background)] pb-14 pt-10 sm:pb-16 sm:pt-12 md:pb-20 md:pt-14">
+      <section className="bg-[color:var(--color-background)] pb-[calc(3.4rem+env(safe-area-inset-bottom))] pt-10 sm:pb-16 sm:pt-12 md:pb-20 md:pt-14">
         <Container>
           <Reveal>
-            <div className="relative isolate overflow-hidden rounded-[2.4rem] border border-[color:var(--color-line)] bg-[color:var(--color-brand)] px-6 py-8 text-white shadow-[0_46px_110px_-74px_rgba(42,18,31,0.84)] sm:px-8 sm:py-10 md:px-10 md:py-12">
+            <div className="relative isolate overflow-hidden rounded-[1.9rem] border border-[color:var(--color-line)] bg-[color:var(--color-brand)] px-5 py-7 text-white shadow-[0_46px_110px_-74px_rgba(42,18,31,0.84)] sm:rounded-[2.4rem] sm:px-8 sm:py-10 md:px-10 md:py-12">
               <div className="absolute inset-0 -z-10">
                 <MediaFill
                   src="/images/pages/hero/cta/cta-recepcion-centro-estetico.mp4"
-                  alt="Recepcion de Centros Ideal Andorra"
+                  alt={imageAlt.closing}
                   className="object-cover object-[56%_44%] opacity-48"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(55,23,39,0.92)_0%,rgba(74,31,52,0.83)_52%,rgba(90,39,62,0.73)_100%)]" />

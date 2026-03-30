@@ -351,7 +351,7 @@ const baseBrand = {
   email: "illa.carlemany@centresideal.com",
 };
 
-export const dictionaries: Record<Locale, SiteDictionary> = {
+export const dictionaries: Record<string, SiteDictionary> = {
   es: {
     languageLabel: "Idioma",
     localeName: "Español",
@@ -1890,6 +1890,931 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
           "Les catégories, durées et finalités des cookies actifs sont détaillées en continu.",
       },
     },
+  },
+};
+
+const esDictionary = dictionaries.es;
+
+dictionaries.en = {
+  ...esDictionary,
+  languageLabel: "Language",
+  localeName: "English",
+  seo: {
+    title: "Centros Ideal Andorra",
+    description:
+      "Centros Ideal Andorra: diode laser hair removal and advanced aesthetics at Illa Carlemany, with professional assessment and clinical follow-up.",
+  },
+  brand: {
+    ...esDictionary.brand,
+    floor: "Second floor",
+    hoursPending: "Opening hours under final validation. Check availability on WhatsApp.",
+  },
+  nav: {
+    treatments: "Treatments",
+    about: "About us",
+    results: "Results",
+    contact: "Contact",
+    book: "Book",
+  },
+  legal: {
+    legalNotice: "Legal notice",
+    privacy: "Privacy",
+    cookies: "Cookies",
+  },
+  cta: {
+    book: "Book consultation",
+    whatsapp: "WhatsApp",
+    viewTreatments: "View treatments",
+    viewResults: "View results",
+    confirmWhatsapp: "Confirm via WhatsApp",
+  },
+  global: {
+    noCommitment: "No obligation.",
+    firstVisit: "First visit",
+    contactDirect: "Direct contact",
+  },
+  footer: {
+    topEyebrow: "Centros Ideal Andorra",
+    topTitle: "Book your assessment or reach out via WhatsApp.",
+    description:
+      "Specialised centre in diode laser hair removal and advanced aesthetics, with clinical criteria and personalised care.",
+    navigation: "Navigation",
+    legal: "Legal",
+    contact: "Contact",
+    rights: "All rights reserved.",
+  },
+  whatsapp: {
+    floatingLabel: "WhatsApp support",
+    supportLabel: "Support channel",
+    supportTitle: "Operational support via WhatsApp",
+    supportDescription:
+      "Primary channel to answer questions, coordinate your assessment and confirm your agenda.",
+    supportHumanNotice:
+      "Support is currently managed directly by the centre team.",
+    supportFutureNotice:
+      "The architecture is ready to add an advanced assistance layer in upcoming phases.",
+  },
+  chat: {
+    launcherLabel: "Assistant",
+    launcherAriaLabel: "Open digital assistant",
+    panelLabel: "Digital assistant",
+    panelTitle: "Immediate guidance",
+    panelDescription:
+      "I can help you with treatments, indicative timelines and how to book your assessment.",
+    welcomeMessage:
+      "Hello, I am the digital assistant at Centros Ideal Andorra. I can guide you about treatments and booking flow.",
+    inputPlaceholder: "Type your question",
+    inputAriaLabel: "Message for the assistant",
+    sendLabel: "Send",
+    closeLabel: "Close",
+    resetLabel: "Reset",
+    thinkingLabel: "Thinking...",
+    errorMessage:
+      "I could not respond right now. Please try again in a few seconds.",
+    rateLimitError:
+      "You have sent too many requests in a row. Please wait one minute and try again.",
+    maxLengthError: "Message exceeds the allowed length",
+    openInContactLabel: "Open assistant",
+    openInContactDescription:
+      "Available to resolve frequent questions before booking.",
+    bookingHint:
+      "The final recommendation is confirmed during your in-person assessment at the centre.",
+  },
+  home: {
+    ...esDictionary.home,
+    closing: {
+      label: "Booking",
+      title: "Book your assessment now.",
+      description: "No obligation.",
+    },
+  },
+  treatmentsPage: {
+    ...esDictionary.treatmentsPage,
+    closing: {
+      label: "Booking",
+      title: "Request your assessment.",
+      description: "Final recommendation in consultation.",
+    },
+  },
+  resultsPage: {
+    ...esDictionary.resultsPage,
+    hero: {
+      ...esDictionary.resultsPage.hero,
+      label: "Results",
+      title: "Results with clinical criteria.",
+      description: "Clinical documentation and follow-up.",
+    },
+    closing: {
+      label: "Booking",
+      title: "Request an individual assessment.",
+      description: "Recommendation in consultation.",
+    },
+  },
+  aboutPage: {
+    ...esDictionary.aboutPage,
+    hero: {
+      ...esDictionary.aboutPage.hero,
+      label: "About us",
+      title: "Advanced aesthetics centre at Illa Carlemany.",
+      description: "Diode laser hair removal and personalised treatments.",
+    },
+    closing: {
+      label: "Contact",
+      title: "Discuss your case directly with the centre.",
+      description: "Reply based on availability.",
+    },
+  },
+  contactPage: {
+    ...esDictionary.contactPage,
+    hero: {
+      ...esDictionary.contactPage.hero,
+      label: "Contact",
+      title: "Direct channel with the centre.",
+      description: "Pre-booking support and operational follow-up.",
+      panelEyebrow: "Support",
+      panelDescription: "Response by opening hours and agenda.",
+    },
+    channels: {
+      ...esDictionary.contactPage.channels,
+      label: "Channels",
+      title: "Operational contact.",
+      description: "Useful information before confirmation.",
+      rows: [
+        { label: "WhatsApp", value: "688 080", note: "Priority channel." },
+        { label: "Phone", value: "688 080", note: "Support by opening hours." },
+        { label: "Email", value: "illa.carlemany@centresideal.com", note: "General inquiries." },
+        {
+          label: "Address",
+          value: "Av. Carlemany, 70, AD700 Andorra",
+          note: "Illa Carlemany Shopping Centre · second floor.",
+        },
+        {
+          label: "Opening hours",
+          value: "Pending validation",
+          note: "Will be confirmed in an official update.",
+        },
+      ],
+    },
+    process: {
+      ...esDictionary.contactPage.process,
+      label: "Process",
+      title: "Response and confirmation.",
+      description: "Short sequence.",
+      steps: [
+        { id: "01", title: "Request", description: "Goal and time slot." },
+        { id: "02", title: "Reply", description: "Availability and conditions." },
+        { id: "03", title: "Confirmation", description: "Final booking." },
+      ],
+    },
+    support: {
+      ...esDictionary.contactPage.support,
+      label: "WhatsApp",
+      title: "Channel ready for advanced support.",
+      description:
+        "The contact flow is structured to add future automation for recurring questions without losing team control.",
+    },
+    closing: {
+      label: "Booking",
+      title: "Confirm your initial assessment.",
+      description: "No obligation.",
+    },
+  },
+  bookingPage: {
+    ...esDictionary.bookingPage,
+    hero: {
+      ...esDictionary.bookingPage.hero,
+      label: "Book assessment",
+      title: "Clear, frictionless booking.",
+      description: "Confirmation via WhatsApp.",
+      panelEyebrow: "Assessment",
+      panelDescription: "Estimated duration: 30 minutes.",
+    },
+    includes: {
+      ...esDictionary.bookingPage.includes,
+      label: "What's included",
+      title: "First visit",
+      description: "Information before deciding your treatment.",
+      rows: [
+        "Facial or body diagnosis.",
+        "Priority objective and initial protocol.",
+        "Indicative investment.",
+      ],
+    },
+    process: {
+      ...esDictionary.bookingPage.process,
+      label: "Process",
+      title: "Request, confirmation and consultation.",
+      description: "Simple sequence.",
+      steps: [
+        { id: "01", title: "Request", description: "Goal and slot." },
+        { id: "02", title: "Confirmation", description: "Schedule and conditions." },
+        { id: "03", title: "Consultation", description: "Diagnosis and recommendation." },
+      ],
+    },
+    closing: {
+      label: "Confirmation",
+      title: "Book your assessment now.",
+      description: "No obligation.",
+    },
+  },
+  legalPages: {
+    legalNotice: {
+      title: "Legal notice",
+      intro: "General information about ownership, site usage and applicable conditions.",
+      holderTitle: "Owner identification",
+      holderDescription:
+        "Owner: Centros Ideal Andorra. Contact: illa.carlemany@centresideal.com · +376 688 080.",
+      conditionsTitle: "General conditions",
+      conditionsIntro:
+        "Access and navigation imply responsible use of content and compliance with current regulations.",
+      useTitle: "Proper use",
+      useDescription:
+        "Users undertake to use the site lawfully and not disrupt its operation.",
+      intellectualTitle: "Intellectual property",
+      intellectualDescription:
+        "Texts, trademarks and visual identity are protected by applicable legislation.",
+    },
+    privacy: {
+      title: "Privacy policy",
+      intro: "Policy on collection and processing of users' personal data.",
+      dataTitle: "Processed data",
+      dataDescription:
+        "Identification and contact data provided in enquiries or booking requests.",
+      purposeTitle: "Purpose",
+      purposeDescription:
+        "Management of enquiries, bookings and communications linked to requested services.",
+      rightsTitle: "Rights management",
+      rightsIntro:
+        "Users can exercise rights of access, rectification, erasure and objection through official channels.",
+      rightsCardTitle: "Exercising your rights",
+      rightsCardDescription:
+        "Requests are handled under applicable regulations and response times.",
+    },
+    cookies: {
+      title: "Cookie policy",
+      intro: "Information about technical and measurement cookies used on the site.",
+      technicalTitle: "Technical cookies",
+      technicalDescription:
+        "Required for basic operation and secure browsing.",
+      analyticsTitle: "Analytics cookies",
+      analyticsDescription:
+        "Used to analyse site usage and improve performance and experience.",
+      consentTitle: "Consent management",
+      consentDescription:
+        "Users can accept, reject or adjust preferences in the consent panel.",
+      configTitle: "Configuration",
+      configIntro:
+        "Settings can be changed at any time from the cookie manager.",
+      configCardTitle: "Cookie details",
+      configCardDescription:
+        "Categories, durations and purposes are detailed based on active cookies.",
+    },
+  },
+};
+
+dictionaries.uk = {
+  ...dictionaries.en,
+  languageLabel: "Мова",
+  localeName: "Українська",
+  seo: {
+    title: "Centros Ideal Andorra",
+    description:
+      "Centros Ideal Andorra: діодна лазерна епіляція та розширена естетика в Illa Carlemany, з професійною консультацією та клінічним супроводом.",
+  },
+  brand: {
+    ...dictionaries.en.brand,
+    floor: "Другий поверх",
+    hoursPending: "Графік у фінальній валідації. Уточнюйте доступність через WhatsApp.",
+  },
+  nav: {
+    treatments: "Процедури",
+    about: "Про нас",
+    results: "Результати",
+    contact: "Контакт",
+    book: "Запис",
+  },
+  legal: {
+    legalNotice: "Правова інформація",
+    privacy: "Приватність",
+    cookies: "Файли cookie",
+  },
+  cta: {
+    book: "Записатися на консультацію",
+    whatsapp: "WhatsApp",
+    viewTreatments: "Переглянути процедури",
+    viewResults: "Переглянути результати",
+    confirmWhatsapp: "Підтвердити у WhatsApp",
+  },
+  global: {
+    noCommitment: "Без зобов'язань.",
+    firstVisit: "Перший візит",
+    contactDirect: "Прямий контакт",
+  },
+  footer: {
+    topEyebrow: "Centros Ideal Andorra",
+    topTitle: "Запишіться на консультацію або напишіть у WhatsApp.",
+    description:
+      "Центр, що спеціалізується на діодній лазерній епіляції та розширеній естетиці, з клінічним підходом і персональним супроводом.",
+    navigation: "Навігація",
+    legal: "Правова інформація",
+    contact: "Контакт",
+    rights: "Усі права захищено.",
+  },
+  home: {
+    ...dictionaries.en.home,
+    closing: {
+      label: "Запис",
+      title: "Запишіться на консультацію вже зараз.",
+      description: "Без зобов'язань.",
+    },
+  },
+  treatmentsPage: {
+    ...dictionaries.en.treatmentsPage,
+    closing: {
+      label: "Запис",
+      title: "Запросіть персональну консультацію.",
+      description: "Фінальну рекомендацію підтверджуємо на очному візиті.",
+    },
+  },
+  resultsPage: {
+    ...dictionaries.en.resultsPage,
+    hero: {
+      label: "Результати",
+      title: "Результати з професійним критерієм.",
+      description: "Клінічна документація і супровід.",
+      panelEyebrow: "Клінічна рамка",
+      panelDescription: "Діагностика, супровід і перегляд.",
+    },
+    documentation: {
+      label: "Документація",
+      title: "Як ми фіксуємо динаміку.",
+      description: "Структурований запис у межах консультації.",
+      pillars: [
+        { title: "Початкова діагностика", description: "Задокументована стартова точка." },
+        { title: "Супровід", description: "Контроль по фазах." },
+        { title: "Критерій публікації", description: "Лише погоджені кейси." },
+      ],
+    },
+    visual: {
+      label: "Візуальна документація",
+      title: "Авторизовані клінічні матеріали.",
+      description: "Візуальні реєстри публікуються тільки за дозволом.",
+      assets: [
+        {
+          id: "registro_1",
+          label: "Реєстр 01",
+          src: "/images/pages/resultados/comparativas/comparativa-antes-tratamiento.png",
+          alt: "Клінічний реєстр еволюції",
+        },
+        {
+          id: "registro_2",
+          label: "Реєстр 02",
+          src: "/images/pages/resultados/comparativas/comparativa-despues-tratamiento.png",
+          alt: "Авторизоване візуальне порівняння",
+        },
+      ],
+    },
+    transparency: {
+      label: "Прозорість",
+      title: "Відповідальна комунікація.",
+      description: "Клінічна інформація і реалістичні очікування.",
+      rows: [
+        "Ми не публікуємо обіцянок результату.",
+        "Еволюція залежить від конкретного клінічного кейсу.",
+        "Фінальне показання підтверджується на консультації.",
+      ],
+    },
+    closing: {
+      label: "Запис",
+      title: "Запросіть індивідуальну консультацію.",
+      description: "Рекомендація формується очно в центрі.",
+    },
+  },
+  aboutPage: {
+    ...dictionaries.en.aboutPage,
+    hero: {
+      label: "Про нас",
+      title: "Центр розширеної естетики в Illa Carlemany.",
+      description: "Діодна лазерна епіляція та персоналізовані протоколи.",
+      panelEyebrow: "Центр",
+      panelDescription: "Професійний супровід і системний контроль.",
+    },
+    method: {
+      label: "Підхід до роботи",
+      title: "Критерій, метод і контроль.",
+      description: "Стабільна клінічна структура без імпровізацій.",
+      principles: [
+        { title: "Експертна діагностика", description: "Попередня клінічна оцінка перед запуском плану." },
+        { title: "План за фазами", description: "Ціль, частота і точки перегляду." },
+        { title: "Супровід", description: "Корекція за реальною динамікою." },
+      ],
+    },
+    identity: {
+      label: "Ідентичність центру",
+      title: "Довіра і безперервність.",
+      highlights: [
+        "Індивідуальні кабіни та персоналізований супровід.",
+        "Діодний лазер і розширена естетика в одному центрі.",
+        "Пряма координація через WhatsApp.",
+      ],
+    },
+    closing: {
+      label: "Контакт",
+      title: "Обговоріть ваш кейс безпосередньо з командою центру.",
+      description: "Відповідь відповідно до доступності.",
+    },
+  },
+  contactPage: {
+    ...dictionaries.en.contactPage,
+    hero: {
+      label: "Контакт",
+      title: "Прямий канал зв'язку з центром.",
+      description: "Супровід до запису і подальший операційний супровід.",
+      panelEyebrow: "Підтримка",
+      panelDescription: "Відповідь у межах графіка і доступності.",
+    },
+    channels: {
+      label: "Канали",
+      title: "Операційний контакт.",
+      description: "Ключова інформація перед підтвердженням візиту.",
+      rows: [
+        { label: "WhatsApp", value: "688 080", note: "Пріоритетний канал." },
+        { label: "Телефон", value: "688 080", note: "Відповідь у робочий час." },
+        { label: "Email", value: "illa.carlemany@centresideal.com", note: "Загальні запити." },
+        { label: "Адреса", value: "Av. Carlemany, 70, AD700 Andorra", note: "Illa Carlemany · другий поверх." },
+        { label: "Графік", value: "Очікує підтвердження", note: "Оновимо після офіційної валідації." },
+      ],
+    },
+    process: {
+      label: "Процес",
+      title: "Відповідь і підтвердження.",
+      description: "Коротка та зрозуміла послідовність.",
+      steps: [
+        { id: "01", title: "Запит", description: "Ціль і часовий слот." },
+        { id: "02", title: "Відповідь", description: "Доступність і умови." },
+        { id: "03", title: "Підтвердження", description: "Фінальний запис." },
+      ],
+    },
+    support: {
+      label: "WhatsApp",
+      title: "Канал, підготовлений до розширеної підтримки.",
+      description:
+        "Контактний контур вже структурований для автоматизації повторних запитань у майбутніх фазах без втрати контролю команди.",
+    },
+    closing: {
+      label: "Запис",
+      title: "Підтвердіть вашу первинну консультацію.",
+      description: "Без зобов'язань.",
+    },
+  },
+  bookingPage: {
+    ...dictionaries.en.bookingPage,
+    hero: {
+      label: "Запис на консультацію",
+      title: "Зрозумілий запис без зайвого тертя.",
+      description: "Підтвердження через WhatsApp.",
+      panelEyebrow: "Консультація",
+      panelDescription: "Орієнтовна тривалість: 30 хвилин.",
+    },
+    includes: {
+      label: "Що включено",
+      title: "Перший візит",
+      description: "Вся необхідна інформація перед рішенням про процедуру.",
+      rows: [
+        "Діагностика обличчя або тіла.",
+        "Пріоритетна ціль і стартовий протокол.",
+        "Орієнтовний бюджет.",
+      ],
+    },
+    process: {
+      label: "Процес",
+      title: "Запит, підтвердження і консультація.",
+      description: "Проста послідовність без плутанини.",
+      steps: [
+        { id: "01", title: "Запит", description: "Ціль і часовий слот." },
+        { id: "02", title: "Підтвердження", description: "Графік і умови." },
+        { id: "03", title: "Консультація", description: "Діагностика і рекомендація." },
+      ],
+    },
+    closing: {
+      label: "Підтвердження",
+      title: "Запишіться на консультацію прямо зараз.",
+      description: "Без зобов'язань.",
+    },
+  },
+  legalPages: {
+    legalNotice: {
+      title: "Правова інформація",
+      intro: "Загальна інформація про власника, правила використання сайту та застосовні умови.",
+      holderTitle: "Ідентифікація власника",
+      holderDescription:
+        "Власник: Centros Ideal Andorra. Контакт: illa.carlemany@centresideal.com · +376 688 080.",
+      conditionsTitle: "Загальні умови",
+      conditionsIntro:
+        "Доступ до сайту і навігація означають відповідальне використання контенту та дотримання чинного регулювання.",
+      useTitle: "Належне використання",
+      useDescription:
+        "Користувач зобов'язується використовувати сайт законно та не порушувати його роботу.",
+      intellectualTitle: "Інтелектуальна власність",
+      intellectualDescription:
+        "Тексти, торгові марки і візуальна ідентичність захищені чинним законодавством.",
+    },
+    privacy: {
+      title: "Політика приватності",
+      intro: "Політика збирання та обробки персональних даних користувача.",
+      dataTitle: "Які дані обробляються",
+      dataDescription:
+        "Ідентифікаційні та контактні дані, які надаються у запитах або бронюваннях.",
+      purposeTitle: "Мета обробки",
+      purposeDescription:
+        "Опрацювання запитів, записів і комунікацій, пов'язаних із запитаною послугою.",
+      rightsTitle: "Реалізація прав",
+      rightsIntro:
+        "Користувач може реалізувати права доступу, виправлення, видалення та заперечення через офіційний канал.",
+      rightsCardTitle: "Подання запиту",
+      rightsCardDescription:
+        "Запити обробляються відповідно до чинного регулювання та встановлених строків.",
+    },
+    cookies: {
+      title: "Політика файлів cookie",
+      intro: "Інформація про використання технічних і аналітичних cookie на сайті.",
+      technicalTitle: "Технічні cookie",
+      technicalDescription:
+        "Необхідні для базової роботи сайту та безпечної навігації.",
+      analyticsTitle: "Аналітичні cookie",
+      analyticsDescription:
+        "Дають змогу аналізувати використання сайту та покращувати його продуктивність.",
+      consentTitle: "Керування згодою",
+      consentDescription:
+        "Користувач може прийняти, відхилити або змінити налаштування в панелі згоди.",
+      configTitle: "Налаштування",
+      configIntro:
+        "Налаштування можна змінити будь-коли через менеджер cookie.",
+      configCardTitle: "Деталі cookie",
+      configCardDescription:
+        "Категорії, тривалість і цілі описані відповідно до активних cookie.",
+    },
+  },
+  whatsapp: {
+    floatingLabel: "Підтримка WhatsApp",
+    supportLabel: "Канал підтримки",
+    supportTitle: "Операційна підтримка через WhatsApp",
+    supportDescription:
+      "Основний канал для питань, координації консультації та підтвердження запису.",
+    supportHumanNotice:
+      "Наразі підтримку веде команда центру.",
+    supportFutureNotice:
+      "Архітектура підготовлена до підключення розширеного рівня асистування в наступних фазах.",
+  },
+  chat: {
+    ...dictionaries.en.chat,
+    launcherLabel: "Асистент",
+    launcherAriaLabel: "Відкрити цифрового асистента",
+    panelLabel: "Цифровий асистент",
+    panelTitle: "Швидка орієнтація",
+    panelDescription:
+      "Допоможу з процедурами, орієнтовними термінами і записом на консультацію.",
+    welcomeMessage:
+      "Вітаю, я цифровий асистент Centros Ideal Andorra. Допоможу з процедурами та процесом запису.",
+    inputPlaceholder: "Напишіть ваше питання",
+    inputAriaLabel: "Повідомлення для асистента",
+    sendLabel: "Надіслати",
+    closeLabel: "Закрити",
+    resetLabel: "Скинути",
+    thinkingLabel: "Думаю...",
+    errorMessage:
+      "Зараз не вдалося відповісти. Спробуйте ще раз за кілька секунд.",
+    rateLimitError:
+      "Забагато запитів поспіль. Зачекайте хвилину і спробуйте знову.",
+    maxLengthError: "Повідомлення перевищує допустиму довжину",
+    openInContactLabel: "Відкрити асистента",
+    openInContactDescription:
+      "Доступний для частих запитань перед записом.",
+    bookingHint:
+      "Фінальну рекомендацію підтверджують під час очної консультації в центрі.",
+  },
+};
+
+dictionaries.ru = {
+  ...dictionaries.en,
+  languageLabel: "Язык",
+  localeName: "Русский",
+  seo: {
+    title: "Centros Ideal Andorra",
+    description:
+      "Centros Ideal Andorra: диодная лазерная эпиляция и продвинутая эстетика в Illa Carlemany, с профессиональной консультацией и клиническим сопровождением.",
+  },
+  brand: {
+    ...dictionaries.en.brand,
+    floor: "Второй этаж",
+    hoursPending: "График на финальной валидации. Уточняйте доступность через WhatsApp.",
+  },
+  nav: {
+    treatments: "Процедуры",
+    about: "О нас",
+    results: "Результаты",
+    contact: "Контакт",
+    book: "Запись",
+  },
+  legal: {
+    legalNotice: "Правовая информация",
+    privacy: "Конфиденциальность",
+    cookies: "Файлы cookie",
+  },
+  cta: {
+    book: "Записаться на консультацию",
+    whatsapp: "WhatsApp",
+    viewTreatments: "Смотреть процедуры",
+    viewResults: "Смотреть результаты",
+    confirmWhatsapp: "Подтвердить в WhatsApp",
+  },
+  global: {
+    noCommitment: "Без обязательств.",
+    firstVisit: "Первый визит",
+    contactDirect: "Прямой контакт",
+  },
+  footer: {
+    topEyebrow: "Centros Ideal Andorra",
+    topTitle: "Запишитесь на консультацию или свяжитесь через WhatsApp.",
+    description:
+      "Центр, специализирующийся на диодной лазерной эпиляции и продвинутой эстетике, с клиническим подходом и персональным сопровождением.",
+    navigation: "Навигация",
+    legal: "Правовая информация",
+    contact: "Контакт",
+    rights: "Все права защищены.",
+  },
+  home: {
+    ...dictionaries.en.home,
+    closing: {
+      label: "Запись",
+      title: "Запишитесь на консультацию уже сейчас.",
+      description: "Без обязательств.",
+    },
+  },
+  treatmentsPage: {
+    ...dictionaries.en.treatmentsPage,
+    closing: {
+      label: "Запись",
+      title: "Запросите персональную консультацию.",
+      description: "Финальную рекомендацию подтверждаем на очном визите.",
+    },
+  },
+  resultsPage: {
+    ...dictionaries.en.resultsPage,
+    hero: {
+      label: "Результаты",
+      title: "Результаты с профессиональным критерием.",
+      description: "Клиническая документация и сопровождение.",
+      panelEyebrow: "Клиническая рамка",
+      panelDescription: "Диагностика, сопровождение и пересмотр.",
+    },
+    documentation: {
+      label: "Документация",
+      title: "Как мы фиксируем динамику.",
+      description: "Структурированный протокол в рамках консультации.",
+      pillars: [
+        { title: "Первичная диагностика", description: "Задокументированная стартовая точка." },
+        { title: "Сопровождение", description: "Контроль по фазам." },
+        { title: "Критерий публикации", description: "Только согласованные кейсы." },
+      ],
+    },
+    visual: {
+      label: "Визуальная документация",
+      title: "Авторизованные клинические материалы.",
+      description: "Визуальные материалы публикуются только по разрешению.",
+      assets: [
+        {
+          id: "registro_1",
+          label: "Реестр 01",
+          src: "/images/pages/resultados/comparativas/comparativa-antes-tratamiento.png",
+          alt: "Клинический реестр эволюции",
+        },
+        {
+          id: "registro_2",
+          label: "Реестр 02",
+          src: "/images/pages/resultados/comparativas/comparativa-despues-tratamiento.png",
+          alt: "Авторизованное визуальное сравнение",
+        },
+      ],
+    },
+    transparency: {
+      label: "Прозрачность",
+      title: "Ответственная коммуникация.",
+      description: "Клиническая информация и реалистичные ожидания.",
+      rows: [
+        "Мы не публикуем обещаний результата.",
+        "Динамика зависит от конкретного клинического случая.",
+        "Финальные показания подтверждаются на консультации.",
+      ],
+    },
+    closing: {
+      label: "Запись",
+      title: "Запросите индивидуальную консультацию.",
+      description: "Рекомендация формируется очно в центре.",
+    },
+  },
+  aboutPage: {
+    ...dictionaries.en.aboutPage,
+    hero: {
+      label: "О нас",
+      title: "Центр продвинутой эстетики в Illa Carlemany.",
+      description: "Диодная лазерная эпиляция и персонализированные протоколы.",
+      panelEyebrow: "Центр",
+      panelDescription: "Профессиональное сопровождение и системный контроль.",
+    },
+    method: {
+      label: "Подход к работе",
+      title: "Критерий, метод и контроль.",
+      description: "Стабильная клиническая структура без импровизации.",
+      principles: [
+        { title: "Экспертная диагностика", description: "Предварительная клиническая оценка перед запуском плана." },
+        { title: "План по фазам", description: "Цель, частота и точки пересмотра." },
+        { title: "Сопровождение", description: "Корректировка по реальной динамике." },
+      ],
+    },
+    identity: {
+      label: "Идентичность центра",
+      title: "Доверие и непрерывность.",
+      highlights: [
+        "Индивидуальные кабинеты и персонализированное сопровождение.",
+        "Диодный лазер и продвинутая эстетика в одном центре.",
+        "Прямая координация через WhatsApp.",
+      ],
+    },
+    closing: {
+      label: "Контакт",
+      title: "Обсудите ваш кейс напрямую с командой центра.",
+      description: "Ответ в соответствии с доступностью.",
+    },
+  },
+  contactPage: {
+    ...dictionaries.en.contactPage,
+    hero: {
+      label: "Контакт",
+      title: "Прямой канал связи с центром.",
+      description: "Сопровождение до записи и дальнейшее операционное сопровождение.",
+      panelEyebrow: "Поддержка",
+      panelDescription: "Ответ в рамках графика и доступности.",
+    },
+    channels: {
+      label: "Каналы",
+      title: "Операционный контакт.",
+      description: "Ключевая информация до подтверждения визита.",
+      rows: [
+        { label: "WhatsApp", value: "688 080", note: "Приоритетный канал." },
+        { label: "Телефон", value: "688 080", note: "Ответ в рабочее время." },
+        { label: "Email", value: "illa.carlemany@centresideal.com", note: "Общие запросы." },
+        { label: "Адрес", value: "Av. Carlemany, 70, AD700 Andorra", note: "Illa Carlemany · второй этаж." },
+        { label: "График", value: "Ожидает подтверждения", note: "Обновим после официальной валидации." },
+      ],
+    },
+    process: {
+      label: "Процесс",
+      title: "Ответ и подтверждение.",
+      description: "Короткая и понятная последовательность.",
+      steps: [
+        { id: "01", title: "Запрос", description: "Цель и временной слот." },
+        { id: "02", title: "Ответ", description: "Доступность и условия." },
+        { id: "03", title: "Подтверждение", description: "Финальная запись." },
+      ],
+    },
+    support: {
+      label: "WhatsApp",
+      title: "Канал, подготовленный к расширенной поддержке.",
+      description:
+        "Контактная структура уже готова к автоматизации повторяющихся запросов в будущих фазах без потери контроля команды.",
+    },
+    closing: {
+      label: "Запись",
+      title: "Подтвердите вашу первичную консультацию.",
+      description: "Без обязательств.",
+    },
+  },
+  bookingPage: {
+    ...dictionaries.en.bookingPage,
+    hero: {
+      label: "Запись на консультацию",
+      title: "Понятная запись без лишнего трения.",
+      description: "Подтверждение через WhatsApp.",
+      panelEyebrow: "Консультация",
+      panelDescription: "Ориентировочная длительность: 30 минут.",
+    },
+    includes: {
+      label: "Что включено",
+      title: "Первый визит",
+      description: "Вся необходимая информация до решения о процедуре.",
+      rows: [
+        "Диагностика лица или тела.",
+        "Приоритетная цель и стартовый протокол.",
+        "Ориентировочный бюджет.",
+      ],
+    },
+    process: {
+      label: "Процесс",
+      title: "Запрос, подтверждение и консультация.",
+      description: "Простая последовательность без путаницы.",
+      steps: [
+        { id: "01", title: "Запрос", description: "Цель и временной слот." },
+        { id: "02", title: "Подтверждение", description: "График и условия." },
+        { id: "03", title: "Консультация", description: "Диагностика и рекомендация." },
+      ],
+    },
+    closing: {
+      label: "Подтверждение",
+      title: "Запишитесь на консультацию прямо сейчас.",
+      description: "Без обязательств.",
+    },
+  },
+  legalPages: {
+    legalNotice: {
+      title: "Правовая информация",
+      intro: "Общая информация о владельце, правилах использования сайта и применимых условиях.",
+      holderTitle: "Идентификация владельца",
+      holderDescription:
+        "Владелец: Centros Ideal Andorra. Контакт: illa.carlemany@centresideal.com · +376 688 080.",
+      conditionsTitle: "Общие условия",
+      conditionsIntro:
+        "Доступ к сайту и навигация означают ответственное использование контента и соблюдение действующего регулирования.",
+      useTitle: "Надлежащее использование",
+      useDescription:
+        "Пользователь обязуется использовать сайт законно и не нарушать его работу.",
+      intellectualTitle: "Интеллектуальная собственность",
+      intellectualDescription:
+        "Тексты, товарные знаки и визуальная идентичность защищены применимым законодательством.",
+    },
+    privacy: {
+      title: "Политика конфиденциальности",
+      intro: "Политика сбора и обработки персональных данных пользователя.",
+      dataTitle: "Какие данные обрабатываются",
+      dataDescription:
+        "Идентификационные и контактные данные, предоставляемые в запросах или бронировании.",
+      purposeTitle: "Цель обработки",
+      purposeDescription:
+        "Обработка запросов, записей и коммуникаций, связанных с запрошенной услугой.",
+      rightsTitle: "Реализация прав",
+      rightsIntro:
+        "Пользователь может реализовать права доступа, исправления, удаления и возражения через официальный канал.",
+      rightsCardTitle: "Подача запроса",
+      rightsCardDescription:
+        "Запросы обрабатываются в соответствии с действующим регулированием и установленными сроками.",
+    },
+    cookies: {
+      title: "Политика файлов cookie",
+      intro: "Информация об использовании технических и аналитических cookie на сайте.",
+      technicalTitle: "Технические cookie",
+      technicalDescription:
+        "Необходимы для базовой работы сайта и безопасной навигации.",
+      analyticsTitle: "Аналитические cookie",
+      analyticsDescription:
+        "Позволяют анализировать использование сайта и улучшать производительность.",
+      consentTitle: "Управление согласием",
+      consentDescription:
+        "Пользователь может принять, отклонить или изменить настройки в панели согласия.",
+      configTitle: "Настройки",
+      configIntro:
+        "Настройки можно изменить в любой момент через менеджер cookie.",
+      configCardTitle: "Детали cookie",
+      configCardDescription:
+        "Категории, срок хранения и цели описаны по активным cookie.",
+    },
+  },
+  whatsapp: {
+    floatingLabel: "Поддержка WhatsApp",
+    supportLabel: "Канал поддержки",
+    supportTitle: "Операционная поддержка через WhatsApp",
+    supportDescription:
+      "Основной канал для вопросов, согласования консультации и подтверждения записи.",
+    supportHumanNotice:
+      "Сейчас поддержку ведёт команда центра.",
+    supportFutureNotice:
+      "Архитектура готова к добавлению продвинутого слоя ассистирования на следующих этапах.",
+  },
+  chat: {
+    ...dictionaries.en.chat,
+    launcherLabel: "Ассистент",
+    launcherAriaLabel: "Открыть цифрового ассистента",
+    panelLabel: "Цифровой ассистент",
+    panelTitle: "Быстрая навигация",
+    panelDescription:
+      "Помогу с процедурами, ориентировочными сроками и записью на консультацию.",
+    welcomeMessage:
+      "Здравствуйте, я цифровой ассистент Centros Ideal Andorra. Помогу с процедурами и процессом записи.",
+    inputPlaceholder: "Введите ваш вопрос",
+    inputAriaLabel: "Сообщение ассистенту",
+    sendLabel: "Отправить",
+    closeLabel: "Закрыть",
+    resetLabel: "Сбросить",
+    thinkingLabel: "Думаю...",
+    errorMessage:
+      "Сейчас не удалось ответить. Попробуйте снова через несколько секунд.",
+    rateLimitError:
+      "Слишком много запросов подряд. Подождите минуту и попробуйте снова.",
+    maxLengthError: "Сообщение превышает допустимую длину",
+    openInContactLabel: "Открыть ассистента",
+    openInContactDescription:
+      "Доступен для частых вопросов перед записью.",
+    bookingHint:
+      "Финальная рекомендация подтверждается на очной консультации в центре.",
   },
 };
 

@@ -12,7 +12,7 @@ type TeamSectionProps = {
   closeLabel?: string;
 };
 
-export default function TeamSection({ members, labels, closeLabel = "Cerrar" }: TeamSectionProps) {
+export default function TeamSection({ members, labels, closeLabel = "Close" }: TeamSectionProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const activeMember = useMemo(
@@ -39,17 +39,17 @@ export default function TeamSection({ members, labels, closeLabel = "Cerrar" }: 
               <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
                 {member.age} {labels.years}
               </p>
-              <h3 className="mt-1 text-[1.03rem] font-semibold text-[color:var(--color-foreground)]">{member.name}</h3>
+              <h3 className="mt-1 text-[1.05rem] font-semibold text-[color:var(--color-foreground)]">{member.name}</h3>
               <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.09em] text-[color:var(--color-accent)]">
                 {member.role}
               </p>
-              <p className="mt-2 text-[0.83rem] leading-6 text-[color:var(--color-muted)]">{member.specialty}</p>
-              <p className="mt-2 text-[0.81rem] leading-6 text-[color:var(--color-muted)]">{member.excerpt}</p>
+              <p className="mt-2 text-[0.86rem] leading-6 text-[color:var(--color-muted)]">{member.specialty}</p>
+              <p className="mt-2 text-[0.84rem] leading-6 text-[color:var(--color-muted)]">{member.excerpt}</p>
 
               <button
                 type="button"
                 onClick={() => setSelectedId(member.id)}
-                className="mt-4 inline-flex h-9 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3.5 text-[0.67rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-[border-color,color,transform] duration-300 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
+                className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3.5 text-[0.67rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-[border-color,color,transform] duration-300 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] sm:w-auto"
               >
                 {member.ctaLabel}
               </button>
@@ -85,8 +85,8 @@ export default function TeamSection({ members, labels, closeLabel = "Cerrar" }: 
                 <h4 className="mt-2 text-[1.05rem] font-semibold tracking-[-0.014em] text-[color:var(--color-foreground)]">
                   {activeMember.name} · {activeMember.role}
                 </h4>
-                <p className="mt-1 text-[0.82rem] leading-6 text-[color:var(--color-muted)]">{activeMember.specialty}</p>
-                <p className="mt-3 text-[0.88rem] leading-7 text-[color:var(--color-muted)]">{activeMember.motivation}</p>
+                <p className="mt-1 text-[0.85rem] leading-6 text-[color:var(--color-muted)]">{activeMember.specialty}</p>
+                <p className="mt-3 text-[0.9rem] leading-7 text-[color:var(--color-muted)]">{activeMember.motivation}</p>
                 <p className="mt-3 text-[0.82rem] leading-6 text-[color:var(--color-muted)]">
                   <span className="font-semibold text-[color:var(--color-foreground)]">{labels.languages}:</span>{" "}
                   {activeMember.languages.join(", ")}

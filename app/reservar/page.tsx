@@ -6,26 +6,69 @@ import PageClosingCta from "@/components/page/PageClosingCta";
 import PageHero from "@/components/page/PageHero";
 import SectionHeading from "@/components/page/SectionHeading";
 import { getPageContext } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/messages";
 import { getServerLocale } from "@/lib/i18n/server";
 import { buildPageMetadata } from "@/lib/seo";
 import { TRACK_EVENTS } from "@/lib/tracking/events";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const descriptionByLocale: Record<Locale, string> = {
+    es: "Reserva valoracion inicial en Centros Ideal Andorra. Proceso claro, confirmacion por WhatsApp y primera visita sin compromiso.",
+    ca: "Reserva valoracio inicial a Centres Ideal Andorra. Proces clar, confirmacio per WhatsApp i primera visita sense compromis.",
+    fr: "Reservez votre evaluation initiale chez Centres Ideal Andorra. Processus clair, confirmation sur WhatsApp et premiere visite sans engagement.",
+    en: "Book your initial assessment at Centres Ideal Andorra. Clear process, WhatsApp confirmation and first visit with no obligation.",
+    uk: "Запис на первинну консультацію в Centres Ideal Andorra: прозорий процес, підтвердження через WhatsApp і перший візит без зобов'язань.",
+    ru: "Запишитесь на первичную консультацию в Centres Ideal Andorra: понятный процесс, подтверждение через WhatsApp и первый визит без обязательств.",
+  };
 
   return buildPageMetadata({
     locale,
     path: "/reservar",
-    title: "Reservar valoracion",
-    description:
-      "Reserva valoracion inicial en Centros Ideal Andorra. Proceso claro, confirmacion por WhatsApp y primera visita sin compromiso.",
+    title: t.nav.book,
+    description: descriptionByLocale[locale],
     imagePath: "/images/pages/reservar/hero/hero-reserva-tratamiento.mp4",
   });
 }
 
 export default async function ReservarPage() {
-  const { t, l } = await getPageContext();
+  const { locale, t, l } = await getPageContext();
   const whatsappHref = `https://wa.me/${t.brand.whatsappNumber}`;
+  const imageAltByLocale: Record<Locale, { hero: string; cabin: string; closing: string }> = {
+    es: {
+      hero: "Cabina principal de reserva",
+      cabin: "Cabina de valoracion",
+      closing: "Detalle de cabina",
+    },
+    ca: {
+      hero: "Cabina principal de reserva",
+      cabin: "Cabina de valoracio",
+      closing: "Detall de cabina",
+    },
+    fr: {
+      hero: "Cabine principale de reservation",
+      cabin: "Cabine d'evaluation",
+      closing: "Detail de cabine",
+    },
+    en: {
+      hero: "Main booking treatment cabin",
+      cabin: "Assessment cabin",
+      closing: "Treatment cabin detail",
+    },
+    uk: {
+      hero: "Основна кабіна для запису",
+      cabin: "Кабіна консультації",
+      closing: "Деталь кабіни",
+    },
+    ru: {
+      hero: "Основной кабинет для записи",
+      cabin: "Кабинет консультации",
+      closing: "Деталь кабинета",
+    },
+  };
+  const imageAlt = imageAltByLocale[locale];
 
   return (
     <>
@@ -34,7 +77,7 @@ export default async function ReservarPage() {
         title={t.bookingPage.hero.title}
         description={t.bookingPage.hero.description}
         imageSrc="/images/pages/reservar/hero/hero-reserva-tratamiento.mp4"
-        imageAlt="Cabina principal de reserva"
+        imageAlt={imageAlt.hero}
         primaryCta={{
           href: whatsappHref,
           label: t.cta.confirmWhatsapp,
@@ -59,7 +102,7 @@ export default async function ReservarPage() {
 
             <div className="mt-7 space-y-3">
               {t.bookingPage.includes.rows.map((item) => (
-                <article key={item} className="surface-card rounded-[1.2rem] px-5 py-4">
+                <article key={item} className="surface-card rounded-[1.2rem] px-4 py-4 sm:px-5">
                   <p className="text-[0.86rem] leading-7 text-[color:var(--color-muted)]">{item}</p>
                 </article>
               ))}
@@ -67,10 +110,10 @@ export default async function ReservarPage() {
           </div>
 
           <article className="image-frame overflow-hidden p-4 sm:p-5">
-            <div className="relative h-[22rem] overflow-hidden rounded-[1.45rem] sm:h-[27rem]">
+            <div className="relative h-[18.5rem] overflow-hidden rounded-[1.45rem] sm:h-[27rem]">
               <MediaFill
                 src="/images/pages/reservar/cabina/cabina-valoracion-estetica.jpg"
-                alt="Cabina de valoración"
+                alt={imageAlt.cabin}
                 className="photo-grade-soft object-cover object-[56%_39%]"
               />
               <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(16,10,14,0.58)_0%,rgba(16,10,14,0.12)_66%)]" />
@@ -89,7 +132,7 @@ export default async function ReservarPage() {
 
           <div className="mt-7 grid gap-3 md:grid-cols-3">
             {t.bookingPage.process.steps.map((step) => (
-              <article key={step.id} className="surface-card rounded-[1.2rem] px-5 py-4">
+              <article key={step.id} className="surface-card rounded-[1.2rem] px-4 py-4 sm:px-5">
                 <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
                   {step.id}
                 </p>
@@ -105,7 +148,7 @@ export default async function ReservarPage() {
 
       <section className="section-shell bg-[color:var(--color-background)] pb-6 pt-0">
         <Container>
-          <article className="surface-card rounded-[1.3rem] px-6 py-6">
+          <article className="surface-card rounded-[1.3rem] px-4 py-5 sm:px-6 sm:py-6">
             <p className="text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
               {t.whatsapp.supportLabel}
             </p>
@@ -122,7 +165,7 @@ export default async function ReservarPage() {
         title={t.bookingPage.closing.title}
         description={t.bookingPage.closing.description}
         imageSrc="/images/pages/reservar/hero/hero-reserva-tratamiento.mp4"
-        imageAlt="Detalle de cabina"
+        imageAlt={imageAlt.closing}
         primaryCta={{
           href: whatsappHref,
           label: t.cta.confirmWhatsapp,

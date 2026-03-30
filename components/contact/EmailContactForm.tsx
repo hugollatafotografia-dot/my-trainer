@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 
 import {
-  CONTACT_REASON_LABELS,
+  CONTACT_REASON_LABELS_BY_LOCALE,
   type ContactEmailPayload,
   type ContactReasonId,
   validateContactEmailPayload,
@@ -34,6 +34,9 @@ type FormCopy = {
   reasonLabel: string;
   messageLabel: string;
   messagePlaceholder: string;
+  namePlaceholder: string;
+  emailPlaceholder: string;
+  phonePlaceholder: string;
   submitLabel: string;
   submitLoadingLabel: string;
   fallbackLabel: string;
@@ -55,6 +58,9 @@ const copyByLocale: Record<Locale, FormCopy> = {
     phoneLabel: "Teléfono (opcional)",
     reasonLabel: "Motivo",
     messageLabel: "Mensaje",
+    namePlaceholder: "Nombre completo",
+    emailPlaceholder: "Tu email",
+    phonePlaceholder: "+376...",
     messagePlaceholder: "Cuéntanos tu consulta con el mayor contexto posible...",
     submitLabel: "Enviar mensaje",
     submitLoadingLabel: "Enviando...",
@@ -75,6 +81,9 @@ const copyByLocale: Record<Locale, FormCopy> = {
     phoneLabel: "Telefon (opcional)",
     reasonLabel: "Motiu",
     messageLabel: "Missatge",
+    namePlaceholder: "Nom complet",
+    emailPlaceholder: "El teu email",
+    phonePlaceholder: "+376...",
     messagePlaceholder: "Explica'ns la teva consulta amb el maxim context possible...",
     submitLabel: "Enviar missatge",
     submitLoadingLabel: "Enviant...",
@@ -95,6 +104,9 @@ const copyByLocale: Record<Locale, FormCopy> = {
     phoneLabel: "Telephone (optionnel)",
     reasonLabel: "Motif",
     messageLabel: "Message",
+    namePlaceholder: "Nom complet",
+    emailPlaceholder: "Votre email",
+    phonePlaceholder: "+376...",
     messagePlaceholder: "Decrivez votre demande avec un maximum de contexte...",
     submitLabel: "Envoyer le message",
     submitLoadingLabel: "Envoi en cours...",
@@ -105,10 +117,79 @@ const copyByLocale: Record<Locale, FormCopy> = {
     errorText: "L'envoi a echoue pour le moment. Reessayez dans quelques minutes.",
     selectPlaceholder: "Selectionnez un motif",
   },
+  en: {
+    badge: "Direct email",
+    title: "Write to us from the website",
+    description:
+      "Send a structured request to the centre's official email. If direct sending is not active yet, we give you an immediate fallback without losing your text.",
+    nameLabel: "Name",
+    emailLabel: "Email",
+    phoneLabel: "Phone (optional)",
+    reasonLabel: "Reason",
+    messageLabel: "Message",
+    namePlaceholder: "Full name",
+    emailPlaceholder: "Your email",
+    phonePlaceholder: "+376...",
+    messagePlaceholder: "Tell us about your request with as much context as possible...",
+    submitLabel: "Send message",
+    submitLoadingLabel: "Sending...",
+    fallbackLabel: "Open prefilled email",
+    helperText: "Typical response time: within the centre's operating hours.",
+    successText: "Message sent successfully.",
+    fallbackText: "Direct sending is not active yet. You can open your email with the prefilled message.",
+    errorText: "We could not send your request right now. Please try again in a few minutes.",
+    selectPlaceholder: "Select a reason",
+  },
+  uk: {
+    badge: "Прямий email",
+    title: "Напишіть нам із сайту",
+    description:
+      "Надішліть структурований запит на офіційну пошту центру. Якщо пряме надсилання ще не активне, ви зможете відкрити готовий лист без втрати тексту.",
+    nameLabel: "Ім'я",
+    emailLabel: "Email",
+    phoneLabel: "Телефон (необов'язково)",
+    reasonLabel: "Причина",
+    messageLabel: "Повідомлення",
+    namePlaceholder: "Повне ім'я",
+    emailPlaceholder: "Ваш email",
+    phonePlaceholder: "+376...",
+    messagePlaceholder: "Опишіть ваш запит якомога детальніше...",
+    submitLabel: "Надіслати повідомлення",
+    submitLoadingLabel: "Надсилання...",
+    fallbackLabel: "Відкрити готовий email",
+    helperText: "Звичний час відповіді: у робочі години центру.",
+    successText: "Повідомлення успішно надіслано.",
+    fallbackText: "Пряме надсилання поки не активне. Ви можете відкрити email з підготовленим текстом.",
+    errorText: "Зараз не вдалося надіслати запит. Спробуйте ще раз за кілька хвилин.",
+    selectPlaceholder: "Оберіть причину",
+  },
+  ru: {
+    badge: "Прямой email",
+    title: "Напишите нам с сайта",
+    description:
+      "Отправьте структурированный запрос на официальный email центра. Если прямая отправка пока не активна, вы сможете открыть готовое письмо без потери текста.",
+    nameLabel: "Имя",
+    emailLabel: "Email",
+    phoneLabel: "Телефон (необязательно)",
+    reasonLabel: "Причина",
+    messageLabel: "Сообщение",
+    namePlaceholder: "Полное имя",
+    emailPlaceholder: "Ваш email",
+    phonePlaceholder: "+376...",
+    messagePlaceholder: "Опишите ваш запрос как можно подробнее...",
+    submitLabel: "Отправить сообщение",
+    submitLoadingLabel: "Отправка...",
+    fallbackLabel: "Открыть готовый email",
+    helperText: "Обычное время ответа: в рабочие часы центра.",
+    successText: "Сообщение успешно отправлено.",
+    fallbackText: "Прямая отправка пока не активна. Вы можете открыть email с подготовленным текстом.",
+    errorText: "Сейчас не удалось отправить запрос. Попробуйте снова через несколько минут.",
+    selectPlaceholder: "Выберите причину",
+  },
 };
 
 const inputClasses =
-  "h-11 w-full rounded-[0.9rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3.5 text-[0.86rem] text-[color:var(--color-foreground)] transition-[border-color,box-shadow] duration-200 placeholder:text-[color:var(--color-muted)]/70 focus-visible:border-[color:var(--color-brand)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-brand)]/22";
+  "min-h-12 w-full rounded-[0.9rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3.5 text-base text-[color:var(--color-foreground)] transition-[border-color,box-shadow] duration-200 placeholder:text-[color:var(--color-muted)]/70 focus-visible:border-[color:var(--color-brand)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-brand)]/22 sm:text-[0.9rem]";
 
 export default function EmailContactForm({ locale, officialEmail, className }: EmailContactFormProps) {
   const copy = copyByLocale[locale];
@@ -184,15 +265,15 @@ export default function EmailContactForm({ locale, officialEmail, className }: E
     }
   }
 
-  const reasonOptions = Object.entries(CONTACT_REASON_LABELS) as Array<[ContactReasonId, string]>;
+  const reasonOptions = Object.entries(CONTACT_REASON_LABELS_BY_LOCALE[locale]) as Array<[ContactReasonId, string]>;
 
   return (
-    <article className={cn("surface-card rounded-[1.4rem] px-5 py-5 sm:px-6", className)}>
+    <article className={cn("surface-card rounded-[1.4rem] px-4 py-5 sm:px-6", className)}>
       <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">{copy.badge}</p>
       <h3 className="mt-2 text-[clamp(1.3rem,2.4vw,1.9rem)] leading-[1.03] font-semibold tracking-[-0.02em] text-[color:var(--color-foreground)]">
         {copy.title}
       </h3>
-      <p className="mt-2 text-[0.86rem] leading-6 text-[color:var(--color-muted)]">{copy.description}</p>
+      <p className="mt-2 text-[0.9rem] leading-7 text-[color:var(--color-muted)]">{copy.description}</p>
 
       <form onSubmit={handleSubmit} className="mt-5 grid gap-4">
         <div className="grid gap-4 lg:grid-cols-2">
@@ -204,8 +285,9 @@ export default function EmailContactForm({ locale, officialEmail, className }: E
               type="text"
               value={payload.name}
               onChange={(event) => updateField("name", event.target.value)}
+              autoComplete="name"
               className={inputClasses}
-              placeholder="Nombre completo"
+              placeholder={copy.namePlaceholder}
             />
             {showValidation && errors.name ? <p className="text-[0.74rem] text-[#7b2f4f]">{errors.name}</p> : null}
           </label>
@@ -218,8 +300,9 @@ export default function EmailContactForm({ locale, officialEmail, className }: E
               type="email"
               value={payload.email}
               onChange={(event) => updateField("email", event.target.value)}
+              autoComplete="email"
               className={inputClasses}
-              placeholder={officialEmail}
+              placeholder={officialEmail || copy.emailPlaceholder}
             />
             {showValidation && errors.email ? <p className="text-[0.74rem] text-[#7b2f4f]">{errors.email}</p> : null}
           </label>
@@ -232,8 +315,9 @@ export default function EmailContactForm({ locale, officialEmail, className }: E
               type="tel"
               value={payload.phone}
               onChange={(event) => updateField("phone", event.target.value)}
+              autoComplete="tel"
               className={inputClasses}
-              placeholder="+376..."
+              placeholder={copy.phonePlaceholder}
             />
             {showValidation && errors.phone ? <p className="text-[0.74rem] text-[#7b2f4f]">{errors.phone}</p> : null}
           </label>
@@ -275,7 +359,7 @@ export default function EmailContactForm({ locale, officialEmail, className }: E
         <button
           type="submit"
           disabled={submitState.status === "loading"}
-          className="inline-flex min-h-12 items-center justify-center rounded-[var(--radius-pill)] border border-transparent bg-[color:var(--color-brand)] px-6 text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-px hover:bg-[color:var(--color-brand-strong)] hover:shadow-[0_24px_44px_-30px_rgba(55,26,40,0.78)] disabled:cursor-not-allowed disabled:opacity-55"
+          className="inline-flex min-h-12 w-full items-center justify-center rounded-[var(--radius-pill)] border border-transparent bg-[color:var(--color-brand)] px-6 text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-px hover:bg-[color:var(--color-brand-strong)] hover:shadow-[0_24px_44px_-30px_rgba(55,26,40,0.78)] disabled:cursor-not-allowed disabled:opacity-55 sm:w-auto"
         >
           {submitState.status === "loading" ? copy.submitLoadingLabel : copy.submitLabel}
         </button>
@@ -289,7 +373,7 @@ export default function EmailContactForm({ locale, officialEmail, className }: E
             <p className="text-[#7b2f4f]">{submitState.message}</p>
             <a
               href={submitState.fallbackMailto}
-              className="inline-flex h-9 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
+              className="inline-flex h-10 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
             >
               {copy.fallbackLabel}
             </a>

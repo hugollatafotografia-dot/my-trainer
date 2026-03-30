@@ -11,7 +11,7 @@ export default function CookiePreferencesButton({ label }: CookiePreferencesButt
     <button
       type="button"
       onClick={openCookiePreferences}
-      className="text-left text-[0.86rem] text-white/80 transition-colors duration-200 hover:text-white"
+      className="inline-flex min-h-10 items-center text-left text-[0.86rem] text-white/80 transition-colors duration-200 hover:text-white"
     >
       {label}
     </button>

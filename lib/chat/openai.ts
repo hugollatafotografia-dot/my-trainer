@@ -73,8 +73,26 @@ function resolveOpenAiConfig(): OpenAiConfig | null {
   };
 }
 
+function getLocaleInstruction(locale: string | undefined) {
+  const localeToLanguage = {
+    es: "español",
+    ca: "català",
+    fr: "français",
+    en: "english",
+    uk: "українська",
+    ru: "русский",
+  } as const;
+
+  if (!locale) {
+    return "Responde en el mismo idioma del usuario.";
+  }
+
+  const target = localeToLanguage[locale as keyof typeof localeToLanguage] ?? locale;
+  return `Responde en ${target}.`;
+}
+
 function buildPrompt(messages: SanitizedChatMessage[], locale: string | undefined) {
-  const localeInstruction = locale ? `Responde en ${locale}.` : "Responde en el mismo idioma del usuario.";
+  const localeInstruction = getLocaleInstruction(locale);
   const transcript = messages
     .map((message) => `${message.role === "user" ? "Usuario" : "Asistente"}: ${message.content}`)
     .join("\n");
@@ -84,6 +102,7 @@ function buildPrompt(messages: SanitizedChatMessage[], locale: string | undefine
     "Da orientacion general, no diagnostico medico definitivo ni promesas de resultado.",
     "Manten un tono claro, sobrio y profesional.",
     "Si la consulta requiere confirmacion final, indica que se valida en la valoracion presencial.",
+    "Si detectas datos de reserva, añade al final un bloque <reservation_update> con claves en ingles: treatment, dateRange, timeSlot, professional, customerName, notes, readyForWhatsapp.",
     localeInstruction,
     "",
     transcript,
@@ -108,6 +127,7 @@ function buildPromptInputFromHistory(
     `Locale: ${locale ?? "no_especificado"}`,
     "Mantén continuidad y no preguntes de nuevo datos ya dados cuando existan en el historial.",
     "Campos relevantes para reserva: tratamiento, rango de días, franja horaria, profesional, nombre y notas.",
+    "Cuando proceda, devuelve al final un bloque <reservation_update> con esas claves en ingles.",
     "",
     "Historial reciente:",
     transcript || "(sin historial)",

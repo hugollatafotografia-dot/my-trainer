@@ -86,7 +86,7 @@ export default function TreatmentsExplorer({
   mode = "page",
   bridgeHref,
   bridgeLabel,
-  closeLabel = "Cerrar",
+  closeLabel = "Close",
 }: TreatmentsExplorerProps) {
   const initialCategory = content.categories[0]?.id;
   const [activeCategory, setActiveCategory] = useState<TreatmentCategoryId>(
@@ -163,26 +163,26 @@ export default function TreatmentsExplorer({
           <p className="text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
             {content.filterLabel}
           </p>
-          <p className="mt-1 text-[0.8rem] leading-6 text-[color:var(--color-muted)]">{content.explorer.guide}</p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <span className="inline-flex h-6 items-center rounded-[var(--radius-pill)] border border-[#9a4565]/35 bg-[#9a4565]/10 px-2.5 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-[#9a4565]">
-              Normal
-            </span>
-            <span className="inline-flex h-6 items-center rounded-[var(--radius-pill)] border border-[#2f6f91]/35 bg-[#2f6f91]/10 px-2.5 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-[#2f6f91]">
-              Avanzada
-            </span>
-            <span className="inline-flex h-6 items-center rounded-[var(--radius-pill)] border border-[#4f7c53]/35 bg-[#4f7c53]/10 px-2.5 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-[#4f7c53]">
-              Regenerativa
-            </span>
-          </div>
-          <p className="mt-2 text-[0.7rem] leading-5 text-[color:var(--color-muted)]">
-            Lectura visual: <span className="font-semibold text-[#2f6f91]">facial</span>,{" "}
-            <span className="font-semibold text-[#8a6533]">corporal</span>,{" "}
-            <span className="font-semibold text-[#2b7a78]">tecnologia</span>,{" "}
-            <span className="font-semibold text-[#4f7c53]">recuperacion</span>.
-          </p>
+          <p className="mt-1 text-[0.84rem] leading-6 text-[color:var(--color-muted)]">{content.explorer.guide}</p>
+          <div className="no-scrollbar mt-3 flex gap-2 overflow-x-auto pb-1">
+            {content.categories.map((category) => {
+              const theme = CATEGORY_THEME[category.id];
 
-          <div className="mt-4 grid gap-2 md:grid-cols-3" aria-label={content.filterLabel}>
+              return (
+                <span
+                  key={`legend-${category.id}`}
+                  className={cn(
+                    "inline-flex h-7 shrink-0 items-center rounded-[var(--radius-pill)] border px-2.5 text-[0.58rem] font-semibold uppercase tracking-[0.08em]",
+                    theme.pill,
+                  )}
+                >
+                  {category.name}
+                </span>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3" aria-label={content.filterLabel}>
             {content.categories.map((category) => {
               const isActive = category.id === activeCategory;
               const categoryTheme = CATEGORY_THEME[category.id];
@@ -196,15 +196,12 @@ export default function TreatmentsExplorer({
                     setShowAll(false);
                   }}
                   className={cn(
-                    "relative rounded-[1rem] border px-3.5 py-3 text-left transition-[border-color,background-color,transform,box-shadow] duration-300",
+                    "relative min-h-24 rounded-[1rem] border px-3.5 py-3 text-left transition-[border-color,background-color,transform,box-shadow] duration-300",
                     isActive ? categoryTheme.activeButton : `border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] text-[color:var(--color-muted)] hover:-translate-y-px ${categoryTheme.hoverButton}`,
                   )}
                 >
                   <span
-                    className={cn(
-                      "text-[0.72rem] font-semibold uppercase tracking-[0.08em]",
-                      isActive ? "text-white" : "text-[color:var(--color-foreground)]",
-                    )}
+                    className={cn("text-[0.72rem] font-semibold uppercase tracking-[0.08em]", isActive ? "text-white" : "text-[color:var(--color-foreground)]")}
                   >
                     {category.name}
                   </span>
@@ -253,7 +250,7 @@ export default function TreatmentsExplorer({
             }}
             disabled={!nextCategory}
             className={cn(
-              "inline-flex h-10 items-center justify-center rounded-[var(--radius-pill)] border bg-[color:var(--color-surface-strong)] px-4 text-[0.68rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60",
+              "inline-flex h-11 w-full items-center justify-center rounded-[var(--radius-pill)] border bg-[color:var(--color-surface-strong)] px-4 text-[0.68rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-60 lg:w-auto",
               nextTheme.pill,
             )}
           >
@@ -296,7 +293,7 @@ export default function TreatmentsExplorer({
                   ) : null}
                 </div>
 
-                <p className="mt-2 text-[0.8rem] leading-6 text-[color:var(--color-muted)]">{item.shortDescription}</p>
+                <p className="mt-2 text-[0.84rem] leading-6 text-[color:var(--color-muted)]">{item.shortDescription}</p>
 
                 <div className="mt-3 flex flex-wrap gap-2">
                   <span className={cn("inline-flex h-7 items-center rounded-[var(--radius-pill)] border px-2.5 text-[0.61rem] font-semibold uppercase tracking-[0.08em]", itemTheme.pill)}>
@@ -314,7 +311,7 @@ export default function TreatmentsExplorer({
                   <span className={cn("font-semibold", itemTheme.accentText)}>{content.labels.candidate}:</span> {item.candidate}
                 </p>
 
-                <span className={cn("mt-4 inline-flex h-8 items-center rounded-[var(--radius-pill)] border px-3 text-[0.64rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-300", itemTheme.pill)}>
+                <span className={cn("mt-4 inline-flex h-9 items-center rounded-[var(--radius-pill)] border px-3 text-[0.64rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-300", itemTheme.pill)}>
                   {item.ctaLabel}
                 </span>
               </button>
@@ -332,7 +329,7 @@ export default function TreatmentsExplorer({
           <button
             type="button"
             onClick={() => setShowAll((prev) => !prev)}
-            className="inline-flex h-10 items-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-300 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
+            className="inline-flex h-11 w-full items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-300 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] sm:w-auto"
           >
             {showAll ? content.explorer.showLessLabel : `${content.explorer.showMoreLabel} (+${hiddenCount})`}
           </button>
@@ -343,7 +340,7 @@ export default function TreatmentsExplorer({
         <div className="mt-7">
           <Link
             href={bridgeHref}
-            className="inline-flex h-10 items-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-300 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
+            className="inline-flex h-11 w-full items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-300 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] sm:w-auto"
           >
             {bridgeLabel}
           </Link>
@@ -360,7 +357,7 @@ export default function TreatmentsExplorer({
       >
         {selectedTreatment ? (
           <div className="space-y-5">
-            <p className="text-[0.92rem] leading-7 text-[color:var(--color-muted)]">{selectedTreatment.modal.intro}</p>
+            <p className="text-[0.9rem] leading-7 text-[color:var(--color-muted)]">{selectedTreatment.modal.intro}</p>
 
             <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-[0.95rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3 py-3">

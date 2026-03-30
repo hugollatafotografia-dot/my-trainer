@@ -22,7 +22,7 @@ export default function PremiumModal({
   label,
   title,
   children,
-  closeLabel = "Cerrar",
+  closeLabel = "Close",
   size = "lg",
 }: PremiumModalProps) {
   const titleId = useId();
@@ -138,7 +138,7 @@ export default function PremiumModal({
   }
 
   return createPortal(
-    <div className="fixed inset-0 z-[90] grid place-items-center p-3 sm:p-5">
+    <div className="fixed inset-0 z-[90] flex items-end justify-center p-0 sm:grid sm:place-items-center sm:p-5">
       <button
         type="button"
         onClick={onClose}
@@ -148,7 +148,7 @@ export default function PremiumModal({
 
       <div
         className={cn(
-          "relative max-h-[calc(100dvh-1.5rem)] w-full overflow-hidden rounded-[1.55rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] shadow-[0_62px_140px_-72px_rgba(13,8,11,0.9)] sm:max-h-[calc(100dvh-2.5rem)]",
+          "relative max-h-[92dvh] w-full overflow-hidden rounded-t-[1.45rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] pb-[env(safe-area-inset-bottom)] shadow-[0_62px_140px_-72px_rgba(13,8,11,0.9)] sm:max-h-[calc(100dvh-2.5rem)] sm:rounded-[1.55rem] sm:pb-0",
           size === "md" ? "max-w-[46rem]" : "",
           size === "lg" ? "max-w-[62rem]" : "",
           size === "xl" ? "max-w-[72rem]" : "",
@@ -159,9 +159,9 @@ export default function PremiumModal({
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="flex h-full min-h-[42vh] flex-col"
+          className="flex h-full min-h-[56vh] flex-col sm:min-h-[42vh]"
         >
-          <header className="border-b border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 pb-4 pt-4 sm:px-7 sm:pb-5 sm:pt-5">
+          <header className="sticky top-0 z-10 border-b border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3.5 pb-3.5 pt-3.5 sm:px-7 sm:pb-5 sm:pt-5">
             <div className="flex items-start justify-between gap-3">
               <div>
                 {label ? (
@@ -181,14 +181,14 @@ export default function PremiumModal({
                 ref={closeButtonRef}
                 type="button"
                 onClick={onClose}
-                className="inline-flex h-9 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3.5 text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)] transition-[border-color,color,transform] duration-200 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
+                className="inline-flex h-10 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-4 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)] transition-[border-color,color,transform] duration-200 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
               >
                 {closeLabel}
               </button>
             </div>
           </header>
 
-          <div className="no-scrollbar flex-1 overflow-y-auto overscroll-contain px-4 py-5 sm:px-7 sm:py-7">{children}</div>
+          <div className="no-scrollbar flex-1 overflow-y-auto overscroll-contain px-3.5 py-4 sm:px-7 sm:py-7">{children}</div>
         </article>
       </div>
     </div>,

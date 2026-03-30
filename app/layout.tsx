@@ -9,6 +9,7 @@ import GlobalMotion from "@/components/GlobalMotion";
 import InteractionTracker from "@/components/InteractionTracker";
 import Navbar from "@/components/Navbar";
 import { getDictionary } from "@/lib/i18n/messages";
+import { localeMeta } from "@/lib/i18n/locale-meta";
 import { withLocalePath } from "@/lib/i18n/routing";
 import { getServerLocale } from "@/lib/i18n/server";
 import {
@@ -66,7 +67,7 @@ export default async function RootLayout({
   const webSiteSchema = buildWebSiteSchema(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={localeMeta[locale].languageTag} data-scroll-behavior="smooth">
       <body className={`${jakarta.variable} antialiased`}>
         <div className="relative flex min-h-screen flex-col overflow-x-clip">
           <Navbar locale={locale} />

@@ -58,12 +58,27 @@ const whatsappCtaLabelsByLocale: Record<string, { ready: string; continue: strin
     ready: "Envoyer la réservation sur WhatsApp",
     continue: "Continuer sur WhatsApp",
   },
+  en: {
+    ready: "Send booking via WhatsApp",
+    continue: "Continue on WhatsApp",
+  },
+  uk: {
+    ready: "Надіслати запис у WhatsApp",
+    continue: "Продовжити у WhatsApp",
+  },
+  ru: {
+    ready: "Отправить запись в WhatsApp",
+    continue: "Продолжить в WhatsApp",
+  },
 };
 
 const reservationUpdateByLocale: Record<string, string> = {
   es: "He actualizado tus datos de reserva para continuar por WhatsApp.",
   ca: "He actualitzat les teves dades de reserva per continuar per WhatsApp.",
   fr: "J'ai mis à jour vos données de réservation pour continuer sur WhatsApp.",
+  en: "I have updated your booking details to continue on WhatsApp.",
+  uk: "Я оновив дані вашого запису, щоб продовжити у WhatsApp.",
+  ru: "Я обновил данные вашей записи, чтобы продолжить в WhatsApp.",
 };
 
 const conversationWhatsappCtaByLocale: Record<string, { lead: string }> = {
@@ -75,6 +90,15 @@ const conversationWhatsappCtaByLocale: Record<string, { lead: string }> = {
   },
   fr: {
     lead: "Je vous laisse la réservation prête à envoyer sur WhatsApp.",
+  },
+  en: {
+    lead: "Your booking draft is ready to send on WhatsApp.",
+  },
+  uk: {
+    lead: "Ваш запис підготовлено для надсилання у WhatsApp.",
+  },
+  ru: {
+    lead: "Ваша запись подготовлена для отправки в WhatsApp.",
   },
 };
 
@@ -339,8 +363,10 @@ export default function ChatExperience({
         onClick={() => setIsOpen(true)}
         aria-label={copy.launcherAriaLabel}
         className={cn(
-          "fixed right-4 z-40 inline-flex h-[2.95rem] items-center gap-2 rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 text-[0.63rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] shadow-[0_20px_44px_-30px_rgba(42,20,31,0.62)] transition-[border-color,color,transform] duration-300 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] md:bottom-6 md:right-6 md:h-11 md:px-5 md:text-[0.66rem]",
-          isOpen ? "pointer-events-none translate-y-1 opacity-0" : "bottom-[5.2rem] md:opacity-100",
+          "fixed right-3 z-40 inline-flex h-12 items-center gap-2 rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] shadow-[0_20px_44px_-30px_rgba(42,20,31,0.62)] transition-[border-color,color,transform] duration-300 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] md:bottom-6 md:right-6 md:h-11 md:px-5 md:text-[0.66rem]",
+          isOpen
+            ? "pointer-events-none translate-y-1 opacity-0"
+            : "bottom-[calc(env(safe-area-inset-bottom)+4.3rem)] md:opacity-100",
         )}
       >
         <span className="inline-flex h-2 w-2 rounded-full bg-[color:var(--color-brand)]" />
@@ -360,9 +386,9 @@ export default function ChatExperience({
             role="dialog"
             aria-modal="true"
             aria-label={copy.panelTitle}
-            className="absolute inset-x-2 bottom-2 top-16 flex flex-col overflow-hidden rounded-[1.55rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] shadow-[0_42px_90px_-60px_rgba(33,17,25,0.75)] md:inset-y-6 md:left-auto md:right-6 md:w-[25.5rem]"
+            className="absolute inset-x-0 bottom-0 top-[4.35rem] flex flex-col overflow-hidden rounded-t-[1.45rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] shadow-[0_42px_90px_-60px_rgba(33,17,25,0.75)] sm:inset-x-2 sm:bottom-2 sm:top-16 sm:rounded-[1.55rem] md:inset-y-6 md:left-auto md:right-6 md:w-[25.5rem]"
           >
-            <header className="border-b border-[color:var(--color-line)] px-4 pb-3 pt-4">
+            <header className="border-b border-[color:var(--color-line)] px-3.5 pb-3 pt-3.5 sm:px-4 sm:pb-3 sm:pt-4">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-[0.63rem] font-semibold uppercase tracking-[0.11em] text-[color:var(--color-accent)]">
@@ -371,7 +397,7 @@ export default function ChatExperience({
                   <h2 className="mt-1 text-[1.04rem] font-semibold tracking-[-0.015em] text-[color:var(--color-foreground)]">
                     {copy.panelTitle}
                   </h2>
-                  <p className="mt-1 max-w-[30ch] text-[0.8rem] leading-6 text-[color:var(--color-muted)]">
+                  <p className="mt-1 max-w-[30ch] text-[0.84rem] leading-6 text-[color:var(--color-muted)]">
                     {copy.panelDescription}
                   </p>
                 </div>
@@ -379,14 +405,14 @@ export default function ChatExperience({
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="inline-flex h-8 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)] transition-colors duration-300 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
+                  className="inline-flex h-10 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3.5 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)] transition-colors duration-300 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
                 >
                   {copy.closeLabel}
                 </button>
               </div>
             </header>
 
-            <div className="no-scrollbar flex-1 overflow-y-auto px-4 py-4">
+            <div className="no-scrollbar flex-1 overflow-y-auto px-3.5 py-4 sm:px-4">
               <div className="space-y-3">
                 {messages.map((message) => (
                   <article
@@ -395,7 +421,7 @@ export default function ChatExperience({
                   >
                     <p
                       className={cn(
-                        "max-w-[88%] rounded-[1.05rem] px-3.5 py-2.5 text-[0.84rem] leading-6",
+                        "max-w-[90%] rounded-[1.05rem] px-3.5 py-3 text-[0.88rem] leading-6",
                         message.role === "user"
                           ? "bg-[color:var(--color-brand)] text-white"
                           : "border border-[color:var(--color-line)] bg-[color:var(--color-surface)] text-[color:var(--color-foreground)]",
@@ -417,7 +443,7 @@ export default function ChatExperience({
 
                 {readyForWhatsapp ? (
                   <article className="flex justify-start">
-                    <div className="w-full max-w-[88%] rounded-[1.05rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3.5 py-3">
+                    <div className="w-full max-w-[92%] rounded-[1.05rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3.5 py-3">
                       <p className="text-[0.78rem] leading-5 text-[color:var(--color-muted)]">
                         {localizedConversationWhatsappCta.lead}
                       </p>
@@ -427,7 +453,7 @@ export default function ChatExperience({
                         rel="noreferrer"
                         aria-disabled={!hasWhatsappNumber}
                         className={cn(
-                          "mt-2 inline-flex h-8 items-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3 text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]",
+                          "mt-2 inline-flex h-10 w-full items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] sm:w-auto",
                           !hasWhatsappNumber && "pointer-events-none opacity-55",
                         )}
                       >
@@ -440,7 +466,7 @@ export default function ChatExperience({
               <div ref={endRef} />
             </div>
 
-            <footer className="border-t border-[color:var(--color-line)] px-4 pb-4 pt-3">
+            <footer className="border-t border-[color:var(--color-line)] px-3.5 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3 sm:px-4 sm:pb-4">
               <form onSubmit={submitMessage} className="space-y-3">
                 <label className="sr-only" htmlFor="chat-input">
                   {copy.inputAriaLabel}
@@ -452,15 +478,15 @@ export default function ChatExperience({
                   onChange={(event) => setDraft(event.target.value)}
                   onKeyDown={handleTextareaKeyDown}
                   placeholder={copy.inputPlaceholder}
-                  className="min-h-[5.5rem] w-full resize-none rounded-[1rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3.5 py-3 text-[0.88rem] leading-6 text-[color:var(--color-foreground)] outline-none transition-colors duration-200 placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-brand)]"
+                  className="min-h-[6rem] w-full resize-none rounded-[1rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3.5 py-3 text-base leading-6 text-[color:var(--color-foreground)] outline-none transition-colors duration-200 placeholder:text-[color:var(--color-muted)] focus:border-[color:var(--color-brand)] sm:text-[0.88rem]"
                 />
 
-                <div className="flex items-center justify-between gap-3">
+                <div className="flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <button
                     type="button"
                     onClick={resetConversation}
                     disabled={isLoading || history.length === 0}
-                    className="inline-flex h-9 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] px-3.5 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] disabled:cursor-not-allowed disabled:opacity-45"
+                    className="inline-flex h-10 w-full items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] px-3.5 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-muted)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] disabled:cursor-not-allowed disabled:opacity-45 sm:w-auto"
                   >
                     {copy.resetLabel}
                   </button>
@@ -468,7 +494,7 @@ export default function ChatExperience({
                   <button
                     type="submit"
                     disabled={!draft.trim() || isLoading}
-                    className="inline-flex h-9 items-center justify-center rounded-[var(--radius-pill)] bg-[color:var(--color-brand)] px-4 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:bg-[color:var(--color-brand-strong)] disabled:cursor-not-allowed disabled:opacity-55"
+                    className="inline-flex h-10 w-full items-center justify-center rounded-[var(--radius-pill)] bg-[color:var(--color-brand)] px-4 text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:bg-[color:var(--color-brand-strong)] disabled:cursor-not-allowed disabled:opacity-55 sm:w-auto"
                   >
                     {copy.sendLabel}
                   </button>
@@ -481,10 +507,10 @@ export default function ChatExperience({
                 </p>
               ) : null}
 
-              <div className="mt-3 flex flex-wrap items-center gap-2">
+              <div className="mt-3 grid gap-2 sm:flex sm:flex-wrap sm:items-center">
                 <Link
                   href={bookingHref}
-                  className="inline-flex h-8 items-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3 text-[0.63rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
+                  className="inline-flex h-10 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3 text-[0.63rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] sm:h-8"
                 >
                   {bookCtaLabel}
                 </Link>
@@ -494,7 +520,7 @@ export default function ChatExperience({
                   rel="noreferrer"
                   aria-disabled={!hasWhatsappNumber}
                   className={cn(
-                    "inline-flex h-8 items-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3 text-[0.63rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]",
+                    "inline-flex h-10 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-3 text-[0.63rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-colors duration-200 hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] sm:h-8",
                     !hasWhatsappNumber && "pointer-events-none opacity-55",
                   )}
                 >

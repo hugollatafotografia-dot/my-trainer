@@ -8,7 +8,7 @@ type ReservationField =
   | "customerName"
   | "notes";
 
-type SupportedLocale = "es" | "ca" | "fr";
+type SupportedLocale = "es" | "ca" | "fr" | "en" | "uk" | "ru";
 
 type ReservationCopy = {
   greeting: string;
@@ -106,10 +106,61 @@ const RESERVATION_COPY: Record<SupportedLocale, ReservationCopy> = {
       professional: "sans préférence",
     },
   },
+  en: {
+    greeting: "Hello, I would like to book an appointment at Centres Ideal Andorra.",
+    continueLine: "I would like to continue managing my assessment through this channel.",
+    thanks: "Thank you.",
+    labels: {
+      treatment: "Treatment or reason",
+      dateRange: "Day or date range",
+      timeSlot: "Time slot",
+      professional: "Professional",
+      customerName: "Client name",
+      notes: "Notes",
+    },
+    fallback: {
+      generic: "to be confirmed",
+      professional: "no preference",
+    },
+  },
+  uk: {
+    greeting: "Вітаю, хочу записатися на прийом у Centres Ideal Andorra.",
+    continueLine: "Хочу продовжити оформлення моєї консультації через цей канал.",
+    thanks: "Дякую.",
+    labels: {
+      treatment: "Процедура або запит",
+      dateRange: "День або діапазон дат",
+      timeSlot: "Часовий слот",
+      professional: "Спеціаліст",
+      customerName: "Ім'я клієнта",
+      notes: "Нотатки",
+    },
+    fallback: {
+      generic: "потрібно уточнити",
+      professional: "без переваг",
+    },
+  },
+  ru: {
+    greeting: "Здравствуйте, хочу записаться на прием в Centres Ideal Andorra.",
+    continueLine: "Хочу продолжить оформление моей консультации через этот канал.",
+    thanks: "Спасибо.",
+    labels: {
+      treatment: "Процедура или запрос",
+      dateRange: "День или диапазон дат",
+      timeSlot: "Временной слот",
+      professional: "Специалист",
+      customerName: "Имя клиента",
+      notes: "Примечания",
+    },
+    fallback: {
+      generic: "нужно уточнить",
+      professional: "без предпочтений",
+    },
+  },
 };
 
 function resolveLocale(locale: string | undefined): SupportedLocale {
-  if (locale === "ca" || locale === "fr") {
+  if (locale === "ca" || locale === "fr" || locale === "en" || locale === "uk" || locale === "ru") {
     return locale;
   }
 
@@ -128,7 +179,7 @@ function normalizeFreeText(value: string) {
 }
 
 function normalizeToken(value: string) {
-  return normalizeFreeText(value).replace(/[^a-z0-9]/g, "");
+  return normalizeFreeText(value).replace(/[^\p{L}\p{N}]+/gu, "");
 }
 
 function parseReservationFieldValue(value: string) {

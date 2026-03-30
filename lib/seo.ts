@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import type { SiteDictionary } from "@/lib/i18n/messages";
 import { defaultLocale, locales, type Locale } from "@/lib/i18n/config";
+import { localeMeta } from "@/lib/i18n/locale-meta";
 import { withLocalePath } from "@/lib/i18n/routing";
 import { contactDetails } from "@/lib/site";
 
@@ -72,7 +73,7 @@ export function buildPageMetadata({
           alt: title,
         },
       ],
-      locale,
+      locale: localeMeta[locale].languageTag,
     },
     twitter: {
       card: "summary_large_image",
@@ -94,12 +95,6 @@ export function buildPageMetadata({
 }
 
 export function buildLocalBusinessSchema(locale: Locale, dictionary: SiteDictionary) {
-  const localeMap: Record<Locale, string> = {
-    es: "es-AD",
-    ca: "ca-AD",
-    fr: "fr-AD",
-  };
-
   return {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
@@ -122,9 +117,9 @@ export function buildLocalBusinessSchema(locale: Locale, dictionary: SiteDiction
       name: "Andorra",
     },
     hasMap: contactDetails.mapsPlaceUrl,
-    availableLanguage: ["es", "ca", "fr"],
+    availableLanguage: locales,
     priceRange: "EUR",
-    inLanguage: localeMap[locale],
+    inLanguage: localeMeta[locale].languageTag,
   };
 }
 

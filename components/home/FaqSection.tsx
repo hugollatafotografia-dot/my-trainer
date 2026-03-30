@@ -10,7 +10,7 @@ type FaqSectionProps = {
   closeLabel?: string;
 };
 
-export default function FaqSection({ items, closeLabel = "Cerrar" }: FaqSectionProps) {
+export default function FaqSection({ items, closeLabel = "Close" }: FaqSectionProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const activeItem = useMemo(
@@ -20,24 +20,24 @@ export default function FaqSection({ items, closeLabel = "Cerrar" }: FaqSectionP
 
   return (
     <>
-      <div className="mt-7 grid gap-2.5 md:grid-cols-2">
+      <div className="mt-7 grid gap-3 md:grid-cols-2">
         {items.map((item, index) => (
           <article
             key={item.id}
-            className="rounded-[1.05rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-4 py-3 transition-[border-color,box-shadow] duration-300 hover:border-[color:var(--color-brand)] hover:shadow-[0_16px_34px_-28px_rgba(33,17,26,0.5)] sm:px-5"
+            className="rounded-[1.15rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface)] px-4 py-4 transition-[border-color,box-shadow] duration-300 hover:border-[color:var(--color-brand)] hover:shadow-[0_16px_34px_-28px_rgba(33,17,26,0.5)] sm:px-5"
           >
             <p className="text-[0.6rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
               FAQ {String(index + 1).padStart(2, "0")}
             </p>
-            <h3 className="mt-1 text-[0.92rem] leading-6 font-semibold tracking-[-0.012em] text-[color:var(--color-foreground)]">
+            <h3 className="mt-1 text-[0.96rem] leading-6 font-semibold tracking-[-0.012em] text-[color:var(--color-foreground)]">
               {item.question}
             </h3>
-            <p className="mt-1 text-[0.8rem] leading-6 text-[color:var(--color-muted)]">{item.summary}</p>
+            <p className="mt-1 text-[0.85rem] leading-6 text-[color:var(--color-muted)]">{item.summary}</p>
 
             <button
               type="button"
               onClick={() => setSelectedId(item.id)}
-              className="mt-3 inline-flex h-8 items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-[border-color,color,transform] duration-300 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)]"
+              className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-[var(--radius-pill)] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3 text-[0.64rem] font-semibold uppercase tracking-[0.08em] text-[color:var(--color-foreground)] transition-[border-color,color,transform] duration-300 hover:-translate-y-px hover:border-[color:var(--color-brand)] hover:text-[color:var(--color-brand)] sm:w-auto"
             >
               {item.ctaLabel}
             </button>

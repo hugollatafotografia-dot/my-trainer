@@ -10,6 +10,7 @@ import PageHero from "@/components/page/PageHero";
 import SectionHeading from "@/components/page/SectionHeading";
 import { getTreatmentsCatalog } from "@/lib/content/treatments-catalog";
 import { getPageContext } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/messages";
 import { getServerLocale } from "@/lib/i18n/server";
 import { buildPageMetadata } from "@/lib/seo";
@@ -18,13 +19,20 @@ import { TRACK_EVENTS } from "@/lib/tracking/events";
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const descriptionByLocale: Record<Locale, string> = {
+    es: "Contacto directo con Centros Ideal Andorra. WhatsApp, direccion en Illa Carlemany y proceso de reserva de valoracion inicial.",
+    ca: "Contacte directe amb Centres Ideal Andorra. WhatsApp, adreca a Illa Carlemany i proces de reserva de valoracio inicial.",
+    fr: "Contact direct avec Centres Ideal Andorra. WhatsApp, adresse a Illa Carlemany et processus de reservation initiale.",
+    en: "Direct contact with Centres Ideal Andorra. WhatsApp, Illa Carlemany location and initial assessment booking flow.",
+    uk: "Прямий контакт із Centres Ideal Andorra: WhatsApp, адреса в Illa Carlemany і процес запису на первинну консультацію.",
+    ru: "Прямой контакт с Centres Ideal Andorra: WhatsApp, адрес в Illa Carlemany и процесс записи на первичную консультацию.",
+  };
 
   return buildPageMetadata({
     locale,
     path: "/contacto",
     title: t.nav.contact,
-    description:
-      "Contacto directo con Centros Ideal Andorra. WhatsApp, direccion en Illa Carlemany y proceso de reserva de valoracion inicial.",
+    description: descriptionByLocale[locale],
     imagePath: "/images/pages/contacto/hero/hero-contacto-centro.mp4",
   });
 }
@@ -53,7 +61,58 @@ export default async function ContactoPage() {
       description:
         "Preparez une demande de rendez-vous WhatsApp avec toutes les informations utiles ou envoyez une demande formelle par email depuis le site.",
     },
+    en: {
+      label: "Guided request",
+      title: "Pre-booking and email in a single contact flow",
+      description:
+        "Prepare a WhatsApp booking request with all key details or send a formal email inquiry directly from the website.",
+    },
+    uk: {
+      label: "Керований запит",
+      title: "Попередній запис і електронна пошта в одному контакті",
+      description:
+        "Підготуйте запит на запис у WhatsApp з усіма ключовими даними або надішліть формальний запит на електронну пошту прямо з сайту.",
+    },
+    ru: {
+      label: "Управляемый запрос",
+      title: "Предзапись и электронная почта в едином контакте",
+      description:
+        "Подготовьте запрос на запись в WhatsApp со всеми ключевыми данными или отправьте формальный запрос по электронной почте прямо с сайта.",
+    },
   }[locale];
+  const imageAltByLocale: Record<Locale, { hero: string; advisory: string; closing: string }> = {
+    es: {
+      hero: "Recepcion y contacto del centro",
+      advisory: "Zona de asesoria",
+      closing: "Detalle del centro",
+    },
+    ca: {
+      hero: "Recepcio i contacte del centre",
+      advisory: "Zona d'assessoria",
+      closing: "Detall del centre",
+    },
+    fr: {
+      hero: "Reception et contact du centre",
+      advisory: "Zone de conseil",
+      closing: "Detail du centre",
+    },
+    en: {
+      hero: "Reception and contact area of the centre",
+      advisory: "Consultation area",
+      closing: "Centre detail",
+    },
+    uk: {
+      hero: "Рецепція та зона контакту центру",
+      advisory: "Зона консультації",
+      closing: "Деталь центру",
+    },
+    ru: {
+      hero: "Ресепшен и контактная зона центра",
+      advisory: "Зона консультации",
+      closing: "Деталь центра",
+    },
+  };
+  const imageAlt = imageAltByLocale[locale];
 
   return (
     <>
@@ -62,7 +121,7 @@ export default async function ContactoPage() {
         title={t.contactPage.hero.title}
         description={t.contactPage.hero.description}
         imageSrc="/images/pages/contacto/hero/hero-contacto-centro.mp4"
-        imageAlt="Recepción y contacto del centro"
+        imageAlt={imageAlt.hero}
         primaryCta={{
           href: whatsappHref,
           label: t.cta.whatsapp,
@@ -82,7 +141,7 @@ export default async function ContactoPage() {
               description={t.contactPage.channels.description}
             />
 
-            <div className="mt-7 divide-y divide-[color:var(--color-line)] rounded-[1.2rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-5 py-2 sm:px-6">
+            <div className="mt-7 divide-y divide-[color:var(--color-line)] rounded-[1.2rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-4 py-2 sm:px-6">
               {t.contactPage.channels.rows.map((channel) => (
                 <article
                   key={channel.label}
@@ -92,10 +151,10 @@ export default async function ContactoPage() {
                     {channel.label}
                   </p>
                   <div>
-                    <p className="text-[0.95rem] leading-7 font-semibold text-[color:var(--color-foreground)]">
+                    <p className="text-[0.96rem] leading-7 font-semibold text-[color:var(--color-foreground)]">
                       {channel.value}
                     </p>
-                    <p className="text-[0.82rem] leading-6 text-[color:var(--color-muted)]">{channel.note}</p>
+                    <p className="text-[0.85rem] leading-6 text-[color:var(--color-muted)]">{channel.note}</p>
                   </div>
                 </article>
               ))}
@@ -103,10 +162,10 @@ export default async function ContactoPage() {
           </div>
 
           <article className="image-frame overflow-hidden p-4 sm:p-5">
-            <div className="relative h-[22rem] overflow-hidden rounded-[1.45rem] sm:h-[27rem]">
+            <div className="relative h-[18.5rem] overflow-hidden rounded-[1.45rem] sm:h-[27rem]">
               <MediaFill
                 src="/images/pages/contacto/asesoria/zona-asesoria-estudio.png"
-                alt="Zona de asesoría"
+                alt={imageAlt.advisory}
                 className="photo-grade-soft object-cover object-[56%_43%]"
               />
               <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(16,10,14,0.58)_0%,rgba(16,10,14,0.14)_66%)]" />
@@ -160,7 +219,7 @@ export default async function ContactoPage() {
 
       <section className="section-shell bg-[color:var(--color-background)] pb-6 pt-0">
         <Container>
-          <article className="surface-card rounded-[1.35rem] px-6 py-6">
+          <article className="surface-card rounded-[1.35rem] px-4 py-5 sm:px-6 sm:py-6">
             <p className="text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
               {t.contactPage.support.label}
             </p>
@@ -170,7 +229,7 @@ export default async function ContactoPage() {
             <p className="mt-3 max-w-[58rem] text-[0.9rem] leading-7 text-[color:var(--color-muted)]">
               {t.contactPage.support.description}
             </p>
-            <p className="mt-3 text-[0.84rem] leading-6 text-[color:var(--color-muted)]">
+            <p className="mt-3 text-[0.86rem] leading-6 text-[color:var(--color-muted)]">
               {t.whatsapp.supportHumanNotice}
               <br />
               {t.whatsapp.supportFutureNotice}
@@ -190,7 +249,7 @@ export default async function ContactoPage() {
         title={t.contactPage.closing.title}
         description={t.contactPage.closing.description}
         imageSrc="/images/pages/contacto/cierre/detalle-centro-ideal-illa-carlemany.png"
-        imageAlt="Detalle del centro"
+        imageAlt={imageAlt.closing}
         primaryCta={{
           href: l("/reservar"),
           label: t.cta.book,

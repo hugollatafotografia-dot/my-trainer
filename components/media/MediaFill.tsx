@@ -9,6 +9,7 @@ type MediaFillProps = {
   className?: string;
   style?: CSSProperties;
   priority?: boolean;
+  sizes?: string;
   autoPlay?: boolean;
   loop?: boolean;
   muted?: boolean;
@@ -38,6 +39,7 @@ export default function MediaFill({
   className,
   style,
   priority = false,
+  sizes = "(max-width: 768px) 92vw, (max-width: 1280px) 50vw, 40vw",
   autoPlay = true,
   loop = true,
   muted = true,
@@ -51,7 +53,7 @@ export default function MediaFill({
         loop={loop}
         muted={muted}
         playsInline={playsInline}
-        preload={priority ? "auto" : preload}
+        preload={priority ? "metadata" : preload}
         aria-label={alt}
         className={cn("absolute inset-0 h-full w-full object-cover", className)}
         style={style}
@@ -61,5 +63,5 @@ export default function MediaFill({
     );
   }
 
-  return <Image src={src} alt={alt} fill priority={priority} className={className} style={style} />;
+  return <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className={className} style={style} />;
 }

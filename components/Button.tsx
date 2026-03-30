@@ -29,8 +29,8 @@ const variants = {
 };
 
 const sizes = {
-  md: "h-11 px-5 text-[0.92rem]",
-  lg: "h-12 px-6 text-[0.98rem]",
+  md: "h-11 px-5 text-[0.88rem] sm:text-[0.92rem]",
+  lg: "h-12 px-6 text-[0.93rem] sm:text-[0.98rem]",
 };
 
 export default function Button({
@@ -55,7 +55,7 @@ export default function Button({
       data-ab-test={abTest}
       data-ab-variant={abVariant}
       className={cn(
-        "inline-flex items-center justify-center rounded-[var(--radius-pill)] font-semibold tracking-[-0.01em] transition-[background-color,color,border-color,transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:translate-y-px",
+        "inline-flex touch-manipulation items-center justify-center rounded-[var(--radius-pill)] font-semibold tracking-[-0.01em] transition-[background-color,color,border-color,transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:translate-y-px",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-brand)] focus-visible:ring-2 focus-visible:ring-[color:var(--color-brand)]",
         variants[variant],
         sizes[size],
