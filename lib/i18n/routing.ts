@@ -47,3 +47,9 @@ export function changeLocalePath(pathname: string, targetLocale: Locale): string
   const stripped = stripLocalePrefix(pathname);
   return withLocalePath(stripped, targetLocale);
 }
+
+export function changeLocalePathForSwitcher(pathname: string, targetLocale: Locale): string {
+  const stripped = stripLocalePrefix(pathname);
+  const normalized = stripped === "/" ? "" : stripped;
+  return `/${targetLocale}${normalized}`;
+}

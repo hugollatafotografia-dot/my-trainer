@@ -17,7 +17,7 @@ export const contactDetails = {
   phoneIntl: "+376 688 080",
   whatsappNumber: "376688080",
   email: "illa.carlemany@centresideal.com",
-  location: "Centre Comercial Illa Carlemany, Escaldes-Engordany, Andorra",
+  location: "Centre Comercial illa Carlemany, Escaldes-Engordany, Andorra",
   address: "Av. Carlemany, 70, AD700 Andorra",
   floor: "Segunda planta",
   mapsPlaceUrl: "https://www.google.com/maps/search/?api=1&query=Av.+Carlemany+70,+AD700+Andorra",

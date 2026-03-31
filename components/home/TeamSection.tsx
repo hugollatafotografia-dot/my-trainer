@@ -25,12 +25,14 @@ export default function TeamSection({ members, labels, closeLabel = "Close" }: T
       <div className="mt-8 grid gap-4 md:grid-cols-3">
         {members.map((member) => (
           <article key={member.id} className="image-frame overflow-hidden p-3.5 sm:p-4">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.2rem]">
+            <div className="relative aspect-[5/6] overflow-hidden rounded-[1.2rem] sm:aspect-[4/5]">
               <MediaFill
                 src={member.image}
                 alt={member.alt}
-                className="photo-grade-soft object-cover"
-                style={{ objectPosition: member.imagePosition ?? "56% 38%" }}
+                mobilePosition={member.mobileImagePosition ?? member.imagePosition ?? "58% 30%"}
+                tabletPosition={member.imagePosition ?? "56% 38%"}
+                desktopPosition={member.imagePosition ?? "56% 38%"}
+                className="photo-grade-soft"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,9,13,0.2)_0%,rgba(15,9,13,0.58)_100%)]" />
             </div>
@@ -74,8 +76,10 @@ export default function TeamSection({ members, labels, closeLabel = "Close" }: T
                   <MediaFill
                     src={activeMember.image}
                     alt={activeMember.alt}
-                    className="photo-grade-soft object-cover"
-                    style={{ objectPosition: activeMember.imagePosition ?? "56% 38%" }}
+                    mobilePosition={activeMember.mobileImagePosition ?? activeMember.imagePosition ?? "58% 30%"}
+                    tabletPosition={activeMember.imagePosition ?? "56% 38%"}
+                    desktopPosition={activeMember.imagePosition ?? "56% 38%"}
+                    className="photo-grade-soft"
                   />
                 </div>
               </div>

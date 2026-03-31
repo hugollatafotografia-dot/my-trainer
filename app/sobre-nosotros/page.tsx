@@ -16,12 +16,12 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const descriptionByLocale: Record<Locale, string> = {
-    es: "Conoce el metodo de trabajo, el equipo profesional y la operativa de Centros Ideal Andorra en Illa Carlemany.",
-    ca: "Coneix el metode de treball, l'equip professional i l'operativa de Centres Ideal Andorra a Illa Carlemany.",
-    fr: "Decouvrez la methode de travail, l'equipe professionnelle et l'operativa de Centres Ideal Andorra a Illa Carlemany.",
-    en: "Learn about the working method, professional team and operations of Centres Ideal Andorra at Illa Carlemany.",
-    uk: "Ознайомтеся з методом роботи, командою і операційним підходом Centres Ideal Andorra в Illa Carlemany.",
-    ru: "Познакомьтесь с методом работы, командой и операционным подходом Centres Ideal Andorra в Illa Carlemany.",
+    es: "Conoce el metodo de trabajo, el equipo profesional y la operativa de Centros Ideal Andorra en illa Carlemany.",
+    ca: "Coneix el metode de treball, l'equip professional i l'operativa de Centres Ideal Andorra a illa Carlemany.",
+    fr: "Decouvrez la methode de travail, l'equipe professionnelle et l'operativa de Centres Ideal Andorra a illa Carlemany.",
+    en: "Learn about the working method, professional team and operations of Centres Ideal Andorra at illa Carlemany.",
+    uk: "Ознайомтеся з методом роботи, командою і операційним підходом Centres Ideal Andorra в illa Carlemany.",
+    ru: "Познакомьтесь с методом работы, командой и операционным подходом Centres Ideal Andorra в illa Carlemany.",
   };
 
   return buildPageMetadata({
@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/sobre-nosotros",
     title: t.nav.about,
     description: descriptionByLocale[locale],
-    imagePath: "/images/pages/sobre-nosotros/hero/hero-centro-estetica-illa-carlemany.jpg",
+    imagePath: "/images/pages/sobre-nosotros/equipo/experiencia-cabina-centro.jpg",
   });
 }
 
@@ -85,8 +85,11 @@ export default async function SobreNosotrosPage() {
         label={t.aboutPage.hero.label}
         title={t.aboutPage.hero.title}
         description={t.aboutPage.hero.description}
-        imageSrc="/images/pages/sobre-nosotros/hero/hero-centro-estetica-illa-carlemany.jpg"
+        imageSrc="/images/pages/sobre-nosotros/equipo/experiencia-cabina-centro.jpg"
         imageAlt={imageAlt.hero}
+        mobileMediaPosition="74% 34%"
+        tabletMediaPosition="64% 36%"
+        desktopMediaPosition="58% 34%"
         primaryCta={{
           href: l("/reservar"),
           label: t.cta.book,
@@ -126,11 +129,15 @@ export default async function SobreNosotrosPage() {
           </div>
 
           <article className="image-frame h-full overflow-hidden p-4 sm:p-5">
-            <div className="relative h-full min-h-[25rem] overflow-hidden rounded-[1.45rem] sm:min-h-[33rem]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem] sm:h-full sm:min-h-[33rem] sm:aspect-auto">
               <MediaFill
                 src="/images/pages/sobre-nosotros/historia/historia-metodo-equipo.mp4"
+                mobileSrc="/images/pages/sobre-nosotros/equipo/experiencia-cabina-centro.jpg"
                 alt={imageAlt.method}
-                className="photo-grade-soft object-cover object-[58%_36%]"
+                mobilePosition="66% 34%"
+                tabletPosition="60% 36%"
+                desktopPosition="58% 36%"
+                className="photo-grade-soft"
               />
               <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(17,10,14,0.52)_0%,rgba(17,10,14,0.14)_66%)]" />
             </div>
@@ -141,11 +148,14 @@ export default async function SobreNosotrosPage() {
       <section className="section-shell bg-[linear-gradient(170deg,#321f2c_0%,#271923_100%)] text-white">
         <Container className="grid gap-8 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:items-start">
           <article className="image-frame overflow-hidden border-white/18 bg-white/8 p-4 sm:p-5">
-            <div className="relative h-[18.5rem] overflow-hidden rounded-[1.4rem] sm:h-[27rem]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.4rem] sm:h-[27rem] sm:aspect-auto">
               <MediaFill
                 src="/images/pages/sobre-nosotros/equipo/experiencia-cabina-centro.jpg"
                 alt={imageAlt.team}
-                className="photo-grade-soft object-cover object-[56%_42%]"
+                mobilePosition="62% 36%"
+                tabletPosition="58% 40%"
+                desktopPosition="56% 42%"
+                className="photo-grade-soft"
               />
               <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(13,8,11,0.48)_0%,rgba(13,8,11,0.12)_66%)]" />
             </div>
@@ -175,6 +185,9 @@ export default async function SobreNosotrosPage() {
         description={t.aboutPage.closing.description}
         imageSrc="/images/pages/sobre-nosotros/cierre/seguimiento-whatsapp-paciente.jpg"
         imageAlt={imageAlt.closing}
+        mobileMediaPosition="66% 34%"
+        tabletMediaPosition="58% 40%"
+        desktopMediaPosition="54% 42%"
         primaryCta={{
           href: l("/reservar"),
           label: t.cta.book,

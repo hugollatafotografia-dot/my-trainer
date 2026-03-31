@@ -114,6 +114,26 @@ video {
   display: none;
 }
 
+.media-fill {
+  object-fit: var(--media-fit, cover);
+  object-position: var(--media-pos-mobile, 50% 50%);
+}
+
+@media (min-width: 640px) {
+  .media-fill {
+    object-position: var(--media-pos-sm, var(--media-pos-mobile, 50% 50%));
+  }
+}
+
+@media (min-width: 1024px) {
+  .media-fill {
+    object-position: var(
+      --media-pos-lg,
+      var(--media-pos-sm, var(--media-pos-mobile, 50% 50%))
+    );
+  }
+}
+
 p {
   font-size: var(--text-body);
 }

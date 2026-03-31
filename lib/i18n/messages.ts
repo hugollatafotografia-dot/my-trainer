@@ -342,7 +342,7 @@ const baseBrand = {
   legalName: "Centros Ideal Andorra",
   heroLine: "Medicina estética y láser de diodo",
   specialty: "Depilación láser diodo y estética avanzada",
-  location: "Centre Comercial Illa Carlemany, Escaldes-Engordany, Andorra",
+  location: "Centre Comercial illa Carlemany, Escaldes-Engordany, Andorra",
   address: "Av. Carlemany, 70, AD700 Andorra",
   floor: "Segunda planta",
   phoneDisplay: "688 080",
@@ -358,7 +358,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
     seo: {
       title: "Centros Ideal Andorra",
       description:
-        "Centros Ideal Andorra: depilación láser diodo y estética avanzada en Illa Carlemany, con valoración profesional y seguimiento clínico.",
+        "Centros Ideal Andorra: depilación láser diodo y estética avanzada en illa Carlemany, con valoración profesional y seguimiento clínico.",
     },
     brand: {
       ...baseBrand,
@@ -437,11 +437,11 @@ export const dictionaries: Record<string, SiteDictionary> = {
     },
     home: {
       hero: {
-        eyebrow: "Centros Ideal Andorra · Illa Carlemany",
+        eyebrow: "Centros Ideal Andorra · illa Carlemany",
         title: "Depilación láser diodo y estética avanzada.",
         description: "Valoración inicial de 30 minutos con criterio profesional.",
         highlights: [
-          "Centre Comercial Illa Carlemany",
+          "Centre Comercial illa Carlemany",
           "Av. Carlemany, 70 · 2ª planta",
         ],
         panelEyebrow: "Primera visita",
@@ -506,7 +506,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
           },
           {
             label: "Ubicación",
-            value: "Centre Comercial Illa Carlemany · segunda planta",
+            value: "Centre Comercial illa Carlemany · segunda planta",
           },
           {
             label: "Horario",
@@ -725,7 +725,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
     aboutPage: {
       hero: {
         label: "Sobre nosotros",
-        title: "Centro de estética avanzada en Illa Carlemany.",
+        title: "Centro de estética avanzada en illa Carlemany.",
         description: "Depilación láser diodo y tratamientos personalizados.",
         panelEyebrow: "Centro",
         panelDescription: "Atención profesional y seguimiento.",
@@ -771,7 +771,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
           { label: "WhatsApp", value: "688 080", note: "Canal preferente." },
           { label: "Teléfono", value: "688 080", note: "Atención por horario." },
           { label: "Email", value: "illa.carlemany@centresideal.com", note: "Consultas generales." },
-          { label: "Dirección", value: "Av. Carlemany, 70, AD700 Andorra", note: "Centre Comercial Illa Carlemany · segunda planta." },
+          { label: "Dirección", value: "Av. Carlemany, 70, AD700 Andorra", note: "Centre Comercial illa Carlemany · segunda planta." },
           { label: "Horario", value: "Pendiente de validación", note: "Se confirmará en actualización oficial." },
         ],
       },
@@ -891,7 +891,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
     seo: {
       title: "Centros Ideal Andorra",
       description:
-        "Centros Ideal Andorra: depilació làser díode i estètica avançada a Illa Carlemany, amb valoració professional i seguiment clínic.",
+        "Centros Ideal Andorra: depilació làser díode i estètica avançada a illa Carlemany, amb valoració professional i seguiment clínic.",
     },
     brand: {
       ...baseBrand,
@@ -970,11 +970,11 @@ export const dictionaries: Record<string, SiteDictionary> = {
     },
     home: {
       hero: {
-        eyebrow: "Centros Ideal Andorra · Illa Carlemany",
+        eyebrow: "Centros Ideal Andorra · illa Carlemany",
         title: "Depilació làser díode i estètica avançada.",
         description: "Valoració inicial de 30 minuts amb criteri professional.",
         highlights: [
-          "Centre Comercial Illa Carlemany",
+          "Centre Comercial illa Carlemany",
           "Av. Carlemany, 70 · 2a planta",
         ],
         panelEyebrow: "Primera visita",
@@ -1036,7 +1036,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
           { label: "Adreça", value: "Av. Carlemany, 70, AD700 Andorra" },
           {
             label: "Ubicació",
-            value: "Centre Comercial Illa Carlemany · segona planta",
+            value: "Centre Comercial illa Carlemany · segona planta",
           },
           { label: "Horari", value: "Pendent de validació final." },
         ],
@@ -1228,7 +1228,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
     aboutPage: {
       hero: {
         label: "Sobre nosaltres",
-        title: "Centre d'estètica avançada a Illa Carlemany.",
+        title: "Centre d'estètica avançada a illa Carlemany.",
         description: "Depilació làser díode i tractaments personalitzats.",
         panelEyebrow: "Centre",
         panelDescription: "Atenció professional i seguiment.",
@@ -1274,7 +1274,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
           { label: "WhatsApp", value: "688 080", note: "Canal preferent." },
           { label: "Telèfon", value: "688 080", note: "Atenció per horari." },
           { label: "Email", value: "illa.carlemany@centresideal.com", note: "Consultes generals." },
-          { label: "Adreça", value: "Av. Carlemany, 70, AD700 Andorra", note: "Centre Comercial Illa Carlemany · segona planta." },
+          { label: "Adreça", value: "Av. Carlemany, 70, AD700 Andorra", note: "Centre Comercial illa Carlemany · segona planta." },
           { label: "Horari", value: "Pendent de validació", note: "Es confirmarà en actualització oficial." },
         ],
       },
@@ -1394,7 +1394,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
     seo: {
       title: "Centros Ideal Andorra",
       description:
-        "Centros Ideal Andorra : épilation laser diode et esthétique avancée à Illa Carlemany, avec évaluation professionnelle et suivi clinique.",
+        "Centros Ideal Andorra : épilation laser diode et esthétique avancée à illa Carlemany, avec évaluation professionnelle et suivi clinique.",
     },
     brand: {
       ...baseBrand,
@@ -1473,11 +1473,11 @@ export const dictionaries: Record<string, SiteDictionary> = {
     },
     home: {
       hero: {
-        eyebrow: "Centros Ideal Andorra · Illa Carlemany",
+        eyebrow: "Centros Ideal Andorra · illa Carlemany",
         title: "Épilation laser diode et esthétique avancée.",
         description: "Évaluation initiale de 30 minutes avec approche professionnelle.",
         highlights: [
-          "Centre Commercial Illa Carlemany",
+          "Centre Commercial illa Carlemany",
           "Av. Carlemany, 70 · 2e étage",
         ],
         panelEyebrow: "Première visite",
@@ -1539,7 +1539,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
           { label: "Adresse", value: "Av. Carlemany, 70, AD700 Andorra" },
           {
             label: "Emplacement",
-            value: "Centre Commercial Illa Carlemany · deuxième étage",
+            value: "Centre Commercial illa Carlemany · deuxième étage",
           },
           { label: "Horaires", value: "En attente de validation finale." },
         ],
@@ -1731,7 +1731,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
     aboutPage: {
       hero: {
         label: "À propos",
-        title: "Centre d'esthétique avancée à Illa Carlemany.",
+        title: "Centre d'esthétique avancée à illa Carlemany.",
         description: "Épilation laser diode et traitements personnalisés.",
         panelEyebrow: "Centre",
         panelDescription: "Accompagnement professionnel et suivi.",
@@ -1777,7 +1777,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
           { label: "WhatsApp", value: "688 080", note: "Canal prioritaire." },
           { label: "Téléphone", value: "688 080", note: "Accueil selon horaires." },
           { label: "Email", value: "illa.carlemany@centresideal.com", note: "Demandes générales." },
-          { label: "Adresse", value: "Av. Carlemany, 70, AD700 Andorra", note: "Centre Commercial Illa Carlemany · deuxième étage." },
+          { label: "Adresse", value: "Av. Carlemany, 70, AD700 Andorra", note: "Centre Commercial illa Carlemany · deuxième étage." },
           { label: "Horaires", value: "En attente de validation", note: "Publication après confirmation officielle." },
         ],
       },
@@ -1902,7 +1902,7 @@ dictionaries.en = {
   seo: {
     title: "Centros Ideal Andorra",
     description:
-      "Centros Ideal Andorra: diode laser hair removal and advanced aesthetics at Illa Carlemany, with professional assessment and clinical follow-up.",
+      "Centros Ideal Andorra: diode laser hair removal and advanced aesthetics at illa Carlemany, with professional assessment and clinical follow-up.",
   },
   brand: {
     ...esDictionary.brand,
@@ -2015,7 +2015,7 @@ dictionaries.en = {
     hero: {
       ...esDictionary.aboutPage.hero,
       label: "About us",
-      title: "Advanced aesthetics centre at Illa Carlemany.",
+      title: "Advanced aesthetics centre at illa Carlemany.",
       description: "Diode laser hair removal and personalised treatments.",
     },
     closing: {
@@ -2046,7 +2046,7 @@ dictionaries.en = {
         {
           label: "Address",
           value: "Av. Carlemany, 70, AD700 Andorra",
-          note: "Illa Carlemany Shopping Centre · second floor.",
+          note: "illa Carlemany Shopping Centre · second floor.",
         },
         {
           label: "Opening hours",
@@ -2179,7 +2179,7 @@ dictionaries.uk = {
   seo: {
     title: "Centros Ideal Andorra",
     description:
-      "Centros Ideal Andorra: діодна лазерна епіляція та розширена естетика в Illa Carlemany, з професійною консультацією та клінічним супроводом.",
+      "Centros Ideal Andorra: діодна лазерна епіляція та розширена естетика в illa Carlemany, з професійною консультацією та клінічним супроводом.",
   },
   brand: {
     ...dictionaries.en.brand,
@@ -2294,7 +2294,7 @@ dictionaries.uk = {
     ...dictionaries.en.aboutPage,
     hero: {
       label: "Про нас",
-      title: "Центр розширеної естетики в Illa Carlemany.",
+      title: "Центр розширеної естетики в illa Carlemany.",
       description: "Діодна лазерна епіляція та персоналізовані протоколи.",
       panelEyebrow: "Центр",
       panelDescription: "Професійний супровід і системний контроль.",
@@ -2341,7 +2341,7 @@ dictionaries.uk = {
         { label: "WhatsApp", value: "688 080", note: "Пріоритетний канал." },
         { label: "Телефон", value: "688 080", note: "Відповідь у робочий час." },
         { label: "Email", value: "illa.carlemany@centresideal.com", note: "Загальні запити." },
-        { label: "Адреса", value: "Av. Carlemany, 70, AD700 Andorra", note: "Illa Carlemany · другий поверх." },
+        { label: "Адреса", value: "Av. Carlemany, 70, AD700 Andorra", note: "illa Carlemany · другий поверх." },
         { label: "Графік", value: "Очікує підтвердження", note: "Оновимо після офіційної валідації." },
       ],
     },
@@ -2502,7 +2502,7 @@ dictionaries.ru = {
   seo: {
     title: "Centros Ideal Andorra",
     description:
-      "Centros Ideal Andorra: диодная лазерная эпиляция и продвинутая эстетика в Illa Carlemany, с профессиональной консультацией и клиническим сопровождением.",
+      "Centros Ideal Andorra: диодная лазерная эпиляция и продвинутая эстетика в illa Carlemany, с профессиональной консультацией и клиническим сопровождением.",
   },
   brand: {
     ...dictionaries.en.brand,
@@ -2617,7 +2617,7 @@ dictionaries.ru = {
     ...dictionaries.en.aboutPage,
     hero: {
       label: "О нас",
-      title: "Центр продвинутой эстетики в Illa Carlemany.",
+      title: "Центр продвинутой эстетики в illa Carlemany.",
       description: "Диодная лазерная эпиляция и персонализированные протоколы.",
       panelEyebrow: "Центр",
       panelDescription: "Профессиональное сопровождение и системный контроль.",
@@ -2664,7 +2664,7 @@ dictionaries.ru = {
         { label: "WhatsApp", value: "688 080", note: "Приоритетный канал." },
         { label: "Телефон", value: "688 080", note: "Ответ в рабочее время." },
         { label: "Email", value: "illa.carlemany@centresideal.com", note: "Общие запросы." },
-        { label: "Адрес", value: "Av. Carlemany, 70, AD700 Andorra", note: "Illa Carlemany · второй этаж." },
+        { label: "Адрес", value: "Av. Carlemany, 70, AD700 Andorra", note: "illa Carlemany · второй этаж." },
         { label: "График", value: "Ожидает подтверждения", note: "Обновим после официальной валидации." },
       ],
     },

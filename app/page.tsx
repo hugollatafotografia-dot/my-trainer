@@ -18,6 +18,7 @@ import { getServerLocale } from "@/lib/i18n/server";
 import { contactDetails } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 import { TRACK_EVENTS } from "@/lib/tracking/events";
+import { cn } from "@/lib/utils";
 
 const ctaExperiment = {
   id: "home_cta_journey",
@@ -114,13 +115,16 @@ export default async function Home() {
             src="/images/pages/hero/inicial/hero-cabina-premium-illa-carlemany.mp4"
             alt={imageAlt.hero}
             priority
-            className="object-cover object-[62%_38%]"
+            mobilePosition="74% 30%"
+            tabletPosition="66% 34%"
+            desktopPosition="62% 38%"
+            className="photo-grade"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(108deg,rgba(11,8,11,0.94)_0%,rgba(11,8,11,0.82)_35%,rgba(11,8,11,0.52)_68%,rgba(11,8,11,0.3)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,6,8,0.92)_0%,rgba(10,7,10,0.88)_30%,rgba(10,7,10,0.58)_62%,rgba(10,7,10,0.34)_100%)] sm:bg-[linear-gradient(108deg,rgba(11,8,11,0.94)_0%,rgba(11,8,11,0.82)_35%,rgba(11,8,11,0.52)_68%,rgba(11,8,11,0.3)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_86%_16%,rgba(188,145,164,0.22),transparent_42%),radial-gradient(circle_at_12%_86%,rgba(189,145,166,0.16),transparent_34%)]" />
         </div>
 
-        <Container className="relative flex min-h-[36rem] items-end pb-9 pt-[5.5rem] sm:min-h-[49rem] sm:pb-12 sm:pt-24 md:min-h-[54rem] md:pt-28 xl:min-h-[58rem] xl:pb-16">
+        <Container className="relative flex min-h-[34.5rem] items-end pb-8 pt-[5.3rem] sm:min-h-[49rem] sm:pb-12 sm:pt-24 md:min-h-[54rem] md:pt-28 xl:min-h-[58rem] xl:pb-16">
           <Reveal className="max-w-[46rem]">
             <p className="mb-4 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-white/78 sm:text-[0.67rem] sm:tracking-[0.16em]">{premium.hero.eyebrow}</p>
             <h1 className="max-w-[13ch] text-[clamp(2.26rem,10.6vw,5.95rem)] leading-[0.87] font-semibold tracking-[-0.043em] sm:max-w-[14ch] sm:text-[clamp(2.6rem,7.7vw,5.95rem)] sm:leading-[0.86]">
@@ -132,10 +136,13 @@ export default async function Home() {
             <p className="mt-2 max-w-[34rem] text-[0.86rem] leading-6 text-white/72">{premium.hero.support}</p>
 
             <div className="no-scrollbar mt-5 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
-              {premium.hero.highlights.map((item) => (
+              {premium.hero.highlights.map((item, index) => (
                 <span
                   key={item}
-                  className="glass-pill inline-flex h-9 shrink-0 items-center px-3 text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-white/90"
+                  className={cn(
+                    "glass-pill inline-flex h-9 shrink-0 items-center px-3 text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-white/90",
+                    index > 1 ? "hidden sm:inline-flex" : "",
+                  )}
                 >
                   {item}
                 </span>
@@ -172,7 +179,7 @@ export default async function Home() {
                 href={contactDetails.mapsPlaceUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex h-[3.02rem] w-full items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-white/26 bg-black/24 px-4 text-[0.66rem] font-semibold uppercase tracking-[0.07em] text-white/88 transition-[background-color,border-color,transform] duration-300 hover:-translate-y-px hover:border-white/42 hover:bg-black/34 sm:w-auto"
+                className="group hidden h-[3.02rem] w-full items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-white/26 bg-black/24 px-4 text-[0.66rem] font-semibold uppercase tracking-[0.07em] text-white/88 transition-[background-color,border-color,transform] duration-300 hover:-translate-y-px hover:border-white/42 hover:bg-black/34 sm:inline-flex sm:w-auto"
               >
                 <span>{premium.hero.locationChip}</span>
                 <span className="text-white/58 transition-colors duration-300 group-hover:text-white/84">{pageCopy.maps}</span>
@@ -186,11 +193,14 @@ export default async function Home() {
         <Container className="grid gap-10 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] xl:gap-14">
           <Reveal className="xl:sticky xl:top-28 xl:self-start">
             <div className="image-frame overflow-hidden p-4 sm:p-5">
-              <div className="relative aspect-[5/6] overflow-hidden rounded-[1.35rem] sm:aspect-[4/5]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.35rem] sm:aspect-[4/5]">
                 <MediaFill
                   src="/images/pages/hero/primera-visita/sala-valoracion-estetica.png"
                   alt={imageAlt.firstVisit}
-                  className="photo-grade-soft object-cover object-[56%_42%]"
+                  mobilePosition="62% 35%"
+                  tabletPosition="58% 38%"
+                  desktopPosition="56% 42%"
+                  className="photo-grade-soft"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(130deg,rgba(19,12,16,0.58)_0%,rgba(19,12,16,0.16)_65%)]" />
               </div>
@@ -214,9 +224,12 @@ export default async function Home() {
           <MediaFill
             src="/images/pages/hero/metodo/metodo-preparacion-tratamiento-cabina.mp4"
             alt={imageAlt.method}
-            className="object-cover object-[54%_40%]"
+            mobilePosition="66% 34%"
+            tabletPosition="58% 36%"
+            desktopPosition="54% 40%"
+            className="photo-grade"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(168deg,rgba(52,32,45,0.9)_0%,rgba(42,26,37,0.9)_58%,rgba(34,20,29,0.92)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(52,32,45,0.93)_0%,rgba(44,27,38,0.91)_40%,rgba(35,21,30,0.92)_100%)] sm:bg-[linear-gradient(168deg,rgba(52,32,45,0.9)_0%,rgba(42,26,37,0.9)_58%,rgba(34,20,29,0.92)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_84%_20%,rgba(214,173,192,0.22),transparent_42%),radial-gradient(circle_at_16%_86%,rgba(122,82,99,0.26),transparent_34%)]" />
         </div>
 
@@ -269,6 +282,7 @@ export default async function Home() {
             bridgeHref={l("/tratamientos")}
             bridgeLabel={premium.treatmentsBridge}
             closeLabel={premium.closeModalLabel}
+            treatmentsBasePath={l("/tratamientos")}
           />
         </Container>
       </section>
@@ -310,11 +324,14 @@ export default async function Home() {
 
           <Reveal delay={140} className="lg:self-stretch">
             <article className="image-frame h-full overflow-hidden border-white/18 bg-white/8 p-4 sm:p-5">
-              <div className="relative h-full min-h-[25rem] overflow-hidden rounded-[1.4rem] sm:min-h-[31rem]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.4rem] sm:h-full sm:min-h-[31rem] sm:aspect-auto">
                 <MediaFill
                   src="/images/pages/hero/proceso/servicios-detalle-tratamiento-estetico.png"
                   alt={imageAlt.process}
-                  className="photo-grade-soft object-cover object-[56%_35%]"
+                  mobilePosition="64% 32%"
+                  tabletPosition="60% 34%"
+                  desktopPosition="56% 35%"
+                  className="photo-grade-soft"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(124deg,rgba(11,8,11,0.56)_0%,rgba(11,8,11,0.16)_64%)]" />
               </div>
@@ -345,9 +362,12 @@ export default async function Home() {
                 <MediaFill
                   src="/images/pages/hero/cta/cta-recepcion-centro-estetico.mp4"
                   alt={imageAlt.closing}
-                  className="object-cover object-[56%_44%] opacity-48"
+                  mobilePosition="68% 32%"
+                  tabletPosition="60% 38%"
+                  desktopPosition="56% 44%"
+                  className="photo-grade-soft opacity-44 sm:opacity-48"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(55,23,39,0.92)_0%,rgba(74,31,52,0.83)_52%,rgba(90,39,62,0.73)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(55,23,39,0.94)_0%,rgba(70,29,49,0.88)_44%,rgba(88,38,61,0.78)_100%)] sm:bg-[linear-gradient(118deg,rgba(55,23,39,0.92)_0%,rgba(74,31,52,0.83)_52%,rgba(90,39,62,0.73)_100%)]" />
               </div>
 
               <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_auto] xl:items-end">

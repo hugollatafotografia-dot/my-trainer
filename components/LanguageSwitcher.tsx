@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 
 import { locales, type Locale } from "@/lib/i18n/config";
 import { localeMeta } from "@/lib/i18n/locale-meta";
-import { changeLocalePath } from "@/lib/i18n/routing";
+import { changeLocalePathForSwitcher } from "@/lib/i18n/routing";
 import { cn } from "@/lib/utils";
 
 type LanguageSwitcherProps = {
@@ -16,7 +16,7 @@ type LanguageSwitcherProps = {
 };
 
 export default function LanguageSwitcher({ label = "Language", className, currentLocale }: LanguageSwitcherProps) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "/";
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const fallbackLocale: Locale = "es";
@@ -50,6 +50,12 @@ export default function LanguageSwitcher({ label = "Language", className, curren
     };
   }, []);
 
+  function handleLocaleNavigation(event: ReactMouseEvent<HTMLAnchorElement>, href: string) {
+    event.preventDefault();
+    setIsOpen(false);
+    window.location.assign(href);
+  }
+
   return (
     <div className={cn("relative", className)} ref={rootRef}>
       <button
@@ -80,7 +86,7 @@ export default function LanguageSwitcher({ label = "Language", className, curren
         </p>
         <ul role="listbox" aria-label={label} className="no-scrollbar max-h-[18rem] space-y-1 overflow-y-auto">
           {locales.map((locale) => {
-            const href = changeLocalePath(pathname, locale);
+            const href = changeLocalePathForSwitcher(pathname, locale);
             const meta = localeMeta[locale] ?? localeMeta[fallbackLocale];
             const isActive = locale === safeLocale;
 
@@ -90,7 +96,14 @@ export default function LanguageSwitcher({ label = "Language", className, curren
                   href={href}
                   prefetch={false}
                   data-locale={locale}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(event) => {
+                    if (isActive) {
+                      event.preventDefault();
+                      setIsOpen(false);
+                      return;
+                    }
+                    handleLocaleNavigation(event, href);
+                  }}
                   className={cn(
                     "flex h-11 items-center gap-2 rounded-[0.8rem] px-2.5 text-[0.66rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-200",
                     isActive

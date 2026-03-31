@@ -18,6 +18,10 @@ type PageClosingCtaProps = {
   description?: string;
   imageSrc: string;
   imageAlt: string;
+  mobileMediaPosition?: string;
+  tabletMediaPosition?: string;
+  desktopMediaPosition?: string;
+  overlayClassName?: string;
   primaryCta: CtaConfig;
   secondaryCta?: CtaConfig;
 };
@@ -28,6 +32,10 @@ export default function PageClosingCta({
   description,
   imageSrc,
   imageAlt,
+  mobileMediaPosition = "68% 36%",
+  tabletMediaPosition = "58% 40%",
+  desktopMediaPosition = "56% 40%",
+  overlayClassName,
   primaryCta,
   secondaryCta,
 }: PageClosingCtaProps) {
@@ -39,9 +47,17 @@ export default function PageClosingCta({
             <MediaFill
               src={imageSrc}
               alt={imageAlt}
-              className="photo-grade-soft object-cover object-[56%_40%] opacity-44"
+              mobilePosition={mobileMediaPosition}
+              tabletPosition={tabletMediaPosition}
+              desktopPosition={desktopMediaPosition}
+              className="photo-grade-soft opacity-42 sm:opacity-44"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(58,25,40,0.9)_0%,rgba(77,35,54,0.82)_100%)]" />
+            <div
+              className={[
+                "absolute inset-0 bg-[linear-gradient(180deg,rgba(58,25,40,0.92)_0%,rgba(66,30,47,0.88)_42%,rgba(78,34,54,0.82)_100%)] sm:bg-[linear-gradient(118deg,rgba(58,25,40,0.9)_0%,rgba(77,35,54,0.82)_100%)]",
+                overlayClassName ?? "",
+              ].join(" ")}
+            />
           </div>
 
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">

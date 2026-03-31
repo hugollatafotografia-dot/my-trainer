@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { getTreatmentsCatalog } from "@/lib/content/treatments-catalog";
 import { contactDetails, legalLinks, navLinks } from "@/lib/site";
 import { getDictionary } from "@/lib/i18n/messages";
 import { withLocalePath } from "@/lib/i18n/routing";
@@ -15,6 +16,8 @@ export default async function Footer() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const footerNav = navLinks.filter((item) => item.href !== "/reservar");
+  const catalog = getTreatmentsCatalog(locale);
+  const featuredTreatments = catalog.treatments.filter((item) => item.featured).slice(0, 4);
   const cookiePreferencesLabelByLocale = {
     es: "Gestionar cookies",
     ca: "Gestionar galetes",
@@ -24,6 +27,33 @@ export default async function Footer() {
     ru: "Управление файлами cookie",
   } as const;
   const cookiePreferencesLabel = cookiePreferencesLabelByLocale[locale] ?? cookiePreferencesLabelByLocale.es;
+  const footerCopyByLocale = {
+    es: {
+      categories: "Categorías",
+      featured: "Tratamientos destacados",
+    },
+    ca: {
+      categories: "Categories",
+      featured: "Tractaments destacats",
+    },
+    fr: {
+      categories: "Catégories",
+      featured: "Traitements mis en avant",
+    },
+    en: {
+      categories: "Categories",
+      featured: "Featured treatments",
+    },
+    uk: {
+      categories: "Категорії",
+      featured: "Рекомендовані процедури",
+    },
+    ru: {
+      categories: "Категории",
+      featured: "Рекомендуемые процедуры",
+    },
+  } as const;
+  const footerCopy = footerCopyByLocale[locale] ?? footerCopyByLocale.es;
 
   return (
     <footer className="border-t border-white/12 bg-[linear-gradient(176deg,#2f1d29_0%,#22151f_58%,#1b1119_100%)] text-white">
@@ -72,7 +102,7 @@ export default async function Footer() {
         </div>
       </Container>
 
-      <Container className="grid gap-7 pb-8 pt-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.85fr_0.85fr_1fr]">
+      <Container className="grid gap-7 pb-8 pt-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr_0.95fr_1fr]">
         <div className="sm:col-span-2 lg:col-span-1">
           <BrandLogo
             size="lg"
@@ -96,6 +126,33 @@ export default async function Footer() {
                 className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white"
               >
                 {t.nav[link.key]}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-[0.66rem] font-semibold uppercase tracking-[0.17em] text-white/62">{footerCopy.categories}</h2>
+          <div className="mt-4 flex flex-col gap-1.5 text-[0.86rem] text-white/80">
+            {catalog.categories.map((category) => (
+              <Link
+                key={category.id}
+                href={`${withLocalePath("/tratamientos", locale)}#cat-${category.slug}`}
+                className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white"
+              >
+                {category.name}
+              </Link>
+            ))}
+          </div>
+          <h2 className="mt-6 text-[0.66rem] font-semibold uppercase tracking-[0.17em] text-white/62">{footerCopy.featured}</h2>
+          <div className="mt-4 flex flex-col gap-1.5 text-[0.86rem] text-white/80">
+            {featuredTreatments.map((item) => (
+              <Link
+                key={item.slug}
+                href={`${withLocalePath("/tratamientos", locale)}/${item.slug}`}
+                className="inline-flex min-h-10 items-center transition-colors duration-200 hover:text-white"
+              >
+                {item.name}
               </Link>
             ))}
           </div>

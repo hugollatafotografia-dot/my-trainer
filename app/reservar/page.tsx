@@ -78,6 +78,9 @@ export default async function ReservarPage() {
         description={t.bookingPage.hero.description}
         imageSrc="/images/pages/reservar/hero/hero-reserva-tratamiento.mp4"
         imageAlt={imageAlt.hero}
+        mobileMediaPosition="72% 34%"
+        tabletMediaPosition="62% 36%"
+        desktopMediaPosition="56% 38%"
         primaryCta={{
           href: whatsappHref,
           label: t.cta.confirmWhatsapp,
@@ -110,11 +113,14 @@ export default async function ReservarPage() {
           </div>
 
           <article className="image-frame overflow-hidden p-4 sm:p-5">
-            <div className="relative h-[18.5rem] overflow-hidden rounded-[1.45rem] sm:h-[27rem]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem] sm:h-[27rem] sm:aspect-auto">
               <MediaFill
                 src="/images/pages/reservar/cabina/cabina-valoracion-estetica.jpg"
                 alt={imageAlt.cabin}
-                className="photo-grade-soft object-cover object-[56%_39%]"
+                mobilePosition="64% 34%"
+                tabletPosition="58% 38%"
+                desktopPosition="56% 39%"
+                className="photo-grade-soft"
               />
               <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(16,10,14,0.58)_0%,rgba(16,10,14,0.12)_66%)]" />
             </div>
@@ -166,6 +172,9 @@ export default async function ReservarPage() {
         description={t.bookingPage.closing.description}
         imageSrc="/images/pages/reservar/hero/hero-reserva-tratamiento.mp4"
         imageAlt={imageAlt.closing}
+        mobileMediaPosition="68% 34%"
+        tabletMediaPosition="60% 36%"
+        desktopMediaPosition="56% 39%"
         primaryCta={{
           href: whatsappHref,
           label: t.cta.confirmWhatsapp,

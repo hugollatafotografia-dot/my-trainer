@@ -2,6 +2,11 @@ import type { Locale } from "./config";
 
 export type UiDictionary = {
   languageLabel: string;
+  mobileMenu: {
+    openLabel: string;
+    closeLabel: string;
+    title: string;
+  };
   nav: {
     treatments: string;
     about: string;
@@ -18,6 +23,11 @@ export type UiDictionary = {
 const uiDictionaries: Record<Locale, UiDictionary> = {
   es: {
     languageLabel: "Idioma",
+    mobileMenu: {
+      openLabel: "Abrir menú",
+      closeLabel: "Cerrar menú",
+      title: "Menú",
+    },
     nav: {
       treatments: "Tratamientos",
       about: "Sobre nosotros",
@@ -32,6 +42,11 @@ const uiDictionaries: Record<Locale, UiDictionary> = {
   },
   ca: {
     languageLabel: "Idioma",
+    mobileMenu: {
+      openLabel: "Obrir menú",
+      closeLabel: "Tancar menú",
+      title: "Menú",
+    },
     nav: {
       treatments: "Tractaments",
       about: "Sobre nosaltres",
@@ -46,6 +61,11 @@ const uiDictionaries: Record<Locale, UiDictionary> = {
   },
   fr: {
     languageLabel: "Langue",
+    mobileMenu: {
+      openLabel: "Ouvrir le menu",
+      closeLabel: "Fermer le menu",
+      title: "Menu",
+    },
     nav: {
       treatments: "Traitements",
       about: "À propos",
@@ -60,6 +80,11 @@ const uiDictionaries: Record<Locale, UiDictionary> = {
   },
   en: {
     languageLabel: "Language",
+    mobileMenu: {
+      openLabel: "Open menu",
+      closeLabel: "Close menu",
+      title: "Menu",
+    },
     nav: {
       treatments: "Treatments",
       about: "About us",
@@ -74,6 +99,11 @@ const uiDictionaries: Record<Locale, UiDictionary> = {
   },
   uk: {
     languageLabel: "Мова",
+    mobileMenu: {
+      openLabel: "Відкрити меню",
+      closeLabel: "Закрити меню",
+      title: "Меню",
+    },
     nav: {
       treatments: "Процедури",
       about: "Про нас",
@@ -88,6 +118,11 @@ const uiDictionaries: Record<Locale, UiDictionary> = {
   },
   ru: {
     languageLabel: "Язык",
+    mobileMenu: {
+      openLabel: "Открыть меню",
+      closeLabel: "Закрыть меню",
+      title: "Меню",
+    },
     nav: {
       treatments: "Процедуры",
       about: "О нас",

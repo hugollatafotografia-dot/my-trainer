@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 
 import ChatExperience from "@/components/chat/ChatExperience";
 import CookieConsentBanner from "@/components/cookies/CookieConsentBanner";
-import FloatingActions from "@/components/FloatingActions";
 import Footer from "@/components/Footer";
 import GlobalMotion from "@/components/GlobalMotion";
 import InteractionTracker from "@/components/InteractionTracker";
@@ -82,7 +81,6 @@ export default async function RootLayout({
           bookCtaLabel={t.cta.book}
           whatsappCtaLabel={t.cta.whatsapp}
         />
-        <FloatingActions />
         <CookieConsentBanner locale={locale} cookiesHref={withLocalePath("/legal/cookies", locale)} />
         <InteractionTracker />
         <script

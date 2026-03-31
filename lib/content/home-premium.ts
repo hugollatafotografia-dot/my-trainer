@@ -51,6 +51,7 @@ export type HomeTeamMember = {
   image: string;
   alt: string;
   imagePosition?: string;
+  mobileImagePosition?: string;
   ctaLabel: string;
   modalLabel: string;
   modalTitle: string;
@@ -131,6 +132,7 @@ const sharedTeam: HomeTeamMember[] = [
     image: "/images/pages/hero/equipo/equipo-eli.png",
     alt: "Eli, gerente del centro",
     imagePosition: "52% 38%",
+    mobileImagePosition: "58% 28%",
     ctaLabel: "Saber más",
     modalLabel: "Equipo",
     modalTitle: "Eli - Gerente",
@@ -161,6 +163,7 @@ const sharedTeam: HomeTeamMember[] = [
     image: "/images/pages/hero/equipo/equipo-jaquie-20260326.png",
     alt: "Jaquie, esteticien del centro",
     imagePosition: "60% 34%",
+    mobileImagePosition: "64% 28%",
     ctaLabel: "Saber más",
     modalLabel: "Equipo",
     modalTitle: "Jaquie - Esteticien",
@@ -191,6 +194,7 @@ const sharedTeam: HomeTeamMember[] = [
     image: "/images/pages/hero/equipo/equipo-karen-20260326.png",
     alt: "Karen, esteticien del centro",
     imagePosition: "56% 42%",
+    mobileImagePosition: "60% 34%",
     ctaLabel: "Saber más",
     modalLabel: "Equipo",
     modalTitle: "Karen - Esteticien",
@@ -432,23 +436,23 @@ const sharedFaqs: HomeFaqItem[] = [
   },
   {
     id: "faq-categorias",
-    question: "¿Qué diferencia hay entre estética normal, avanzada y regenerativa?",
-    summary: "Cada categoria responde a una intensidad y objetivo distinto.",
+    question: "¿Cómo se organiza ahora el catálogo de tratamientos?",
+    summary: "La web agrupa por faciales, corporales, depilación, capilar, bienestar y especiales.",
     ctaLabel: "Saber más",
     modalLabel: "FAQs",
-    modalTitle: "Diferencia entre categorías de tratamiento",
+    modalTitle: "Estructura actual del catálogo",
     answerLead:
-      "La cartera se organiza por nivel de intervencion y por momento del proceso de la piel.",
+      "La cartera se organiza por objetivo comercial y zona de trabajo para facilitar la decisión de forma más rápida.",
     blocks: [
       {
-        title: "Estética normal",
-        lines: ["Mantenimiento, limpieza y mejora visible de baja intensidad."],
+        title: "Categorías principales",
+        lines: ["Faciales, corporales, depilación y capilar/regeneración."],
       },
       {
-        title: "Estética avanzada y regenerativa",
+        title: "Categorías de soporte",
         lines: [
-          "Avanzada: tecnología para objetivos de precision.",
-          "Regenerativa: recuperación de calidad cutánea y continuidad.",
+          "Masajes y bienestar para confort y descarga.",
+          "Estética avanzada y especiales para objetivos más concretos.",
         ],
       },
     ],
@@ -520,8 +524,8 @@ const caFaqCopy: Record<string, { question: string; summary: string }> = {
     summary: "Si, avisant amb antelacio per reorganitzar l'agenda.",
   },
   "faq-categorias": {
-    question: "Quina diferencia hi ha entre estética normal, avancada i regenerativa?",
-    summary: "Cada categoria respon a una intensitat i objectiu diferent.",
+    question: "Com s'organitza ara el catàleg de tractaments?",
+    summary: "S'agrupa per facials, corporals, depilació, capil·lar, benestar i especials.",
   },
   "faq-combinacion": {
     question: "Puc combinar diversos tractaments?",
@@ -571,8 +575,8 @@ const frFaqCopy: Record<string, { question: string; summary: string }> = {
     summary: "Oui, en prevenant a l'avance pour reorganiser l'agenda.",
   },
   "faq-categorias": {
-    question: "Quelle différence entre esthétique classique, avancée et régénérative?",
-    summary: "Chaque categorie correspond a une intensite et un objectif differents.",
+    question: "Comment le catalogue de traitements est-il organisé maintenant?",
+    summary: "Il est structuré en visage, corps, épilation, capillaire, bien-être et spéciaux.",
   },
   "faq-combinacion": {
     question: "Puis-je combiner plusieurs traitements?",
@@ -622,8 +626,8 @@ const enFaqCopy: Record<string, { question: string; summary: string }> = {
     summary: "Yes, with prior notice so the agenda can be reorganized.",
   },
   "faq-categorias": {
-    question: "What is the difference between normal, advanced and regenerative aesthetics?",
-    summary: "Each category responds to a different intensity and objective.",
+    question: "How is the treatments catalogue organised now?",
+    summary: "It is grouped into facial, body, hair-removal, hair/regeneration, wellness and specials.",
   },
   "faq-combinacion": {
     question: "Can I combine several treatments?",
@@ -673,8 +677,8 @@ const ukFaqCopy: Record<string, { question: string; summary: string }> = {
     summary: "Так, якщо попередити завчасно для переналаштування графіка.",
   },
   "faq-categorias": {
-    question: "У чому різниця між базовою, розширеною та регенеративною естетикою?",
-    summary: "Кожна категорія має свою інтенсивність і ціль.",
+    question: "Як зараз організовано каталог процедур?",
+    summary: "Його згруповано за напрямами: обличчя, тіло, епіляція, капілярний догляд, добробут і спеціальні.",
   },
   "faq-combinacion": {
     question: "Чи можна комбінувати кілька процедур?",
@@ -724,8 +728,8 @@ const ruFaqCopy: Record<string, { question: string; summary: string }> = {
     summary: "Да, при предварительном уведомлении для корректировки графика.",
   },
   "faq-categorias": {
-    question: "Чем отличаются базовая, продвинутая и регенеративная эстетика?",
-    summary: "Каждая категория соответствует своей интенсивности и цели.",
+    question: "Как сейчас организован каталог процедур?",
+    summary: "Он сгруппирован по направлениям: лицо, тело, эпиляция, капиллярный уход, wellbeing и специальные.",
   },
   "faq-combinacion": {
     question: "Можно комбинировать несколько процедур?",
@@ -773,7 +777,7 @@ function buildLocalizedFaqs(
 const esHome: HomePremiumContent = {
   closeModalLabel: "Cerrar",
   hero: {
-    eyebrow: "Centros Ideal Andorra - Illa Carlemany",
+    eyebrow: "Centros Ideal Andorra - illa Carlemany",
     titleLead: "Depilacion laser diodo",
     titleStrong: "y estética avanzada",
     titleTail: "con protocolo profesional real.",
@@ -781,10 +785,10 @@ const esHome: HomePremiumContent = {
       "Primera visita de 30 minutos para diagnosticar, priorizar objetivos y definir un plan claro desde el primer dia.",
     support: "Centro en Escaldes-Engordany, con atención por agenda y seguimiento activo.",
     highlights: ["Diagnostico inicial", "Plan recomendado", "Seguimiento por fases"],
-    locationChip: "Escaldes-Engordany · Illa Carlemany · 2a planta",
+    locationChip: "Escaldes-Engordany · illa Carlemany · 2a planta",
     locationLabel: "Ubicación operativa",
     addressLine: "Av. Carlemany, 70, AD700 Andorra",
-    floorLine: "Centre Comercial Illa Carlemany - segunda planta",
+    floorLine: "Centre Comercial illa Carlemany - segunda planta",
     hoursLine: "Agenda gestionada por cita previa y confirmación por WhatsApp.",
     mapCta: "Abrir en Google Maps",
     routeCta: "Cómo llegar",
@@ -887,7 +891,7 @@ const esHome: HomePremiumContent = {
   treatmentsLabel: "Tratamientos",
   treatmentsTitle: "Oferta amplia, ordenada y fácil de explorar.",
   treatmentsDescription:
-    "Explora por categoria y abre cada ficha sin salir de la página para entender tiempos, objetivo y encaje.",
+    "Explora por categoría, compara tratamientos y entra en la ficha completa de cada servicio.",
   treatmentsBridge: "Ver catálogo completo",
   teamLabel: "Equipo",
   teamTitle: "Tres profesionales, un mismo estándar de trabajo.",
@@ -944,7 +948,7 @@ const caHome: HomePremiumContent = {
   closeModalLabel: "Tancar",
   hero: {
     ...esHome.hero,
-    eyebrow: "Centres Ideal Andorra - Illa Carlemany",
+    eyebrow: "Centres Ideal Andorra - illa Carlemany",
     titleLead: "Depilacio laser de diode",
     titleStrong: "i estètica avançada",
     titleTail: "amb protocol professional real.",
@@ -952,7 +956,7 @@ const caHome: HomePremiumContent = {
       "Primera visita de 30 minuts per diagnosticar, prioritzar objectius i definir un pla clar des del primer dia.",
     support: "Centre a Escaldes-Engordany, amb atenció per agenda i seguiment actiu.",
     highlights: ["Diagnosi inicial", "Pla recomanat", "Seguiment per fases"],
-    locationChip: "Escaldes-Engordany · Illa Carlemany · 2a planta",
+    locationChip: "Escaldes-Engordany · illa Carlemany · 2a planta",
   },
   firstVisitLabel: "Primera visita",
   firstVisitTitle: "Una valoració que et deixa decisions clares, no dubtes.",
@@ -1051,7 +1055,7 @@ const caHome: HomePremiumContent = {
   treatmentsLabel: "Tractaments",
   treatmentsTitle: "Oferta amplia, ordenada i fácil d'explorar.",
   treatmentsDescription:
-    "Explora per categoria i obre cada fitxa sense sortir de la página per entendre temps, objectiu i encaix.",
+    "Explora per categoria, compara tractaments i entra a la fitxa completa de cada servei.",
   treatmentsBridge: "Veure catàleg complet",
   teamLabel: "Equip",
   teamTitle: "Tres professionals, un mateix estàndard de treball.",
@@ -1162,7 +1166,7 @@ const frHome: HomePremiumContent = {
   closeModalLabel: "Fermer",
   hero: {
     ...esHome.hero,
-    eyebrow: "Centres Ideal Andorre - Illa Carlemany",
+    eyebrow: "Centres Ideal Andorre - illa Carlemany",
     titleLead: "Epilation laser diode",
     titleStrong: "et esthétique avancée",
     titleTail: "avec un protocole professionnel reel.",
@@ -1170,7 +1174,7 @@ const frHome: HomePremiumContent = {
       "Premiere visite de 30 minutes pour diagnostiquer, prioriser les objectifs et definir un plan clair des le debut.",
     support: "Centre situe a Escaldes-Engordany, avec prise en charge sur rendez-vous et suivi actif.",
     highlights: ["Diagnostic initial", "Plan recommande", "Suivi par phases"],
-    locationChip: "Escaldes-Engordany · Illa Carlemany · 2e etage",
+    locationChip: "Escaldes-Engordany · illa Carlemany · 2e etage",
   },
   firstVisitLabel: "Premiere visite",
   firstVisitTitle: "Une evaluation qui vous laisse des decisions claires, pas des doutes.",
@@ -1269,7 +1273,7 @@ const frHome: HomePremiumContent = {
   treatmentsLabel: "Traitements",
   treatmentsTitle: "Une offre large, structuree et fácile a explorer.",
   treatmentsDescription:
-    "Explorez par categorie et ouvrez chaque fiche sans quitter la page pour comprendre duree, objectif et indication.",
+    "Explorez par catégorie, comparez les soins et ouvrez la fiche complète de chaque service.",
   treatmentsBridge: "Voir le catalogue complet",
   teamLabel: "Equipe",
   teamTitle: "Trois professionnelles, un meme niveau d'exigence.",
@@ -1380,7 +1384,7 @@ const enHome: HomePremiumContent = {
   closeModalLabel: "Close",
   hero: {
     ...esHome.hero,
-    eyebrow: "Centres Ideal Andorra - Illa Carlemany",
+    eyebrow: "Centres Ideal Andorra - illa Carlemany",
     titleLead: "Diode laser hair removal",
     titleStrong: "and advanced aesthetics",
     titleTail: "with a real professional protocol.",
@@ -1388,9 +1392,9 @@ const enHome: HomePremiumContent = {
       "A 30-minute first visit to diagnose, prioritise goals and define a clear treatment plan from day one.",
     support: "Centre in Escaldes-Engordany, agenda-based care and active follow-up.",
     highlights: ["Initial diagnosis", "Recommended plan", "Phase-by-phase follow-up"],
-    locationChip: "Escaldes-Engordany · Illa Carlemany · 2nd floor",
+    locationChip: "Escaldes-Engordany · illa Carlemany · 2nd floor",
     locationLabel: "Operational location",
-    floorLine: "Illa Carlemany Shopping Centre - second floor",
+    floorLine: "illa Carlemany Shopping Centre - second floor",
     hoursLine: "Agenda managed by prior booking and WhatsApp confirmation.",
     mapCta: "Open in Google Maps",
     routeCta: "How to get there",
@@ -1493,7 +1497,7 @@ const enHome: HomePremiumContent = {
   treatmentsLabel: "Treatments",
   treatmentsTitle: "A broad offer, clearly structured and easy to explore.",
   treatmentsDescription:
-    "Explore by category and open each profile without leaving the page to understand duration, objective and fit.",
+    "Explore by category, compare treatments and open the full page of each service.",
   treatmentsBridge: "View full catalogue",
   teamLabel: "Team",
   teamTitle: "Three professionals, one quality standard.",
@@ -1605,7 +1609,7 @@ const ukHome: HomePremiumContent = {
   closeModalLabel: "Закрити",
   hero: {
     ...enHome.hero,
-    eyebrow: "Centres Ideal Andorra - Illa Carlemany",
+    eyebrow: "Centres Ideal Andorra - illa Carlemany",
     titleLead: "Діодна лазерна епіляція",
     titleStrong: "та розширена естетика",
     titleTail: "з реальним професійним протоколом.",
@@ -1613,9 +1617,9 @@ const ukHome: HomePremiumContent = {
       "Перший візит триває 30 хвилин: діагностика, пріоритети та чіткий план дій з першого дня.",
     support: "Центр у Escaldes-Engordany, робота за записом і активний супровід.",
     highlights: ["Початкова діагностика", "Рекомендований план", "Супровід за фазами"],
-    locationChip: "Escaldes-Engordany · Illa Carlemany · 2-й поверх",
+    locationChip: "Escaldes-Engordany · illa Carlemany · 2-й поверх",
     locationLabel: "Локація центру",
-    floorLine: "Illa Carlemany - другий поверх",
+    floorLine: "illa Carlemany - другий поверх",
     hoursLine: "Графік керується попереднім записом і підтвердженням у WhatsApp.",
     mapCta: "Відкрити в Google Maps",
     routeCta: "Як дістатися",
@@ -1830,7 +1834,7 @@ const ruHome: HomePremiumContent = {
   closeModalLabel: "Закрыть",
   hero: {
     ...enHome.hero,
-    eyebrow: "Centres Ideal Andorra - Illa Carlemany",
+    eyebrow: "Centres Ideal Andorra - illa Carlemany",
     titleLead: "Диодная лазерная эпиляция",
     titleStrong: "и продвинутая эстетика",
     titleTail: "с реальным профессиональным протоколом.",
@@ -1838,9 +1842,9 @@ const ruHome: HomePremiumContent = {
       "Первый визит длится 30 минут: диагностика, приоритеты и четкий план действий с первого дня.",
     support: "Центр в Escaldes-Engordany, работа по записи и активное сопровождение.",
     highlights: ["Первичная диагностика", "Рекомендованный план", "Сопровождение по фазам"],
-    locationChip: "Escaldes-Engordany · Illa Carlemany · 2-й этаж",
+    locationChip: "Escaldes-Engordany · illa Carlemany · 2-й этаж",
     locationLabel: "Локация центра",
-    floorLine: "Illa Carlemany - второй этаж",
+    floorLine: "illa Carlemany - второй этаж",
     hoursLine: "График ведется по предварительной записи и подтверждению в WhatsApp.",
     mapCta: "Открыть в Google Maps",
     routeCta: "Как добраться",

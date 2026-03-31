@@ -81,6 +81,9 @@ export default async function ResultadosPage() {
         description={t.resultsPage.hero.description}
         imageSrc="/images/pages/resultados/hero/hero-resultados-tratamientos.mp4"
         imageAlt={imageAlt.hero}
+        mobileMediaPosition="72% 34%"
+        tabletMediaPosition="62% 35%"
+        desktopMediaPosition="56% 34%"
         primaryCta={{
           href: l("/reservar"),
           label: t.cta.book,
@@ -111,11 +114,15 @@ export default async function ResultadosPage() {
           </div>
 
           <article className="image-frame overflow-hidden p-4 sm:p-5">
-            <div className="relative h-[18.5rem] overflow-hidden rounded-[1.45rem] sm:h-[26rem]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem] sm:h-[26rem] sm:aspect-auto">
               <MediaFill
                 src="/images/pages/resultados/confianza/modulo-confianza-centro.mp4"
+                mobileSrc="/images/pages/reservar/cabina/cabina-valoracion-estetica.jpg"
                 alt={imageAlt.trust}
-                className="photo-grade-soft object-cover object-[54%_36%]"
+                mobilePosition="62% 34%"
+                tabletPosition="56% 36%"
+                desktopPosition="54% 36%"
+                className="photo-grade-soft"
               />
               <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(16,10,14,0.48)_0%,rgba(16,10,14,0.12)_66%)]" />
             </div>
@@ -134,8 +141,15 @@ export default async function ResultadosPage() {
           <div className="mt-7 grid gap-4 md:grid-cols-2">
             {t.resultsPage.visual.assets.map((item) => (
               <article key={item.id} className="surface-card overflow-hidden rounded-[1.3rem] border border-[color:var(--color-line)]">
-                <div className="relative h-[15.8rem] sm:h-[20rem]">
-                  <MediaFill src={item.src} alt={item.alt} className="photo-grade-soft object-cover object-[56%_38%]" />
+                <div className="relative aspect-[5/6] sm:h-[20rem] sm:aspect-auto">
+                  <MediaFill
+                    src={item.src}
+                    alt={item.alt}
+                    mobilePosition="60% 34%"
+                    tabletPosition="58% 38%"
+                    desktopPosition="56% 38%"
+                    className="photo-grade-soft"
+                  />
                   <div className="absolute inset-0 bg-[linear-gradient(126deg,rgba(16,10,14,0.28)_0%,rgba(16,10,14,0.12)_64%)]" />
                 </div>
                 <div className="px-5 py-4">
@@ -174,6 +188,9 @@ export default async function ResultadosPage() {
         description={t.resultsPage.closing.description}
         imageSrc="/images/pages/resultados/cierre/detalle-centro-ideal-illa-carlemany.png"
         imageAlt={imageAlt.closing}
+        mobileMediaPosition="64% 36%"
+        tabletMediaPosition="58% 40%"
+        desktopMediaPosition="54% 40%"
         primaryCta={{
           href: l("/reservar"),
           label: t.cta.book,

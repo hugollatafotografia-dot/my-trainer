@@ -20,12 +20,12 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const descriptionByLocale: Record<Locale, string> = {
-    es: "Contacto directo con Centros Ideal Andorra. WhatsApp, direccion en Illa Carlemany y proceso de reserva de valoracion inicial.",
-    ca: "Contacte directe amb Centres Ideal Andorra. WhatsApp, adreca a Illa Carlemany i proces de reserva de valoracio inicial.",
-    fr: "Contact direct avec Centres Ideal Andorra. WhatsApp, adresse a Illa Carlemany et processus de reservation initiale.",
-    en: "Direct contact with Centres Ideal Andorra. WhatsApp, Illa Carlemany location and initial assessment booking flow.",
-    uk: "Прямий контакт із Centres Ideal Andorra: WhatsApp, адреса в Illa Carlemany і процес запису на первинну консультацію.",
-    ru: "Прямой контакт с Centres Ideal Andorra: WhatsApp, адрес в Illa Carlemany и процесс записи на первичную консультацию.",
+    es: "Contacto directo con Centros Ideal Andorra. WhatsApp, direccion en illa Carlemany y proceso de reserva de valoracion inicial.",
+    ca: "Contacte directe amb Centres Ideal Andorra. WhatsApp, adreca a illa Carlemany i proces de reserva de valoracio inicial.",
+    fr: "Contact direct avec Centres Ideal Andorra. WhatsApp, adresse a illa Carlemany et processus de reservation initiale.",
+    en: "Direct contact with Centres Ideal Andorra. WhatsApp, illa Carlemany location and initial assessment booking flow.",
+    uk: "Прямий контакт із Centres Ideal Andorra: WhatsApp, адреса в illa Carlemany і процес запису на первинну консультацію.",
+    ru: "Прямой контакт с Centres Ideal Andorra: WhatsApp, адрес в illa Carlemany и процесс записи на первичную консультацию.",
   };
 
   return buildPageMetadata({
@@ -122,6 +122,9 @@ export default async function ContactoPage() {
         description={t.contactPage.hero.description}
         imageSrc="/images/pages/contacto/hero/hero-contacto-centro.mp4"
         imageAlt={imageAlt.hero}
+        mobileMediaPosition="74% 32%"
+        tabletMediaPosition="63% 35%"
+        desktopMediaPosition="56% 36%"
         primaryCta={{
           href: whatsappHref,
           label: t.cta.whatsapp,
@@ -162,11 +165,14 @@ export default async function ContactoPage() {
           </div>
 
           <article className="image-frame overflow-hidden p-4 sm:p-5">
-            <div className="relative h-[18.5rem] overflow-hidden rounded-[1.45rem] sm:h-[27rem]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem] sm:h-[27rem] sm:aspect-auto">
               <MediaFill
                 src="/images/pages/contacto/asesoria/zona-asesoria-estudio.png"
                 alt={imageAlt.advisory}
-                className="photo-grade-soft object-cover object-[56%_43%]"
+                mobilePosition="64% 36%"
+                tabletPosition="58% 40%"
+                desktopPosition="56% 43%"
+                className="photo-grade-soft"
               />
               <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(16,10,14,0.58)_0%,rgba(16,10,14,0.14)_66%)]" />
             </div>
@@ -250,6 +256,9 @@ export default async function ContactoPage() {
         description={t.contactPage.closing.description}
         imageSrc="/images/pages/contacto/cierre/detalle-centro-ideal-illa-carlemany.png"
         imageAlt={imageAlt.closing}
+        mobileMediaPosition="64% 35%"
+        tabletMediaPosition="58% 40%"
+        desktopMediaPosition="54% 40%"
         primaryCta={{
           href: l("/reservar"),
           label: t.cta.book,
