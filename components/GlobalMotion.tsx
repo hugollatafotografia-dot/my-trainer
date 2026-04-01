@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const AUTO_REVEAL_SELECTOR = [
-  "main > section",
   "main section .surface-card",
   "main section .image-frame",
   "main section .dark-panel",
@@ -51,7 +50,7 @@ export default function GlobalMotion() {
         });
       },
       {
-        threshold: 0.14,
+        threshold: 0.01,
         rootMargin: "0px 0px -8% 0px",
       },
     );

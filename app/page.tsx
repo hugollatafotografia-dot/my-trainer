@@ -281,7 +281,6 @@ export default async function Home() {
             mode="home"
             bridgeHref={l("/tratamientos")}
             bridgeLabel={premium.treatmentsBridge}
-            closeLabel={premium.closeModalLabel}
             treatmentsBasePath={l("/tratamientos")}
           />
         </Container>

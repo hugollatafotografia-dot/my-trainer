@@ -437,7 +437,7 @@ const sharedFaqs: HomeFaqItem[] = [
   {
     id: "faq-categorias",
     question: "¿Cómo se organiza ahora el catálogo de tratamientos?",
-    summary: "La web agrupa por faciales, corporales, depilación, capilar, bienestar y especiales.",
+    summary: "La web agrupa por estética normal, avanzada y regenerativa.",
     ctaLabel: "Saber más",
     modalLabel: "FAQs",
     modalTitle: "Estructura actual del catálogo",
@@ -446,13 +446,10 @@ const sharedFaqs: HomeFaqItem[] = [
     blocks: [
       {
         title: "Categorías principales",
-        lines: ["Faciales, corporales, depilación y capilar/regeneración."],
-      },
-      {
-        title: "Categorías de soporte",
         lines: [
-          "Masajes y bienestar para confort y descarga.",
-          "Estética avanzada y especiales para objetivos más concretos.",
+          "Estética normal para mantenimiento, entrada y cuidado base.",
+          "Estética avanzada para protocolos técnicos y aparatología.",
+          "Estética regenerativa para renovación de calidad cutánea.",
         ],
       },
     ],
@@ -525,7 +522,7 @@ const caFaqCopy: Record<string, { question: string; summary: string }> = {
   },
   "faq-categorias": {
     question: "Com s'organitza ara el catàleg de tractaments?",
-    summary: "S'agrupa per facials, corporals, depilació, capil·lar, benestar i especials.",
+    summary: "S'agrupa en estètica normal, avançada i regenerativa.",
   },
   "faq-combinacion": {
     question: "Puc combinar diversos tractaments?",
@@ -576,7 +573,7 @@ const frFaqCopy: Record<string, { question: string; summary: string }> = {
   },
   "faq-categorias": {
     question: "Comment le catalogue de traitements est-il organisé maintenant?",
-    summary: "Il est structuré en visage, corps, épilation, capillaire, bien-être et spéciaux.",
+    summary: "Il est structuré en esthétique normale, avancée et régénérative.",
   },
   "faq-combinacion": {
     question: "Puis-je combiner plusieurs traitements?",
@@ -627,7 +624,7 @@ const enFaqCopy: Record<string, { question: string; summary: string }> = {
   },
   "faq-categorias": {
     question: "How is the treatments catalogue organised now?",
-    summary: "It is grouped into facial, body, hair-removal, hair/regeneration, wellness and specials.",
+    summary: "It is grouped into normal, advanced and regenerative aesthetics.",
   },
   "faq-combinacion": {
     question: "Can I combine several treatments?",
@@ -678,7 +675,7 @@ const ukFaqCopy: Record<string, { question: string; summary: string }> = {
   },
   "faq-categorias": {
     question: "Як зараз організовано каталог процедур?",
-    summary: "Його згруповано за напрямами: обличчя, тіло, епіляція, капілярний догляд, добробут і спеціальні.",
+    summary: "Його згруповано у базову, просунуту та регенеративну естетику.",
   },
   "faq-combinacion": {
     question: "Чи можна комбінувати кілька процедур?",
@@ -729,7 +726,7 @@ const ruFaqCopy: Record<string, { question: string; summary: string }> = {
   },
   "faq-categorias": {
     question: "Как сейчас организован каталог процедур?",
-    summary: "Он сгруппирован по направлениям: лицо, тело, эпиляция, капиллярный уход, wellbeing и специальные.",
+    summary: "Он сгруппирован в базовую, продвинутую и регенеративную эстетику.",
   },
   "faq-combinacion": {
     question: "Можно комбинировать несколько процедур?",

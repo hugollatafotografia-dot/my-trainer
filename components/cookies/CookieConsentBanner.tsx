@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
 import {
   COOKIE_OPEN_PREFERENCES_EVENT,
@@ -112,18 +112,21 @@ const copyByLocale: Record<Locale, CookieCopy> = {
 
 export default function CookieConsentBanner({ locale, cookiesHref }: CookieConsentBannerProps) {
   const copy = useMemo(() => copyByLocale[locale], [locale]);
+  const isHydrated = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const [visible, setVisible] = useState(() => {
     if (typeof window === "undefined") {
       return false;
     }
-
     return !readCookieConsent();
   });
   const [analytics, setAnalytics] = useState(() => {
     if (typeof window === "undefined") {
       return false;
     }
-
     return readCookieConsent()?.analytics ?? false;
   });
 
@@ -146,7 +149,7 @@ export default function CookieConsentBanner({ locale, cookiesHref }: CookieConse
     setVisible(false);
   }
 
-  if (!visible) {
+  if (!isHydrated || !visible) {
     return null;
   }
 

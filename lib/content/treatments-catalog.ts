@@ -1,12 +1,9 @@
 import type { Locale } from "@/lib/i18n/config";
 
 export type TreatmentCategoryId =
-  | "facials"
-  | "corporals"
-  | "depilacio"
-  | "capilar-regeneracio"
-  | "massatges-benestar"
-  | "estetica-avancada";
+  | "estetica-normal"
+  | "estetica-avanzada"
+  | "estetica-regenerativa";
 
 export type TreatmentCategory = {
   id: TreatmentCategoryId;
@@ -14,6 +11,9 @@ export type TreatmentCategory = {
   order: number;
   name: string;
   description: string;
+  profile: string;
+  intervention: string;
+  differentiation: string;
 };
 
 export type TreatmentItem = {
@@ -53,6 +53,16 @@ export type TreatmentsCatalogContent = {
     category: string;
     keyBenefits: string;
     relatedTreatments: string;
+    openModal: string;
+    modalDescription: string;
+    modalIndicatedFor: string;
+    modalGoals: string;
+    modalBenefits: string;
+    modalDuration: string;
+    modalFrequency: string;
+    modalSensation: string;
+    modalConsiderations: string;
+    modalAssessment: string;
     ctaPrimary: string;
     ctaSecondary: string;
   };
@@ -69,172 +79,169 @@ type BaseCategory = {
 type LocalizedCategoryCopy = {
   name: string;
   description: string;
+  profile: string;
+  intervention: string;
+  differentiation: string;
 };
 
 const baseCategories: BaseCategory[] = [
-  { id: "facials", slug: "facials", order: 10 },
-  { id: "corporals", slug: "corporals", order: 20 },
-  { id: "depilacio", slug: "depilacio", order: 30 },
-  { id: "capilar-regeneracio", slug: "capilar-regeneracio", order: 40 },
-  { id: "massatges-benestar", slug: "massatges-i-benestar", order: 50 },
-  { id: "estetica-avancada", slug: "estetica-avancada-i-especials", order: 60 },
+  { id: "estetica-normal", slug: "estetica-normal", order: 10 },
+  { id: "estetica-avanzada", slug: "estetica-avanzada", order: 20 },
+  { id: "estetica-regenerativa", slug: "estetica-regenerativa", order: 30 },
 ];
 
 const categoryCopyByLocale: Record<Locale, Record<TreatmentCategoryId, LocalizedCategoryCopy>> = {
   es: {
-    facials: {
-      name: "Faciales",
-      description: "Protocolos para calidad de piel, luminosidad y armonía facial con enfoque progresivo.",
+    "estetica-normal": {
+      name: "Estética normal",
+      description:
+        "Tratamientos de entrada, mantenimiento y cuidado estético base para piel y cuerpo con enfoque progresivo.",
+      profile:
+        "Ideal si buscas mejorar imagen, confort y constancia sin empezar por protocolos técnicamente intensivos.",
+      intervention: "Grado de intervención: suave a moderado, orientado a continuidad y hábitos estéticos sólidos.",
+      differentiation:
+        "Se diferencia por su enfoque de base: limpia, equilibra y mantiene antes de escalar a protocolos de alta intensidad.",
     },
-    corporals: {
-      name: "Corporales",
-      description: "Tratamientos orientados a firmeza, textura, drenaje y mejora del confort corporal.",
+    "estetica-avanzada": {
+      name: "Estética avanzada",
+      description:
+        "Protocolos con aparatología y técnicas de corrección visible para objetivos específicos faciales y corporales.",
+      profile:
+        "Pensada para quien necesita un plan más técnico, con metas de cambio más marcadas y medición por evolución.",
+      intervention:
+        "Grado de intervención: moderado a alto dentro de la estética no invasiva, con sesiones estructuradas por fases.",
+      differentiation:
+        "Se diferencia por precisión tecnológica y combinación de técnicas para acelerar resultados con criterio profesional.",
     },
-    depilacio: {
-      name: "Depilación",
-      description: "Soluciones de depilación láser y cera adaptadas a zona, fototipo y preferencia.",
-    },
-    "capilar-regeneracio": {
-      name: "Capilar y regeneración",
-      description: "Soporte cosmético capilar y protocolos de estímulo para continuidad de cuidado.",
-    },
-    "massatges-benestar": {
-      name: "Masajes y bienestar",
-      description: "Rituales manuales para relajación, descarga muscular y bienestar general.",
-    },
-    "estetica-avancada": {
-      name: "Estética avanzada y especiales",
-      description: "Tecnologías y protocolos de precisión para objetivos específicos y casos concretos.",
+    "estetica-regenerativa": {
+      name: "Estética regenerativa",
+      description:
+        "Tratamientos orientados a renovación progresiva de la calidad cutánea, soporte biológico y mejora estructural.",
+      profile:
+        "Indicada cuando la prioridad es recuperar textura, vitalidad y capacidad de respuesta del tejido en el tiempo.",
+      intervention:
+        "Grado de intervención: técnico y progresivo, con foco en reparación estética y rejuvenecimiento sostenible.",
+      differentiation:
+        "Se diferencia por su narrativa regenerativa: no solo corrige visualmente, también trabaja la calidad del tejido.",
     },
   },
   ca: {
-    facials: {
-      name: "Facials",
-      description: "Protocols per qualitat de pell, lluminositat i harmonia facial amb enfoc progressiu.",
+    "estetica-normal": {
+      name: "Estètica normal",
+      description: "Tractaments d'entrada i manteniment per cura estètica base de pell i cos.",
+      profile:
+        "Ideal si busques millora visual progressiva i continuïtat sense començar per protocols intensius.",
+      intervention: "Grau d'intervenció: suau a moderat, orientat a manteniment i rutina de cura.",
+      differentiation:
+        "Es diferencia per consolidar base estètica abans d'escalar cap a tecnologia més avançada.",
     },
-    corporals: {
-      name: "Corporals",
-      description: "Tractaments orientats a fermesa, textura, drenatge i millora del confort corporal.",
+    "estetica-avanzada": {
+      name: "Estètica avançada",
+      description: "Protocols amb aparatologia i tècniques de correcció visible per objectius concrets.",
+      profile: "Pensada per a casos que necessiten més precisió tècnica i una estratègia per fases.",
+      intervention: "Grau d'intervenció: moderat-alt dins estètica no invasiva.",
+      differentiation:
+        "Es diferencia per combinació tecnològica i enfoc clínic-estètic orientat a resultats mesurables.",
     },
-    depilacio: {
-      name: "Depilació",
-      description: "Solucions de depilació làser i cera adaptades a zona, fototip i preferència.",
-    },
-    "capilar-regeneracio": {
-      name: "Capil·lar i regeneració",
-      description: "Suport cosmètic capil·lar i protocols d'estímul per mantenir la continuïtat.",
-    },
-    "massatges-benestar": {
-      name: "Massatges i benestar",
-      description: "Rituals manuals per relaxació, descàrrega muscular i benestar general.",
-    },
-    "estetica-avancada": {
-      name: "Estètica avançada i especials",
-      description: "Tecnologies i protocols de precisió per objectius específics i casos concrets.",
+    "estetica-regenerativa": {
+      name: "Estètica regenerativa",
+      description: "Protocols orientats a renovació cutània i millora de qualitat de teixit a mitjà termini.",
+      profile: "Indicada quan la prioritat és recuperar vitalitat, textura i resposta del teixit.",
+      intervention: "Grau d'intervenció: tècnic i progressiu amb enfoc de regeneració.",
+      differentiation:
+        "Es diferencia perquè combina correcció visual amb treball de qualitat estructural del teixit.",
     },
   },
   fr: {
-    facials: {
-      name: "Soins du visage",
-      description: "Protocoles progressifs pour qualité de peau, éclat et harmonie du visage.",
+    "estetica-normal": {
+      name: "Esthétique normale",
+      description: "Soins d'entretien et d'amélioration de base pour visage et corps.",
+      profile: "Adaptée aux personnes qui veulent progresser sans protocoles techniques lourds.",
+      intervention: "Niveau d'intervention: léger à modéré, orienté continuité.",
+      differentiation: "Crée une base solide avant de passer vers des plans avancés.",
     },
-    corporals: {
-      name: "Soins corporels",
-      description: "Traitements orientés fermeté, texture, drainage et confort corporel.",
+    "estetica-avanzada": {
+      name: "Esthétique avancée",
+      description: "Protocoles techniques avec technologies ciblées pour correction visible.",
+      profile: "Pour des objectifs plus précis nécessitant une approche structurée par étapes.",
+      intervention: "Niveau d'intervention: modéré à élevé en esthétique non invasive.",
+      differentiation: "Allie précision technologique et stratégie commerciale claire.",
     },
-    depilacio: {
-      name: "Épilation",
-      description: "Solutions laser et cire adaptées à la zone, au phototype et à la préférence.",
-    },
-    "capilar-regeneracio": {
-      name: "Capillaire et régénération",
-      description: "Soutien cosmétique capillaire et protocoles de stimulation.",
-    },
-    "massatges-benestar": {
-      name: "Massages et bien-être",
-      description: "Rituels manuels pour relaxation, décontraction et bien-être global.",
-    },
-    "estetica-avancada": {
-      name: "Esthétique avancée et spéciaux",
-      description: "Technologies et protocoles de précision pour objectifs spécifiques.",
+    "estetica-regenerativa": {
+      name: "Esthétique régénérative",
+      description: "Plans orientés renouvellement cutané et amélioration progressive de la qualité tissulaire.",
+      profile: "Indiquée lorsque l'objectif principal est la restauration et la vitalité de la peau.",
+      intervention: "Niveau d'intervention: technique et progressif, avec logique de réparation.",
+      differentiation: "Combine amélioration visuelle et soutien de la qualité structurelle.",
     },
   },
   en: {
-    facials: {
-      name: "Facial treatments",
-      description: "Progressive protocols focused on skin quality, glow and facial harmony.",
+    "estetica-normal": {
+      name: "Normal aesthetics",
+      description: "Entry-level and maintenance treatments for consistent facial and body care.",
+      profile: "Best for clients looking for clear improvement without intensive technical protocols.",
+      intervention: "Intervention level: gentle to moderate, focused on continuity.",
+      differentiation: "Builds a strong baseline before moving into high-intensity plans.",
     },
-    corporals: {
-      name: "Body treatments",
-      description: "Treatments focused on firmness, texture, drainage and body comfort.",
+    "estetica-avanzada": {
+      name: "Advanced aesthetics",
+      description: "Technology-led protocols for more visible correction and targeted objectives.",
+      profile: "Designed for clients needing more technical plans and measurable progression.",
+      intervention: "Intervention level: moderate to high within non-invasive aesthetics.",
+      differentiation: "Combines precision technology with strategic protocol design.",
     },
-    depilacio: {
-      name: "Hair removal",
-      description: "Laser and wax hair-removal options adapted to area and skin profile.",
-    },
-    "capilar-regeneracio": {
-      name: "Hair and regeneration",
-      description: "Scalp support and stimulation protocols with a conservative approach.",
-    },
-    "massatges-benestar": {
-      name: "Massage and wellness",
-      description: "Manual rituals designed for relaxation and muscular wellbeing.",
-    },
-    "estetica-avancada": {
-      name: "Advanced and special treatments",
-      description: "Technology-led protocols for specific indications and goals.",
+    "estetica-regenerativa": {
+      name: "Regenerative aesthetics",
+      description: "Protocols focused on skin renewal, tissue quality and long-term recovery.",
+      profile: "Ideal when the main goal is restoring vitality, texture and biological response.",
+      intervention: "Intervention level: technical and progressive with regenerative logic.",
+      differentiation: "Goes beyond visual correction by supporting structural skin quality.",
     },
   },
   uk: {
-    facials: {
-      name: "Процедури для обличчя",
-      description: "Поступові протоколи для якості шкіри, сяйва та гармонії рис.",
+    "estetica-normal": {
+      name: "Базова естетика",
+      description: "Базові та підтримувальні процедури для обличчя й тіла.",
+      profile: "Для клієнтів, яким потрібен зрозумілий старт без інтенсивних протоколів.",
+      intervention: "Рівень втручання: м'який або помірний.",
+      differentiation: "Формує стабільну естетичну базу перед складнішими етапами.",
     },
-    corporals: {
-      name: "Процедури для тіла",
-      description: "Процедури для пружності, текстури, дренажу та комфорту тіла.",
+    "estetica-avanzada": {
+      name: "Просунута естетика",
+      description: "Технологічні протоколи для більш вираженої корекції.",
+      profile: "Для завдань, що потребують точнішого технічного підходу.",
+      intervention: "Рівень втручання: помірний або високий у межах неінвазивної естетики.",
+      differentiation: "Поєднує апаратну точність і структурований план по етапах.",
     },
-    depilacio: {
-      name: "Епіляція",
-      description: "Лазерні та воскові рішення з урахуванням зони та типу шкіри.",
-    },
-    "capilar-regeneracio": {
-      name: "Капілярний і регенеративний догляд",
-      description: "Підтримка шкіри голови та стимулювальні протоколи.",
-    },
-    "massatges-benestar": {
-      name: "Масаж і добробут",
-      description: "Ручні ритуали для релаксації, розслаблення та загального комфорту.",
-    },
-    "estetica-avancada": {
-      name: "Розширена естетика та спеціальні",
-      description: "Технологічні протоколи для конкретних показань і цілей.",
+    "estetica-regenerativa": {
+      name: "Регенеративна естетика",
+      description: "Протоколи відновлення якості шкіри та поступового оновлення тканин.",
+      profile: "Коли пріоритетом є відновлення текстури, тонусу й життєвості тканин.",
+      intervention: "Рівень втручання: технічний і поступовий.",
+      differentiation: "Працює не лише з візуальним ефектом, а й з якістю тканини.",
     },
   },
   ru: {
-    facials: {
-      name: "Процедуры для лица",
-      description: "Пошаговые протоколы для качества кожи, сияния и гармонии лица.",
+    "estetica-normal": {
+      name: "Базовая эстетика",
+      description: "Базовые и поддерживающие процедуры для лица и тела.",
+      profile: "Подходит для понятного старта без интенсивных технических протоколов.",
+      intervention: "Уровень воздействия: мягкий или умеренный.",
+      differentiation: "Создает стабильную эстетическую базу перед продвинутыми этапами.",
     },
-    corporals: {
-      name: "Процедуры для тела",
-      description: "Протоколы для упругости, текстуры, дренажа и комфорта тела.",
+    "estetica-avanzada": {
+      name: "Продвинутая эстетика",
+      description: "Технологичные протоколы для более выраженной коррекции.",
+      profile: "Для задач, где нужен более точный технический подход.",
+      intervention: "Уровень воздействия: умеренный или высокий в рамках неинвазивной эстетики.",
+      differentiation: "Сочетает аппаратную точность и структурный план по этапам.",
     },
-    depilacio: {
-      name: "Эпиляция",
-      description: "Лазерные и восковые решения с учетом зоны и фототипа.",
-    },
-    "capilar-regeneracio": {
-      name: "Капиллярное и регенеративное направление",
-      description: "Поддержка кожи головы и протоколы стимуляции.",
-    },
-    "massatges-benestar": {
-      name: "Массаж и благополучие",
-      description: "Ручные ритуалы для расслабления и общего комфорта.",
-    },
-    "estetica-avancada": {
-      name: "Продвинутая эстетика и специальные",
-      description: "Технологичные протоколы для конкретных задач.",
+    "estetica-regenerativa": {
+      name: "Регенеративная эстетика",
+      description: "Протоколы восстановления качества кожи и постепенного обновления тканей.",
+      profile: "Когда ключевая цель - восстановить текстуру, тонус и жизненность кожи.",
+      intervention: "Уровень воздействия: технический и поэтапный.",
+      differentiation: "Работает не только с визуальным эффектом, но и с качеством ткани.",
     },
   },
 };
@@ -243,7 +250,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Wonder Axon",
     slug: "wonder-axon",
-    category: "estetica-avancada",
+    category: "estetica-regenerativa",
     shortDescription: "Protocol de tecnologia avançada per treballar qualitat i to de la pell de forma progressiva.",
     longDescription:
       "Sessió amb tecnologia estètica avançada que s'adapta a l'estat actual de la pell i als objectius prioritaris definits a diagnòstic.",
@@ -255,7 +262,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Hollywood peel",
     slug: "hollywood-peel",
-    category: "facials",
+    category: "estetica-normal",
     shortDescription: "Peeling de renovació superficial orientat a lluminositat i textura més uniforme.",
     longDescription:
       "Tractament facial de renovació cosmètica per revitalitzar pell apagada i preparar la pell per fases de manteniment.",
@@ -267,7 +274,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Depilació làser",
     slug: "depilacio-laser",
-    category: "depilacio",
+    category: "estetica-avanzada",
     shortDescription: "Depilació per zones amb paràmetres ajustats segons fototip, zona i evolució.",
     longDescription:
       "Protocol de depilació làser estructurat per fases, amb seguiment de resposta i ajust d'intervals segons cada cas.",
@@ -279,7 +286,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Peeling químic facial",
     slug: "peeling-quimic-facial",
-    category: "facials",
+    category: "estetica-normal",
     shortDescription: "Exfoliació química controlada per millorar lluminositat i homogeneïtat.",
     longDescription:
       "Sessió facial de renovació química ajustada a tolerància, objectiu i moment de la pell dins del pla.",
@@ -291,7 +298,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Peeling corporal",
     slug: "peeling-corporal",
-    category: "corporals",
+    category: "estetica-normal",
     shortDescription: "Renovació corporal per millorar textura i preparació de la pell.",
     longDescription:
       "Peeling de cos orientat a afinar relleu cutani i preparar teixit abans de tractaments corporals intensius.",
@@ -303,7 +310,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Neteja de cutis vapor",
     slug: "neteja-cutis-vapor",
-    category: "facials",
+    category: "estetica-normal",
     shortDescription: "Neteja facial amb vapor per descongestionar i reequilibrar la pell.",
     longDescription:
       "Protocol de neteja en cabina amb vapor i extracció selectiva per millorar confort i aparença global.",
@@ -315,7 +322,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Neteja de cutis profunda punta de diamant",
     slug: "neteja-cutis-punta-diamant",
-    category: "facials",
+    category: "estetica-normal",
     shortDescription: "Higiene facial profunda amb exfoliació mecànica controlada.",
     longDescription:
       "Neteja facial tècnica amb punta de diamant per afinar textura, reduir impureses i aportar més uniformitat.",
@@ -327,7 +334,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Disseny de celles",
     slug: "disseny-celles",
-    category: "facials",
+    category: "estetica-normal",
     shortDescription: "Disseny i definició de celles per equilibrar expressió i harmonia facial.",
     longDescription:
       "Servei de disseny de celles amb valoració de simetria i estil per potenciar trets facials amb resultat natural.",
@@ -339,7 +346,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Depilació cera calenta i tèbia",
     slug: "depilacio-cera-calenta-tebia",
-    category: "depilacio",
+    category: "estetica-normal",
     shortDescription: "Depilació amb cera per manteniment de zones facials i corporals.",
     longDescription:
       "Servei de depilació amb cera calenta o tèbia segons zona i sensibilitat per un resultat de manteniment.",
@@ -351,7 +358,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Maderoteràpia Gold",
     slug: "maderoterapia-gold",
-    category: "corporals",
+    category: "estetica-normal",
     shortDescription: "Maderoteràpia corporal premium amb enfoc de definició i drenatge.",
     longDescription:
       "Protocol corporal manual amb instruments de fusta en seqüència avançada per treballar teixit i contorn.",
@@ -363,7 +370,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Maderoteràpia corporal",
     slug: "maderoterapia-corporal",
-    category: "corporals",
+    category: "estetica-normal",
     shortDescription: "Treball manual corporal amb instrumental per dinamitzar teixit.",
     longDescription:
       "Sessió corporal de maderoteràpia orientada a millorar aspecte de la pell i suportar plans de remodelació.",
@@ -375,7 +382,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Radiofreqüència facial",
     slug: "radiofrequencia-facial",
-    category: "facials",
+    category: "estetica-avanzada",
     shortDescription: "Radiofreqüència facial per millorar fermesa i qualitat global.",
     longDescription:
       "Tractament facial amb radiofreqüència no invasiva per reforçar to i definició dins de plans progressius.",
@@ -387,7 +394,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Radiofreqüència corporal",
     slug: "radiofrequencia-corporal",
-    category: "corporals",
+    category: "estetica-avanzada",
     shortDescription: "Protocol corporal de radiofreqüència per treball de fermesa.",
     longDescription:
       "Sessió corporal de radiofreqüència enfocada en zones localitzades per millorar la qualitat visual del teixit.",
@@ -399,7 +406,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Cyclone Luxury facial",
     slug: "cyclone-luxury-facial",
-    category: "estetica-avancada",
+    category: "estetica-avanzada",
     shortDescription: "Protocol facial premium de tecnologia combinada per millora global.",
     longDescription:
       "Tractament facial d'alta gamma amb combinació de tècniques per qualitat de pell, to i lluminositat.",
@@ -411,7 +418,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Cyclone corporal",
     slug: "cyclone-corporal",
-    category: "corporals",
+    category: "estetica-avanzada",
     shortDescription: "Protocol corporal combinat per tractar textura, drenatge i to.",
     longDescription:
       "Sessió corporal de tecnologia combinada per treballar diferents objectius en un mateix bloc de tractament.",
@@ -423,7 +430,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Cavitació",
     slug: "cavitacio",
-    category: "corporals",
+    category: "estetica-avanzada",
     shortDescription: "Tecnologia corporal per treball localitzat dins plans de remodelació.",
     longDescription:
       "Tractament corporal no invasiu orientat a zones concretes, sempre amb planificació i seguiment de resposta.",
@@ -435,7 +442,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Hifu corporal",
     slug: "hifu-corporal",
-    category: "corporals",
+    category: "estetica-avanzada",
     shortDescription: "Tecnologia d'ultrasò focalitzat per objectius corporals específics.",
     longDescription:
       "Protocol corporal de precisió per treballar fermesa en zones prioritàries definides a diagnòstic.",
@@ -447,7 +454,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Vacunteràpia",
     slug: "vacunterapia",
-    category: "corporals",
+    category: "estetica-avanzada",
     shortDescription: "Protocol corporal de succió controlada amb enfoc de drenatge i activació.",
     longDescription:
       "Sessió de vacunteràpia en zones corporals per dinamitzar teixit i complementar plans de treball manual.",
@@ -459,7 +466,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Ones Galvaniques",
     slug: "ones-galvaniques",
-    category: "estetica-avancada",
+    category: "estetica-avanzada",
     shortDescription: "Tractament amb corrents galvàniques per vehiculitzar actius i equilibrar pell.",
     longDescription:
       "Protocol facial/cosmètic amb corrent galvànic orientat a millorar l'absorció d'actius segons objectiu.",
@@ -471,7 +478,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Fototeràpia",
     slug: "fototerapia",
-    category: "estetica-avancada",
+    category: "estetica-regenerativa",
     shortDescription: "Llum terapèutica estètica per suportar confort i qualitat cutània.",
     longDescription:
       "Sessió de fototeràpia com a suport en protocols facials per millorar confort, aspecte i continuïtat.",
@@ -483,7 +490,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Alta freqüència",
     slug: "alta-frequencia",
-    category: "estetica-avancada",
+    category: "estetica-regenerativa",
     shortDescription: "Tècnica complementària per higiene i equilibri en protocols facials.",
     longDescription:
       "Alta freqüència aplicada en fases facials per reforçar higiene cosmètica i estabilitat de la pell.",
@@ -495,7 +502,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Spa de peus i mans",
     slug: "spa-peus-mans",
-    category: "massatges-benestar",
+    category: "estetica-normal",
     shortDescription: "Ritual de cura estètica i benestar per peus i mans.",
     longDescription:
       "Tractament de benestar per mans i peus amb hidratació, cura estètica i experiència relaxant.",
@@ -507,7 +514,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Microneedling facial",
     slug: "microneedling-facial",
-    category: "facials",
+    category: "estetica-regenerativa",
     shortDescription: "Microneedling cosmètic facial per qualitat de pell i textura.",
     longDescription:
       "Protocol facial de microestimulació orientat a millorar relleu, to i aparença general de la pell.",
@@ -519,7 +526,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Microneedling corporal",
     slug: "microneedling-corporal",
-    category: "corporals",
+    category: "estetica-regenerativa",
     shortDescription: "Microneedling corporal per treballar textura en zones localitzades.",
     longDescription:
       "Sessió de microestimulació corporal orientada a qualitat de pell en àrees específiques dins d'un pla global.",
@@ -531,7 +538,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Microneedling capilar",
     slug: "microneedling-capilar",
-    category: "capilar-regeneracio",
+    category: "estetica-regenerativa",
     shortDescription: "Microestimulació capil·lar cosmètica com a suport de densitat visual.",
     longDescription:
       "Protocol capil·lar de microestimulació amb enfoc conservador per millorar l'entorn del cuir cabellut.",
@@ -543,7 +550,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Microneedling llavis + àcid hialurònic",
     slug: "microneedling-llavis-acid-hialuronic",
-    category: "facials",
+    category: "estetica-regenerativa",
     shortDescription: "Tractament de llavis orientat a hidratació, textura i definició visual.",
     longDescription:
       "Protocol específic de llavis amb microestimulació i actius cosmètics per millorar qualitat i confort.",
@@ -555,7 +562,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Ones acústiques",
     slug: "ones-acustiques",
-    category: "corporals",
+    category: "estetica-avanzada",
     shortDescription: "Tecnologia corporal de suport en plans de remodelació i qualitat de teixit.",
     longDescription:
       "Protocol corporal amb ones acústiques per complementar tractaments localitzats i reforçar continuïtat.",
@@ -567,7 +574,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Presoterapia",
     slug: "presoterapia",
-    category: "corporals",
+    category: "estetica-normal",
     shortDescription: "Compressió seqüencial per drenatge estètic i sensació de lleugeresa.",
     longDescription:
       "Sessió de presoterapia per millorar confort de cames i suportar protocols corporals de continuïtat.",
@@ -579,7 +586,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Tractaments despigmentants",
     slug: "tractaments-despigmentants",
-    category: "estetica-avancada",
+    category: "estetica-avanzada",
     shortDescription: "Protocols estètics orientats a to irregular i marques pigmentàries visibles.",
     longDescription:
       "Pla despigmentant per fases, amb diagnòstic inicial i seguiment periòdic segons evolució de la pell.",
@@ -591,7 +598,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Taques",
     slug: "taques",
-    category: "estetica-avancada",
+    category: "estetica-avanzada",
     shortDescription: "Valoració i abordatge estètic de taques amb criteri personalitzat.",
     longDescription:
       "Servei orientat a treballar taques visibles mitjançant protocols adaptats i pautes de continuïtat.",
@@ -603,7 +610,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Laser taques",
     slug: "laser-taques",
-    category: "estetica-avancada",
+    category: "estetica-avanzada",
     shortDescription: "Tractament làser orientat a millorar l'aspecte de taques localitzades.",
     longDescription:
       "Protocol de làser per taques seleccionades amb diagnòstic previ i pauta adaptada a cada pell.",
@@ -615,7 +622,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Eliminació de tatuatges",
     slug: "eliminacio-tatuatges",
-    category: "estetica-avancada",
+    category: "estetica-avanzada",
     shortDescription: "Protocol per sessions per reducció progressiva de tatuatge.",
     longDescription:
       "Tractament làser per eliminació estètica de tatuatges amb valoració inicial i seguiment entre sessions.",
@@ -627,7 +634,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Massatges relaxants",
     slug: "massatges-relaxants",
-    category: "massatges-benestar",
+    category: "estetica-normal",
     shortDescription: "Massatge de benestar per reduir tensió general i afavorir desconnexió.",
     longDescription:
       "Sessió manual enfocada en relaxació global, confort corporal i experiència de benestar.",
@@ -639,7 +646,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Massatges descontracturants",
     slug: "massatges-descontracturants",
-    category: "massatges-benestar",
+    category: "estetica-normal",
     shortDescription: "Massatge manual per zones de sobrecàrrega i tensió muscular.",
     longDescription:
       "Protocol manual orientat a descarregar zones contracturades i recuperar mobilitat de confort.",
@@ -651,7 +658,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Massatges anticel·lulítics",
     slug: "massatges-anticellulitics",
-    category: "massatges-benestar",
+    category: "estetica-normal",
     shortDescription: "Massatge corporal específic de suport en plans anticel·lulítics.",
     longDescription:
       "Treball manual corporal amb orientació estètica per complementar protocols de remodelació i drenatge.",
@@ -663,7 +670,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Drenatges limfàtics",
     slug: "drenatges-limfatics",
-    category: "massatges-benestar",
+    category: "estetica-normal",
     shortDescription: "Tècnica manual de drenatge per millorar sensació de lleugeresa.",
     longDescription:
       "Sessió de drenatge limfàtic manual orientada a confort corporal i suport de protocols estètics.",
@@ -675,7 +682,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Lifting manual facial",
     slug: "lifting-manual-facial",
-    category: "facials",
+    category: "estetica-normal",
     shortDescription: "Massatge facial tècnic per to, relaxació de faccions i efecte de vitalitat.",
     longDescription:
       "Protocol manual facial per estimular musculatura, millorar confort i reforçar un aspecte descansat.",
@@ -687,7 +694,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Tractaments facials personalitzats",
     slug: "tractaments-facials-personalitzats",
-    category: "facials",
+    category: "estetica-regenerativa",
     shortDescription: "Plans facials a mida segons diagnòstic, objectiu i evolució.",
     longDescription:
       "Disseny d'un protocol facial personalitzat combinant tècniques i ritme de sessions segons la resposta de la pell.",
@@ -699,7 +706,7 @@ const treatmentsBase: TreatmentItem[] = [
   {
     name: "Tractaments corporals personalitzats",
     slug: "tractaments-corporals-personalitzats",
-    category: "corporals",
+    category: "estetica-avanzada",
     shortDescription: "Pla corporal a mida amb combinació de tècniques segons objectiu principal.",
     longDescription:
       "Estructura de tractament corporal personalitzat per fases, amb selecció tècnica segons diagnòstic i prioritat.",
@@ -717,35 +724,45 @@ const catalogCopyByLocale: Record<
   es: {
     closeModalLabel: "Cerrar",
     heroLabel: "Catálogo de tratamientos",
-    heroTitle: "Tratamientos organizados por objetivo para decidir mejor y reservar más rápido.",
+    heroTitle: "Explora el catálogo por nivel estético: normal, avanzada y regenerativa.",
     heroDescription:
-      "Hemos reorganizado toda la oferta por áreas de necesidad real. Menos ruido, más claridad comercial y una navegación que ayuda a elegir sin fricción.",
+      "Organizamos los tratamientos por grado de intervención y tipo de objetivo para que entender, comparar y decidir sea más fácil.",
     heroHighlights: [
       "39 tratamientos activos",
-      "6 categorías claras",
-      "Fichas individuales con SEO",
-      "Reserva y WhatsApp en cada recorrido",
+      "3 bloques de navegación principal",
+      "Comparación más clara y guiada",
+      "Reserva y WhatsApp sin salir del flujo",
     ],
-    sectionLabel: "Estructura comercial",
-    sectionTitle: "Explora por categoría, compara y entra al detalle en un clic.",
+    sectionLabel: "Estructura principal",
+    sectionTitle: "Selecciona una familia y revisa solo los tratamientos de ese nivel.",
     sectionDescription:
-      "Cada tratamiento tiene un resumen corto, una explicación amplia, beneficios clave y conexiones con tratamientos relacionados para facilitar la toma de decisión.",
-    categoryNavLabel: "Navegación por categorías",
-    categoryJumpLabel: "Ir a categoría",
+      "Cada ficha está optimizada para escaneo rápido: nombre, contexto breve, beneficios clave y detalle completo en modal premium.",
+    categoryNavLabel: "Selector principal",
+    categoryJumpLabel: "Cambiar categoría",
     treatmentCountLabel: "tratamientos",
     featuredLabel: "Destacado",
-    cardCtaLabel: "Ver ficha completa",
-    cardRelatedLabel: "Relacionados",
+    cardCtaLabel: "Saber más",
+    cardRelatedLabel: "Combinable con",
     relatedLabel: "Tratamientos relacionados",
     emptyStateLabel: "No hay tratamientos en esta categoría por ahora.",
-    seoIntroTitle: "Cómo trabajamos la recomendación de tratamiento",
+    seoIntroTitle: "Decisión estética con criterio profesional",
     seoIntroDescription:
-      "La indicación siempre se adapta a diagnóstico y evolución. No hacemos promesas cerradas: diseñamos un plan realista, escalable y revisable en cabina.",
+      "La recomendación siempre se adapta a diagnóstico, tolerancia y evolución real. Diseñamos planes progresivos, realistas y revisables.",
     detail: {
       backToTreatments: "Volver a tratamientos",
       category: "Categoría",
       keyBenefits: "Beneficios clave",
       relatedTreatments: "También te puede interesar",
+      openModal: "Saber más",
+      modalDescription: "Descripción general",
+      modalIndicatedFor: "Indicado para",
+      modalGoals: "Objetivos del tratamiento",
+      modalBenefits: "Beneficios esperables",
+      modalDuration: "Duración orientativa",
+      modalFrequency: "Frecuencia orientativa",
+      modalSensation: "Sensación durante la sesión",
+      modalConsiderations: "Cuidados y consideraciones",
+      modalAssessment: "Cuándo recomendamos valoración previa",
       ctaPrimary: "Reservar valoración",
       ctaSecondary: "Hablar por WhatsApp",
     },
@@ -753,20 +770,20 @@ const catalogCopyByLocale: Record<
   ca: {
     closeModalLabel: "Tancar",
     heroLabel: "Catàleg de tractaments",
-    heroTitle: "Tractaments organitzats per objectiu per decidir millor i reservar més ràpid.",
+    heroTitle: "Explora el catàleg per nivell estètic: normal, avançada i regenerativa.",
     heroDescription:
-      "Hem reorganitzat tota l'oferta per àrees de necessitat real. Menys soroll, més claredat comercial i una navegació que ajuda a triar sense fricció.",
-    heroHighlights: ["39 tractaments actius", "6 categories clares", "Fitxes individuals", "CTA directe a reserva"],
-    sectionLabel: "Estructura comercial",
-    sectionTitle: "Explora per categoria, compara i entra al detall amb un clic.",
+      "Hem reorganitzat tota l'oferta per grau d'intervenció i objectiu estètic perquè triar sigui més simple.",
+    heroHighlights: ["39 tractaments actius", "3 blocs principals", "Comparació més clara", "CTA directe a reserva"],
+    sectionLabel: "Estructura principal",
+    sectionTitle: "Selecciona una família i revisa només els tractaments d'aquest nivell.",
     sectionDescription:
-      "Cada tractament inclou resum, explicació extensa, beneficis clau i enllaços a tractaments relacionats.",
-    categoryNavLabel: "Navegació per categories",
-    categoryJumpLabel: "Anar a categoria",
+      "Cada fitxa està pensada per escaneig ràpid: nom, context curt, beneficis clau i detall complet en modal.",
+    categoryNavLabel: "Selector principal",
+    categoryJumpLabel: "Canviar categoria",
     treatmentCountLabel: "tractaments",
     featuredLabel: "Destacat",
-    cardCtaLabel: "Veure fitxa completa",
-    cardRelatedLabel: "Relacionats",
+    cardCtaLabel: "Saber-ne més",
+    cardRelatedLabel: "Combinable amb",
     relatedLabel: "Tractaments relacionats",
     emptyStateLabel: "Ara mateix no hi ha tractaments en aquesta categoria.",
     seoIntroTitle: "Com estructurem la recomanació",
@@ -777,6 +794,16 @@ const catalogCopyByLocale: Record<
       category: "Categoria",
       keyBenefits: "Beneficis clau",
       relatedTreatments: "També et pot interessar",
+      openModal: "Saber-ne més",
+      modalDescription: "Descripció general",
+      modalIndicatedFor: "Indicat per a",
+      modalGoals: "Objectius del tractament",
+      modalBenefits: "Beneficis esperables",
+      modalDuration: "Durada orientativa",
+      modalFrequency: "Freqüència orientativa",
+      modalSensation: "Sensació durant la sessió",
+      modalConsiderations: "Cures i consideracions",
+      modalAssessment: "Quan recomanem valoració prèvia",
       ctaPrimary: "Reservar valoració",
       ctaSecondary: "Parlar per WhatsApp",
     },
@@ -787,16 +814,16 @@ const catalogCopyByLocale: Record<
     heroTitle: "Traitements organisés par objectif pour choisir plus facilement.",
     heroDescription:
       "Offre structurée en catégories claires, avec fiches détaillées et navigation orientée conversion.",
-    heroHighlights: ["39 traitements", "6 catégories", "Fiches dédiées", "CTA direct"],
+    heroHighlights: ["39 traitements", "3 blocs principaux", "Navigation plus claire", "CTA direct"],
     sectionLabel: "Structure",
     sectionTitle: "Parcourez par catégorie et accédez à la fiche complète.",
     sectionDescription: "Chaque traitement présente une synthèse claire, bénéfices clés et options liées.",
-    categoryNavLabel: "Navigation par catégories",
+    categoryNavLabel: "Sélecteur principal",
     categoryJumpLabel: "Aller à la catégorie",
     treatmentCountLabel: "traitements",
     featuredLabel: "Mis en avant",
-    cardCtaLabel: "Voir la fiche",
-    cardRelatedLabel: "Liés",
+    cardCtaLabel: "En savoir plus",
+    cardRelatedLabel: "Combinable avec",
     relatedLabel: "Traitements liés",
     emptyStateLabel: "Aucun traitement disponible dans cette catégorie.",
     seoIntroTitle: "Approche de recommandation",
@@ -807,6 +834,16 @@ const catalogCopyByLocale: Record<
       category: "Catégorie",
       keyBenefits: "Bénéfices clés",
       relatedTreatments: "Vous pourriez aussi aimer",
+      openModal: "En savoir plus",
+      modalDescription: "Description générale",
+      modalIndicatedFor: "Indiqué pour",
+      modalGoals: "Objectifs du traitement",
+      modalBenefits: "Bénéfices attendus",
+      modalDuration: "Durée indicative",
+      modalFrequency: "Fréquence indicative",
+      modalSensation: "Sensation pendant la séance",
+      modalConsiderations: "Soins et considérations",
+      modalAssessment: "Quand une évaluation préalable est recommandée",
       ctaPrimary: "Réserver une évaluation",
       ctaSecondary: "Écrire sur WhatsApp",
     },
@@ -817,17 +854,17 @@ const catalogCopyByLocale: Record<
     heroTitle: "Treatments grouped by goal for faster and clearer decisions.",
     heroDescription:
       "The full offer is now organised into clear service categories with dedicated treatment pages and direct booking paths.",
-    heroHighlights: ["39 active treatments", "6 clear categories", "Individual treatment pages", "Direct booking CTAs"],
+    heroHighlights: ["39 active treatments", "3 core blocks", "Clearer navigation", "Direct booking CTAs"],
     sectionLabel: "Commercial architecture",
     sectionTitle: "Browse by category, compare quickly and open the full treatment page.",
     sectionDescription:
       "Each treatment card includes concise positioning, key benefits and links to related options.",
-    categoryNavLabel: "Category navigation",
+    categoryNavLabel: "Main selector",
     categoryJumpLabel: "Jump to category",
     treatmentCountLabel: "treatments",
     featuredLabel: "Featured",
-    cardCtaLabel: "Open full page",
-    cardRelatedLabel: "Related",
+    cardCtaLabel: "Learn more",
+    cardRelatedLabel: "Pairs well with",
     relatedLabel: "Related treatments",
     emptyStateLabel: "No treatments available in this category yet.",
     seoIntroTitle: "How we structure treatment recommendations",
@@ -838,6 +875,16 @@ const catalogCopyByLocale: Record<
       category: "Category",
       keyBenefits: "Key benefits",
       relatedTreatments: "You may also be interested in",
+      openModal: "Learn more",
+      modalDescription: "General description",
+      modalIndicatedFor: "Best for",
+      modalGoals: "Treatment goals",
+      modalBenefits: "Expected benefits",
+      modalDuration: "Estimated duration",
+      modalFrequency: "Suggested frequency",
+      modalSensation: "Session sensation",
+      modalConsiderations: "Care and considerations",
+      modalAssessment: "When we recommend prior assessment",
       ctaPrimary: "Book an assessment",
       ctaSecondary: "Chat on WhatsApp",
     },
@@ -848,16 +895,16 @@ const catalogCopyByLocale: Record<
     heroTitle: "Процедури, впорядковані за цілями для простішого вибору.",
     heroDescription:
       "Уся пропозиція структурована за категоріями з окремими сторінками процедур і прямими CTA.",
-    heroHighlights: ["39 процедур", "6 категорій", "Окремі сторінки", "Пряме бронювання"],
+    heroHighlights: ["39 процедур", "3 основні блоки", "Зрозуміла навігація", "Пряме бронювання"],
     sectionLabel: "Структура",
     sectionTitle: "Оберіть категорію, порівняйте та відкрийте повну сторінку.",
     sectionDescription: "Кожна картка містить короткий опис, ключові переваги та пов'язані опції.",
-    categoryNavLabel: "Навігація за категоріями",
+    categoryNavLabel: "Головний селектор",
     categoryJumpLabel: "Перейти до категорії",
     treatmentCountLabel: "процедур",
     featuredLabel: "Рекомендовано",
-    cardCtaLabel: "Відкрити сторінку",
-    cardRelatedLabel: "Пов'язані",
+    cardCtaLabel: "Детальніше",
+    cardRelatedLabel: "Комбінується з",
     relatedLabel: "Пов'язані процедури",
     emptyStateLabel: "У цій категорії поки немає доступних процедур.",
     seoIntroTitle: "Як формується рекомендація",
@@ -867,6 +914,16 @@ const catalogCopyByLocale: Record<
       category: "Категорія",
       keyBenefits: "Ключові переваги",
       relatedTreatments: "Також може бути цікаво",
+      openModal: "Детальніше",
+      modalDescription: "Загальний опис",
+      modalIndicatedFor: "Кому підходить",
+      modalGoals: "Цілі процедури",
+      modalBenefits: "Очікувані переваги",
+      modalDuration: "Орієнтовна тривалість",
+      modalFrequency: "Орієнтовна частота",
+      modalSensation: "Відчуття під час сеансу",
+      modalConsiderations: "Догляд і рекомендації",
+      modalAssessment: "Коли варто зробити попередню оцінку",
       ctaPrimary: "Записатися на консультацію",
       ctaSecondary: "Написати у WhatsApp",
     },
@@ -877,16 +934,16 @@ const catalogCopyByLocale: Record<
     heroTitle: "Процедуры, структурированные по целям для понятного выбора.",
     heroDescription:
       "Вся линейка организована по категориям с отдельными страницами процедур и прямыми CTA.",
-    heroHighlights: ["39 процедур", "6 категорий", "Отдельные страницы", "Прямое бронирование"],
+    heroHighlights: ["39 процедур", "3 основные группы", "Понятная навигация", "Прямое бронирование"],
     sectionLabel: "Структура",
     sectionTitle: "Выберите категорию, сравните и откройте полную страницу процедуры.",
     sectionDescription: "Каждая карточка содержит краткое описание, ключевые преимущества и связанные опции.",
-    categoryNavLabel: "Навигация по категориям",
+    categoryNavLabel: "Главный селектор",
     categoryJumpLabel: "Перейти к категории",
     treatmentCountLabel: "процедур",
     featuredLabel: "Рекомендуем",
-    cardCtaLabel: "Открыть страницу",
-    cardRelatedLabel: "Связанные",
+    cardCtaLabel: "Подробнее",
+    cardRelatedLabel: "Комбинируется с",
     relatedLabel: "Связанные процедуры",
     emptyStateLabel: "В этой категории пока нет доступных процедур.",
     seoIntroTitle: "Как формируется рекомендация",
@@ -896,6 +953,16 @@ const catalogCopyByLocale: Record<
       category: "Категория",
       keyBenefits: "Ключевые преимущества",
       relatedTreatments: "Также может подойти",
+      openModal: "Подробнее",
+      modalDescription: "Общее описание",
+      modalIndicatedFor: "Кому подходит",
+      modalGoals: "Цели процедуры",
+      modalBenefits: "Ожидаемые преимущества",
+      modalDuration: "Ориентировочная длительность",
+      modalFrequency: "Ориентировочная частота",
+      modalSensation: "Ощущения во время сеанса",
+      modalConsiderations: "Уход и рекомендации",
+      modalAssessment: "Когда нужна предварительная консультация",
       ctaPrimary: "Записаться на оценку",
       ctaSecondary: "Написать в WhatsApp",
     },
@@ -910,6 +977,9 @@ function buildCategories(locale: Locale): TreatmentCategory[] {
       ...category,
       name: copy[category.id].name,
       description: copy[category.id].description,
+      profile: copy[category.id].profile,
+      intervention: copy[category.id].intervention,
+      differentiation: copy[category.id].differentiation,
     }))
     .sort((a, b) => a.order - b.order);
 }

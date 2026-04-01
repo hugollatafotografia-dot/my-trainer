@@ -85,7 +85,7 @@ export default async function SobreNosotrosPage() {
         label={t.aboutPage.hero.label}
         title={t.aboutPage.hero.title}
         description={t.aboutPage.hero.description}
-        imageSrc="/images/pages/sobre-nosotros/equipo/experiencia-cabina-centro.jpg"
+        imageSrc="/images/pages/sobre-nosotros/hero/hero-centro-estetica-illa-carlemany.mp4"
         imageAlt={imageAlt.hero}
         mobileMediaPosition="74% 34%"
         tabletMediaPosition="64% 36%"
@@ -131,7 +131,7 @@ export default async function SobreNosotrosPage() {
           <article className="image-frame h-full overflow-hidden p-4 sm:p-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem] sm:h-full sm:min-h-[33rem] sm:aspect-auto">
               <MediaFill
-                src="/images/pages/sobre-nosotros/historia/historia-metodo-equipo.mp4"
+                src="/images/pages/sobre-nosotros/historia/historia-metodo-equipo.png"
                 mobileSrc="/images/pages/sobre-nosotros/equipo/experiencia-cabina-centro.jpg"
                 alt={imageAlt.method}
                 mobilePosition="66% 34%"
