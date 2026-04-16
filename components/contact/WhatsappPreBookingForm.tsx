@@ -56,9 +56,9 @@ type FormCopy = {
 const copyByLocale: Record<Locale, FormCopy> = {
   es: {
     badge: "Pre-reserva asistida",
-    title: "Prepara tu cita y envíala por WhatsApp",
+    title: "Prepara tu solicitud y envíala por WhatsApp",
     description:
-      "Define tratamiento, disponibilidad y profesional en menos de un minuto. El equipo solo tendrá que confirmar hueco real de agenda.",
+      "Indica motivo, disponibilidad y profesional si lo deseas. El equipo revisará la agenda y te confirmará el hueco real para diagnóstico o tratamiento.",
     treatmentLabel: "Tratamiento",
     preferredDatesLabel: "Días preferidos",
     addDateLabel: "Añadir otro día",
@@ -71,9 +71,9 @@ const copyByLocale: Record<Locale, FormCopy> = {
     noteLabel: "Nota breve (opcional)",
     notePlaceholder: "Ejemplo: primera visita, embarazo, piel sensible, solo tardes...",
     ctaLabel: "Enviar solicitud por WhatsApp",
-    helperText: "No es una confirmación automática. Te responderemos con disponibilidad real.",
+    helperText: "No es una confirmación automática. Primero revisamos la agenda y después te confirmamos disponibilidad real.",
     previewLabel: "Resumen de solicitud",
-    validationHint: "Completa tratamiento, nombre, día preferido y franja horaria.",
+    validationHint: "Completa motivo o tratamiento, nombre, día preferido y franja horaria.",
     noPreferenceLabel: "Sin preferencia",
     selectPlaceholder: "Selecciona una opción",
     datePlaceholder: "Selecciona fecha",
@@ -89,9 +89,9 @@ const copyByLocale: Record<Locale, FormCopy> = {
   },
   ca: {
     badge: "Pre-reserva assistida",
-    title: "Prepara la teva cita i envia-la per WhatsApp",
+    title: "Prepara la teva sollicitud i envia-la per WhatsApp",
     description:
-      "Defineix tractament, disponibilitat i professional en menys d'un minut. L'equip nomes haura de confirmar un espai real d'agenda.",
+      "Indica tractament o motiu, disponibilitat i professional si vols. L'equip revisara l'agenda i et confirmara el millor espai real per a valoracio o tractament.",
     treatmentLabel: "Tractament",
     preferredDatesLabel: "Dies preferits",
     addDateLabel: "Afegir un altre dia",
@@ -104,7 +104,7 @@ const copyByLocale: Record<Locale, FormCopy> = {
     noteLabel: "Nota breu (opcional)",
     notePlaceholder: "Exemple: primera visita, pell sensible, nomes tardes...",
     ctaLabel: "Enviar sollicitud per WhatsApp",
-    helperText: "No es una confirmacio automatica. Et respondrem amb disponibilitat real.",
+    helperText: "No es una confirmacio automatica. Primer revisem l'agenda i despres et confirmem la disponibilitat real.",
     previewLabel: "Resum de sollicitud",
     validationHint: "Completa tractament, nom, dia preferit i franja horaria.",
     noPreferenceLabel: "Sense preferencia",
@@ -122,9 +122,9 @@ const copyByLocale: Record<Locale, FormCopy> = {
   },
   fr: {
     badge: "Pre-reservation assistee",
-    title: "Preparez votre rendez-vous et envoyez-le via WhatsApp",
+    title: "Preparez votre demande et envoyez-la via WhatsApp",
     description:
-      "Indiquez traitement, disponibilites et professionnelle en moins d'une minute. L'equipe n'aura plus qu'a confirmer le vrai creneau.",
+      "Indiquez traitement ou motif, disponibilites et professionnelle si vous le souhaitez. L'equipe reverifie l'agenda et vous confirme le meilleur creneau reel pour l'evaluation ou le traitement.",
     treatmentLabel: "Traitement",
     preferredDatesLabel: "Jours preferes",
     addDateLabel: "Ajouter un autre jour",
@@ -137,7 +137,7 @@ const copyByLocale: Record<Locale, FormCopy> = {
     noteLabel: "Note breve (optionnel)",
     notePlaceholder: "Exemple: premiere visite, peau sensible, uniquement l'apres-midi...",
     ctaLabel: "Envoyer la demande par WhatsApp",
-    helperText: "Ce n'est pas une confirmation automatique. Nous vous repondrons avec les disponibilites reelles.",
+    helperText: "Ce n'est pas une confirmation automatique. Nous revoyons d'abord l'agenda puis nous confirmons les disponibilites reelles.",
     previewLabel: "Resume de la demande",
     validationHint: "Completez traitement, nom, jour prefere et plage horaire.",
     noPreferenceLabel: "Sans preference",
@@ -155,9 +155,9 @@ const copyByLocale: Record<Locale, FormCopy> = {
   },
   en: {
     badge: "Assisted pre-booking",
-    title: "Prepare your booking and send it via WhatsApp",
+    title: "Prepare your request and send it via WhatsApp",
     description:
-      "Set treatment, availability and professional in less than a minute. The team will only need to confirm a real slot in the agenda.",
+      "Share your treatment or reason, availability and preferred professional if relevant. The team reviews the agenda first and then confirms the best real slot for assessment or treatment.",
     treatmentLabel: "Treatment",
     preferredDatesLabel: "Preferred dates",
     addDateLabel: "Add another date",
@@ -170,7 +170,7 @@ const copyByLocale: Record<Locale, FormCopy> = {
     noteLabel: "Short note (optional)",
     notePlaceholder: "Example: first visit, pregnancy, sensitive skin, afternoons only...",
     ctaLabel: "Send request via WhatsApp",
-    helperText: "This is not an automatic confirmation. We will reply with real availability.",
+    helperText: "This is not an automatic confirmation. We review the agenda first and then confirm real availability.",
     previewLabel: "Request summary",
     validationHint: "Complete treatment, name, a preferred date and a time slot.",
     noPreferenceLabel: "No preference",

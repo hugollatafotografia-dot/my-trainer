@@ -45,9 +45,9 @@ export default async function ContactoPage() {
   const sectionCopy = {
     es: {
       label: "Solicitud guiada",
-      title: "Pre-reserva y correo en un único flujo de contacto",
+      title: "Prepara tu solicitud de cita o escríbenos por email",
       description:
-        "Prepara una solicitud de cita por WhatsApp con todos los datos clave o envía una consulta formal por correo desde la web.",
+        "Puedes dejar lista tu solicitud por WhatsApp con los datos clave para que el centro revise agenda real, o enviar una consulta más detallada por correo.",
     },
     ca: {
       label: "Sollicitud guiada",

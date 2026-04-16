@@ -340,8 +340,8 @@ export type SiteDictionary = {
 
 const baseBrand = {
   legalName: "Centros Ideal Andorra",
-  heroLine: "Medicina estética y láser de diodo",
-  specialty: "Depilación láser diodo y estética avanzada",
+  heroLine: "Láser de diodo, estética avanzada y regeneración",
+  specialty: "Depilación láser de diodo y protocolos faciales y corporales personalizados",
   location: "Centre Comercial illa Carlemany, Escaldes-Engordany, Andorra",
   address: "Av. Carlemany, 70, AD700 Andorra",
   floor: "Segunda planta",
@@ -358,11 +358,11 @@ export const dictionaries: Record<string, SiteDictionary> = {
     seo: {
       title: "Centros Ideal Andorra",
       description:
-        "Centros Ideal Andorra: depilación láser diodo y estética avanzada en illa Carlemany, con valoración profesional y seguimiento clínico.",
+        "Centros Ideal Andorra: láser de diodo, aparatología avanzada y protocolos regenerativos en illa Carlemany, con diagnóstico previo y seguimiento real.",
     },
     brand: {
       ...baseBrand,
-      hoursPending: "Horario en validación final. Consulta disponibilidad por WhatsApp.",
+      hoursPending: "Lunes a sábado de 10:00 a 20:30. Domingo de 10:00 a 20:00.",
     },
     nav: {
       treatments: "Tratamientos",
@@ -390,9 +390,9 @@ export const dictionaries: Record<string, SiteDictionary> = {
     },
     footer: {
       topEyebrow: "Centros Ideal Andorra",
-      topTitle: "Reserva valoración o consulta por WhatsApp.",
+      topTitle: "Reserva tu cita de diagnóstico o escríbenos por WhatsApp.",
       description:
-        "Centro especializado en depilación láser diodo y estética avanzada con criterio clínico y atención personalizada.",
+        "Centro especializado en láser de diodo, aparatología avanzada y protocolos regenerativos. No vendemos sesiones sueltas: diseñamos tratamientos con diagnóstico, criterio y seguimiento real.",
       navigation: "Navegación",
       legal: "Legal",
       contact: "Contacto",
@@ -401,23 +401,23 @@ export const dictionaries: Record<string, SiteDictionary> = {
     whatsapp: {
       floatingLabel: "Atención WhatsApp",
       supportLabel: "Canal de asistencia",
-      supportTitle: "Soporte operativo por WhatsApp",
+      supportTitle: "WhatsApp para citas y seguimiento",
       supportDescription:
-        "Canal principal para resolver dudas, coordinar valoración y confirmar agenda.",
+        "Es el canal más ágil para pedir cita, resolver dudas previas y confirmar la disponibilidad real del centro.",
       supportHumanNotice:
-        "Actualmente la atención la gestiona el equipo del centro.",
+        "La atención la gestiona directamente el equipo del centro dentro del horario operativo.",
       supportFutureNotice:
-        "Estructura preparada para incorporar una capa de asistencia avanzada en futuras fases.",
+        "Si lo prefieres, también puedes llamarnos o venir al centro para gestionar la cita.",
     },
     chat: {
       launcherLabel: "Asistente",
       launcherAriaLabel: "Abrir asistente digital",
       panelLabel: "Asistente digital",
-      panelTitle: "Orientación inmediata",
+      panelTitle: "Orientación previa",
       panelDescription:
-        "Te ayudo con tratamientos, tiempos orientativos y cómo reservar tu valoración.",
+        "Te ayudo a entender tratamientos, tiempos orientativos y cómo funciona la cita de diagnóstico.",
       welcomeMessage:
-        "Hola, soy el asistente digital de Centros Ideal Andorra. Puedo orientarte sobre tratamientos y proceso de reserva.",
+        "Hola, soy el asistente digital de Centros Ideal Andorra. Puedo orientarte sobre tratamientos, primera visita y proceso de reserva.",
       inputPlaceholder: "Escribe tu consulta",
       inputAriaLabel: "Mensaje para el asistente",
       sendLabel: "Enviar",
@@ -431,9 +431,9 @@ export const dictionaries: Record<string, SiteDictionary> = {
       maxLengthError: "El mensaje supera la longitud permitida",
       openInContactLabel: "Abrir asistente",
       openInContactDescription:
-        "Disponible para resolver dudas frecuentes antes de reservar.",
+        "Útil para resolver dudas frecuentes antes de reservar.",
       bookingHint:
-        "La indicación definitiva se confirma en la valoración presencial del centro.",
+        "La indicación definitiva siempre se confirma en la cita de diagnóstico presencial.",
     },
     home: {
       hero: {
@@ -573,8 +573,8 @@ export const dictionaries: Record<string, SiteDictionary> = {
     treatmentsPage: {
       hero: {
         label: "Tratamientos",
-        title: "Protocolos con criterio clínico.",
-        description: "Indicación personalizada tras valoración.",
+        title: "Láser, aparatología y regeneración con criterio profesional.",
+        description: "La recomendación final no sale del catálogo: se confirma en valoración.",
         panelEyebrow: "Duración",
         panelDescription: "Sesiones definidas según zona y protocolo.",
       },
@@ -609,8 +609,8 @@ export const dictionaries: Record<string, SiteDictionary> = {
       },
       closing: {
         label: "Reserva",
-        title: "Confirma tu valoración inicial.",
-        description: "Sin compromiso.",
+        title: "Reserva primero la cita de diagnóstico.",
+        description: "Sin compromiso y con un plan claro desde la primera visita.",
       },
     },
     treatmentDetail: {
@@ -672,19 +672,19 @@ export const dictionaries: Record<string, SiteDictionary> = {
     resultsPage: {
       hero: {
         label: "Resultados",
-        title: "Resultados con criterio.",
-        description: "Documentación clínica y seguimiento.",
-        panelEyebrow: "Marco clínico",
-        panelDescription: "Diagnóstico, seguimiento y revisión.",
+        title: "Resultados visibles, pero bien explicados.",
+        description: "Sin promesas vacías: diagnóstico, seguimiento y expectativas realistas.",
+        panelEyebrow: "Criterio",
+        panelDescription: "Diagnóstico previo, seguimiento y revisión del plan.",
       },
       documentation: {
         label: "Documentación",
-        title: "Cómo medimos evolución.",
-        description: "Registro aplicado en consulta.",
+        title: "Cómo trabajamos la evolución.",
+        description: "No hablamos de magia ni de cambios instantáneos: hablamos de seguimiento y respuesta real.",
         pillars: [
-          { title: "Diagnóstico inicial", description: "Punto de partida documentado." },
-          { title: "Seguimiento", description: "Control por fases." },
-          { title: "Criterio de publicación", description: "Solo casos autorizados." },
+          { title: "Diagnóstico previo", description: "El punto de partida define el tratamiento y la expectativa." },
+          { title: "Seguimiento por fases", description: "El plan se revisa y se reajusta según evolución." },
+          { title: "Autorización y criterio", description: "Solo mostramos material permitido y siempre con enfoque responsable." },
         ],
       },
       visual: {
@@ -709,126 +709,126 @@ export const dictionaries: Record<string, SiteDictionary> = {
       transparency: {
         label: "Transparencia",
         title: "Comunicación responsable.",
-        description: "Información clínica y expectativas realistas.",
+        description: "Información clara, límites reales y resultados honestos.",
         rows: [
-          "No se publican promesas de resultado.",
-          "La evolución depende del caso clínico.",
-          "La indicación final se confirma en consulta.",
+          "No prometemos resultados espectaculares en pocas sesiones si no es realista.",
+          "La evolución depende del caso, de la continuidad y de cómo responde la piel o el vello.",
+          "La indicación final siempre se confirma en la cita de diagnóstico.",
         ],
       },
       closing: {
         label: "Reserva",
         title: "Solicita una valoración individual.",
-        description: "Recomendación en consulta.",
+        description: "Te orientamos con honestidad y un plan adaptado a tu caso.",
       },
     },
     aboutPage: {
       hero: {
         label: "Sobre nosotros",
-        title: "Centro de estética avanzada en illa Carlemany.",
-        description: "Depilación láser diodo y tratamientos personalizados.",
+        title: "Centro premium, cercano y sin protocolos estándar.",
+        description: "Cada tratamiento se diseña según necesidades reales, diagnóstico y evolución.",
         panelEyebrow: "Centro",
-        panelDescription: "Atención profesional y seguimiento.",
+        panelDescription: "Diagnóstico previo, plan personalizado y seguimiento real.",
       },
       method: {
         label: "Forma de trabajo",
-        title: "Criterio, método y control.",
-        description: "Estructura clínica estable.",
+        title: "No hacemos sesiones aisladas: planificamos procesos.",
+        description: "La diferencia está en cómo indicamos, ejecutamos y reajustamos cada tratamiento.",
         principles: [
-          { title: "Diagnóstico experto", description: "Valoración clínica previa." },
-          { title: "Plan por fases", description: "Objetivo, frecuencia y revisión." },
-          { title: "Seguimiento", description: "Ajustes por evolución." },
+          { title: "Diagnóstico previo", description: "No empezamos sin entender de verdad qué inquieta a la clienta y qué necesita su caso." },
+          { title: "Protocolo personalizado", description: "Cada plan se diseña al 100% según piel, vello, objetivo y evolución." },
+          { title: "Seguimiento y reajuste", description: "Si la respuesta cambia, el protocolo también. No seguimos por inercia." },
         ],
       },
       identity: {
         label: "Identidad del centro",
-        title: "Confianza y continuidad.",
+        title: "No vendemos sesiones: diseñamos protocolos con criterio.",
         highlights: [
-          "Cabinas individuales y atención personalizada.",
-          "Depilación láser diodo y estética avanzada.",
-          "Coordinación directa por WhatsApp.",
+          "No trabajamos con protocolos estándar ni con sesiones sin estrategia.",
+          "Combinamos diagnóstico técnico, aparatología avanzada y activos regenerativos según el caso.",
+          "Buscamos resultados visibles y sostenibles, no efectos rápidos mal planteados ni promesas vacías.",
         ],
       },
       closing: {
         label: "Contacto",
-        title: "Consulta tu caso con el centro.",
-        description: "Respuesta según disponibilidad.",
+        title: "Cuéntanos tu caso y te orientamos con honestidad.",
+        description: "Queremos que al entrar te sientas relajada, tranquila y con la confianza de estar en un centro que trabaja para que mejores de verdad.",
       },
     },
     contactPage: {
       hero: {
         label: "Contacto",
-        title: "Canal directo con el centro.",
-        description: "Atención previa a reserva y seguimiento operativo.",
+        title: "Habla directamente con el centro.",
+        description: "WhatsApp, llamada o visita presencial para gestionar tu cita de diagnóstico.",
         panelEyebrow: "Atención",
-        panelDescription: "Respuesta por horario y agenda.",
+        panelDescription: "Respuesta según horario operativo y disponibilidad real.",
       },
       channels: {
         label: "Canales",
         title: "Contacto operativo.",
-        description: "Información útil antes de confirmar.",
+        description: "Toda la información útil para pedir cita, resolver dudas y llegar al centro sin fricción.",
         rows: [
           { label: "WhatsApp", value: "688 080", note: "Canal preferente." },
           { label: "Teléfono", value: "688 080", note: "Atención por horario." },
           { label: "Email", value: "illa.carlemany@centresideal.com", note: "Consultas generales." },
           { label: "Dirección", value: "Av. Carlemany, 70, AD700 Andorra", note: "Centre Comercial illa Carlemany · segunda planta." },
-          { label: "Horario", value: "Pendiente de validación", note: "Se confirmará en actualización oficial." },
+          { label: "Horario", value: "Lunes a sábado de 10:00 a 20:30", note: "Domingo de 10:00 a 20:00." },
         ],
       },
       process: {
         label: "Proceso",
-        title: "Respuesta y confirmación.",
-        description: "Secuencia breve.",
+        title: "Así gestionamos la cita.",
+        description: "Primero recibimos la solicitud, después revisamos agenda y por último confirmamos la disponibilidad real.",
         steps: [
-          { id: "01", title: "Solicitud", description: "Objetivo y franja." },
-          { id: "02", title: "Respuesta", description: "Disponibilidad y condiciones." },
-          { id: "03", title: "Confirmación", description: "Reserva final." },
+          { id: "01", title: "Solicitud", description: "Nos escribes, llamas o vienes al centro para pedir cita." },
+          { id: "02", title: "Revisión de agenda", description: "Valoramos duración, tipo de cita y hueco disponible." },
+          { id: "03", title: "Confirmación", description: "Te confirmamos disponibilidad real y cómo prepararte si hace falta." },
         ],
       },
       support: {
         label: "WhatsApp",
-        title: "Canal preparado para asistencia avanzada.",
+        title: "WhatsApp es el canal más ágil para empezar.",
         description:
-          "La base de contacto está estructurada para incorporar en el futuro automatización de consultas recurrentes sin perder control del equipo.",
+          "Es el canal preferente para pedir cita, resolver dudas operativas y mantener seguimiento entre visitas, aunque también puedes llamarnos o venir al centro.",
       },
       closing: {
         label: "Reserva",
-        title: "Confirma tu valoración inicial.",
-        description: "Sin compromiso.",
+        title: "Reserva tu cita de diagnóstico.",
+        description: "Te confirmamos disponibilidad real y los siguientes pasos sin compromiso.",
       },
     },
     bookingPage: {
       hero: {
         label: "Reservar valoración",
-        title: "Reserva clara y sin fricción.",
-        description: "Confirmación por WhatsApp.",
+        title: "Reserva la cita de diagnóstico.",
+        description: "Primero entendemos tu caso; después indicamos el tratamiento y la inversión.",
         panelEyebrow: "Valoración",
         panelDescription: "Duración orientativa de 30 minutos.",
       },
       includes: {
         label: "Qué incluye",
         title: "Primera visita",
-        description: "Información antes de decidir tratamiento.",
+        description: "La primera visita sirve para diagnosticar, ordenar prioridades y decidir con criterio.",
         rows: [
-          "Diagnóstico facial o corporal.",
-          "Objetivo prioritario y pauta inicial.",
-          "Inversión orientativa.",
+          "Diagnóstico de piel, vello o zona a tratar.",
+          "Plan recomendado con orden de prioridades y continuidad orientativa.",
+          "Explicación de la inversión y de si conviene sesión suelta o bono.",
         ],
       },
       process: {
         label: "Proceso",
-        title: "Solicitud, confirmación y consulta.",
-        description: "Secuencia simple.",
+        title: "Solicitud, confirmación y diagnóstico.",
+        description: "Una secuencia clara para que sepas qué va a pasar antes de venir.",
         steps: [
-          { id: "01", title: "Solicitud", description: "Objetivo y franja." },
-          { id: "02", title: "Confirmación", description: "Horario y condiciones." },
-          { id: "03", title: "Consulta", description: "Diagnóstico y recomendación." },
+          { id: "01", title: "Solicitud", description: "Nos indicas motivo y franja horaria preferida." },
+          { id: "02", title: "Confirmación", description: "Te damos disponibilidad real y detalles operativos." },
+          { id: "03", title: "Diagnóstico", description: "Valoramos el caso y te proponemos el plan adecuado." },
         ],
       },
       closing: {
         label: "Confirmación",
-        title: "Reserva tu valoración ahora.",
-        description: "Sin compromiso.",
+        title: "Empieza con una valoración bien hecha.",
+        description: "Sin compromiso y con una recomendación clara desde la primera visita.",
       },
     },
     legalPages: {
@@ -895,7 +895,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
     },
     brand: {
       ...baseBrand,
-      hoursPending: "Horari en validació final. Consulta disponibilitat per WhatsApp.",
+      hoursPending: "Dilluns a dissabte de 10:00 a 20:30. Diumenge de 10:00 a 20:00.",
     },
     nav: {
       treatments: "Tractaments",
@@ -923,9 +923,9 @@ export const dictionaries: Record<string, SiteDictionary> = {
     },
     footer: {
       topEyebrow: "Centros Ideal Andorra",
-      topTitle: "Reserva valoració o consulta per WhatsApp.",
+      topTitle: "Reserva la teva cita de diagnosi o escriu-nos per WhatsApp.",
       description:
-        "Centre especialitzat en depilació làser díode i estètica avançada amb criteri clínic i atenció personalitzada.",
+        "Centre especialitzat en depilació làser díode, aparatologia avançada i protocols regeneratius dissenyats segons diagnosi i evolució real.",
       navigation: "Navegació",
       legal: "Legal",
       contact: "Contacte",
@@ -934,13 +934,13 @@ export const dictionaries: Record<string, SiteDictionary> = {
     whatsapp: {
       floatingLabel: "Atenció WhatsApp",
       supportLabel: "Canal d'assistència",
-      supportTitle: "Suport operatiu per WhatsApp",
+      supportTitle: "WhatsApp per a cites i seguiment",
       supportDescription:
-        "Canal principal per resoldre dubtes, coordinar valoració i confirmar agenda.",
+        "Es el canal mes agil per demanar cita, resoldre dubtes previs i confirmar la disponibilitat real del centre.",
       supportHumanNotice:
-        "Actualment l'atenció la gestiona l'equip del centre.",
+        "L'atencio la gestiona directament l'equip del centre dins l'horari operatiu.",
       supportFutureNotice:
-        "Estructura preparada per incorporar una capa d'assistència avançada en futures fases.",
+        "Si ho prefereixes, tambe pots trucar-nos o venir al centre per gestionar la cita.",
     },
     chat: {
       launcherLabel: "Assistent",
@@ -1088,8 +1088,8 @@ export const dictionaries: Record<string, SiteDictionary> = {
     treatmentsPage: {
       hero: {
         label: "Tractaments",
-        title: "Protocols amb criteri clínic.",
-        description: "Indicació personalitzada després de valoració.",
+        title: "Laser, aparatologia i regeneracio amb criteri professional.",
+        description: "La recomanacio final no surt del cataleg: es confirma a la valoracio.",
         panelEyebrow: "Durada",
         panelDescription: "Sessions definides segons zona i protocol.",
       },
@@ -1112,8 +1112,8 @@ export const dictionaries: Record<string, SiteDictionary> = {
       },
       closing: {
         label: "Reserva",
-        title: "Confirma la teva valoració inicial.",
-        description: "Sense compromís.",
+        title: "Reserva primer la cita de diagnosi.",
+        description: "Sense compromis i amb un pla clar des de la primera visita.",
       },
     },
     treatmentDetail: {
@@ -1175,8 +1175,8 @@ export const dictionaries: Record<string, SiteDictionary> = {
     resultsPage: {
       hero: {
         label: "Resultats",
-        title: "Resultats amb criteri.",
-        description: "Documentació clínica i seguiment.",
+        title: "Resultats visibles, ben explicats i sense promeses buides.",
+        description: "Diagnosi previa, seguiment i expectatives realistes.",
         panelEyebrow: "Marc clínic",
         panelDescription: "Diagnòstic, seguiment i revisió.",
       },
@@ -1214,57 +1214,57 @@ export const dictionaries: Record<string, SiteDictionary> = {
         title: "Comunicació responsable.",
         description: "Informació clínica i expectatives realistes.",
         rows: [
-          "No es publiquen promeses de resultat.",
-          "L'evolució depèn del cas clínic.",
-          "La indicació final es confirma a consulta.",
+          "No prometem resultats espectaculars en poques sessions si no es realista.",
+          "L'evolucio depen del cas, de la continuitat i de com respon la pell o el borrissol.",
+          "La recomanacio final sempre es confirma a la cita de diagnosi.",
         ],
       },
       closing: {
         label: "Reserva",
         title: "Sol·licita una valoració individual.",
-        description: "Recomanació a consulta.",
+        description: "T'orientem amb honestedat i amb un pla adaptat al teu cas.",
       },
     },
     aboutPage: {
       hero: {
         label: "Sobre nosaltres",
-        title: "Centre d'estètica avançada a illa Carlemany.",
-        description: "Depilació làser díode i tractaments personalitzats.",
+        title: "Centre premium, proper i sense protocols estandard.",
+        description: "Cada tractament es dissenya segons necessitats reals, diagnosi i evolucio.",
         panelEyebrow: "Centre",
-        panelDescription: "Atenció professional i seguiment.",
+        panelDescription: "Diagnosi previa, pla personalitzat i seguiment real.",
       },
       method: {
         label: "Forma de treball",
-        title: "Criteri, mètode i control.",
-        description: "Estructura clínica estable.",
+        title: "No fem sessions aillades: planifiquem processos.",
+        description: "La diferencia es com indiquem, executem i reajustem cada tractament.",
         principles: [
-          { title: "Diagnòstic expert", description: "Valoració clínica prèvia." },
-          { title: "Pla per fases", description: "Objectiu, freqüència i revisió." },
-          { title: "Seguiment", description: "Ajustos per evolució." },
+          { title: "Diagnosi previa", description: "No comencem sense entendre de veritat que preocupa la clienta i que necessita el seu cas." },
+          { title: "Protocol personalitzat", description: "Cada pla es dissenya al 100% segons pell, borrissol, objectiu i evolucio." },
+          { title: "Seguiment i reajust", description: "Si la resposta canvia, el protocol tambe. No seguim per inercia." },
         ],
       },
       identity: {
         label: "Identitat del centre",
-        title: "Confiança i continuïtat.",
+        title: "La diferencia es al criteri.",
         highlights: [
-          "Cabines individuals i atenció personalitzada.",
-          "Depilació làser díode i estètica avançada.",
-          "Coordinació directa per WhatsApp.",
+          "No treballem amb protocols estandard ni amb sessions sense estrategia.",
+          "Combinem diagnosi tecnica, aparatologia avancada i actius regeneratius segons el cas.",
+          "Busquem resultats visibles i sostinguts, no efectes rapids mal plantejats.",
         ],
       },
       closing: {
         label: "Contacte",
-        title: "Consulta el teu cas amb el centre.",
-        description: "Resposta segons disponibilitat.",
+        title: "Explica'ns el teu cas i t'orientem amb honestedat.",
+        description: "La resposta es planteja segons agenda, pero sempre amb criteri i sense promeses buides.",
       },
     },
     contactPage: {
       hero: {
         label: "Contacte",
-        title: "Canal directe amb el centre.",
-        description: "Atenció prèvia a reserva i seguiment operatiu.",
+        title: "Parla directament amb el centre.",
+        description: "WhatsApp, trucada o visita presencial per gestionar la teva cita de diagnosi.",
         panelEyebrow: "Atenció",
-        panelDescription: "Resposta per horari i agenda.",
+        panelDescription: "Resposta segons horari operatiu i disponibilitat real.",
       },
       channels: {
         label: "Canals",
@@ -1275,63 +1275,63 @@ export const dictionaries: Record<string, SiteDictionary> = {
           { label: "Telèfon", value: "688 080", note: "Atenció per horari." },
           { label: "Email", value: "illa.carlemany@centresideal.com", note: "Consultes generals." },
           { label: "Adreça", value: "Av. Carlemany, 70, AD700 Andorra", note: "Centre Comercial illa Carlemany · segona planta." },
-          { label: "Horari", value: "Pendent de validació", note: "Es confirmarà en actualització oficial." },
+          { label: "Horari", value: "Dilluns a dissabte de 10:00 a 20:30", note: "Diumenge de 10:00 a 20:00." },
         ],
       },
       process: {
         label: "Procés",
-        title: "Resposta i confirmació.",
-        description: "Seqüència breu.",
+        title: "Aixi gestionem la cita.",
+        description: "Primer rebem la sollicitud, despres revisem agenda i finalment confirmem la disponibilitat real.",
         steps: [
-          { id: "01", title: "Sol·licitud", description: "Objectiu i franja." },
-          { id: "02", title: "Resposta", description: "Disponibilitat i condicions." },
-          { id: "03", title: "Confirmació", description: "Reserva final." },
+          { id: "01", title: "Sol·licitud", description: "Ens escrius, truques o vens al centre per demanar cita." },
+          { id: "02", title: "Revisio d'agenda", description: "Valorem durada, tipus de cita i espai disponible." },
+          { id: "03", title: "Confirmacio", description: "Et confirmem la disponibilitat real i com preparar-te si cal." },
         ],
       },
       support: {
         label: "WhatsApp",
-        title: "Canal preparat per a assistència avançada.",
+        title: "WhatsApp es el canal mes agil per comencar.",
         description:
-          "La base de contacte està estructurada per incorporar en el futur automatització de consultes recurrents sense perdre control de l'equip.",
+          "Es el canal preferent per demanar cita, resoldre dubtes operatius i mantenir seguiment entre visites, tot i que tambe pots trucar-nos o venir al centre.",
       },
       closing: {
         label: "Reserva",
-        title: "Confirma la teva valoració inicial.",
-        description: "Sense compromís.",
+        title: "Reserva la teva cita de diagnosi.",
+        description: "Et confirmem disponibilitat real i els seguents passos sense compromis.",
       },
     },
     bookingPage: {
       hero: {
         label: "Reservar valoració",
-        title: "Reserva clara i sense fricció.",
-        description: "Confirmació per WhatsApp.",
+        title: "Reserva la cita de diagnosi.",
+        description: "Primer entenem el teu cas; despres indiquem el tractament i la inversio.",
         panelEyebrow: "Valoració",
         panelDescription: "Durada orientativa de 30 minuts.",
       },
       includes: {
         label: "Què inclou",
         title: "Primera visita",
-        description: "Informació abans de decidir tractament.",
+        description: "La primera visita serveix per diagnosticar, ordenar prioritats i decidir amb criteri.",
         rows: [
-          "Diagnòstic facial o corporal.",
-          "Objectiu prioritari i pauta inicial.",
-          "Inversió orientativa.",
+          "Diagnosi de pell, borrissol o zona a tractar.",
+          "Pla recomanat amb ordre de prioritats i continuitat orientativa.",
+          "Explicacio de la inversio i de si convé sessio solta o bo.",
         ],
       },
       process: {
         label: "Procés",
-        title: "Sol·licitud, confirmació i consulta.",
-        description: "Seqüència simple.",
+        title: "Sol·licitud, confirmacio i diagnosi.",
+        description: "Una sequencia clara perque sapigues que passara abans de venir.",
         steps: [
-          { id: "01", title: "Sol·licitud", description: "Objectiu i franja." },
-          { id: "02", title: "Confirmació", description: "Horari i condicions." },
-          { id: "03", title: "Consulta", description: "Diagnòstic i recomanació." },
+          { id: "01", title: "Sol·licitud", description: "Ens indiques motiu i franja horaria preferida." },
+          { id: "02", title: "Confirmacio", description: "Et donem disponibilitat real i detalls operatius." },
+          { id: "03", title: "Diagnosi", description: "Valorem el cas i et proposem el pla adequat." },
         ],
       },
       closing: {
         label: "Confirmació",
-        title: "Reserva la teva valoració ara.",
-        description: "Sense compromís.",
+        title: "Comenca amb una valoracio ben feta.",
+        description: "Sense compromis i amb una recomanacio clara des de la primera visita.",
       },
     },
     legalPages: {
@@ -1398,7 +1398,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
     },
     brand: {
       ...baseBrand,
-      hoursPending: "Horaires en validation finale. Consultez la disponibilité via WhatsApp.",
+      hoursPending: "Lundi a samedi de 10:00 a 20:30. Dimanche de 10:00 a 20:00.",
     },
     nav: {
       treatments: "Traitements",
@@ -1426,9 +1426,9 @@ export const dictionaries: Record<string, SiteDictionary> = {
     },
     footer: {
       topEyebrow: "Centros Ideal Andorra",
-      topTitle: "Réservez une évaluation ou contactez-nous via WhatsApp.",
+      topTitle: "Reservez votre rendez-vous de diagnostic ou ecrivez-nous sur WhatsApp.",
       description:
-        "Centre spécialisé en épilation laser diode et esthétique avancée, avec approche clinique et suivi personnalisé.",
+        "Centre specialise en epilation laser diode, technologies avancees et protocoles regeneratifs definis selon le diagnostic et l'evolution reelle.",
       navigation: "Navigation",
       legal: "Légal",
       contact: "Contact",
@@ -1437,13 +1437,13 @@ export const dictionaries: Record<string, SiteDictionary> = {
     whatsapp: {
       floatingLabel: "Support WhatsApp",
       supportLabel: "Canal d'assistance",
-      supportTitle: "Support opérationnel via WhatsApp",
+      supportTitle: "WhatsApp pour les rendez-vous et le suivi",
       supportDescription:
-        "Canal principal pour répondre aux questions, coordonner l'évaluation et confirmer l'agenda.",
+        "C'est le canal le plus rapide pour demander un rendez-vous, resoudre les questions prealables et confirmer les disponibilites reelles du centre.",
       supportHumanNotice:
-        "Actuellement, l'accompagnement est assuré par l'équipe du centre.",
+        "L'accompagnement est gere directement par l'equipe du centre pendant les horaires operationnels.",
       supportFutureNotice:
-        "Base prête pour intégrer une couche d'assistance avancée dans les prochaines phases.",
+        "Si vous preferez, vous pouvez aussi nous appeler ou venir directement au centre.",
     },
     chat: {
       launcherLabel: "Assistant",
@@ -1541,7 +1541,7 @@ export const dictionaries: Record<string, SiteDictionary> = {
             label: "Emplacement",
             value: "Centre Commercial illa Carlemany · deuxième étage",
           },
-          { label: "Horaires", value: "En attente de validation finale." },
+          { label: "Horaires", value: "Lundi a samedi de 10:00 a 20:30." },
         ],
       },
       team: {
@@ -1591,8 +1591,8 @@ export const dictionaries: Record<string, SiteDictionary> = {
     treatmentsPage: {
       hero: {
         label: "Traitements",
-        title: "Protocoles avec rigueur clinique.",
-        description: "Indication personnalisée après évaluation.",
+        title: "Laser, technologies et regeneration avec un critere professionnel.",
+        description: "La recommandation finale ne sort pas du catalogue: elle est confirmee lors de l'evaluation.",
         panelEyebrow: "Durée",
         panelDescription: "Séances définies selon zone et protocole.",
       },
@@ -1615,8 +1615,8 @@ export const dictionaries: Record<string, SiteDictionary> = {
       },
       closing: {
         label: "Réservation",
-        title: "Confirmez votre évaluation initiale.",
-        description: "Sans engagement.",
+        title: "Reservez d'abord le rendez-vous de diagnostic.",
+        description: "Sans engagement et avec un plan clair des la premiere visite.",
       },
     },
     treatmentDetail: {
@@ -1678,8 +1678,8 @@ export const dictionaries: Record<string, SiteDictionary> = {
     resultsPage: {
       hero: {
         label: "Résultats",
-        title: "Résultats avec rigueur.",
-        description: "Documentation clinique et suivi.",
+        title: "Des resultats visibles, bien expliques et sans promesses vides.",
+        description: "Diagnostic prealable, suivi et attentes realistes.",
         panelEyebrow: "Cadre clinique",
         panelDescription: "Diagnostic, suivi et révision.",
       },
@@ -1717,57 +1717,57 @@ export const dictionaries: Record<string, SiteDictionary> = {
         title: "Communication responsable.",
         description: "Information clinique et attentes réalistes.",
         rows: [
-          "Aucune promesse de résultat n'est publiée.",
-          "L'évolution dépend du cas clinique.",
-          "L'indication finale est confirmée en consultation.",
+          "Nous ne promettons pas des resultats spectaculaires en quelques seances si ce n'est pas realiste.",
+          "L'evolution depend du cas, de la continuite et de la reponse de la peau ou du poil.",
+          "La recommandation finale est toujours confirmee pendant le rendez-vous de diagnostic.",
         ],
       },
       closing: {
         label: "Réservation",
         title: "Demandez une évaluation individuelle.",
-        description: "Recommandation en consultation.",
+        description: "Nous vous orientons avec honnetete et avec un plan adapte a votre cas.",
       },
     },
     aboutPage: {
       hero: {
         label: "À propos",
-        title: "Centre d'esthétique avancée à illa Carlemany.",
-        description: "Épilation laser diode et traitements personnalisés.",
+        title: "Un centre premium, proche et sans protocoles standard.",
+        description: "Chaque traitement est defini selon les besoins reels, le diagnostic et l'evolution.",
         panelEyebrow: "Centre",
-        panelDescription: "Accompagnement professionnel et suivi.",
+        panelDescription: "Diagnostic prealable, plan personnalise et suivi reel.",
       },
       method: {
         label: "Méthode de travail",
-        title: "Rigueur, méthode et contrôle.",
-        description: "Structure clinique stable.",
+        title: "Nous ne faisons pas de seances isolees: nous planifions des parcours.",
+        description: "La difference tient a la facon d'indiquer, d'executer et d'ajuster chaque traitement.",
         principles: [
-          { title: "Diagnostic expert", description: "Évaluation clinique préalable." },
-          { title: "Plan par phases", description: "Objectif, fréquence et révision." },
-          { title: "Suivi", description: "Ajustements selon évolution." },
+          { title: "Diagnostic prealable", description: "Nous ne commençons pas sans comprendre ce qui preoccupe vraiment la cliente et ce dont son cas a besoin." },
+          { title: "Protocole personnalise", description: "Chaque plan est construit a 100 % selon la peau, le poil, l'objectif et l'evolution." },
+          { title: "Suivi et reajustement", description: "Si la reponse change, le protocole change aussi. Nous ne poursuivons pas par inertie." },
         ],
       },
       identity: {
         label: "Identité du centre",
-        title: "Confiance et continuité.",
+        title: "La difference tient au critere.",
         highlights: [
-          "Cabines individuelles et accompagnement personnalisé.",
-          "Épilation laser diode et esthétique avancée.",
-          "Coordination directe via WhatsApp.",
+          "Nous ne travaillons ni avec des protocoles standard ni avec des seances sans strategie.",
+          "Nous combinons diagnostic technique, technologies avancees et actifs regeneratifs selon le cas.",
+          "Nous cherchons des resultats visibles et durables, pas des effets rapides mal poses.",
         ],
       },
       closing: {
         label: "Contact",
-        title: "Échangez avec le centre sur votre cas.",
-        description: "Réponse selon disponibilité.",
+        title: "Parlez-nous de votre cas et nous vous orienterons avec honnetete.",
+        description: "La reponse depend de l'agenda, mais toujours avec critere et sans promesses vides.",
       },
     },
     contactPage: {
       hero: {
         label: "Contact",
-        title: "Canal direct avec le centre.",
-        description: "Accompagnement avant réservation et suivi opérationnel.",
+        title: "Parlez directement avec le centre.",
+        description: "WhatsApp, appel ou visite sur place pour organiser votre rendez-vous de diagnostic.",
         panelEyebrow: "Accueil",
-        panelDescription: "Réponse selon horaires et agenda.",
+        panelDescription: "Reponse selon les horaires operationnels et les disponibilites reelles.",
       },
       channels: {
         label: "Canaux",
@@ -1778,63 +1778,63 @@ export const dictionaries: Record<string, SiteDictionary> = {
           { label: "Téléphone", value: "688 080", note: "Accueil selon horaires." },
           { label: "Email", value: "illa.carlemany@centresideal.com", note: "Demandes générales." },
           { label: "Adresse", value: "Av. Carlemany, 70, AD700 Andorra", note: "Centre Commercial illa Carlemany · deuxième étage." },
-          { label: "Horaires", value: "En attente de validation", note: "Publication après confirmation officielle." },
+          { label: "Horaires", value: "Lundi a samedi de 10:00 a 20:30", note: "Dimanche de 10:00 a 20:00." },
         ],
       },
       process: {
         label: "Processus",
-        title: "Réponse et confirmation.",
-        description: "Séquence courte.",
+        title: "Voici comment nous gerons le rendez-vous.",
+        description: "Nous recevons d'abord la demande, puis nous revoyons l'agenda avant de confirmer les disponibilites reelles.",
         steps: [
-          { id: "01", title: "Demande", description: "Objectif et créneau." },
-          { id: "02", title: "Réponse", description: "Disponibilité et conditions." },
-          { id: "03", title: "Confirmation", description: "Réservation finale." },
+          { id: "01", title: "Demande", description: "Vous nous ecrivez, appelez ou venez au centre pour demander un rendez-vous." },
+          { id: "02", title: "Revision de l'agenda", description: "Nous evaluons la duree, le type de rendez-vous et le bon creneau." },
+          { id: "03", title: "Confirmation", description: "Nous confirmons les disponibilites reelles et la preparation si necessaire." },
         ],
       },
       support: {
         label: "WhatsApp",
-        title: "Canal prêt pour une assistance avancée.",
+        title: "WhatsApp est le canal le plus agile pour commencer.",
         description:
-          "La base de contact est conçue pour intégrer à l'avenir une automatisation des demandes récurrentes, sans remplacer le contrôle de l'équipe.",
+          "C'est le canal prefere pour demander un rendez-vous, resoudre les questions operationnelles et maintenir le suivi entre les visites, meme si vous pouvez aussi appeler ou venir au centre.",
       },
       closing: {
         label: "Réservation",
-        title: "Confirmez votre évaluation initiale.",
-        description: "Sans engagement.",
+        title: "Reservez votre rendez-vous de diagnostic.",
+        description: "Nous confirmons les disponibilites reelles et les prochaines etapes sans engagement.",
       },
     },
     bookingPage: {
       hero: {
         label: "Réserver une évaluation",
-        title: "Réservation claire et sans friction.",
-        description: "Confirmation via WhatsApp.",
+        title: "Reservez le rendez-vous de diagnostic.",
+        description: "Nous comprenons d'abord votre cas; ensuite nous indiquons le traitement et l'investissement.",
         panelEyebrow: "Évaluation",
         panelDescription: "Durée indicative de 30 minutes.",
       },
       includes: {
         label: "Inclus",
         title: "Première visite",
-        description: "Informations avant de décider du traitement.",
+        description: "La premiere visite sert a diagnostiquer, ordonner les priorites et decider avec critere.",
         rows: [
-          "Diagnostic facial ou corporel.",
-          "Objectif prioritaire et protocole initial.",
-          "Investissement indicatif.",
+          "Diagnostic de la peau, du poil ou de la zone a traiter.",
+          "Plan recommande avec priorites et continuite indicative.",
+          "Explication de l'investissement et de l'interet d'une seance isolee ou d'un forfait.",
         ],
       },
       process: {
         label: "Processus",
-        title: "Demande, confirmation et consultation.",
-        description: "Séquence simple.",
+        title: "Demande, confirmation et diagnostic.",
+        description: "Une sequence claire pour savoir ce qui va se passer avant votre venue.",
         steps: [
-          { id: "01", title: "Demande", description: "Objectif et créneau." },
-          { id: "02", title: "Confirmation", description: "Horaires et conditions." },
-          { id: "03", title: "Consultation", description: "Diagnostic et recommandation." },
+          { id: "01", title: "Demande", description: "Vous nous indiquez le motif et le creneau prefere." },
+          { id: "02", title: "Confirmation", description: "Nous donnons les disponibilites reelles et les details utiles." },
+          { id: "03", title: "Diagnostic", description: "Nous evaluons le cas et proposons le plan adapte." },
         ],
       },
       closing: {
         label: "Confirmation",
-        title: "Réservez votre évaluation maintenant.",
-        description: "Sans engagement.",
+        title: "Commencez par une evaluation bien faite.",
+        description: "Sans engagement et avec une recommandation claire des la premiere visite.",
       },
     },
     legalPages: {
@@ -1907,7 +1907,7 @@ dictionaries.en = {
   brand: {
     ...esDictionary.brand,
     floor: "Second floor",
-    hoursPending: "Opening hours under final validation. Check availability on WhatsApp.",
+    hoursPending: "Monday to Saturday from 10:00 to 20:30. Sunday from 10:00 to 20:00.",
   },
   nav: {
     treatments: "Treatments",
@@ -1935,9 +1935,9 @@ dictionaries.en = {
   },
   footer: {
     topEyebrow: "Centros Ideal Andorra",
-    topTitle: "Book your assessment or reach out via WhatsApp.",
+    topTitle: "Book your diagnosis appointment or message us on WhatsApp.",
     description:
-      "Specialised centre in diode laser hair removal and advanced aesthetics, with clinical criteria and personalised care.",
+      "Specialised centre in diode laser hair removal, advanced technology and regenerative protocols defined through diagnosis and real follow-up.",
     navigation: "Navigation",
     legal: "Legal",
     contact: "Contact",
@@ -1946,13 +1946,13 @@ dictionaries.en = {
   whatsapp: {
     floatingLabel: "WhatsApp support",
     supportLabel: "Support channel",
-    supportTitle: "Operational support via WhatsApp",
+    supportTitle: "WhatsApp for appointments and follow-up",
     supportDescription:
-      "Primary channel to answer questions, coordinate your assessment and confirm your agenda.",
+      "It is the quickest channel to request an appointment, solve pre-visit questions and confirm the centre's real availability.",
     supportHumanNotice:
-      "Support is currently managed directly by the centre team.",
+      "Support is managed directly by the centre team during operating hours.",
     supportFutureNotice:
-      "The architecture is ready to add an advanced assistance layer in upcoming phases.",
+      "If you prefer, you can also call us or visit the centre to arrange your appointment.",
   },
   chat: {
     launcherLabel: "Assistant",
@@ -1990,10 +1990,16 @@ dictionaries.en = {
   },
   treatmentsPage: {
     ...esDictionary.treatmentsPage,
+    hero: {
+      ...esDictionary.treatmentsPage.hero,
+      label: "Treatments",
+      title: "Laser, technology and regeneration with professional judgement.",
+      description: "The final recommendation does not come from the catalogue: it is confirmed during the assessment.",
+    },
     closing: {
       label: "Booking",
-      title: "Request your assessment.",
-      description: "Final recommendation in consultation.",
+      title: "Book the diagnosis appointment first.",
+      description: "No obligation, and a clear plan from the very first visit.",
     },
   },
   resultsPage: {
@@ -2001,13 +2007,21 @@ dictionaries.en = {
     hero: {
       ...esDictionary.resultsPage.hero,
       label: "Results",
-      title: "Results with clinical criteria.",
-      description: "Clinical documentation and follow-up.",
+      title: "Visible results, explained honestly and without empty promises.",
+      description: "Prior diagnosis, follow-up and realistic expectations.",
+    },
+    transparency: {
+      ...esDictionary.resultsPage.transparency,
+      rows: [
+        "We do not promise spectacular results in a few sessions if that is not realistic.",
+        "Progress depends on the case, continuity and how the skin or hair responds.",
+        "The final recommendation is always confirmed during the diagnosis appointment.",
+      ],
     },
     closing: {
       label: "Booking",
       title: "Request an individual assessment.",
-      description: "Recommendation in consultation.",
+      description: "We guide you honestly and with a plan adapted to your case.",
     },
   },
   aboutPage: {
@@ -2015,13 +2029,32 @@ dictionaries.en = {
     hero: {
       ...esDictionary.aboutPage.hero,
       label: "About us",
-      title: "Advanced aesthetics centre at illa Carlemany.",
-      description: "Diode laser hair removal and personalised treatments.",
+      title: "A premium centre, close to clients and without standard protocols.",
+      description: "Every treatment is designed around real needs, diagnosis and evolution.",
+    },
+    method: {
+      ...esDictionary.aboutPage.method,
+      title: "We do not do isolated sessions: we plan full processes.",
+      description: "The difference lies in how we indicate, execute and adjust each treatment.",
+      principles: [
+        { title: "Prior diagnosis", description: "We do not start without understanding what really concerns the client and what the case actually needs." },
+        { title: "Personalised protocol", description: "Each plan is built around skin, hair, goals and evolution." },
+        { title: "Follow-up and adjustment", description: "If the response changes, the protocol changes too. We do not keep going by inertia." },
+      ],
+    },
+    identity: {
+      ...esDictionary.aboutPage.identity,
+      title: "The difference is in the judgement behind the plan.",
+      highlights: [
+        "We do not work with standard protocols or isolated sessions with no strategy.",
+        "We combine technical diagnosis, advanced technology and regenerative actives according to each case.",
+        "We aim for visible and sustainable results, not badly framed quick effects.",
+      ],
     },
     closing: {
       label: "Contact",
-      title: "Discuss your case directly with the centre.",
-      description: "Reply based on availability.",
+      title: "Tell us about your case and we will guide you honestly.",
+      description: "The reply depends on the agenda, but always with judgement and without empty promises.",
     },
   },
   contactPage: {
@@ -2029,16 +2062,16 @@ dictionaries.en = {
     hero: {
       ...esDictionary.contactPage.hero,
       label: "Contact",
-      title: "Direct channel with the centre.",
-      description: "Pre-booking support and operational follow-up.",
+      title: "Speak directly with the centre.",
+      description: "WhatsApp, phone call or in-person visit to arrange your diagnosis appointment.",
       panelEyebrow: "Support",
-      panelDescription: "Response by opening hours and agenda.",
+      panelDescription: "Reply based on operating hours and real availability.",
     },
     channels: {
       ...esDictionary.contactPage.channels,
       label: "Channels",
       title: "Operational contact.",
-      description: "Useful information before confirmation.",
+      description: "Useful information to request an appointment, solve questions and reach the centre without friction.",
       rows: [
         { label: "WhatsApp", value: "688 080", note: "Priority channel." },
         { label: "Phone", value: "688 080", note: "Support by opening hours." },
@@ -2050,33 +2083,33 @@ dictionaries.en = {
         },
         {
           label: "Opening hours",
-          value: "Pending validation",
-          note: "Will be confirmed in an official update.",
+          value: "Monday to Saturday from 10:00 to 20:30",
+          note: "Sunday from 10:00 to 20:00.",
         },
       ],
     },
     process: {
       ...esDictionary.contactPage.process,
       label: "Process",
-      title: "Response and confirmation.",
-      description: "Short sequence.",
+      title: "This is how we manage the appointment.",
+      description: "First we receive the request, then we review the agenda and finally confirm the real availability.",
       steps: [
-        { id: "01", title: "Request", description: "Goal and time slot." },
-        { id: "02", title: "Reply", description: "Availability and conditions." },
-        { id: "03", title: "Confirmation", description: "Final booking." },
+        { id: "01", title: "Request", description: "You write, call or visit the centre to ask for an appointment." },
+        { id: "02", title: "Agenda review", description: "We check duration, appointment type and the best available slot." },
+        { id: "03", title: "Confirmation", description: "We confirm real availability and how to prepare if needed." },
       ],
     },
     support: {
       ...esDictionary.contactPage.support,
       label: "WhatsApp",
-      title: "Channel ready for advanced support.",
+      title: "WhatsApp is the quickest way to start.",
       description:
-        "The contact flow is structured to add future automation for recurring questions without losing team control.",
+        "It is the preferred channel to request an appointment, solve operational questions and keep follow-up between visits, although you can also call or visit the centre.",
     },
     closing: {
       label: "Booking",
-      title: "Confirm your initial assessment.",
-      description: "No obligation.",
+      title: "Book your diagnosis appointment.",
+      description: "We confirm real availability and next steps with no obligation.",
     },
   },
   bookingPage: {
@@ -2084,8 +2117,8 @@ dictionaries.en = {
     hero: {
       ...esDictionary.bookingPage.hero,
       label: "Book assessment",
-      title: "Clear, frictionless booking.",
-      description: "Confirmation via WhatsApp.",
+      title: "Book the diagnosis appointment.",
+      description: "We understand your case first; then we indicate treatment and investment.",
       panelEyebrow: "Assessment",
       panelDescription: "Estimated duration: 30 minutes.",
     },
@@ -2093,28 +2126,28 @@ dictionaries.en = {
       ...esDictionary.bookingPage.includes,
       label: "What's included",
       title: "First visit",
-      description: "Information before deciding your treatment.",
+      description: "The first visit is designed to diagnose, order priorities and decide with proper judgement.",
       rows: [
-        "Facial or body diagnosis.",
-        "Priority objective and initial protocol.",
-        "Indicative investment.",
+        "Diagnosis of the skin, hair or treatment area.",
+        "Recommended plan with priorities and indicative continuity.",
+        "Explanation of investment and whether a single session or package makes more sense.",
       ],
     },
     process: {
       ...esDictionary.bookingPage.process,
       label: "Process",
-      title: "Request, confirmation and consultation.",
-      description: "Simple sequence.",
+      title: "Request, confirmation and diagnosis.",
+      description: "A clear sequence so you know what will happen before you come.",
       steps: [
-        { id: "01", title: "Request", description: "Goal and slot." },
-        { id: "02", title: "Confirmation", description: "Schedule and conditions." },
-        { id: "03", title: "Consultation", description: "Diagnosis and recommendation." },
+        { id: "01", title: "Request", description: "You tell us the reason and your preferred time slot." },
+        { id: "02", title: "Confirmation", description: "We share real availability and useful operational details." },
+        { id: "03", title: "Diagnosis", description: "We assess the case and propose the right plan." },
       ],
     },
     closing: {
       label: "Confirmation",
-      title: "Book your assessment now.",
-      description: "No obligation.",
+      title: "Start with a diagnosis that is properly done.",
+      description: "No obligation, and a clear recommendation from the first visit.",
     },
   },
   legalPages: {

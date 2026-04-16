@@ -56,7 +56,7 @@ export function buildPreBookingWhatsappMessage(data: PreBookingWhatsappData, loc
     }
   > = {
     es: {
-      hello: "Hola, me gustaría reservar una valoración/cita en Centres Ideal Andorra.",
+      hello: "Hola, me gustaría reservar una cita de diagnóstico/valoración en Centros Ideal Andorra.",
       name: "Nombre",
       phone: "Telefono",
       treatment: "Tratamiento",
@@ -68,7 +68,7 @@ export function buildPreBookingWhatsappMessage(data: PreBookingWhatsappData, loc
       note: "Nota",
     },
     ca: {
-      hello: "Hola, m'agradaria reservar una valoracio/cita a Centres Ideal Andorra.",
+      hello: "Hola, m'agradaria reservar una cita de diagnosi/valoracio a Centres Ideal Andorra.",
       name: "Nom",
       phone: "Telefon",
       treatment: "Tractament",
@@ -80,7 +80,7 @@ export function buildPreBookingWhatsappMessage(data: PreBookingWhatsappData, loc
       note: "Nota",
     },
     fr: {
-      hello: "Bonjour, je souhaite reserver une evaluation/un rendez-vous chez Centres Ideal Andorra.",
+      hello: "Bonjour, je souhaite reserver une evaluation diagnostique chez Centres Ideal Andorra.",
       name: "Nom",
       phone: "Telephone",
       treatment: "Traitement",
@@ -92,7 +92,7 @@ export function buildPreBookingWhatsappMessage(data: PreBookingWhatsappData, loc
       note: "Note",
     },
     en: {
-      hello: "Hello, I would like to book an assessment/appointment at Centres Ideal Andorra.",
+      hello: "Hello, I would like to book a diagnosis or assessment appointment at Centres Ideal Andorra.",
       name: "Name",
       phone: "Phone",
       treatment: "Treatment",

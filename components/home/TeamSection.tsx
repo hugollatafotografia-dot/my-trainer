@@ -38,9 +38,11 @@ export default function TeamSection({ members, labels, closeLabel = "Close" }: T
             </div>
 
             <div className="px-1 pb-1 pt-4">
-              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
-                {member.age} {labels.years}
-              </p>
+              {member.age ? (
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-[color:var(--color-accent)]">
+                  {member.age} {labels.years}
+                </p>
+              ) : null}
               <h3 className="mt-1 text-[1.05rem] font-semibold text-[color:var(--color-foreground)]">{member.name}</h3>
               <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.09em] text-[color:var(--color-accent)]">
                 {member.role}

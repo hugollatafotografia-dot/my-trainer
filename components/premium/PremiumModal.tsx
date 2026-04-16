@@ -148,7 +148,7 @@ export default function PremiumModal({
 
       <div
         className={cn(
-          "relative max-h-[92dvh] w-full overflow-hidden rounded-t-[1.45rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] pb-[env(safe-area-inset-bottom)] shadow-[0_62px_140px_-72px_rgba(13,8,11,0.9)] sm:max-h-[calc(100dvh-2.5rem)] sm:rounded-[1.55rem] sm:pb-0",
+          "relative flex max-h-[92dvh] w-full flex-col overflow-hidden rounded-t-[1.45rem] border border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] pb-[env(safe-area-inset-bottom)] shadow-[0_62px_140px_-72px_rgba(13,8,11,0.9)] sm:max-h-[calc(100dvh-2.5rem)] sm:rounded-[1.55rem] sm:pb-0",
           size === "md" ? "max-w-[46rem]" : "",
           size === "lg" ? "max-w-[62rem]" : "",
           size === "xl" ? "max-w-[72rem]" : "",
@@ -159,7 +159,7 @@ export default function PremiumModal({
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="flex h-full min-h-[56vh] flex-col sm:min-h-[42vh]"
+          className="flex min-h-0 min-h-[56vh] flex-1 flex-col sm:min-h-[42vh]"
         >
           <header className="sticky top-0 z-10 border-b border-[color:var(--color-line)] bg-[color:var(--color-surface-strong)] px-3.5 pb-3.5 pt-3.5 sm:px-7 sm:pb-5 sm:pt-5">
             <div className="flex items-start justify-between gap-3">
@@ -188,7 +188,9 @@ export default function PremiumModal({
             </div>
           </header>
 
-          <div className="no-scrollbar flex-1 overflow-y-auto overscroll-contain px-3.5 py-4 sm:px-7 sm:py-7">{children}</div>
+          <div className="no-scrollbar min-h-0 flex-1 overflow-y-auto overscroll-contain px-3.5 py-4 sm:px-7 sm:py-7">
+            {children}
+          </div>
         </article>
       </div>
     </div>,
